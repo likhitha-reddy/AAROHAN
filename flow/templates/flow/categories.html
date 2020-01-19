@@ -15,8 +15,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% for event in event_groups %}
-            <a href="{% url 'category' gId=event.groupID %}">{{ event.groupId }}</a>
+        {% for events in event_groups %}
+            <a href="{% url 'category' id=events.groupId %}">{{ events.groupId }}</a>
         {% endfor %}
         <script src="" async defer></script>
     </body>

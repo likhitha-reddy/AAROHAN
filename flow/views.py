@@ -13,8 +13,9 @@ def eventGroups(request):
     context = {'event_groups':eventGroups}
     return render(request,'flow/categories.html',context)
 
-def events(request, gId):
-    events = Events.objects.filter(eventGroup=EventCategory.objects.get(groupId=gID))
+def events(request, id):
+    categrory = EventCategory.objects.get(groupId=id)
+    events = Events.objects.filter(eventGroup=categrory)
     context = {'events':events}
     return render(request,'flow/category.html',context)
 
