@@ -44,6 +44,7 @@ class Sponsors(models.Model):
 
 class About(models.Model):
     text = models.TextField(help_text="Enter the about page of the fest here")
+    logo = models.ImageField(blank=True)
     identifier = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
@@ -60,3 +61,11 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.identifier
+
+class MajorAttractions(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField(help_text="Enter the description of the attraction here")
+    logo = models.ImageField(blank = True)
+
+    def __str__(self):
+        return self.name

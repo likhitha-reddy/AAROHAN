@@ -9,7 +9,8 @@ def index(request):
     faqs = FAQ.objects.all()
     about = About.objects.all()
     sponsors = Sponsors.objects.all()
-    context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors}
+    attractions = MajorAttractions.objects.all()
+    context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
     return render(request, 'flow/home.html', context)
 
 def eventGroups(request):
@@ -45,7 +46,12 @@ def about_page(request):
 def faq_page(request):
     faqs = FAQ.objects.all()
     context = {'faqs':faqs}
-    return rendeer(request,"flow/faq.html",context)
+    return render(request,"flow/faq.html",context)
+
+def attractions_page(request):
+    attractions = MajorAttractions.objects.all()
+    context = {'attractions':attractions}
+    return render(request,'flow/attractions.html',context)
 
 
 
