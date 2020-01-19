@@ -33,3 +33,30 @@ class Workshops(models.Model):
 
     def __str__(self):
         return self.workshopName
+
+class Sponsors(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(blank=True)
+    url = models.EmailField(help_text='URL of the sponsor')
+    
+    def __str__(self):
+        return self.name 
+
+class About(models.Model):
+    text = models.TextField(help_text="Enter the about page of the fest here")
+    identifier = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.identifier
+
+class FAQ(models.Model):
+    identifier = models.CharField(max_length = 50)
+    question = models.CharField(max_length = 100)
+    answer = models.CharField(max_length = 100)
+
+    class Meta:
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQs'
+
+    def __str__(self):
+        return self.identifier
