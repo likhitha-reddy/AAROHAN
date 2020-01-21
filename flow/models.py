@@ -69,3 +69,32 @@ class MajorAttractions(models.Model):
 
     def __str__(self):
         return self.name
+
+class TeamCategory(models.Model):
+    name = models.CharField(max_length = 100, blank = False, help_text="Enter name of the team category here")
+    teamId = models.CharField(max_length = 50, unique=True, help_text="Enter category ID")
+
+    def __str__(self):
+        return self.name
+
+class TeamMember(models.Model):
+    category = models.ForeignKey(TeamCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, unique=True, help_text="Enter the name of the member here")
+    position = models.CharField(max_length=50, help_text="Enter the position of the person")
+    profile_img = models.ImageField()
+    club_choice = (
+        ("GLUG","GNU/Linux Users' Group"),
+        ("CCA","Centre for Cognitive Activities"),
+        ("SAE","SAE"),
+        ("MNTC","Maths n Tech Club"),
+        ("REC","RECursion"),
+    )
+    choice = models.CharField(
+        max_length=5,
+        choices= club_choice,
+        default="GLUG"
+    )
+
+    def __str__(self):
+        return self.name
+

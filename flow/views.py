@@ -53,5 +53,12 @@ def attractions_page(request):
     context = {'attractions':attractions}
     return render(request,'flow/attractions.html',context)
 
-
-
+def team_page(request):
+    umbrellas = TeamCategory.objects.all()
+    res = []
+    for umbrella in umbrellas:
+        members = TeamMember.objects.filter(category=umbrella)
+        group = {'name':umbrella.name , 'members':members}
+        res.append(group)
+    context = {'teams':res}
+    return render(request,"flow/teams.html", context)
