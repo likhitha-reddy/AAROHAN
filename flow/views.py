@@ -57,7 +57,7 @@ def team_page(request):
     umbrellas = TeamCategory.objects.all()
     res = []
     for umbrella in umbrellas:
-        members = TeamMember.objects.filter(category=umbrella)
+        members = TeamMember.objects.filter(team=umbrella)
         group = {'name':umbrella.name , 'members':members}
         res.append(group)
     context = {'teams':res}
