@@ -4,7 +4,7 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    events = Events.objects.all()
+    events = EventCategory.objects.all()
     workshops = Workshops.objects.all()
     faqs = FAQ.objects.all()
     about = About.objects.all()
@@ -12,11 +12,6 @@ def index(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
     return render(request, 'flow/home.html', context)
-
-def eventGroups(request):
-    eventGroups = EventCategory.objects.all()
-    context = {'event_groups':eventGroups}
-    return render(request,'flow/categories.html',context)
 
 def events(request, id):
     context = {}

@@ -15,6 +15,7 @@ class Events(models.Model):
     eventId = models.CharField(max_length=50,help_text="Enter the ID of the event")
     logo = models.ImageField(blank=True)
     description = models.TextField(help_text="Enter short description of the event")
+    problem_statement = models.TextField(help_text="Enter the problem statement of the event here")
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50,null=False)
     contact = models.CharField(max_length=20)
