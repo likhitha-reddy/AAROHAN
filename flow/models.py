@@ -4,7 +4,7 @@ from django.db import models
 class EventCategory(models.Model):
     groupName = models.CharField(max_length = 255,unique=True, help_text="Name of the event group")
     groupId = models.CharField(max_length = 20,unique=True, help_text="ID by which group will be identified")
-    logo = models.ImageField(blank=True)
+    logo = models.ImageField(blank=True, upload_to="event_category_images/")
 
     def __str__(self):
         return self.groupName
@@ -13,7 +13,7 @@ class Events(models.Model):
     eventGroup = models.ForeignKey(EventCategory, on_delete=models.CASCADE)
     eventName = models.CharField(max_length=50, unique=True, help_text="Enter the name of the event")
     eventId = models.CharField(max_length=50,help_text="Enter the ID of the event")
-    logo = models.ImageField(blank=True)
+    logo = models.ImageField(blank=True, upload_to="event_images/")
     description = models.TextField(help_text="Enter short description of the event")
     problem_statement = models.TextField(help_text="Enter the problem statement of the event here")
     date_time = models.DateTimeField()
@@ -26,7 +26,7 @@ class Events(models.Model):
 class Workshops(models.Model):
     workshopName = models.CharField(max_length=100,unique=True, help_text="Enter name of workshop")
     workshopId = models.CharField(max_length=50, help_text="Enter the ID of the workshop")
-    logo = models.ImageField(blank=True)
+    logo = models.ImageField(blank=True, upload_to="workshop_images/")
     description = models.TextField(help_text="Enter short description of the workshop")
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50, null=False)
@@ -37,7 +37,7 @@ class Workshops(models.Model):
 
 class Sponsors(models.Model):
     name = models.CharField(max_length=255)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=True, upload_to="sponsors/")
     url = models.EmailField(help_text='URL of the sponsor')
     
     def __str__(self):
@@ -81,7 +81,7 @@ class TeamMember(models.Model):
     team = models.ManyToManyField(TeamCategory)
     name = models.CharField(max_length=50, unique=True, help_text="Enter the name of the member here")
     position = models.CharField(max_length=50, help_text="Enter the position of the person")
-    profile_img = models.ImageField()
+    profile_img = models.ImageField(blank= True, upload_to="members/")
     club_choice = (
         ("GLUG","GNU/Linux Users' Group"),
         ("CCA","Centre for Cognitive Activities"),
