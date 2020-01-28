@@ -1,0 +1,84 @@
+{% load static %}
+{% load filter %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teams</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="{% static 'css/teams.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo" style="position: relative; top: 0px;">
+        <a href="{% url 'home' %}"> <img src="{% static 'img/coin.png' %}" alt="logo" /></a>
+    </div>
+
+    <div class="el">
+        <div class="container-fluid">
+            <div class="row" style="justify-content:center">
+                {% for team in teams %}
+                <div class="col-sm-6 col-lg-2 mb-3 temp">
+                    <div class="card mb-3 h-100">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal{{ forloop.counter0 }}">
+                                <img src="{{ team.team_image.url }}" class="img-thumbnail mx-auto d-block" />
+                            </button>
+                            <b>
+                                {{ team.name }}
+                            </b>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% for member in members %}
+    <div class="modal" id="exampleModal{{ forloop.counter0 }}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-transparent w3-animate-top">
+                <div class="modal-header">
+                    {% with res=teams|lookup:forloop.counter0 %}
+                    <h5 class="modal-title" id="exampleModalLabel">{{ res.name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: teal;">&times;</span>
+                    </button>
+                    {% endwith %}
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" style="justify-content:center">
+                            {% for individual in member %}
+                            <div class="col-auto col-sm-4 col-lg-3 mb-3 temp">
+                                <div class="card mb-3 h-100">
+                                    <div class="card-body">
+                                        <img src="{{ individual.profile_img.url }}" height="100" class="img mx-auto d-block" />
+                                        <b>
+                                            {{ individual.name }}
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+
+    

@@ -74,6 +74,7 @@ class MajorAttractions(models.Model):
 class TeamCategory(models.Model):
     name = models.CharField(max_length = 100, blank = False, help_text="Enter name of the team category here")
     teamId = models.CharField(max_length = 50, unique=True, help_text="Enter category ID")
+    team_image = models.ImageField(blank=True, upload_to="team_images/")
     def __str__(self):
         return self.name
 

@@ -1,0 +1,205 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-image: url("/static/img/bg1.png");
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-color: #031a09 !important;
+}
+
+.img-thumbnail {
+    background-color: transparent;
+    border: transparent !important;
+    border-radius: 0.45rem !important;
+}
+
+.el .img-thumbnail {
+    max-width: 90% !important;
+}
+
+.modal .img-thumbnail {
+    max-width: 100% !important;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal .card {
+    border: none;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.modal .card-body {
+    padding: 0;
+}
+
+.el img:hover {
+    animation: .5s infinite shake;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.el .temp {
+    max-width: 15rem !important;
+}
+
+.el .card {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+}
+
+.el .btn-primary:focus {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.el .btn-primary {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.el.btn-primary:hover {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.modal-dialog {
+    max-width: 800px !important;
+}
+
+.modal-content {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+.card-body b {
+    color: lightskyblue;
+    text-transform: uppercase;
+}
+
+.card {
+    background-color: rgba(160, 73, 73, 0);
+}
+
+.card img {
+    border-radius: 50%;
+}
+
+.modal .card img:hover {
+    box-shadow: 6px 7px 14px 0px rgba(247,239,247,1);
+}
+
+.logo img {
+    width: 10rem;
+    height: 7rem;
+    margin-left: 1.5rem;
+}
+
+.modal-title{
+    color: wheat;
+}
+
+@media only screen and (max-width: 1150px) {
+    .modal-dialog {
+        max-width: 600px !important;
+    }
+}
+
+.logo img {
+    width: 8rem;
+    height: 5.5rem;
+    margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url("/static/img/bg1.png") !important;
+    }
+
+    .el .temp {
+        min-width: 26rem !important;
+        max-width: 26rem !important;
+    }
+
+    .modal-dialog {
+        max-width: 500px !important;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .logo img {
+        width: 7rem;
+        height: 5.5rem;
+        margin-left: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .el .temp {
+        min-width: 20rem !important;
+        max-width: 20rem !important;
+    }
+}
+
+@media only screen and (max-width: 200px) {
+    .el .temp {
+        min-width: 15rem !important;
+        max-width: 15rem !important;
+    }
+
+    .card-body b {
+        font-size: 0.8rem;
+    }
+}

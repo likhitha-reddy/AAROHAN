@@ -50,10 +50,8 @@ def attractions_page(request):
 
 def team_page(request):
     umbrellas = TeamCategory.objects.all()
-    res = []
+    members = []
     for umbrella in umbrellas:
-        members = TeamMember.objects.filter(team=umbrella)
-        group = {'name':umbrella.name , 'members':members}
-        res.append(group)
-    context = {'teams':res}
-    return render(request,"flow/teams.html", context)
+        members.append(TeamMember.objects.filter(team=umbrella))
+    context = {'teams':umbrellas,'members':members}
+    return render(request,"flow/teampage.html", context)
