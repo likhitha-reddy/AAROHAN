@@ -132,6 +132,16 @@ body {
 .card {
     background-color: rgba(160, 73, 73, 0);
 }
+.card-body .img {
+    z-index: 1;
+height: 7rem;
+width: 8rem;
+background-size: cover;
+transition: .4s ease-in-out;
+cursor: pointer;
+border-radius: 50%;
+object-fit: cover;
+}
 
 .card img {
     border-radius: 50%;
