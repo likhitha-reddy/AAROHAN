@@ -13,6 +13,16 @@ def index(request):
     context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
     return render(request, 'flow/home.html', context)
 
+def index2(request):
+    context = {}
+    try:
+        events = EventCategory.objects.all()
+        context['events'] = events
+        return render(request,'flow/index.html',context)
+    except ObjectDoesNotExist:
+        raise Http404
+
+
 def events(request, id):
     context = {}
     try:

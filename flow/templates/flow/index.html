@@ -1,0 +1,386 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Aarohan 2020</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+        integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- fullpage cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css" />
+    <!-- tweenmax cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+    <!-- css file -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+</head>
+
+<body>
+    <!-- loader  -->
+    <div id="loader"></div>
+
+    <div id="content">
+        <!-- <nav id="navigation">
+            <ul>
+                <li class="current-item">
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#aboutus">About Us</a>
+                </li>
+                <li>
+                    <a href="#event">Events & Workshop</a>
+                </li>
+                <li>
+                    <a href="#mjr_attr">Major Attractions</a>
+                </li>
+                <li>
+                    <a href="#sponsor">Sponsors</a>
+                </li>
+                <li>
+                    <a href="#contactus">Contact Us</a>
+                </li>
+            </ul>
+            <span id="slide-line"></span>
+        </nav> -->
+        
+        <div class="overlay-navigation">
+            <nav role="navigation">
+              <ul>
+                <li><a href="#home" data-content="The beginning">Home</a></li>
+                <li><a href="#aboutus" data-content="Curious?">About</a></li>
+                <li><a href="#event" data-content="Fun & Fun">Events</a></li>
+                <li><a href="#workshops" data-content="Only the finest">Workshops</a></li>
+                <li><a href="#contactus" data-content="Don't hesitate">Contact</a></li>
+              </ul>
+            </nav>
+        </div>
+
+        <div class="open-overlay">
+            <span class="bar-top"></span>
+            <span class="bar-middle"></span>
+            <span class="bar-bottom"></span>
+        </div>
+
+        <!-- Social Links -->
+        <div id="social_icons" class="social_links">
+            <a href="https://www.facebook.com/arhn.nitd/"><i id="icn1" class="fab fa-facebook-square"></i></a></br>
+            <a href="https://www.instagram.com/arhn.nitd/"><i id="icn2" class="fab fa-instagram"></i></a></br>
+            <a href="https://twitter.com/aarohan_nitdgp?lang=en"><i id="icn3"
+                    class="fab fa-twitter-square"></i></a></br>
+            <a href="https://www.youtube.com/user/arhnNITD"><i id="icn4" class="fab fa-youtube"></i></a></br>
+        </div>
+
+        <!-- fullpage div -->
+        <div id="fullpage">
+            <!-- landing 1 -->
+            <div class="section " id="landing">
+                <img id="header" src="{% static 'img/a4png.png' %}" alt="arhn2020" />
+                <img id="mob_head" src="{% static 'img/arhn_header.png' %}" alt="arhn2020">
+                <!-- txt 1 -->
+                <h1 id="head-txt-1">AAR</h1>
+                <!-- txt 2 -->
+                <h1 id="head-txt-2">HAN</h1>
+                <!-- eye -->
+                <div id="eye-container">
+                    <img id="eye-container-img" src="{% static 'img/a2.png' %}" alt="arhn2020" />
+                </div>
+                <div id="eye" class="eyes">
+                    <div class="eye">
+                        <div class="ball"></div>
+                    </div>
+                </div>
+                <!-- waves -->
+                <div id="waves">
+                </div>
+            </div>
+
+            <!-- about us 2 -->
+            <div class="section" id="about">
+                <div class="intro">
+                    <div id="about-us">
+                        <img id="about-us-img" src="{% static 'img/about-us2.png' %}" alt="arhn2020" />
+                    </div>
+                    <div id="about-handle">
+                        <img id="about-handle-img" src="{% static 'img/peri2.png' %}" alt="arhn2020" />
+                    </div>
+                    <div id="txt-2">
+                        Organised by the Team Aavishkar, Aarohan is the Annual Techno-Management fest of NIT Durgapur and the second largest of its kind in eastern India. It is made possible by a group of enthusiastic students working passionately under the supervision of our highly responsible faculties. This festival has been constantly encouraging the students to showcase their talents, explore their creative limits, experiment and have fun by taking part in fun and creative events. Aarohan has been a pioneer in the culture of celebrating science, technology and innovation through festivities. With more than 50 events covering all genres of technology and management, Aarohan brings some of the best solutions of mankind’s modern-day problems to the fore.
+                    </div>
+                </div>
+            </div>
+
+            <!-- events  3 -->
+            <div class="section" id="events">
+                <div id="evnt_back">
+                    <img src="{% static 'img/events.png' %}" />
+                </div>
+                <div id="evnt_circle">
+                    <div class="center">
+                        <img class="c_img" src="{% static 'img/CENTRE.png' %}" alt="wdct">
+                        <h1 class="center_txt">EVENTS</h1>
+                    </div>
+                    <div class="rad" id="rad1">
+                        <div class="sides" id="side1" style="transform: rotate(-27deg);">
+                            <img class="s_img" src="{% static 'img/1.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.0.groupId %}");>
+                                <h1 class="side_txt">{{ events.0.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rad" id="rad2">
+                        <div class="sides" id="side2" style="transform: rotatez(-90deg);">
+                            <img class="s_img" src="{% static 'img/2.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.1.groupId %}");>
+                                <h1 class="side_txt">{{ events.1.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rad" id="rad3">
+                        <div class="sides" id="side3" style="transform: rotate(34deg);">
+                            <img class="s_img" src="{% static 'img/3.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.2.groupId %}");>
+                                <h1 class="side_txt">{{ events.2.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rad" id="rad4">
+                        <div class="sides" id="side4" style="transform: rotate(90deg);">
+                            <img class="s_img" src="{% static 'img/4.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.3.groupId %}");>
+                                <h1 class="side_txt">{{ events.3.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rad" id="rad5">
+                        <div class="sides" id="side5" style="transform: rotate(152deg);">
+                            <img class="s_img" src="{% static 'img/5.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.4.groupId %}");>
+                                <h1 class="side_txt">{{ events.4.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rad" id="rad6">
+                        <div class="sides" id="side6" style="    transform: rotate(-146deg);">
+                            <img class="s_img" src="{% static 'img/6.png' %}" alt="wdct">
+                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.5.groupId %}");>
+                                <h1 class="side_txt">{{ events.5.groupName }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- mobile -->
+                <div id="evnt_circle_mobile">
+                    <div class="center">
+                        <img class="c_img" src="{% static 'img/CENTRE.png' %}" alt="wdct">
+                        <h1 class="center_txt">EVENTS</h1>
+                    </div>
+
+                    <div class="sides_mob" id="side1">
+                        <img class="s_img" src="{% static 'img/1.png' %}" alt="wdct">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.0.groupId %}");>
+                            <h1 class="side_txt">{{ events.0.groupName }}</h1>
+                        </div>
+                    </div>
+
+
+                    <div class="sides_mob" id="side2">
+                        <img class="s_img" src="{% static 'img/2.png' %}" alt="wdct">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.1.groupId %}");>
+                            <h1 class="side_txt">{{ events.1.groupName }}</h1>
+                        </div>  
+                    </div>
+
+
+
+                    <div class="sides_mob" id="side3">
+                        <img class="s_img" src="{% static 'img/3.png' %}" alt="wdct">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.2.groupId %}");>
+                            <h1 class="side_txt">{{ events.2.groupName }}</h1>
+                        </div>
+                    </div>
+
+
+
+                    <div class="sides_mob" id="side4">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.3.groupId %}");>
+                            <h1 class="side_txt">{{ events.3.groupName }}</h1>
+                        </div>
+                    </div>
+
+
+
+                    <div class="sides_mob" id="side5">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.4.groupId %}");>
+                            <h1 class="side_txt">{{ events.4.groupName }}</h1>
+                        </div>
+                    </div>
+
+
+
+                    <div class="sides_mob" id="side6">
+                        <img class="s_img" src="{% static 'img/6.png' %}" alt="wdct">
+                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.5.groupId %}");>
+                            <h1 class="side_txt">{{ events.5.groupName }}</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- workshop 4 -->
+            <div class="section" id="workshop">
+                <div id="evnt_back">
+                    <img src="{% static 'img/workshop.png' %}" />
+                </div>
+                <div class="workshop-div">
+                    <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                    <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
+                    <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                </div>
+            </div>
+
+            <!-- major attractions 5 -->
+            <div class="section" id="attr">
+                <div class="intro">
+                    <h1>Major Attractions</h1>
+                </div>
+            </div>
+
+            <!-- sponsors 6 -->
+            <div class="section" id="sponsors">
+                <div class="intro">
+                    <h1>Sponsors</h1>
+                </div>
+            </div>
+
+            <!-- accomodation, travel and hospitality 7 -->
+            <div class="section" id="accomodation">
+                <div class="intro">
+                    <h1>Accomodation, Travel & Hospitality</h1>
+                </div>
+            </div>
+
+            <!-- contact us 8 -->
+            <div class="section" id="contact">
+                <div id="cntct_us">
+                    <img src="{% static 'img/cntct_us.png' %}" />
+                </div>
+                <div class="container-fluid contact-us">
+                    <h1 style="color: #758156; ">Contact Us</h1><br><br>
+                    <h3>We are just a click away</h3>
+                    <a href="https://www.facebook.com/arhn.nitd/" target="_blank">facebook.com/arhn.nitd</a>
+                    <br>
+                    <a href="https://www.instagram.com/arhn.nitd/" target="_blank">instagram.com/arhn.nitd</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- index js -->
+<script src="{% static 'js/index.js' %}"></script>
+<!-- navigation js -->
+<script src="{% static 'js/navigation.js' %}"></script>
+<!-- loader js -->
+<script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
+<!-- waves js -->
+<script src="{% static 'js/waves.js' %}"></script>
+
+<!-- fullpage options -->
+<script type="text/javascript">
+    var myFullpage = new fullpage("#fullpage", {
+        sectionsColor: [
+            "#1bbc9b",
+            "#131414",
+            "#141615",
+            "#141615",
+            "#4BBFC3",
+            "#7BAABE",
+            "#1bbc9b",
+            "#7BAABE",
+        ],
+        //Navigation
+        menu: '#menu',
+        lockAnchors: false,
+        anchors: ['home', 'aboutus', 'event', 'workshops', 'mjr_attr', 'sponsor', 'accomod', 'contactus'],
+        navigation: false,
+        navigationPosition: 'right',
+        showActiveTooltip: false,
+        slidesNavigation: false,
+        slidesNavPosition: 'bottom',
+
+        // animation afterleaving prev section
+        onLeave: function (origin, destination, direction) {
+            var loadedSection = this;
+            //using anchorLink
+            if (origin.anchor == 'aboutus' && direction == 'down') {
+                // events animation
+                animateBadge()
+            }
+            else if (origin.anchor == 'workshops' && direction == 'up') {
+                // events animation
+                animateBadge()
+            }
+            else if (origin.anchor == 'home' && direction == 'down') {
+                iconChange()
+            }
+            else if (destination.anchor == 'home' && direction == 'up') {
+                iconChange2()
+            }
+        },
+
+        //animation onload
+        afterLoad: function (origin, destination, direction) {
+            if (destination.anchor == 'event') {
+                // events animation
+                animateBadge()
+            }
+        }
+    });
+
+
+    // landing page style
+    var el = document.getElementById("eye-container");
+    var ell = el.offsetWidth;
+    var win = window.screen.width;
+    var rt = (win - ell) / 2;
+    var eye = document.getElementById("eye");
+    el.style.right = rt + "px";
+    eye.style.right = rt + "px";
+    eye.style.width = ell + "px";
+    console.log(rt)
+
+    //contact page style
+    var abtel = document.getElementById("about-handle");
+    var abtell = abtel.offsetWidth;
+    var abtrt = (win - abtell) / 2;
+    abtel.style.right = abtrt + "px";
+
+    // landing header style
+    var landtxt1 = document.getElementById("head-txt-1");
+    landtxt1.style.width = rt + "px";
+    var landtxt2 = document.getElementById("head-txt-2");
+    landtxt2.style.width = rt + "px";
+
+</script>
+
+</html>
+<script>
+    redirect = val => window.location.href = val;
+</script>
