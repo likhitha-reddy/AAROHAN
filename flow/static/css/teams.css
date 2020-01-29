@@ -47,43 +47,33 @@ body {
     0% {
         transform: translate(1px, 1px) rotate(0);
     }
-
     10% {
         transform: translate(-1px, -2px) rotate(-1deg);
     }
-
     20% {
         transform: translate(-3px, 0) rotate(1deg);
     }
-
     30% {
         transform: translate(3px, 2px) rotate(0);
     }
-
     40% {
         transform: translate(1px, -1px) rotate(1deg);
     }
-
     50% {
         transform: translate(-1px, 2px) rotate(-1deg);
     }
-
     60% {
         transform: translate(-3px, 1px) rotate(0);
     }
-
     70% {
         transform: translate(3px, 1px) rotate(-1deg);
     }
-
     80% {
         transform: translate(-1px, -1px) rotate(1deg);
     }
-
     90% {
         transform: translate(1px, 2px) rotate(0);
     }
-
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
     }
@@ -132,15 +122,16 @@ body {
 .card {
     background-color: rgba(160, 73, 73, 0);
 }
+
 .card-body .img {
     z-index: 1;
-height: 7rem;
-width: 8rem;
-background-size: cover;
-transition: .4s ease-in-out;
-cursor: pointer;
-border-radius: 50%;
-object-fit: cover;
+    height: 7rem;
+    width: 8rem;
+    background-size: cover;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .card img {
@@ -148,7 +139,7 @@ object-fit: cover;
 }
 
 .modal .card img:hover {
-    box-shadow: 6px 7px 14px 0px rgba(247,239,247,1);
+    box-shadow: 6px 7px 14px 0px rgba(247, 239, 247, 1);
 }
 
 .logo img {
@@ -157,7 +148,7 @@ object-fit: cover;
     margin-left: 1.5rem;
 }
 
-.modal-title{
+.modal-title {
     color: wheat;
 }
 
@@ -177,12 +168,10 @@ object-fit: cover;
     body {
         background-image: url("/static/img/bg1.png") !important;
     }
-
     .el .temp {
         min-width: 26rem !important;
         max-width: 26rem !important;
     }
-
     .modal-dialog {
         max-width: 500px !important;
     }
@@ -208,7 +197,6 @@ object-fit: cover;
         min-width: 15rem !important;
         max-width: 15rem !important;
     }
-
     .card-body b {
         font-size: 0.8rem;
     }
