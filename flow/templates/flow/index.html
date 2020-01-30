@@ -4,15 +4,14 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/gif" sizes="64x64">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Aarohan 2020</title>
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
-        integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- fullpage cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css" />
@@ -30,39 +29,19 @@
     <div id="loader"></div>
 
     <div id="content">
-        <!-- <nav id="navigation">
-            <ul>
-                <li class="current-item">
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#aboutus">About Us</a>
-                </li>
-                <li>
-                    <a href="#event">Events & Workshop</a>
-                </li>
-                <li>
-                    <a href="#mjr_attr">Major Attractions</a>
-                </li>
-                <li>
-                    <a href="#sponsor">Sponsors</a>
-                </li>
-                <li>
-                    <a href="#contactus">Contact Us</a>
-                </li>
-            </ul>
-            <span id="slide-line"></span>
-        </nav> -->
-        
+        <div id="arhn_header">
+            <a href=""> <img style="width: 10vw;" src="{% static 'img/arhn_header.png' %}" /></a>
+        </div>
+
         <div class="overlay-navigation">
             <nav role="navigation">
-              <ul>
-                <li><a href="#home" data-content="The beginning">Home</a></li>
-                <li><a href="#aboutus" data-content="Curious?">About</a></li>
-                <li><a href="#event" data-content="Fun & Fun">Events</a></li>
-                <li><a href="#workshops" data-content="Only the finest">Workshops</a></li>
-                <li><a href="#contactus" data-content="Don't hesitate">Contact</a></li>
-              </ul>
+                <ul>
+                    <li><a href="#home" data-content="The beginning">Home</a></li>
+                    <li><a href="#aboutus" data-content="Curious?">About</a></li>
+                    <li><a href="#event" data-content="Fun & Fun">Events</a></li>
+                    <li><a href="#workshops" data-content="Only the finest">Workshops</a></li>
+                    <li><a href="#contactus" data-content="Don't hesitate">Contact</a></li>
+                </ul>
             </nav>
         </div>
 
@@ -115,7 +94,9 @@
                         <img id="about-handle-img" src="{% static 'img/peri2.png' %}" alt="arhn2020" />
                     </div>
                     <div id="txt-2">
-                        Organised by the Team Aavishkar, Aarohan is the Annual Techno-Management fest of NIT Durgapur and the second largest of its kind in eastern India. It is made possible by a group of enthusiastic students working passionately under the supervision of our highly responsible faculties. This festival has been constantly encouraging the students to showcase their talents, explore their creative limits, experiment and have fun by taking part in fun and creative events. Aarohan has been a pioneer in the culture of celebrating science, technology and innovation through festivities. With more than 50 events covering all genres of technology and management, Aarohan brings some of the best solutions of mankind’s modern-day problems to the fore.
+                        Organised by the Team Aavishkar, Aarohan is the Annual Techno-Management fest of NIT Durgapur and the second largest of its kind in eastern India. It is made possible by a group of enthusiastic students working passionately under the supervision of our
+                        highly responsible faculties. This festival has been constantly encouraging the students to showcase their talents, explore their creative limits, experiment and have fun by taking part in fun and creative events.<br><br>                        Aarohan has been a pioneer in the culture of celebrating science, technology and innovation through festivities. With more than 50 events covering all genres of technology and management, Aarohan brings some of the best solutions
+                        of mankind’s modern-day problems to the fore.
                     </div>
                 </div>
             </div>
@@ -133,16 +114,16 @@
                     <div class="rad" id="rad1">
                         <div class="sides" id="side1" style="transform: rotate(-27deg);">
                             <img class="s_img" src="{% static 'img/1.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.0.groupId %}");>
-                                <h1 class="side_txt">{{ events.0.groupName }}</h1>
+                            <div class="txt_div">
+                                <h1 class="side_txt">BoB</h1>
                             </div>
                         </div>
                     </div>
                     <div class="rad" id="rad2">
                         <div class="sides" id="side2" style="transform: rotatez(-90deg);">
                             <img class="s_img" src="{% static 'img/2.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.1.groupId %}");>
-                                <h1 class="side_txt">{{ events.1.groupName }}</h1>
+                            <div class="txt_div" style="width: 135%;">
+                                <h1 class="side_txt">Armageddon</h1>
                             </div>
                         </div>
                     </div>
@@ -150,8 +131,8 @@
                     <div class="rad" id="rad3">
                         <div class="sides" id="side3" style="transform: rotate(34deg);">
                             <img class="s_img" src="{% static 'img/3.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.2.groupId %}");>
-                                <h1 class="side_txt">{{ events.2.groupName }}</h1>
+                            <div class="txt_div">
+                                <h1 class="side_txt">Eureka</h1>
                             </div>
                         </div>
                     </div>
@@ -159,8 +140,8 @@
                     <div class="rad" id="rad4">
                         <div class="sides" id="side4" style="transform: rotate(90deg);">
                             <img class="s_img" src="{% static 'img/4.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.3.groupId %}");>
-                                <h1 class="side_txt">{{ events.3.groupName }}</h1>
+                            <div class="txt_div">
+                                <h1 class="side_txt">Neo-Tronix</h1>
                             </div>
                         </div>
                     </div>
@@ -168,8 +149,8 @@
                     <div class="rad" id="rad5">
                         <div class="sides" id="side5" style="transform: rotate(152deg);">
                             <img class="s_img" src="{% static 'img/5.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.4.groupId %}");>
-                                <h1 class="side_txt">{{ events.4.groupName }}</h1>
+                            <div class="txt_div">
+                                <h1 class="side_txt">Tech Turf</h1>
                             </div>
                         </div>
                     </div>
@@ -177,8 +158,8 @@
                     <div class="rad" id="rad6">
                         <div class="sides" id="side6" style="    transform: rotate(-146deg);">
                             <img class="s_img" src="{% static 'img/6.png' %}" alt="wdct">
-                            <div class="txt_div" onclick=redirect("{% url 'category' id=events.5.groupId %}");>
-                                <h1 class="side_txt">{{ events.5.groupName }}</h1>
+                            <div class="txt_div">
+                                <h1 class="side_txt">Strategia</h1>
                             </div>
                         </div>
                     </div>
@@ -193,41 +174,43 @@
 
                     <div class="sides_mob" id="side1">
                         <img class="s_img" src="{% static 'img/1.png' %}" alt="wdct">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.0.groupId %}");>
-                            <h1 class="side_txt">{{ events.0.groupName }}</h1>
+                        <div class="txt_div">
+                            <h1 class="side_txt">BoB</h1>
                         </div>
                     </div>
 
 
                     <div class="sides_mob" id="side2">
                         <img class="s_img" src="{% static 'img/2.png' %}" alt="wdct">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.1.groupId %}");>
-                            <h1 class="side_txt">{{ events.1.groupName }}</h1>
-                        </div>  
+                        <div class="txt_div">
+                            <h1 class="side_txt">Armageddon</h1>
+                        </div>
                     </div>
 
 
 
                     <div class="sides_mob" id="side3">
                         <img class="s_img" src="{% static 'img/3.png' %}" alt="wdct">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.2.groupId %}");>
-                            <h1 class="side_txt">{{ events.2.groupName }}</h1>
+                        <div class="txt_div">
+                            <h1 class="side_txt">Eureka</h1>
                         </div>
                     </div>
 
 
 
                     <div class="sides_mob" id="side4">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.3.groupId %}");>
-                            <h1 class="side_txt">{{ events.3.groupName }}</h1>
+                        <img class="s_img" src="{% static 'img/4.png' %}" alt="wdct">
+                        <div class="txt_div">
+                            <h1 class="side_txt">Neo-Tronix</h1>
                         </div>
                     </div>
 
 
 
                     <div class="sides_mob" id="side5">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.4.groupId %}");>
-                            <h1 class="side_txt">{{ events.4.groupName }}</h1>
+                        <img class="s_img" src="{% static 'img/5.png' %}" alt="wdct">
+                        <div class="txt_div">
+                            <h1 class="side_txt">Tech Turf</h1>
                         </div>
                     </div>
 
@@ -235,8 +218,8 @@
 
                     <div class="sides_mob" id="side6">
                         <img class="s_img" src="{% static 'img/6.png' %}" alt="wdct">
-                        <div class="txt_div" onclick=redirect("{% url 'category' id=events.5.groupId %}");>
-                            <h1 class="side_txt">{{ events.5.groupName }}</h1>
+                        <div class="txt_div">
+                            <h1 class="side_txt">Strategia</h1>
                         </div>
                     </div>
 
@@ -249,9 +232,19 @@
                     <img src="{% static 'img/workshop.png' %}" />
                 </div>
                 <div class="workshop-div">
+                    <h2 class="workshop-title">WORKSHOPS</h2>
                     <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                    <h2 class="workshop-name workshop-name1 workshop-mob">IoT & AI</h2>
                     <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
+                    <h2 class="workshop-name workshop-name2 workshop-mob">3D printing</h2>
                     <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                    <h2 class="workshop-name workshop-name3 workshop-mob">Ethical hacking</h2>
+
+                    <br class="workshop-not-mob">
+                    <h2 class="workshop-name workshop-name1 workshop-not-mob">IoT & AI</h2>
+                    <h2 class="workshop-name workshop-name2 workshop-not-mob">3D printing</h2>
+                    <h2 class="workshop-name workshop-name3 workshop-not-mob">Ethical hacking</h2>
+
                 </div>
             </div>
 
@@ -290,7 +283,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div~>
 </body>
 
 <!-- index js -->
@@ -326,27 +319,24 @@
         slidesNavPosition: 'bottom',
 
         // animation afterleaving prev section
-        onLeave: function (origin, destination, direction) {
+        onLeave: function(origin, destination, direction) {
             var loadedSection = this;
             //using anchorLink
             if (origin.anchor == 'aboutus' && direction == 'down') {
                 // events animation
                 animateBadge()
-            }
-            else if (origin.anchor == 'workshops' && direction == 'up') {
+            } else if (origin.anchor == 'workshops' && direction == 'up') {
                 // events animation
                 animateBadge()
-            }
-            else if (origin.anchor == 'home' && direction == 'down') {
+            } else if (origin.anchor == 'home' && direction == 'down') {
                 iconChange()
-            }
-            else if (destination.anchor == 'home' && direction == 'up') {
+            } else if (destination.anchor == 'home' && direction == 'up') {
                 iconChange2()
             }
         },
 
         //animation onload
-        afterLoad: function (origin, destination, direction) {
+        afterLoad: function(origin, destination, direction) {
             if (destination.anchor == 'event') {
                 // events animation
                 animateBadge()
@@ -377,10 +367,6 @@
     landtxt1.style.width = rt + "px";
     var landtxt2 = document.getElementById("head-txt-2");
     landtxt2.style.width = rt + "px";
-
 </script>
 
 </html>
-<script>
-    redirect = val => window.location.href = val;
-</script>

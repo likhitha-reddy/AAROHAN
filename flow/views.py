@@ -11,7 +11,7 @@ def index(request):
     sponsors = Sponsors.objects.all()
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
-    return render(request, 'flow/home.html', context)
+    return render(request, 'flow/index.html', context)
 
 def index2(request):
     context = {}
