@@ -1,39 +1,38 @@
 {% load static %} {% load filter %}
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teams</title>
+    <title>TeamPage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=El+Messiri|Fauna+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link href="{% static 'css/teams.css' %}" rel="stylesheet">
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="logo" style="position: relative; top: 0px;">
-        <a href="{% url 'home' %}"> <img src="{% static 'img/coin.png' %}" alt="logo" /></a>
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="logo" style="position: relative; top: 0px;height:0">
+        <!--<a href="home.html"> <img src="static/coin.png" alt="logo" /></a>-->
     </div>
-
+    <h1 class="text-right font-weight-bold m-1 mb-3 mr-3" id="heading">THE ARMY</h1>
+    <div class="vector mt-4">
+    </div>
     <div class="el">
         <div class="container-fluid">
             <div class="row" style="justify-content:center">
                 {% for team in teams %}
-                <div class="col-sm-6 col-lg-2 mb-3 temp">
+                <div class="col-sm-12 col-lg-4 mb-2 temp">
                     <div class="card mb-3 h-100">
                         <div class="card-body">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ forloop.counter0 }}">
-                                <img src="{{ team.team_image.url }}" class="img-thumbnail mx-auto d-block" />
-                            </button>
+                <img src="{{ team.team_image.url }}" class="img-thumbnail mx-auto d-block" />
+              </button>
                             <b>
-                                {{ team.name }}
-                            </b>
+                {{ team.name }}
+              </b>
                         </div>
                     </div>
                 </div>
@@ -41,28 +40,62 @@
             </div>
         </div>
     </div>
-    {% for member in members %}
+    {% for member_team in members %}
     <div class="modal" id="exampleModal{{ forloop.counter0 }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content bg-transparent w3-animate-top">
+            <div class="modal-content bg-transparent w3-animate-bottom">
                 <div class="modal-header">
                     {% with res=teams|lookup:forloop.counter0 %}
-                    <h5 class="modal-title" id="exampleModalLabel">{{ res.name }}</h5>
+                    <h5 class="modal-title text-white" id="exampleModalLabel">{{ res.name }}</h5>
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: teal;">&times;</span>
-                    </button> {% endwith %}
+            <span id="start-btn" aria-hidden="true" style="color: teal;">&times;</span>
+            {% endwith %}
+          </button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row" style="justify-content:center">
-                            {% for individual in member %}
-                            <div class="col-auto col-sm-4 col-lg-3 mb-3 temp">
-                                <div class="card mb-3 h-100">
-                                    <div class="card-body">
-                                        <img src="{{ individual.profile_img.url }}" height="100" class="img mx-auto d-block" />
-                                        <b>
-                                            {{ individual.name }}
-                                        </b>
+                            {% for individual in member_team %}
+                            <div class="col-auto col-lg-2 m-2 temp">
+                                <div class="card mx-auto mb-3 h-100">
+                                    <div class="card-body mx-auto" style="display:grid">
+                                        <svg viewBox="0 0 600 600">
+                      <defs>
+                        <path id="SVGID_1_"
+                          d="M600 300c0 165.69-134.31 300-300 300S0 465.69 0 300 134.31 0 300 0s300 134.31 300 300" />
+                      </defs>
+                      <clipPath id="SVGID_2_">
+                        <use xlink:href="#SVGID_1_" overflow="hidden" />
+                      </clipPath>
+                      <g clip-path="url(#SVGID_2_)"></g>
+                      <g clip-path="url(#SVGID_2_)" fill="none" stroke="#FFF" stroke-miterlimit="10">
+                        <circle cx="300" cy="300" r="150" stroke-width="20" />
+                        <image width="800" height="600" xlink:href="{{ individual.profile_img.url }}" clip-path=url(#SVGID_1_)
+                          style="z-index: -1000;" />
+                        <path d="M600 300" stroke-width="8" />
+                        <path d="M555.58 300" stroke-width="8" />
+                        <path d="M44.42 300" stroke-width="8" />
+                        <path d="M300 3.09" stroke-width="8" />
+                        <path d="M300 47.52" stroke-width="8" />
+                        <path d="M300 553.57" stroke-width="8" />
+                        <path d="M300 597.99" stroke-width="8" />
+                        <path d="M574.69 300" />
+                        <path d="M25.31 300" />
+                        <line x1="300" y1="25.31" x2="300" y2="100" stroke-width="19" />
+                        <line x1="300" y1="500" x2="300" y2="574.69" stroke-width="19" />
+                        <line x1="498.23" y1="300" x2="572.92" y2="300" stroke-width="19" />
+                        <line x1="25.31" y1="300" x2="100" y2="300" stroke-width="19" />
+                        <line x1="300" y1="25.31" x2="300" y2="574.69" stroke-width="2" />
+                        <line x1="25.31" y1="300" x2="574.69" y2="300" stroke-width="2" />
+                        <g id="sniper-cross1" stroke-width="5">
+                        </g>
+                      </g>
+                    </svg>
+
+                                        <span class="text-white">
+                      {{ individual.name }}
+                    </span>
                                     </div>
                                 </div>
                             </div>
@@ -77,9 +110,363 @@
 </body>
 
 </html>
+<style>
+body {
+        /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+        background-color: #2b2c30;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    
+    .vector {
+        background-image: url("{% static 'img/bg1.png' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 65vh;
+        width: 100vw;
+        z-index: 2;
+    }
+    
+    svg {
+        width: 90%;
+        max-height: 90%;
+    }
+    /* #canvas{
+		background-color: #2c343f;
+		width: 100vw;
+		height: 100vh;
+    position: fixed;
+    z-index: -100;
+} */
+    
+    .img-thumbnail {
+        background-color: transparent;
+        border: transparent !important;
+        border-radius: 0.45rem !important;
+    }
+    /* .el .img-thumbnail {                         //Regards the Icons of the Team
+    max-width: 90% !important;
+  } */
+    
+    .modal {
+        cursor: auto !important;
+    }
+    
+    .modal .img-thumbnail {
+        max-width: 100% !important;
+    }
+    
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .modal .card {
+        border: none;
+    }
+    
+    .card-body {
+        text-align: center;
+    }
+    
+    .modal .card-body {
+        padding: 0;
+    }
+    
+    .el img:hover {
+        animation: .5s infinite shake;
+    }
+    
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0);
+        }
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+        20% {
+            transform: translate(-3px, 0) rotate(1deg);
+        }
+        30% {
+            transform: translate(3px, 2px) rotate(0);
+        }
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+        60% {
+            transform: translate(-3px, 1px) rotate(0);
+        }
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+        90% {
+            transform: translate(1px, 2px) rotate(0);
+        }
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+    /* .letter {
+    text-align: center !important;
+  } */
+    
+    .el .temp {
+        /* min-width: 15rem!important; */
+        max-width: 15rem !important;
+    }
+    
+    .el .card {
+        background-color: transparent !important;
+        border: 1px solid transparent !important;
+    }
+    
+    .el .btn-primary:focus {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    .el .btn-primary {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+    
+    .el.btn-primary:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+    
+    svg {
+        border-radius: 50%;
+        box-shadow: 0 10px 20px rgba(216, 211, 211, 0.397), 0 6px 6px rgba(209, 204, 204, 0.363);
+    }
+    
+    .modal-dialog {
+        max-width: 100% !important;
+        cursor: crosshair !important;
+    }
+    
+    .modal-content {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: hidden !important;
+    }
+    
+    .modal .modal-header {
+        font-family: "Fauna-One", sans-serif;
+        color: #576085;
+        text-transform: uppercase;
+    }
+    
+    .modal-body .card {
+        background-color: transparent;
+    }
+    
+    .el .card-body b {
+        font-family: "Fauna One", sans-serif;
+        font-size: 0.7rem;
+        color: lightskyblue;
+        text-transform: uppercase;
+    }
+    
+    #heading {
+        font-family: "Fauna One", sans-serif;
+        color: lightskyblue;
+        text-transform: uppercase;
+        position: absolute;
+        right: 0;
+    }
+    
+    .card-body b {
+        font-family: 'El Messiri', sans-serif;
+        color: lightskyblue;
+    }
+    
+    .card-body .img {
+        z-index: 1;
+        height: 8rem;
+        width: 8rem;
+        /* background-size: cover; */
+        transition: .4s ease-in-out;
+        cursor: pointer;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .card-body .img:hover {
+        box-shadow: 0 10px 20px rgba(216, 211, 211, 0.397), 0 6px 6px rgba(209, 204, 204, 0.363);
+    }
+    
+    .logo img {
+        width: 10rem;
+        height: 7rem;
+        margin-left: 1.5rem;
+    }
+    
+    .modal-backdrop {
+        opacity: 0.75 !important;
+    }
+    
+    @media only screen and (max-width: 1150px) {
+        /* .modal-dialog {
+      max-width: 600px !important;
+    }*/
+    }
+    
+    .logo img {
+        width: 8rem;
+        height: 5.5rem;
+        margin-left: 1.5rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    /* .navbar {
+      position: fixed;
+    }
+
+    li a:hover {
+      padding: 1.2rem;
+    } */
+    
+    body {
+        background-image: url("{% static 'img/Website BG Mobile.png' %}") !important;
+    }
+    /* background-position: center!important; */
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* position: absolute; */
+    /* z-index: -100; */
+    
+    background-size: 100vw auto;
+}
+.el .temp {
+    min-width: 22rem !important;
+    max-width: 22rem !important;
+}
+
+}
+@media only screen and (max-width: 567px) {
+    /* .el .container-fluid {
+      margin-top: 20% !important;
+    } */
+    .logo img {
+        width: 7rem;
+        height: 5.5rem;
+        margin-left: 1.5rem;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .el .temp {
+        min-width: 20rem !important;
+        max-width: 20rem !important;
+    }
+}
+</style>
+</style>
+<!-- <script src="./html2canvas.min.js"></script>
+<script src="http://chancejs.com/chance.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
-<script src="{% static 'js/teams.js' %}"></script>
+<script>
+    //Image 1
+    var sniperCross = document.querySelector('#sniper-cross1')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 2
+    var sniperCross = document.querySelector('#sniper-cross2')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 3
+    var sniperCross = document.querySelector('#sniper-cross3')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 4
+    var sniperCross = document.querySelector('#sniper-cross4')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 5
+    var sniperCross = document.querySelector('#sniper-cross5')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 6
+    var sniperCross = document.querySelector('#sniper-cross6')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 7
+    var sniperCross = document.querySelector('#sniper-cross7')
+
+    TweenMax.to(sniperCross, 1, {
+            scale: 1.7,
+            transformOrigin: 'center',
+            repeat: -1,
+            yoyo: true,
+            ease: Power0.easeNone
+        })
+        //Image 8
+    var sniperCross = document.querySelector('#sniper-cross8')
+
+    TweenMax.to(sniperCross, 1, {
+        scale: 1.7,
+        transformOrigin: 'center',
+        repeat: -1,
+        yoyo: true,
+        ease: Power0.easeNone
+    })
+</script>
