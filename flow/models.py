@@ -19,6 +19,7 @@ class Events(models.Model):
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50,null=False)
     contact = models.CharField(max_length=20)
+    registration_open = models.BooleanField(default=True)
 
     def __str__(self):
         return self.eventName
@@ -30,7 +31,7 @@ class Workshops(models.Model):
     description = models.TextField(help_text="Enter short description of the workshop")
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50, null=False)
-    resgistration_open = models.BooleanField(default=True)
+    registration_open = models.BooleanField(default=True)
 
     def __str__(self):
         return self.workshopName

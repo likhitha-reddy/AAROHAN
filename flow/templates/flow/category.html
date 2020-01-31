@@ -8,21 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ group.groupName }}</title>
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/events.css' %}">
     <script src="{% static 'js/swiper.js' %}"></script>
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for event in events %}
             <div class="swiper-slide" style="background-image:url({{ event.logo.url }})" onclick="showModal();
                         document.getElementById('eventName').innerHTML='{{ event.eventName }}';
                         document.getElementById('eventData').innerHTML='{{ event.description }}';
-                        document.getElementById('eventImage').src='{{ event.logo.url }}'"></div>
+                        document.getElementById('eventImage').src='{{ event.logo.url }}';
+                        register('{{ event.registration_open }}')">
+            </div>
             {% endfor %}
         </div>
         <div class="swiper-pagination"></div>
@@ -49,9 +49,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn waves-effect waves-light" type="button" data-dismiss="modal" style="
-          background-color: #25D399;  border-width: 0.1rem;">Close</button>
-                    <button type="button" class="btn waves-effect" type="button" style="border-color: #25D399; border-width: 0.1rem;">Save changes</button>
+                    <button type="button" id="register_button" class="btn waves-effect" type="button" style="border-color: #2196f3; border-width: 0.1rem; display: none;">Register</button>
+                    <button type="button" class="btn waves-effect waves-light" type="button" data-dismiss="modal" style="border-color: #2196f3; border-width: 0.1rem;">Close</button>
                 </div>
             </div>
         </div>
@@ -65,3 +64,44 @@
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
 <script src="{% static 'js/events.js' %}"></script>
+<style>
+    body {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        background-image: url("{% static 'img/Website BG.png' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: rgb(60, 69, 81);
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        cursor: none;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .swiper-slide {
+            width: 350px;
+            height: 350px;
+        }
+        body {
+            background-image: url("{% static 'img/Website BG Mobile.png' %}") !important;
+            background-position: center!important;
+            top: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* position: absolute; */
+            /* z-index: -100; */
+            background-size: 100vw 100vh;
+        }
+        .modal-open {
+            overflow: visible !important;
+        }
+        .swiper-container {
+            transform: translateY(45%) !important;
+        }
+    }
+</style>
