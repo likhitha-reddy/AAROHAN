@@ -7,7 +7,7 @@ To run on your local machine :
 1. `mkdir arhn`
 2. `python3 -m venv venv`
 3. `source venv/bin/activate`
-4. `git clone https://github.com/himanshu272/festcms2.0.git`
+4. `git clone https://github.com/arhnnitdgp/festcms.git`
 5. `cd festcms2`
 6. `python manage.py migrate`
 7. `cp .env.example .env` and fill the secret key and debug values in .env
