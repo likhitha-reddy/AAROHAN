@@ -15,9 +15,9 @@ class Events(models.Model):
     eventId = models.CharField(max_length=50,help_text="Enter the ID of the event")
     logo = models.ImageField(blank=True, upload_to="event_images/")
     description = models.TextField(help_text="Enter short description of the event")
-    problem_statement = models.TextField(help_text="Enter the problem statement of the event here")
+    problem_statement = models.TextField(help_text="Enter the problem statement of the event here", blank=True)
     date_time = models.DateTimeField()
-    venue = models.CharField(max_length=50,null=False)
+    venue = models.CharField(max_length=50,null=False, blank=True)
     contact = models.CharField(max_length=20)
     registration_open = models.BooleanField(default=True)
     registration_link = models.CharField(max_length=50,blank=True,help_text="Enter the registration link here")
@@ -41,7 +41,7 @@ class Workshops(models.Model):
 class Sponsors(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(blank=True, upload_to="sponsors/")
-    url = models.EmailField(help_text='URL of the sponsor')
+    url = models.EmailField(help_text='URL of the sponsor', blank=True)
     
     def __str__(self):
         return self.name 
@@ -84,7 +84,7 @@ class TeamCategory(models.Model):
 class TeamMember(models.Model):
     team = models.ManyToManyField(TeamCategory)
     name = models.CharField(max_length=50, unique=True, help_text="Enter the name of the member here")
-    position = models.CharField(max_length=50, help_text="Enter the position of the person")
+    position = models.CharField(max_length=50, help_text="Enter the position of the person", blank=True)
     profile_img = models.ImageField(blank= True, upload_to="members/")
     club_choice = (
         ("GLUG","GNU/Linux Users' Group"),
