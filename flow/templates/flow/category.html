@@ -25,6 +25,7 @@
                         document.getElementById('eventName').innerHTML='{{ event.eventName }}';
                         document.getElementById('eventData').innerHTML='{{ event.description }}';
                         document.getElementById('eventImage').src='{{ event.logo.url }}';
+                        document.getElementById('reg_link').setAttribute('href','{{ event.registration_link }}');
                         register('{{ event.registration_open }}')">
             </div>
             {% endfor %}
@@ -54,8 +55,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="register_button" class="btn waves-effect" type="button"
-                        style="border-color: #2196f3; border-width: 0.1rem; display: none;">Register</button>
+                    <a id="reg_link" style="text-decoration: none;"><button type="button" id="register_button" class="btn waves-effect" type="button"
+                        style="border-color: #2196f3; border-width: 0.1rem; display: none;">Register</button></a>
                     <button type="button" class="btn waves-effect waves-light" type="button" data-dismiss="modal"
                         style="border-color: #2196f3; border-width: 0.1rem;">Close</button>
                 </div>
