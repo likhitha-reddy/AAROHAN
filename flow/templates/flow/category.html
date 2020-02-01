@@ -8,12 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ group.groupName }}</title>
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/events.css' %}">
     <script src="{% static 'js/swiper.js' %}"></script>
 </head>
 
 <body>
+    <div id="arhn_header">
+        <a href="/"> <img style="width: 10vw;" src="{% static 'img/arhn_header.png' %}" /></a>
+    </div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for event in events %}
@@ -27,14 +31,15 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -49,8 +54,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="register_button" class="btn waves-effect" type="button" style="border-color: #2196f3; border-width: 0.1rem; display: none;">Register</button>
-                    <button type="button" class="btn waves-effect waves-light" type="button" data-dismiss="modal" style="border-color: #2196f3; border-width: 0.1rem;">Close</button>
+                    <button type="button" id="register_button" class="btn waves-effect" type="button"
+                        style="border-color: #2196f3; border-width: 0.1rem; display: none;">Register</button>
+                    <button type="button" class="btn waves-effect waves-light" type="button" data-dismiss="modal"
+                        style="border-color: #2196f3; border-width: 0.1rem;">Close</button>
                 </div>
             </div>
         </div>
@@ -58,13 +65,28 @@
 </body>
 
 </html>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
 <script src="{% static 'js/events.js' %}"></script>
 <style>
+    #arhn_header {
+        position: absolute;
+        left: 5rem;
+        top: 2rem;
+        z-index: 100;
+        display: block;
+        cursor: pointer;
+    }
+
     body {
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         background-image: url("{% static 'img/Website BG.png' %}");
@@ -81,27 +103,29 @@
         overflow: hidden;
         cursor: none;
     }
-    
+
     @media only screen and (max-width: 767px) {
-        .swiper-slide {
-            width: 350px;
-            height: 350px;
-        }
-        body {
-            background-image: url("{% static 'img/Website BG Mobile.png' %}") !important;
-            background-position: center!important;
-            top: 0;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* position: absolute; */
-            /* z-index: -100; */
-            background-size: 100vw 100vh;
-        }
-        .modal-open {
-            overflow: visible !important;
-        }
-        .swiper-container {
-            transform: translateY(45%) !important;
-        }
+    .swiper-slide {
+      width: 350px;
+      height: 350px;
     }
+
+    body {
+      background-image: url("{% static 'img/Website BG Mobile.png' %}"),url("{% static 'img/Website BG Mobile.png' %}") !important;
+      background-position: 0px 300px, center !important;
+      background-repeat: no-repeat, no-repeat;
+      background-attachment: fixed, fixed;
+      z-index: -100, -100;
+      background-size: 100vw 100vh, 100vw 100vh;
+    }
+
+    .modal-open {
+      overflow: visible !important;
+    }
+
+    .swiper-container {
+      transform: translateY(45%) !important;
+    }    
+  }
+
 </style>
