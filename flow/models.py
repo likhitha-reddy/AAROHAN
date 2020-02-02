@@ -18,7 +18,7 @@ class Events(models.Model):
     problem_statement = models.TextField(help_text="Enter the problem statement of the event here", blank=True)
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50,null=False, blank=True)
-    contact = models.CharField(max_length=20)
+    contact = models.CharField(max_length=50)
     registration_open = models.BooleanField(default=True)
     registration_link = models.CharField(max_length=50,blank=True,help_text="Enter the registration link here")
 
@@ -32,6 +32,7 @@ class Workshops(models.Model):
     description = models.TextField(help_text="Enter short description of the workshop")
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50, null=False)
+    contact = models.CharField(max_length=50)
     registration_open = models.BooleanField(default=True)
     registration_link = models.CharField(max_length=50,blank=True,help_text="Enter the registration link here")
 
@@ -69,7 +70,7 @@ class FAQ(models.Model):
 class MajorAttractions(models.Model):
     name = models.CharField(max_length=50, unique=True)
     description = models.TextField(help_text="Enter the description of the attraction here")
-    logo = models.ImageField(blank = True)
+    logo = models.ImageField(blank = True, upload_to="mjr_attrs/")
 
     def __str__(self):
         return self.name
