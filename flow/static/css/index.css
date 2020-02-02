@@ -1,16 +1,15 @@
-
 body {
   font-family: "Muller-thin", sans-serif;
 }
 
-h1{
+h1 {
   font-size: 2em;
 }
 
 /* loader gif */
 
-
 /* landing */
+
 .nitd-black {
   display: inline-block;
   position: absolute;
@@ -45,7 +44,7 @@ h1{
   padding-top: 2vh;
 }
 
-.title-sponsor h1{
+.title-sponsor h1 {
   display: inline;
   font-size: 1.5em;
 }
@@ -96,23 +95,27 @@ h1{
   z-index: 10;
   top: 0;
 }
+
 #front-wave-img {
   height: auto;
   width: 100vw;
 }
 
 /* eye container */
+
 #eye-container {
   position: absolute;
   z-index: 1;
   right: 43%;
   bottom: 0;
 }
+
 #eye-container-img {
   height: 95vh;
 }
 
 /* eye */
+
 .eyes {
   position: absolute;
   top: 55%;
@@ -122,6 +125,7 @@ h1{
   z-index: 2;
   top: 51%;
 }
+
 .eye {
   width: 5vw;
   height: 5vw;
@@ -146,6 +150,7 @@ h1{
 }
 
 /* social icons */
+
 .social_links {
   z-index: 5;
   position: fixed;
@@ -161,6 +166,7 @@ h1{
 }
 
 /* events */
+
 .center {
   background: transparent;
   position: absolute;
@@ -227,8 +233,8 @@ h1{
 }
 
 /* events circle rad */
-.c_img,
-.s_img {
+
+.c_img, .s_img {
   width: 100%;
 }
 
@@ -275,18 +281,14 @@ h1{
   top: 25%;
 }
 
-#side1,
-#side2,
-#side3,
-#side4,
-#side5,
-#side6 {
+#side1, #side2, #side3, #side4, #side5, #side6 {
   opacity: 0;
   top: -5vw;
   left: 200px;
 }
 
 /* events */
+
 #evnt_back {
   position: relative;
   z-index: 0;
@@ -298,7 +300,62 @@ h1{
   width: 100%;
 }
 
+/* sponsors */
+
+#sponsors .titlehead {
+  color: white;
+  letter-spacing: 0.8rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#sponsors .container {
+  width: 80%;
+}
+
+#sponsors .temprow {
+  position: relative;
+}
+
+#sponsors img {
+  min-height: 3rem;
+  min-width: 4rem;
+  max-height: 4.5rem;
+  max-width: 6rem;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  #sponsors img {
+    min-height: 2.5rem;
+    min-width: 3.5rem;
+    max-height: 3.7rem;
+    max-width: 5rem;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #sponsors img {
+    min-height: 2.0rem;
+    min-width: 3.1rem;
+    max-height: 3.2rem;
+    max-width: 4.5rem;
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  #sponsors img {
+    min-height: 1.8rem;
+    min-width: 2.7rem;
+    max-height: 2.9rem;
+    max-width: 4.1rem;
+    padding: 3px;
+  }
+}
+
 /* contact us */
+
 #cntct_us {
   position: relative;
   width: 100vw;
@@ -313,6 +370,7 @@ h1{
 }
 
 /* about */
+
 #about-us {
   position: relative;
   z-index: 10;
@@ -326,10 +384,12 @@ h1{
   z-index: 20;
   top: 0;
 }
+
 #about-us-img {
   width: 100%;
   height: auto;
 }
+
 #about-handle-img {
   height: 90vh;
   /* width: 100vw; */
@@ -346,7 +406,8 @@ h1{
 }
 
 /* workshop */
-.workshop-div{
+
+.workshop-div {
   position: absolute;
   z-index: 5;
   top: 0;
@@ -355,7 +416,7 @@ h1{
   padding-top: 15vh;
 }
 
-#images_cont{
+#images_cont {
   margin-top: 10vh;
   text-align: center;
   display: flex;
@@ -363,25 +424,26 @@ h1{
   justify-content: space-evenly;
 }
 
-.workshop-img{
+.workshop-img {
   height: auto;
   width: 20vw;
   padding: 0 2.5vw;
 }
 
-.workshop-title{
+.workshop-title {
   color: white;
   text-align: center;
   font-size: 2em;
 }
 
-.workshop-name{
+.workshop-name {
   color: white;
   text-align: center;
   font-size: 1.5rem;
 }
 
 /* contact us */
+
 .contact-us {
   position: absolute;
   z-index: 55;
@@ -398,23 +460,24 @@ h1{
 }
 
 /* ath */
-.ath-heading{
+
+.ath-heading {
   text-align: center;
   color: white;
   font-weight: 700;
   padding: 5vh 0;
 }
 
-.about__info-text h2{
+.about__info-text h2 {
   font-size: 1.5em;
   font-weight: 700;
 }
 
-.aavni img{
+.aavni img {
   height: 70vh;
 }
 
-.about__info-text p{
+.about__info-text p {
   font-size: 1.1em;
   line-height: 1.4em;
   padding-right: 5vw;
@@ -429,37 +492,29 @@ h1{
     width: 60vw;
     left: 10vw;
   }
-
-  .nitd-black{
+  .nitd-black {
     left: 9vw;
     top: 21vh;
   }
-
-  .nitd-black img{
+  .nitd-black img {
     width: 25vw;
   }
-
-  .title-sponsor{
+  .title-sponsor {
     left: 40vw;
     top: 20vh;
   }
-
-  .title-sponsor img{
+  .title-sponsor img {
     width: 25vw;
   }
-
-  .title-sponsor h1{
+  .title-sponsor h1 {
     display: block;
   }
-
   #arhn_header {
     display: none;
   }
-
-  #head-txt-1 , #head-txt-2 {
+  #head-txt-1, #head-txt-2 {
     display: none;
   }
-
   /* event badges */
   #evnt_circle_mobile {
     display: block;
@@ -469,40 +524,33 @@ h1{
     bottom: 20%;
     position: absolute;
   }
-
   #evnt_circle {
     display: none;
   }
-
   .center {
     right: 30%;
     width: auto;
     height: 35%;
     top: 32.5%;
   }
-
   .c_img {
     width: auto;
     height: 100%;
   }
-
   .center_txt {
     font-size: 1.3em;
     font-weight: bold;
   }
-
   /* event txt */
   .txt_div {
     opacity: 1;
     top: -5vh;
   }
-
   .side_txt {
     background-color: transparent;
     color: white;
     font-size: 1rem;
   }
-
   /* event sides */
   .sides_mob {
     background: transparent;
@@ -513,26 +561,22 @@ h1{
     border-radius: 50%;
     top: 0%;
   }
-
   #side1 {
     opacity: 1;
     top: 0;
     left: auto;
   }
-
   #side2 {
     opacity: 1;
     top: 15%;
     right: 5%;
     left: auto;
   }
-
   #side3 {
     opacity: 1;
     top: 15%;
     left: 5%;
   }
-
   #side4 {
     opacity: 1;
     bottom: 15%;
@@ -540,26 +584,22 @@ h1{
     top: auto;
     left: auto;
   }
-
   #side5 {
     opacity: 1;
     top: auto;
     bottom: 0;
     left: auto;
   }
-
   #side6 {
     opacity: 1;
     top: auto;
     left: 5%;
     bottom: 15%;
   }
-
   #header {
     height: 100%;
     width: auto;
   }
-
   /* wave */
   #front-wave {
     height: 100%;
@@ -567,45 +607,36 @@ h1{
     top: unset;
     bottom: 0;
   }
-
   #front-wave-img {
     height: 100%;
     width: auto;
   }
-
   /* eye */
   #eye-container {
     bottom: -2vh;
     right: -17vw !important;
   }
-
   #eye-container-img {
     height: 70vh;
   }
-
   .eyes {
     display: none;
   }
-
   /* about us */
   #about-us {
     height: 100%;
     width: auto;
   }
-
   #about-us-img {
     height: 100vh;
     width: auto;
   }
-
   #about-handle {
     right: -104vw !important;
   }
-
   #about-handle-img {
     height: 70vh;
   }
-
   /* contact us */
   #cntct_us img {
     height: 100vh;
@@ -632,25 +663,23 @@ h1{
     font-size: 1.05em;
     text-align: center;
   }
-
   /* workshop */
-  #images_cont{
+  #images_cont {
     display: block;
     margin: 0;
   }
-  
-  .workshop-img{
+  .workshop-img {
     height: 18vh;
     width: auto;
     padding-left: 30%;
     padding-right: 30%;
   }
-  .workshop-name{
+  .workshop-name {
     padding-left: 30%;
     padding-right: 30%;
     font-size: 1rem;
   }
-  .workshop-div{
+  .workshop-div {
     position: absolute;
     z-index: 5;
     top: 0;
@@ -659,38 +688,32 @@ h1{
     height: 100%;
     padding: 0;
   }
-  .workshop-title{
+  .workshop-title {
     text-align: center;
   }
-  .workshop-not-mob{
+  .workshop-not-mob {
     display: none;
   }
-  .workshop-mob{
+  .workshop-mob {
     display: inline;
   }
-
   /* ath */
-  .aavni{
+  .aavni {
     position: absolute;
     right: -20vw;
     display: none;
   }
-
-  .aavni img{
+  .aavni img {
     opacity: 0.6;
   }
-
-  .ath-heading{
+  .ath-heading {
     font-size: 1.5em;
   }
-  .about__info-text h2{
+  .about__info-text h2 {
     font-size: 1.5em;
     font-weight: 700;
   }
-
 }
-
-
 
 /* ====================================
 Navigation 
@@ -717,8 +740,7 @@ Navigation
   transform: translateY(-100%)
 }
 
-nav,
-nav ul {
+nav, nav ul {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -798,12 +820,29 @@ nav li a:hover:after {
   opacity: 1;
 }
 
-nav li:nth-of-type(1){background-color: #536d3b}
-nav li:nth-of-type(2){background-color: #51372c}
-nav li:nth-of-type(3){background-color: #98b168}
-nav li:nth-of-type(4){background-color: #394a38}
-nav li:nth-of-type(5){background-color: #192123}
-nav li:nth-of-type(6){background-color: #329e63}
+nav li:nth-of-type(1) {
+  background-color: #536d3b
+}
+
+nav li:nth-of-type(2) {
+  background-color: #51372c
+}
+
+nav li:nth-of-type(3) {
+  background-color: #98b168
+}
+
+nav li:nth-of-type(4) {
+  background-color: #394a38
+}
+
+nav li:nth-of-type(5) {
+  background-color: #192123
+}
+
+nav li:nth-of-type(6) {
+  background-color: #329e63
+}
 
 .slide-in-nav-item {
   animation: slide-in-nav-item 0.4s linear 1 .2s both;
@@ -853,6 +892,11 @@ nav li:nth-of-type(6){background-color: #329e63}
   animation: slide-in-nav-item-reverse .3s linear 1 both;
 }
 
+@media only screen and (max-width: 800px) {
+  .overlay-navigation nav ul {
+    display: grid;
+  }
+}
 
 /* ====================================
 Burger king
@@ -899,7 +943,6 @@ Burger king
 .animate-out-middle-bar {
   animation: animate-out-middle-bar .6s linear 1 both
 }
-
 
 /* ====================================
 Animation keyframes
@@ -1030,7 +1073,8 @@ Animation keyframes
     background-color: #fff;
   }
 }
-.home a{
+
+.home a {
   font-family: "Work Sans", sans-serif;
   color: #fff;
   font-weight: 300;
@@ -1039,21 +1083,24 @@ Animation keyframes
   text-decoration: none;
   position: absolute;
   z-index: 10;
-  top:50px;
-  left:50px;
+  top: 50px;
+  left: 50px;
   padding-bottom: 3px;
   border-bottom: 1px solid #fff;
 }
+
 @media (max-width: 1050px) {
-#loader {
-  background-position-x: 43%!important;
+  #loader {
+    background-position-x: 43%!important;
+  }
 }
-}
+
 @media (max-width: 800px) {
-#loader {
-  background-position-x: 44%!important;
+  #loader {
+    background-position-x: 44%!important;
+  }
 }
-}
+
 @media (max-width: 640px) {
   nav ul li a {
     font-size: 11px;
@@ -1073,8 +1120,8 @@ Animation keyframes
   }
 }
 
-.contact-links{
-	text-decoration:none;
+.contact-links {
+  text-decoration: none;
 }
 
 .attr-img {
@@ -1097,14 +1144,39 @@ Animation keyframes
   border-color: rgba(0, 0, 0, 0) !important;
   padding: 30px !important;
 }
-@media only screen and (max-width: 600px) {
-  .social_links{
+
+@media only screen and (max-width: 650px) {
+  .social_links {
     display: flex;
     flex-direction: row;
   }
-  .social_links i{
+  .social_links i {
     padding: 5px;
+  }
 }
+@media only screen and (max-width: 1200px) {
+  .attr-img {
+    height: 120px;
+    width: 120px;
+  }
+  .attr-title {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #attr .row{
+    text-align: center;
+  }
+  .attr-img {
+    height: 100px;
+    width: 100px;
+  }
+  .attr-title {
+    position: relative;
+  }
+  .btn-remove {
+    padding: 15px !important;
+  }
 }
 @media only screen and (max-width: 500px) {
   .attr-img {
@@ -1117,4 +1189,8 @@ Animation keyframes
   .btn-remove {
     padding: 5px !important;
   }
+}
+
+#accomodation .container-fluid{
+  background-color: #141615;
 }
