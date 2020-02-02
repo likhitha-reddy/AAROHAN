@@ -1048,9 +1048,11 @@ Animation keyframes
 #loader {
   background-position-x: 43%!important;
 }
+}
 @media (max-width: 800px) {
 #loader {
   background-position-x: 44%!important;
+}
 }
 @media (max-width: 640px) {
   nav ul li a {
@@ -1102,6 +1104,7 @@ Animation keyframes
   }
   .social_links i{
     padding: 5px;
+}
 }
 @media only screen and (max-width: 500px) {
   .attr-img {
