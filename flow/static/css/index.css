@@ -1044,6 +1044,14 @@ Animation keyframes
   padding-bottom: 3px;
   border-bottom: 1px solid #fff;
 }
+@media (max-width: 1050px) {
+#loader {
+  background-position-x: 43%!important;
+}
+@media (max-width: 800px) {
+#loader {
+  background-position-x: 44%!important;
+}
 @media (max-width: 640px) {
   nav ul li a {
     font-size: 11px;
@@ -1058,7 +1066,7 @@ Animation keyframes
     width: 15px;
   }
   #loader {
-    background-position-x: 46%;
+    background-position-x: 46%!important;
     background-position-y: 18%;
   }
 }
