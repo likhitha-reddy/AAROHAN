@@ -23,18 +23,16 @@
         <div class="container-fluid">
             <div class="row" style="justify-content:center">
                 {% for team in teams %}
-                <div class="col-sm-12 col-lg-4 mb-2 temp">
-                    <div class="card mb-3 h-100">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModal{{ forloop.counter0 }}">
-                                <img src="{{ team.team_image.url }}" class="img-thumbnail mx-auto d-block" />
-                            </button>
-                            <b>
-                                {{ team.name }}
-                            </b>
-                        </div>
-                    </div>
+                <div class="col-6 col-lg-2">
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal{{ forloop.counter0 }}">
+                        <img src="{{ team.team_image.url }}" class="img-thumbnail mx-auto d-block" />
+                    </button>
+                    <b>
+                        {{ team.name }}
+                    </b>
+                  </div>
                 </div>
                 {% endfor %}
             </div>
@@ -326,6 +324,7 @@
         opacity: 0.75 !important;
     }
 
+
     @media only screen and (max-width: 767px) {
         #arhn_header {
             left: 2rem!important;
@@ -345,7 +344,7 @@
             max-width: 15rem !important;
         }
         #arhn_header img {
-            width: 5rem;
+            width: 20vw !important;
             margin-left: 1.5rem;
         }
         .el .container-fluid{
