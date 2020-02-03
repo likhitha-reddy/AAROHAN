@@ -571,7 +571,7 @@ h1 {
   /* landing */
 
   .date {
-    top: 80vh;
+    top: 77vh!important;
     font-size: 1.5em;
     color: white;
     left: 0 !important;
@@ -579,7 +579,7 @@ h1 {
   }
 
   .team {
-    top: 87vh;
+    top: 85vh!important;
     font-size: 1.5em;
     color: white;
     left: 0 !important;
