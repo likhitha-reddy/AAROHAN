@@ -108,9 +108,9 @@ h1 {
 
 .title-sponsor h1 {
   display: inline;
-  color: white;
+  color: black;
   font-size: 1.5em;
-  letter-spacing: 0.8rem;
+  letter-spacing: 0.2rem;
 }
 
 #head-txt-1 {
@@ -587,8 +587,9 @@ h1 {
     width: 100vw !important;
   }
 
-  #mob_head {
+  #mob-head {
     display: block;
+    transform: translateY(-150px);
   }
   .nitd-black {
     left: 15vw;
@@ -979,12 +980,13 @@ nav li:nth-of-type(4) {
 }
 
 nav li:nth-of-type(5) {
-  background-color: #192123
+  background-color: #329e63
 }
 
 nav li:nth-of-type(6) {
-  background-color: #329e63
+  background-color: #192123
 }
+
 
 .slide-in-nav-item {
   animation: slide-in-nav-item 0.4s linear 1 .2s both;
@@ -1423,4 +1425,7 @@ Animation keyframes
   -ms-transform: translateY(-0.91rem) rotate(-45deg);
   -o-transform: translateY(-0.91rem) rotate(-45deg);
   transform: translateY(-0.91rem) rotate(-45deg);
+}
+#accomodation .container-fluid {
+  background-color: transparent;
 }

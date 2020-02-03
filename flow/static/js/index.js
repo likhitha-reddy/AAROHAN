@@ -42,7 +42,6 @@ const animateBadge = () => {
       opacity: 1,
       ease: Power2.easeInOut
     });
-    console.log("anim1 done");
   }
 };
 
@@ -61,10 +60,3 @@ const iconChange2 = () => {
     icons.style.color = "black";
   }
 };
-
-function showModal() {
-  $("#exampleModal").modal('show');
-}
-$("#exampleModal").on("show.bs.modal", function () {
-  $(".modal-dialog").velocity("transition.whirlIn", {duration: 400});
-})

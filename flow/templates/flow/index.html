@@ -98,8 +98,8 @@
                     <li><a href="#aboutus" data-content="Curious?">About</a></li>
                     <li><a href="#event" data-content="Fun & Fun">Events</a></li>
                     <li><a href="#workshops" data-content="Only the finest">Workshops</a></li>
-                    <li><a href="/teams" data-content="The Brains behind">Team</a></li>
                     <li><a href="#contactus" data-content="Don't hesitate">Contact Us</a></li>
+                    <li><a href="/teams" data-content="The Brains behind">Team</a></li>
                 </ul>
             </nav>
         </div>
@@ -668,7 +668,6 @@
 
     .mob-head {
         color: whitesmoke;
-        color: rgba(255, 255, 255, .1);
         position: absolute;
         z-index: 55;
         top: 61vh;
@@ -683,7 +682,7 @@
         text-transform: uppercase;
         background-image: url('{% static "img/water_image.png" %}');
         background-repeat: repeat-x;
-        -webkit-background-clip: text;
+        background-clip: text;
         animation: animate 15s linear infinite;
     }
 </style>

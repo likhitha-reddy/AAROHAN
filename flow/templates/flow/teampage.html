@@ -17,7 +17,7 @@
         <a href="/"> <img style="width: 10vw;" src="{% static 'img/arhn_header.png' %}" /></a>
     </div>
     <h1 class="text-right font-weight-bold m-1 mb-3 mr-3" id="heading">THE ARMY</h1>
-    <div class="vector mt-4">
+    <div class="vector mt-4 mx-auto d-block">
     </div>
     <div class="el">
         <div class="container-fluid">
@@ -146,7 +146,7 @@
         background-repeat: no-repeat;
         background-size: contain;
         height: 65vh;
-        width: 100vw;
+        width: 80vw;
         z-index: 2;
     }
 
@@ -322,51 +322,37 @@
         box-shadow: 0 10px 20px rgba(216, 211, 211, 0.397), 0 6px 6px rgba(209, 204, 204, 0.363);
     }
 
-    .logo img {
-        width: 10rem;
-        height: 7rem;
-        margin-left: 1.5rem;
-    }
-
     .modal-backdrop {
         opacity: 0.75 !important;
     }
 
-    @media only screen and (max-width: 1150px) {
-        /* .modal-dialog {
-      max-width: 600px !important;
-    }*/
-
-        .logo img {
-            width: 8rem;
-            height: 5.5rem;
-            margin-left: 1.5rem;
-        }
-    }
-
     @media only screen and (max-width: 767px) {
+        #arhn_header {
+            left: 2rem!important;
+        }
         .el .temp {
-            min-width: 22rem !important;
-            max-width: 22rem !important;
+            min-width: 18rem;
+            max-width: 18rem;
+        }
+        #heading {
+            font-size: 2rem!important;
         }
     }
 
     @media only screen and (max-width: 567px) {
-
-        .logo img {
-            width: 7rem;
-            height: 5.5rem;
+        .el .temp {
+            min-width: 15rem !important;
+            max-width: 15rem !important;
+        }
+        #arhn_header img {
+            width: 5rem;
             margin-left: 1.5rem;
         }
-    }
-
-    @media only screen and (max-width: 300px) {
-
-        .el .temp {
-            min-width: 20rem !important;
-            max-width: 20rem !important;
+        .el .container-fluid{
+            transform: translateY(-15vh);
         }
     }
+
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

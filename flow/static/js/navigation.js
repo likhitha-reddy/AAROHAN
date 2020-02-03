@@ -75,3 +75,15 @@ $('.overlay-navigation').click(function() {
     nav_item_6.removeClass('slide-in-nav-item-delay-5').addClass('slide-in-nav-item-delay-5-reverse');
   }
 })
+
+
+$(document).ready(function () {
+  $(".hamburger").click(function () {
+    $(this).toggleClass("is-active");
+  });
+});
+
+var menuopt = $(".overlay-navigation");
+menuopt.click(function () {
+  $(".hamburger").toggleClass("is-active");
+});

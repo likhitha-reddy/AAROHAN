@@ -23,7 +23,7 @@ var self = window;
 		canvas.style.left = 0;
 		canvas.style.right = 0;
 		canvas.style.zIndex = 5;
-		// canvas.style.cursor = 'n-resize';
+		canvas.style.cursor = 'move';
        
         body.appendChild(canvas);
 		
