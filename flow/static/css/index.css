@@ -27,6 +27,16 @@ h1 {
   font-size: 2.5em;
   text-align: center;
 }
+
+.team {
+  position: absolute;
+  top: 68vh;
+  left: 70%;
+  letter-spacing: 4px;
+  z-index: 555;
+  font-size: 2em;
+  text-align: center;
+}
 /* 
 @keyframes animate {
 	0%{
@@ -82,8 +92,8 @@ h1 {
   display: inline-block;
   position: absolute;
   width: auto;
-  left: 29vw;
-  top: 12vh;
+  left: 10%;
+  top: 20vh;
   text-align: right;
   z-index: 5;
   font-family: "Work Sans", sans-serif;
@@ -98,7 +108,9 @@ h1 {
 
 .title-sponsor h1 {
   display: inline;
+  color: white;
   font-size: 1.5em;
+  letter-spacing: 0.8rem;
 }
 
 #head-txt-1 {
@@ -561,6 +573,14 @@ h1 {
 
   .date {
     top: 80vh;
+    font-size: 1.5em;
+    color: white;
+    left: 0 !important;
+    width: 100vw !important;
+  }
+
+  .team {
+    top: 87vh;
     font-size: 1.5em;
     color: white;
     left: 0 !important;
