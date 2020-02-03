@@ -1278,8 +1278,8 @@ Animation keyframes
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  letter-spacing: 0.8rem;
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .btn-remove {
@@ -1292,6 +1292,7 @@ Animation keyframes
   .social_links {
     display: flex;
     flex-direction: row;
+    bottom: 0!important;
   }
   .social_links i {
     padding: 5px;
