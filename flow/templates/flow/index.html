@@ -104,10 +104,18 @@
             </nav>
         </div>
 
-        <div class="open-overlay">
+        <!-- <div class="open-overlay">
             <span class="bar-top"></span>
             <span class="bar-middle"></span>
             <span class="bar-bottom"></span>
+        </div> -->
+
+        <div class="hamburger open-overlay" id="hamburger-11">
+            <a id="menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </a>
         </div>
 
         <!-- Social Links -->
@@ -124,7 +132,10 @@
             <!-- landing 1 -->
             <div class="section " id="landing">
                 <img id="header" src="{% static 'img/a4png.png' %}" alt="arhn2020" />
-                <img id="mob_head" src="{% static 'img/arhn_header.png' %}" alt="arhn2020">
+                <!-- <img id="mob_head" src="{% static 'img/arhn_header.png' %}" alt="arhn2020"> -->
+
+                <!-- patrons -->
+                <img class="patron" src="{% static 'img/patron.png' %}" alt="patron">
 
                 <!-- title sponsor -->
                 <div class="nitd-black">
@@ -140,6 +151,10 @@
                 <h1 id="head-txt-1">AAR</h1>
                 <!-- txt 2 -->
                 <h1 id="head-txt-2">HAN</h1>
+                <!-- mobile txt -->
+                <p class="mob-head" id="mob-head">AAROHAN</p>
+                <!-- date -->
+                <h1 class="date" id="date">7 8 9 10<br>FEBRUARY</h1>
                 <!-- eye -->
                 <div id="eye-container">
                     <img id="eye-container-img" src="{% static 'img/a2.png' %}" alt="arhn2020" />
@@ -334,37 +349,41 @@
                 <div class="workshop-div">
                     <h2 class="workshop-title">WORKSHOPS</h2>
                     <div id="images_cont" style="text-align: center;">
-                        <div>
-                            <a href='https://bit.ly/38zqCjb'>
-                            <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
-                            <h2 class="workshop-name workshop-name1 workshop-mob">ML & AI</h2>
+
+                        <div class="div-out-wksp" style="display: block;">
+                            <a href="https://bit.ly/38zqCjb" target="_blank">
+                                <div class="div-in-wksp" style="display: inline-grid;">
+                                    <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                                    <h2 class="workshop-name workshop-name1 workshop-mob">ML & AI</h2>
+                                </div>
+                            </a>
+                            <a href="https://bit.ly/2RnfpfP" target="_blank">
+                                <div class="div-in-wksp" style="display: inline-grid;">
+                                    <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
+                                    <h2 class="workshop-name workshop-name2 workshop-mob">IoT</h2>
+                                </div>
                             </a>
                         </div>
-                        <div>
-                            <a href="https://bit.ly/2RnfpfP">
-                            <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
-                            <h2 class="workshop-name workshop-name2 workshop-mob">IoT</h2>
+
+                        <div class="div-out-wksp" style="display: block;">
+                            <a href="https://bit.ly/2Ggn9dd" target="_blank">
+                                <div class="div-in-wksp" style="display: inline-grid;">
+                                    <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
+                                    <h2 class="workshop-name workshop-name2 workshop-mob">3D printing</h2>
+                                </div>
                             </a>
-                        </div>
-                        <div>
-                            <a href="https://bit.ly/2Ggn9dd">
-                            <img class="workshop-img" src="{% static 'img/WORKSHOP1.png' %}" alt="workshop">
-                            <h2 class="workshop-name workshop-name2 workshop-mob">3D printing</h2>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://bit.ly/37pIUDl">
-                            <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
-                            <h2 class="workshop-name workshop-name3 workshop-mob">Ethical hacking</h2>
+                            <a href="https://bit.ly/37pIUDl" target="_blank">
+                                <div class="div-in-wksp" style="display: inline-grid;">
+                                    <img class="workshop-img" src="{% static 'img/WORKSHOP2.png' %}" alt="workshop">
+                                    <h2 class="workshop-name workshop-name3 workshop-mob">Ethical hacking</h2>
+                                </div>
                             </a>
                         </div>
                         <!-- <br class="workshop-not-mob">
-                        <h2 class="workshop-name workshop-name1 workshop-not-mob">IoT & AI</h2>
-                        <h2 class="workshop-name workshop-name2 workshop-not-mob">3D printing</h2>
-                        <h2 class="workshop-name workshop-name3 workshop-not-mob">Ethical hacking</h2> -->
+                            <h2 class="workshop-name workshop-name1 workshop-not-mob">IoT & AI</h2>
+                            <h2 class="workshop-name workshop-name2 workshop-not-mob">3D printing</h2>
+                            <h2 class="workshop-name workshop-name3 workshop-not-mob">Ethical hacking</h2> -->
                     </div>
-
-
                 </div>
             </div>
 
@@ -480,25 +499,24 @@
 
             <!-- accomodation, travel and hospitality 7 -->
             <div class="section" id="accomodation">
+                <div id="cntct_us">
+                    <img src="{% static 'img/ath.png' %}" alt="ath">
+                </div>
                 <div class="container-fluid ath-box">
                     <h1 class="ath-heading">ACCOMODATION, TRAVEL & HOSPITALITY</h1>
 
                     <div class="row">
-                        <div class="col-sm-4 offset-lg-1 aavni" style="background-color: #fad587;">
-                            <img class="ath_img" src="{% static 'img/mascot.png' %}" style="height: 80vh;">
-                        </div>
-                        <div class="col-sm-5" style="background-color: #fad587;">
-                            <div class="about__info-text" style="padding-top: 7vh;">
+                        <div class="col-sm-6 offset-lg-3 ath-txt">
+                            <div class="about__info-text" style="padding-top: 5vh;">
                                 <p class="sep-half">
                                     <h2>ACCOMODATION</h2>
-                                    <p>Accomodation is free, only a
-                                        caution money of INR 200 will be required at the time of registation. The
-                                        caution money will be fully
-                                        refunded at the time of departure provided the beddings provided are not
-                                        tampered or damaged or missing.</p>
+                                    <p>An accomodation fee of ₹200 and an additional caution fee of ₹100 has be will be
+                                        required at the time of registration. The caution money will be refunded at the
+                                        time of departure provided the beddings provided are not tampered or missing.
+                                    </p>
                                 </p>
                             </div>
-                            <div class="about__info-text">
+                            <div class="about__info-text" style="padding: 1vh 0;">
                                 <p class="sep-half">
                                     <h2>TRAVEL</h2>
                                     <p>Durgapur is very well connected by rail and road to almost all parts of the
@@ -507,7 +525,7 @@
                                         Durgapur station to the institute campus.</p>
                                 </p>
                             </div>
-                            <div class="about__info-text">
+                            <div class="about__info-text ath-no-mob" style="padding-bottom: 5vh;">
                                 <p class="sep-half">
                                     <h2>HOSPITALITY</h2>
                                     <p>Apart from your accomodation & travel, there are multiple food joints in and
@@ -519,7 +537,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- contact us 8 -->
             <div class="section" id="contact">
                 <div id="cntct_us">
@@ -649,5 +666,26 @@
     @font-face {
         font-family: Muller-thin;
         src: url("{% static 'fonts/Muller/MullerNarrowDemo-Light.otf' %}");
+    }
+
+    .mob-head {
+        color: whitesmoke;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        z-index: 55;
+        top: 61vh;
+        left: 5vw;
+        font-family: Muller;
+        font-size: 4em;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: 6px;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        background-image: url('{% static "img/water_image.png" %}');
+        background-repeat: repeat-x;
+        -webkit-background-clip: text;
+        animation: animate 15s linear infinite;
     }
 </style>
