@@ -74,7 +74,7 @@
   .menu_items {
     position: fixed;
     bottom: 0;
-    left: 50px;
+    left: 25px;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -86,10 +86,16 @@
     transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
   }
   .menu_items li:nth-child(2) {
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .menu_items li:nth-child(3) {
+    margin-left: 50px;
+  }
+  .menu_items li:nth-child(4) {
     margin-left: 80px;
+  }
+  .menu_items li:nth-child(5) {
+    margin-left: 110px;
   }
   .menu_items a {
     display: block;
