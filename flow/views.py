@@ -53,6 +53,15 @@ def team_page(request):
     umbrellas = TeamCategory.objects.all()
     members = []
     for umbrella in umbrellas:
-        members.append(TeamMember.objects.filter(team=umbrella))
-    context = {'teams':umbrellas,'members':members}
+        members.append((TeamMember.objects.filter(team=umbrella).values()))
+    umbrellas=TeamCategory.objects.values()
+    umbrellas=[umbrella for umbrella in umbrellas]
+    members_list=[]
+    for category in members:
+        category_members=[member for member in category]
+        members_list.append(category_members)
+        
+    print(umbrellas)
+    print(members_list)
+    context = {'teams':umbrellas,'members':members_list}
     return render(request,"flow/teampage.html", context)
