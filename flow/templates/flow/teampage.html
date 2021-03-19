@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarohan</title>
+    <link rel="stylesheet" href="{% static 'css/teams/teams.css'%}">
+    <link rel="stylesheet" id="color-css" href="{% static 'css/teams/teams1.css' %}">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <!-- <h1 class="team-name" id="team-name">TEAM</h1> -->
+    <div class="bg"></div>
+    <img class="headgear" src="{%static 'img/headgear.png'%}" alt="">
+    <div class="hologram" id="hologram">
+
+        {{teams|json_script:"teams"}}
+        {{members|json_script:"members"}}
+        <div class="holo" id="holo"></div>
+        <div class="cards" id="cards"></div>
+        <style class="hoverEff hover"></style>
+    </div>
+    <div class="team-details">
+        <div class="team-category text-glitch" id="team-category" data-text="Category" style="--text-glitch-time: 2s">Category</div>
+    </div>
+    <div class="member-details" id="member-details">
+        <h1 class="member-name text-glitch" id="member-name" style="--text-glitch-time: 2s"></h1>
+        <h1 class="member-position text-glitch" id="member-position" style="--text-glitch-time: 2s"></h1>
+        <h1 class="member-club text-glitch" id="member-club" style="--text-glitch-time: 2s"></h1>
+    </div>
+    <script type="text/javascript" src="{% static 'js/teams.js'%}"></script>
+</body>
+</html>

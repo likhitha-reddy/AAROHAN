@@ -12,6 +12,16 @@ def index(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
     return render(request, 'flow/index.html', context)
+
+def home(request):
+    events = EventCategory.objects.all()
+    workshops = Workshops.objects.all()
+    faqs = FAQ.objects.all()
+    about = About.objects.all()
+    sponsors = Sponsors.objects.all()
+    attractions = MajorAttractions.objects.all()
+    context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
+    return render(request, 'flow/home.html', context)
     
 def events(request, id):
     context = {}
@@ -53,6 +63,15 @@ def team_page(request):
     umbrellas = TeamCategory.objects.all()
     members = []
     for umbrella in umbrellas:
-        members.append(TeamMember.objects.filter(team=umbrella))
-    context = {'teams':umbrellas,'members':members}
+        members.append((TeamMember.objects.filter(team=umbrella).values()))
+    umbrellas=TeamCategory.objects.values()
+    umbrellas=[umbrella for umbrella in umbrellas]
+    members_list=[]
+    for category in members:
+        category_members=[member for member in category]
+        members_list.append(category_members)
+        
+    print(umbrellas)
+    print(members_list)
+    context = {'teams':umbrellas,'members':members_list}
     return render(request,"flow/teampage.html", context)
