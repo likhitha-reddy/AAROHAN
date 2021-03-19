@@ -11,5 +11,5 @@ media
 media/
 venv
 env
-static/
+
 .idea
