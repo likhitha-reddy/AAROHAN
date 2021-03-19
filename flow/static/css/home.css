@@ -1,0 +1,141 @@
+body {
+    background-color: #141615;
+    overflow: hidden;
+}
+
+.mobile {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+.central-illustration {
+    height: 80vh;
+    width: 34vw;
+    bottom: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+.matrix-gif {
+    height: 40vh;
+    width: 23vw;
+    margin-left: 6%;
+    position: absolute;
+}
+
+.posAndShapeContactUs {
+    top: 27%;
+    right: 0;
+    padding: 1% 1% 1% 1%;
+}
+
+.posAndShapeContactUs:hover {
+    top: 27%;
+    right: 0;
+    padding-right: 4%;
+    border-radius: 10px !important;
+}
+
+.posAndShapeTeam {
+    top: 39%;
+    right: 22%;
+    padding: 2% 3% 2% 5%;
+}
+
+.posAndShapeAttractions {
+    top: 49%;
+    right: 0;
+    padding: 4% 7% 4% 7%;
+}
+
+.posAndShapeAttractions:hover {
+    top: 49%;
+    right: 0;
+    border-radius: 10px !important;
+}
+
+.posAndShapeEvents {
+    top: 27%;
+    left: -7%;
+    padding: 4% 10% 3% 10%;
+}
+
+.posAndShapeAboutUs {
+    top: 42%;
+    left: 10%;
+    padding: 3% 5% 3% 5%;
+}
+
+.posAndShapeLive {
+    top: 64%;
+    left: 15%;
+    padding: 4% 10% 4% 10%;
+}
+
+.nav-card {
+    position: absolute;
+    background-color: #30D692;
+    opacity: 0.3;
+    font-weight: 800;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: transform .2s;
+}
+
+.nav-card:hover {
+    transform: scale(1.5);
+}
+
+@media only screen and (max-width: 1000px) {
+    .central-illustration {
+        height: 80vh;
+        width: 38vw;
+    }
+
+    .matrix-gif {
+        width: 27vw;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .nav-card {
+        z-index: 30;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .central-illustration {
+        height: 80vh;
+        width: inherit;
+        margin-left: -4%;
+    }
+
+    .matrix-gif {
+        width: 67vw;
+        margin-left: 14%;
+    }
+
+    .posAndShapeLive {
+        font-size: 21px !important;
+        top: 76%;
+        left: 15%;
+        height: 25vh;
+        padding: 4% 10% 4% 10%;
+    }
+}
