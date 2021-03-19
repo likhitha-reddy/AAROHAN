@@ -42,12 +42,12 @@
     <link rel="icon" type="image/png" href="{% static 'favicons/img-favicon2x.png' %}" sizes="32x32">
 
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'css/generated-default_1605622710609.css' %}">
 
     <script>
-        (function (w) {
+       (function (w) {
             w.F = w.F || {};
             w.F.CONFIG = {
                 PATH_URL: '/',
@@ -89,16 +89,6 @@
 
 <body class="home blog group-blog">
 
-    <div id="overlay-loader-red" class="overlay-loader">
-        <div class="overlay-loader-inner">
-            <span class="loader-logo logo">AAROHAN</span>
-        </div>
-    </div>
-    <div id="overlay-loader-blue" class="overlay-loader">
-        <div class="overlay-loader-inner">
-            <span class="loader-logo logo">AAROHAN</span>
-        </div>
-    </div>
 
 
 
@@ -110,7 +100,7 @@
 
 
                 <div id="home-slider" class="scroll-anim" data-scroll-class="Paralax">
-                    <div class="home-slide-item current  home-slide-item--gradiant">
+                    <div class="home-slide-item  home-slide-item--gradiant">
                         <div class="home-slide-item-paralax bkg-full paralax" data-start-y="0" data-end-y="120"
                              data-start-scroll="0%" data-end-scroll="0%">
                             <div class="home-slide-item-bkg-mask bkg-full">
@@ -125,7 +115,7 @@
                         <div class="wrapper wrapper--medium home-slide-item-text">
                             <div class="inner">
                                 <a title="Lire l'article Ce que ta voix dit de moi"
-                                   href="#" class="home-slide-content has-hover-text">
+                                   href="/attractions" class="home-slide-content has-hover-text">
                                     <div class="hover-text hover-text--lire"><span>LI</span><span>RE</span></div>
                                     <div class="home-slider-item-content">
                                         <ul class="categories">
@@ -153,7 +143,7 @@
                         <div class="wrapper wrapper--medium home-slide-item-text">
                             <div class="inner">
                                 <a title="Lire l'article Catastrophe : le boxon dans ton salon"
-                                   href="#"
+                                   href="/attractions"
                                    class="home-slide-content has-hover-text">
                                     <div class="hover-text hover-text--lire"><span>LI</span><span>RE</span></div>
                                     <div class="home-slider-item-content">
@@ -182,7 +172,7 @@
                         <div class="wrapper wrapper--medium home-slide-item-text">
                             <div class="inner">
                                 <a title="Lire l'article BIOPIX &ndash; Myl&egrave;ne Farmer : Une vie d&rsquo;artiste illustr&eacute;e [3/8]"
-                                   href="#"
+                                   href="/attractions"
                                    class="home-slide-content has-hover-text">
                                     <div class="hover-text hover-text--voir"><span>VO</span><span>IR</span></div>
                                     <div class="home-slider-item-content">
@@ -211,7 +201,7 @@
                         <div class="wrapper wrapper--medium home-slide-item-text">
                             <div class="inner">
                                 <a title="Lire l'article On a film&eacute; le Battle Opsession 2021 au Lieu Unique &agrave; Nantes"
-                                   href="#"
+                                   href="/attractions"
                                    class="home-slide-content has-hover-text">
                                     <div class="hover-text hover-text--voir"><span>VO</span><span>IR</span></div>
                                     <div class="home-slider-item-content">
@@ -225,7 +215,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-slide-item   home-slide-item--gradiant">
+                    <div class="home-slide-item  current  home-slide-item--gradiant">
                         <div class="home-slide-item-paralax bkg-full paralax" data-start-y="0" data-end-y="120"
                              data-start-scroll="0%" data-end-scroll="0%">
                             <div class="home-slide-item-bkg-mask bkg-full">
@@ -240,7 +230,7 @@
                         <div class="wrapper wrapper--medium home-slide-item-text">
                             <div class="inner">
                                 <a title="Lire l'article Th&eacute;o Muller, explorations sonores et politiques"
-                                   href="#"
+                                   href="/attractions"
                                    class="home-slide-content has-hover-text">
                                     <div class="hover-text hover-text--lire"><span>LI</span><span>RE</span></div>
                                     <div class="home-slider-item-content">
@@ -259,7 +249,7 @@
 
                 <div class="wrapper wrapper--medium" id="slider-home-pagers-wrapper">
                     <div id="slider-home-pagers">
-                <span class="current">
+                <span class="">
                         <span class="bkg-wrapper">
                             <span class="bkg-full">
                                 <span class="bkg bkg-cover bkg-full"
@@ -291,7 +281,7 @@
                             </span>
                         </span>
                         <span class="progress"></span>
-                    </span><span class="">
+                    </span><span class="current">
                         <span id="startCarousel" class="bkg-wrapper">
                             <span class="bkg-full">
                                 <span class="bkg bkg-cover bkg-full"
@@ -308,8 +298,8 @@
 
             <div class="wrapper wrapper--large" id="home-content">
                 <a class="home-list-item has-hover-text home-list-type--lire home-list-item--normal"
-                   href="#"
-                   title="attraction page of aarohan">
+                   href="/attractions"   data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button"
+                   title="attraction page of aarohan" >
                     <div class="home-list-item-image bkg-cover"
                          style="background-image: url(https://sourdoreille.net/2016/wp-content/uploads/2021/03/feu-hd7-730x370.jpg);">
                         <div class="bkg-full  home-list-item-image-nb">
@@ -333,9 +323,10 @@
 
                     </div>
 
+
                 </a>
                 <a class="home-list-item has-hover-text home-list-type--lire home-list-item--alternate"
-                       href="#"
+                       href="/attractions" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
                        title="aarohan attraction page">
                 <div class="home-list-item-image bkg-cover"
                      style="background-image: url(https://sourdoreille.net/2016/wp-content/uploads/2021/03/sgc-2-christophe-urbain-730x370.jpg);">
@@ -372,7 +363,67 @@
         </div>
     </div>
 
+<!-- Button trigger modal -->
 
+
+<!-- Modal -->
+<div class=" modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm" >
+        <img src="https://sourdoreille.net/2016/wp-content/uploads/2021/03/sgc-2-christophe-urbain-730x370.jpg" class="img-fluid"/>
+    </div>
+    <div class="col-sm">
+     Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.
+    </div>
+
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+           <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm" >
+        <img src="https://sourdoreille.net/2016/wp-content/uploads/2021/03/feu-hd7-730x370.jpg" class="img-fluid"/>
+    </div>
+    <div class="col-sm">
+     Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.
+    </div>
+
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="{% static 'js/1.11.3-jquery.min.js' %}"></script>
 
@@ -394,19 +445,14 @@
 
 
 
-    (function (m, d) {
-        if (!m.csstransforms) {
-            d.body.className += ' error--browser';
-            d.write('<div id="error_browser_wrapper"><div id="error_browser">' +
-                '<div class="logo">SOURDOREILLE' +
-                '<div class="link_navigateur"><p>Ce site n\'est pas optimis&eacute; pour votre navigateur internet<br />Vous pouvez le mettre &agrave; jour ou utiliser un des navigateurs suivants&nbsp;:<ul><li><a target="_blank" href="http://www.google.com/intl/fr_fr/chrome/browser/"><img src="https://sourdoreille.net/2016/wp-content/themes/sourdoreille/img/navigateur/chrome.png" alt="Chrome"><br/>Chrome<li><a target="_blank" href="http://support.apple.com/kb/DL1531?viewlocale=fr_FR"><img src="https://sourdoreille.net/2016/wp-content/themes/sourdoreille/img/navigateur/safari.png" alt="Safari"><br/>Safari<li><a target="_blank" href="https://www.mozilla.org/fr/firefox/new/"><img src="https://sourdoreille.net/2016/wp-content/themes/sourdoreille/img/navigateur/firefox.png" alt="Firefox"><br/>Firefox<li><a target="_blank" href="http://windows.microsoft.com/fr-fr/internet-explorer/ie-11-worldwide-languages"><img src="https://sourdoreille.net/2016/wp-content/themes/sourdoreille/img/navigateur/ie.png" alt="IE"><br/>Internet Explorer');
-        }
-    })(Modernizr, document);
-</script>
 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 
 <script src="{% static 'js/generated-default-footer_1605622709300.js' %}" ></script>
 <script src="{% static 'js/attractions.js' %}" ></script>
+
 </body>
 </html>
 
