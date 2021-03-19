@@ -39,12 +39,8 @@ a:hover {
 
 .posAndShapeContactUs:hover {
     top: 27%;
-<<<<<<< HEAD
-    right: 3%;
-=======
     right: 0;
     padding-right: 4%;
->>>>>>> e98fff507cf5d540da1f18ae064593a8fedb3c7c
     border-radius: 10px !important;
 }
 
@@ -62,11 +58,7 @@ a:hover {
 
 .posAndShapeAttractions:hover {
     top: 49%;
-<<<<<<< HEAD
-    right: 2%;
-=======
     right: 0;
->>>>>>> e98fff507cf5d540da1f18ae064593a8fedb3c7c
     border-radius: 10px !important;
 }
 
