@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Gruppo&display=swap');
-
+@font-face {
+	font-family: 'Konexy';
+	src: url(./fonts/Konexy.otf);
+}
 
 @keyframes scroll {
 	0% { height: 0 }
@@ -80,9 +83,9 @@
   width: 100%;
   justify-content: center;
   display: flex;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   font-size: 120px;
-  font-family: 'Gruppo', cursive;
+  font-family: 'Konexy';
 }
 #sub{
   text-align: center;
