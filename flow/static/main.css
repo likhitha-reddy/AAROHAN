@@ -100,10 +100,9 @@
   width: 100%;
   justify-content: center;
   display: flex;
-  /*margin-top: 50px;*/
   margin-top: 80px;
   font-size: 120px;
-  font-family: 'Konexy';
+  font-family: 'Konexy' !important;
 }
 #sub{
   text-align: center;
