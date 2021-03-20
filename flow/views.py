@@ -30,7 +30,7 @@ def events(request, id):
         events = Events.objects.filter(eventGroup=categrory)
         context['events'] = events
         context['group'] = categrory
-        return render(request,'flow/category.html',context)
+        return render(request,'flow/events.html',context)
     except ObjectDoesNotExist:
         raise Http404
 
@@ -75,3 +75,14 @@ def team_page(request):
     print(members_list)
     context = {'teams':umbrellas,'members':members_list}
     return render(request,"flow/teampage.html", context)
+
+def timeline(request):
+    days = Timeline.objects.all()
+    return render(request, 'flow/timeline.html', {'days': days})
+
+def timeline_detail(request, id):
+    day = Timeline.objects.get(day_number=id)
+    events = Events.objects.filter(eventDay__day_number__exact=id).order_by('date_time')
+    context = {'day': day, 'events': events}
+    print(events)
+    return render(request, 'flow/event_timeline.html', context)

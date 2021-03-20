@@ -9,8 +9,15 @@ class EventCategory(models.Model):
     def __str__(self):
         return self.groupName
 
+class Timeline(models.Model):
+    day_number = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=20)
+    body = models.TextField()
+    image = models.ImageField(blank=True, upload_to="day_img/")
+
 class Events(models.Model):
     eventGroup = models.ForeignKey(EventCategory, on_delete=models.CASCADE)
+    eventDay = models.ForeignKey(Timeline, on_delete=models.DO_NOTHING)
     eventName = models.CharField(max_length=50, unique=True, help_text="Enter the name of the event")
     eventId = models.CharField(max_length=50,help_text="Enter the ID of the event")
     logo = models.ImageField(blank=True, upload_to="event_images/")
@@ -102,4 +109,3 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.name
-
