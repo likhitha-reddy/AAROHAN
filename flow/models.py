@@ -103,3 +103,8 @@ class TeamMember(models.Model):
     def __str__(self):
         return self.name
 
+class Timeline(models.Model):
+    day_number = models.IntegerField()
+    title = models.CharField(max_length=20)
+    body = models.TextField()
+    image = models.ImageField(blank=True, upload_to="day_img/")

@@ -75,3 +75,7 @@ def team_page(request):
     print(members_list)
     context = {'teams':umbrellas,'members':members_list}
     return render(request,"flow/teampage.html", context)
+
+def timeline(request):
+    days = Timeline.objects.all()
+    return render(request, 'flow/timeline.html', {'days': days})
