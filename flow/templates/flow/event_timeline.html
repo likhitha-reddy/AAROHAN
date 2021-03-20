@@ -1,0 +1,34 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="{% static 'css/events/timeline_details.css' %}">
+</head>
+<body>
+    <div class="timeline-container" id="timeline-1">
+        <div class="timeline-header">
+          <h2 class="timeline-header__title">Events Timeline</h2>
+          <h3 class="timeline-header__subtitle">Day {{day.day_number}}</h3>
+        </div>
+        <div class="timeline">
+            {%for event in events%}
+                <div class="timeline-item" data-text="{{event.date_time}}">
+                    <div class="timeline__content"><img class="timeline__img" src="{{event.logo.url}}"/>
+                    <h2 class="timeline__content-title">{{event.eventName}}</h2>
+                    <p class="timeline__content-desc">{{event.description}}</p>
+                    {%if event.registration_open%}
+                        <a href="{{event.registration_link}}"><button class="register_here">Register Here</button></a>
+                    {%endif%}
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="{% static 'js/timeline.js'%}"></script>
+</body>
+</html>

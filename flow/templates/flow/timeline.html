@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/events/events.css'%}">
+    <title>Timeline</title>
+</head>
+<body>
+    <section id="timeline">
+        {%for day in days%}
+  
+        <div class="tl-item" day-no="{{day.day_number}}">
+          
+          <div class="tl-bg" style="background-image: url({{day.image.url}})">
+          </div>
+          
+          <div class="tl-year">
+            <p class="f2 heading--sanSerif">Day {{day.day_number}}</p>
+          </div>
+      
+          <div class="tl-content">
+            <h1 class="f3 text--accent ttu">{{day.title}}</h1>
+            <p>{{day.body}}</p>
+          </div>
+      
+        </div>
+        {%endfor%}
+      </section>   
+      <script>
+        fest_days=document.getElementsByClassName("tl-item")
+        console.log(fest_days)
+        // for(var i=0;i<fest_days.length;i++)
+        // {
+        //   fest_days[i].addEventListener("click",()=>{
+        //     window.location.href = fest_days[i].getAttribute("day-no");
+        //   })
+        // }
+        Array.from(fest_days).forEach(function(element) {
+          element.addEventListener("click",()=>{
+            var day_no= element.getAttribute("day-no");
+            window.location.href = `/timeline/${day_no}`
+        })
+      });
+      </script>  
+</body>
+</html>

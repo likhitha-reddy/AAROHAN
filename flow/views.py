@@ -30,7 +30,7 @@ def events(request, id):
         events = Events.objects.filter(eventGroup=categrory)
         context['events'] = events
         context['group'] = categrory
-        return render(request,'flow/category.html',context)
+        return render(request,'flow/events.html',context)
     except ObjectDoesNotExist:
         raise Http404
 
