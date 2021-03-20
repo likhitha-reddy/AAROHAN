@@ -11,3 +11,5 @@ media
 media/
 venv
 env
+.vscode
+*/migrations

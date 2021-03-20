@@ -11,5 +11,6 @@ urlpatterns = [
     path('sponsors',sponsor_view,name="sponsors"),
     path('attractions',attractions_page,name="attractions"),
     path('teams',team_page,name="teams"),
-    path('timeline', timeline, name="timeline")
+    path('timeline', timeline, name="timeline"),
+    path('timeline/<id>', timeline_detail, name="timeline_detail")
 ]

@@ -79,3 +79,10 @@ def team_page(request):
 def timeline(request):
     days = Timeline.objects.all()
     return render(request, 'flow/timeline.html', {'days': days})
+
+def timeline_detail(request, id):
+    day = Timeline.objects.get(day_number=id)
+    events = Events.objects.filter(eventDay__day_number__exact=id).order_by('date_time')
+    context = {'day': day, 'events': events}
+    print(events)
+    return render(request, 'flow/event_timeline.html', context)
