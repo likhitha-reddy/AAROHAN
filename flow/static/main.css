@@ -208,6 +208,11 @@ body {
   background: #111;
   color: #fff;
 }
+
+.footer {
+  text-align: center;
+}
+
 a.switcher {
   display: block;
   position: fixed;
@@ -241,7 +246,7 @@ a.switcher:before {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 85%;
   overflow: hidden;
 }
 .figure {
