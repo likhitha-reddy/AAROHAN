@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'timeline.css' %}">
+    <title>Timeline</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="menu_toggle">
+            <a href="/"><i class="fas fa-chevron-left"></i></a>
+        </span>
+        <section id="timeline">
+            {%for day in days%}
+            <div class="tl-item" day-no="{{day.day_number}}">
+                <div class="tl-bg" style="background-image: url({{day.image.url}})">
+                </div>
+
+                <div class="tl-year">
+                    <p class="f2 heading--sanSerif">Day {{day.day_number}}</p>
+                </div>
+
+                <div class="tl-content">
+                    <h1 class="f3 text--accent ttu">{{day.title}}</h1>
+                    <p>{{day.body}}</p>
+                </div>
+            </div>
+            {%endfor%}
+            <!-- <div class="tl-item">
+                <a href="events_day_1.html">
+                    <div class="tl-bg"
+                        style="background-image: url(https://image.freepik.com/free-vector/isometric-business-technology-with-woman-projection-screen_23-2148190897.jpg)">
+                    </div>
+
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Day 1</p>
+                    </div>
+
+                    <div class="tl-content">
+                        <h1>1st Day of Aarohan 2021</h1>
+                        <p class="day_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi
+                            ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tl-item">
+                <a href="events_day_2.html">
+                    <div class="tl-bg" style="background-image: url(./augmented-reality-concept_crop.jpg)"></div>
+
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Day 2</p>
+                    </div>
+
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">2nd Day Of Aarohan</h1>
+                        <p class="day_details">Suspendisse potenti. Sed sollicitudin eros lorem, eget accumsan risus
+                            dictum id. Maecenas
+                            dignissim
+                            ipsum vel mi rutrum egestas. Donec mauris nibh, facilisis ut hendrerit vel, fringilla
+                            sed felis.
+                            Morbi sed nisl et arcu.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tl-item">
+                <a href="events_day_3.html">
+                    <div class="tl-bg"
+                        style="background-image: url(https://image.freepik.com/free-vector/neon-illustration-arcade-game-machine_122058-846.jpg)">
+                    </div>
+
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Day 3</p>
+                    </div>
+
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">3rd Day of Aarohan</h1>
+                        <p class="day_details">Mauris cursus magna at libero lobortis tempor. Suspendisse potenti.
+                            Aliquam interdum vulputate
+                            neque
+                            sit amet varius. Maecenas ac pulvinar nisi. Fusce vitae nunc ultrices, tristique dolor
+                            at,
+                            porttitor
+                            dolor. Etiam id cursus arcu, in dapibus nibh. Pellentesque non porta leo. Nulla eros
+                            odio,
+                            egestas
+                            quis efficitur vel, pretium sed.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tl-item">
+                <a href="events_day_4.html">
+                    <div class="tl-bg"
+                        style="background-image: url(https://image.freepik.com/free-vector/chess-piece-pawn-consisting-points-lines-luminous-forms_201274-62.jpg)">
+                    </div>
+
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Day 4</p>
+                    </div>
+
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">4th Day of Aarohan</h1>
+                        <p class="day_details">Suspendisse ac mi at dolor sodales faucibus. Nunc sagittis ornare
+                            purus non euismod. Donec
+                            vestibulum
+                            efficitur tortor, eget efficitur enim facilisis consequat. Vivamus laoreet laoreet elit.
+                            Ut ut
+                            varius metus, bibendum imperdiet ex. Curabitur diam quam, blandit at risus nec, pulvinar
+                            porttitor
+                            lorem. Pellentesque dolor elit.</p>
+                    </div>
+                </a>
+            </div> -->
+        </section>
+
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script> var $page = $('.wrapper');
+        fest_days = document.getElementsByClassName("tl-item")
+        Array.from(fest_days).forEach(function (element) {
+            element.addEventListener("click", () => {
+                var day_no = element.getAttribute("day-no");
+                window.location.href = `/timeline/${day_no}`
+            })
+        });
+    </script>
+</body>
+
+</html>

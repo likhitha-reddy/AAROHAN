@@ -1,0 +1,342 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'events_day.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Day 1</title>
+</head>
+
+<body id="wrapper">
+    <div class="wrapper">
+        <span class="menu_toggle">
+            <i class="menu_open fa fa-bars fa-lg"></i>
+            <i class="menu_close fa fa-times fa-lg"></i>
+        </span>
+        <ul id="menuitems" class="menu_items">
+            <li><a href="/teams"><i class="icon fa fa-users fa-2x"></i> Teams </a></li>
+            <li><a href="/sponsors"><i class="icon fa fa-inr fa-2x"></i> Sponsors</a></li>
+            <li><a href="/attractions"><i class="icon fa fa-star fa-2x"></i> Attractions</a></li>
+            <li><a href="/events"><i class="icon fa fa-calendar fa-2x"></i> Events</a></li>
+            <li><a href="/workshops"><i class="icon fa fa-podcast fa-2x"></i> Workshops</a></li>
+        </ul>
+        <div class="content">
+            <div class="sc">
+                <div class="timeline-container" id="timeline-1">
+                    <div class="timeline-header">
+                        <h2 class="timeline-header__title">EVENTS</h2>
+                    </div>
+                    <div class="timeline">
+                        {%for event in events%}
+                        <div class="timeline-item" id='{{ forloop.counter0 }}' data-text="{{event.date_time}}">
+                            <div class="timeline__content"><img class="timeline__img" src="{{event.logo.url}}" />
+                                <h2 class="timeline__content-title">{{event.eventName}}</h2>
+                                <p class="timeline__content-desc">{{event.description}}</p>
+                                {%if event.registration_open%}
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register"
+                                        onclick="window.location.href='{{ event.registration_link }}'" />
+                                </div>
+                                <!-- <a href="{{event.registration_link}}"><button class="register_here">Register
+                                        Here</button></a> -->
+                                {%endif%}
+                            </div>
+                        </div>
+                        {%endfor%}
+                        <!-- <div class="timeline-item" id="0" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="1" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="2" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="3" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="4" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="5" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="6" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="7" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="8" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="9" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="10" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="11" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="12" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="13" data-text="Date: 01/04/2021 Time: 10:00">
+                            <div class="timeline__content"><img class="timeline__img" src="./hch21.jpg" />
+                                <h5 class="timeline__content-title">Hackoverflow</h5>
+                                <p class="timeline__content-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s,
+                                    when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book.has
+                                    many
+                                    dozen ants but none in their pants.
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" />
+                                </div>
+                                </p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'events_day.js' %}"></script>
+
+
+</body>
+
+</html>
