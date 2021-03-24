@@ -64,21 +64,17 @@ $('.menu_toggle').on('click', function () {
   document.documentElement.scrollTop = 0
   pos = document.getElementsByClassName('timeline-item--active')[0].id
   console.log(pos)
-  if (!$page.hasClass('shazam'))
+  if (!$page.hasClass('shazam')) {
     setTimeout(function () {
-      document.getElementById(pos).scrollIntoView();
-      document.getElementById(pos).click();
+      document.getElementById(pos).scrollIntoView()
+      var wrapper = document.getElementById('wrapper')
+      wrapper.style.overflow = 'auto'
     }, 700)
+  }
 })
 $('.content').on('click', function () {
   // let pos = document.getElementsByClassName("timeline-item--active")[0].id;
   document.getElementById(pos).scrollIntoView()
   $page.removeClass('shazam')
-  var wrapper = document.getElementById('wrapper')
-  wrapper.style.overflow = 'auto'
-})
+});
 
-$('.content').hover(function () {
-  console.log('hi!')
-  // let pos = document.getElementsByClassName("timeline-item--active")[0].id;
-})

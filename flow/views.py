@@ -70,9 +70,6 @@ def team_page(request):
     for category in members:
         category_members=[member for member in category]
         members_list.append(category_members)
-        
-    print(umbrellas)
-    print(members_list)
     context = {'teams':umbrellas,'members':members_list}
     return render(request,"flow/teampage.html", context)
 
@@ -84,5 +81,4 @@ def timeline_detail(request, id):
     day = Timeline.objects.get(day_number=id)
     events = Events.objects.filter(eventDay__day_number__exact=id).order_by('date_time')
     context = {'day': day, 'events': events}
-    print(events)
     return render(request, 'flow/event_timeline2.html', context)

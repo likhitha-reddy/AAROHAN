@@ -173,7 +173,7 @@ html, body {
 }
 
 .shazam .content {
-    transform: rotate(-25deg);
+    transform: rotate(-30deg);
 }
 
 .shazam .menu_open {
@@ -233,7 +233,7 @@ body {
     letter-spacing: 0.12ch;
     word-spacing: 0.18ch;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 1);
     font-family: "Pathway Gothic One", sans-serif;
     font-weight: normal;
     line-height: 25px;
@@ -257,7 +257,7 @@ body {
 
 .timeline-item {
     padding: 40px 0;
-    opacity: 0.3;
+    opacity: 0.5;
     filter: blur(2px);
     transition: 0.5s;
     box-sizing: border-box;
@@ -456,6 +456,7 @@ color: wheat;
 @media only screen and (max-width:576px) {
     .content {
         min-width: fit-content;
+        min-width: -moz-fit-content;
     }
     .menu_items a .icon:after {
         width: 60px;
