@@ -75,7 +75,7 @@ html {
     text-align: right;
     position: absolute;
     bottom: 40vh;
-    max-widtzh: 600px;
+    /* max-width: 600px; */
     min-width: 300px;
     width: 50vw;
   }
@@ -87,8 +87,8 @@ html {
 
   .team-details{
     color: white;
-    /* position: fixed; */
-    bottom: 0;
+    position: fixed;
+    top: 0;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -1199,3 +1199,6 @@ html {
       left: 18%;
       box-shadow: 0 0 4px 2px #FFF;
     }
+
+    
+    

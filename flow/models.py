@@ -1,14 +1,5 @@
 from django.db import models
 
-# Create your models here.
-class EventCategory(models.Model):
-    groupName = models.CharField(max_length = 255,unique=True, help_text="Name of the event group")
-    groupId = models.CharField(max_length = 20,unique=True, help_text="ID by which group will be identified")
-    logo = models.ImageField(blank=True, upload_to="event_category_images/")
-
-    def __str__(self):
-        return self.groupName
-
 class Timeline(models.Model):
     day_number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20)
@@ -16,7 +7,6 @@ class Timeline(models.Model):
     image = models.ImageField(blank=True, upload_to="day_img/")
 
 class Events(models.Model):
-    eventGroup = models.ForeignKey(EventCategory, on_delete=models.CASCADE)
     eventDay = models.ForeignKey(Timeline, on_delete=models.DO_NOTHING)
     eventName = models.CharField(max_length=50, unique=True, help_text="Enter the name of the event")
     eventId = models.CharField(max_length=50,help_text="Enter the ID of the event")

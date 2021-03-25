@@ -4,13 +4,12 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    events = EventCategory.objects.all()
     workshops = Workshops.objects.all()
     faqs = FAQ.objects.all()
     about = About.objects.all()
     sponsors = Sponsors.objects.all()
     attractions = MajorAttractions.objects.all()
-    context = {'events': events, 'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
+    context = {'workshops': workshops, 'faqs': faqs, 'about':about, 'sponsors':sponsors, 'attractions': attractions}
     return render(request, 'flow/index.html', context)
 
 def home(request):

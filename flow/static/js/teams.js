@@ -99,7 +99,7 @@ const changeColor=()=>{
  
     setTimeout(()=>{
         changeColor()
-    },10000)
+    },5000)
 }
 
 changeColor()
