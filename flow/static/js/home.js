@@ -1,68 +1,88 @@
-(function($) { "use strict";
-		
-	//Page cursors
 
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-        t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px", 
-		i.style.left = n.clientX + "px", 
-		i.style.top = n.clientY + "px"
-    });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
-    }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
-    }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
-    }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }
-	
-	//Navigation
+// for mobile workshop section carousel
+(function() {
+  "use strict";
 
-	var app = function () {
-		var body = undefined;
-		var menu = undefined;
-		var menuItems = undefined;
-		var init = function init() {
-			body = document.querySelector('body');
-			menu = document.querySelector('.menu-icon');
-			menuItems = document.querySelectorAll('.nav__list-item');
-			applyListeners();
-		};
-		var applyListeners = function applyListeners() {
-			menu.addEventListener('click', function () {
-				return toggleClass(body, 'nav-active');
-			});
-		};
-		var toggleClass = function toggleClass(element, stringClass) {
-			if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
-		};
-		init();
-	}();
+  var carousel = document.getElementsByClassName('carousel')[0],
+      slider = carousel.getElementsByClassName('carousel__slider')[0],
+      items = carousel.getElementsByClassName('carousel__slider__item'),
+      prevBtn = carousel.getElementsByClassName('carousel__prev')[0],
+      nextBtn = carousel.getElementsByClassName('carousel__next')[0];
 
-	
-	//Switch light/dark
-	
-	$("#switch").on('click', function () {
-		if ($("body").hasClass("light")) {
-			$("body").removeClass("light");
-			$("#switch").removeClass("switched");
-		}
-		else {
-			$("body").addClass("light");
-			$("#switch").addClass("switched");
-		}
-	});
-	
-})(jQuery);
+  var width, height, totalWidth, margin = 20,
+      currIndex = 0,
+      interval, intervalTime = 2000;
 
+  function init() {
+      resize();
+      // move(Math.floor(items.length / 2));
+      move(1);
+      bindEvents();
+
+      timer();
+  }
+
+  function resize() {
+      // width = Math.max(window.innerWidth * .25, 275),
+      // height = window.innerHeight * .5,
+	  width = 200,
+      height = 180,
+      totalWidth = width * items.length;
+
+      slider.style.width = totalWidth + "px";
+
+      for(var i = 0; i < items.length; i++) {
+          let item = items[i];
+          item.style.width = (width - (margin * 2)) + "px";
+          item.style.height = height + "px";
+      }
+  }
+
+  function move(index) {
+
+      if(index < 1) index = items.length;
+      if(index > items.length) index = 1;
+      currIndex = index;
+
+      for(var i = 0; i < items.length; i++) {
+          let item = items[i],
+              box = item.getElementsByClassName('item__3d-frame')[0];
+          if(i == (index - 1)) {
+              item.classList.add('carousel__slider__item--active');
+              box.style.transform = "perspective(1200px)";
+          } else {
+            item.classList.remove('carousel__slider__item--active');
+              box.style.transform = "perspective(1200px) rotateY(" + (i < (index - 1) ? 40 : -40) + "deg)";
+          }
+      }
+
+      slider.style.transform = "translate3d(" + ((index * -width) + (width / 2) + window.innerWidth / 2) + "px, 0, 0)";
+  }
+
+  function timer() {
+      clearInterval(interval);
+      interval = setInterval(() => {
+        move(++currIndex);
+      }, intervalTime);
+  }
+
+  function prev() {
+    move(--currIndex);
+    timer();
+  }
+
+  function next() {
+    move(++currIndex);
+    timer();
+  }
+
+
+  function bindEvents() {
+      window.onresize = resize;
+      prevBtn.addEventListener('click', () => { prev(); });
+      nextBtn.addEventListener('click', () => { next(); });
+  }
+
+  init();
+
+})();
