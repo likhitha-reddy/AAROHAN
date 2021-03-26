@@ -19,8 +19,8 @@ html, body {
 
 .content {
     height: 200%;
-    min-width: 1460px;
-    transform-origin: left top;
+    min-width: 1280px;
+    transform-origin: top right;
     transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
     background-color: #141615;
     color: wheat;
@@ -47,7 +47,7 @@ html, body {
     z-index: 900;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     display: block;
     cursor: pointer;
     width: 100px;
@@ -87,13 +87,13 @@ html, body {
 
 .menu_toggle .menu_close {
     transform: rotate(20deg);
-    transform-origin: -100px -160px;
+    transform-origin: 100px 180px;
 }
 
 .menu_items {
     position: fixed;
     bottom: 0;
-    left: 25px;
+    right: 25px;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -102,25 +102,26 @@ html, body {
 .menu_items li {
     height: 60px;
     margin-bottom: 30px;
+    margin-left: 10px;
     transform: translateX(-300px);
     transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
     color: #584E4A !important;
 }
 
 .menu_items li:nth-child(2) {
-    margin-left: 20px;
+    margin-left: -10px;
 }
 
 .menu_items li:nth-child(3) {
-    margin-left: 50px;
+    margin-left: -40px;
 }
 
 .menu_items li:nth-child(4) {
-    margin-left: 80px;
+    margin-left: -70px;
 }
 
 .menu_items li:nth-child(5) {
-    margin-left: 110px;
+    margin-left: -100px;
 }
 
 .menu_items a {
@@ -173,7 +174,7 @@ html, body {
 }
 
 .shazam .content {
-    transform: rotate(-30deg);
+    transform: rotate(20deg);
 }
 
 .shazam .menu_open {
@@ -233,7 +234,7 @@ body {
     letter-spacing: 0.12ch;
     word-spacing: 0.18ch;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.7);
     font-family: "Pathway Gothic One", sans-serif;
     font-weight: normal;
     line-height: 25px;
@@ -257,7 +258,7 @@ body {
 
 .timeline-item {
     padding: 40px 0;
-    opacity: 0.5;
+    opacity: 0.3;
     filter: blur(2px);
     transition: 0.5s;
     box-sizing: border-box;
@@ -356,8 +357,8 @@ color: wheat;
     padding: 80px 0;
     transform-origin: top left;
     transition: 0.3s ease 0s;
-    background-attachment: fixed;
-    background-size: cover;
+    /* background-attachment: fixed; */
+    background-size: contain;
 }
 
 .timeline-container:before {
@@ -468,16 +469,19 @@ color: wheat;
         transition: border-color 0.2s;
     }
     .shazam .content {
-        transform: rotate(-35deg);
+        transform: rotate(35deg);
     }
 }
 
-@media only screen and (min-width: 1480px) {
+@media only screen and (min-width: 1300px) {
     .wrapper {
         overflow-x: hidden;
     }
     .content {
-        min-width: 1864px;
+        min-width: 1440px;
+    }
+    .shazam .content {
+        transform: rotate(25deg);
     }
 }
 
@@ -487,5 +491,8 @@ color: wheat;
     }
     .content {
         min-width: 1400px;
+    }
+    .shazam .content {
+        transform: rotate(40deg);
     }
 }
