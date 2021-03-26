@@ -4,6 +4,10 @@
   height: 100%;
 }
 
+.wrapper{
+    overflow: hidden;
+}
+
 .content {
   height: 100%;
   transform-origin: top right;
@@ -145,8 +149,8 @@
   z-index: 1001;
 }
 .shazam .content {
-    height: 180%;
-  transform: rotate(20deg);
+    height: 200%;
+  transform: rotate(30deg);
 }
 .shazam .menu_open {
   transform: rotate(-20deg);
@@ -408,17 +412,5 @@ color: wheat;
 
   .shazam .content {
     transform: rotate(35deg);
-  }
-}
-
-@media only screen and (min-width: 1300px) {
-  .wrapper {
-    overflow-x: hidden;
-  }
-  .content {
-    min-width: 1440px;
-  }
-  .shazam .content {
-    transform: rotate(25deg);
   }
 }

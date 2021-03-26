@@ -12,6 +12,7 @@ html {
     margin: 0;
     height: 100%;
     position: absolute;
+    overflow: hidden;
   }
 
   .hologram{
