@@ -1,26 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-
-<!--    &lt;!&ndash; Bootstrap   &ndash;&gt;-->
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"-->
-<!--          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">-->
-
-<!--    &lt;!&ndash;    <link rel="icon" href="">&ndash;&gt;-->
-<!--    <link rel="stylesheet" href="./css/attractions.css">-->
-
-<!--    <title>Aarohan 2021</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div>Attractions</div>-->
-
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"-->
-<!--        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"-->
-<!--        crossorigin="anonymous"></script>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 {% load static %}
 <!--[if lt IE 7]>
@@ -33,18 +10,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aarohan 2021</title>
+    <link rel="icon" type="image/png" href="{% static 'img/final-logo.png' %}">
     <link rel="profile" href="http://gmpg.org/xfn/11">
 
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400italic%7CTitillium+Web:400,300italic,700,600"
           rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="{% static 'favicons/img-favicon.png' %}">
-    <link rel="icon" type="image/png" href="{% static 'favicons/img-favicon.png' %}" sizes="16x16">
-    <link rel="icon" type="image/png" href="{% static 'favicons/img-favicon2x.png' %}" sizes="32x32">
 
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'css/generated-default_1605622710609.css' %}">
+    <link rel="stylesheet" href="{% static 'css/attractions.css' %}">
 
     <script>
        (function (w) {
@@ -83,13 +59,48 @@
             };
         })(window);
     </script>
-
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <script src="{% static 'js/generated-default-header_1605622709300.js' %}"></script>
 </head>
 
 <body class="home blog group-blog">
+<header class="cd-header">
+    <div class="header-wrapper">
+        <div class="logo-wrap">
+            <!--                        <a href="#" class="hover-target"><span>AAROHAN</span></a>-->
+        </div>
+        <div class="nav-but-wrap">
+            <div class="menu-icon hover-target">
+                <span class="menu-icon__line menu-icon__line-left"></span>
+                <span class="menu-icon__line"></span>
+                <span class="menu-icon__line menu-icon__line-right"></span>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="nav">
+    <div class="nav__content">
+        <ul class="nav__list">
+            <li class="nav__list-item"><a href="home" class="hover-target">home</a></li>
+            <li class="nav__list-item"><a href="aboutus" class="hover-target">about us</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">events</a></li>
+            <li class="nav__list-item active-nav"><a href="attractions" class="hover-target">attractions</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">team</a></li>
+            <li class="nav__list-item"><a href="contactus" class="hover-target">contact us</a></li>
+        </ul>
+    </div>
+</div>
+<body class="noisy"></body>
+<div class="emblem"><span class="icon-information"></span></div>
+<div class="frame">
+<div class="cont">
+    <div class="over3 "></div>
+  <div class="over box"></div>
+  <div class="over2 box"></div>
 
 
+
+  </div>
 
 
     <div id="content" class="site-content wrapper">
@@ -317,7 +328,7 @@
                             <span class="date">date</span>
                         </div>
                         <h4>Title of the page</h4>
-                        <span class="btn">
+                        <span class="btn cta">
                              <span>show details</span>
                     </span>
 
@@ -345,7 +356,7 @@
                         <span class="date">date </span>
                     </div>
                     <h4>Title of the page </h4>
-                    <span class="btn">
+                    <span class="btn cta">
                              <span>show details</span>
                     </span>
 
@@ -387,8 +398,8 @@
   </div>
 </div>
       </div>
-      <div class="modal-footer center" style="display:block">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      <div class="modal-footer center " style="display:block">
+        <button type="button" class="btn btn-primary cta" data-bs-dismiss="modal">Close</button>
 
       </div>
     </div>
@@ -418,14 +429,16 @@
   </div>
 </div>
       </div>
-      <div class="modal-footer center" style="display:block">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      <div class="modal-footer center " style="display:block">
+        <button type="button" class="btn btn-primary cta" data-bs-dismiss="modal">Close</button>
 
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
 <script src="{% static 'js/1.11.3-jquery.min.js' %}"></script>
 
 <script src="{% static 'js/widgets.js' %}"></script>
@@ -445,11 +458,64 @@
     };
 
 
+ var t1=new TimelineMax({
+    onComplete:function(){
+        console.log('finsted')
+    }
+    })
+
+    t1.to('.over3',0,{scaleX:1,ease:Power1.easeInOut},0);
+    t1.to('.over',0.5,{scaleX:1,ease:Power1.easeInOut},0);
+    t1.to('.over2',0.5,{scaleX:1,ease:Power1.easeInOut},0.3);
+    t1.to('.over',0.5,{width:"0%",ease:Power1.easeInOut},0.5);
+    t1.to('.over2',0.5,{width:"0%",ease:Power1.easeInOut},1);
+    t1.to('.over3',0.5,{width:"0%",ease:Power1.easeInOut},1);
+
+
+      document.getElementByClassName('cta').addEventListener('click',function(){
+        console.log('clicked');
+        t1.reversed(!t1.reversed());
+        if(t1.reversed()){
+            t1.reverse();
+        }
+        else{
+            t1.play();
+        }
+
+
+
+    })
 
 
 </script>
+    <script>
+    var app = function () {
+        var body = undefined;
+        var menu = undefined;
+        var menuItems = undefined;
+        var init = function init() {
+            body = document.querySelector('body');
+            menu = document.querySelector('.menu-icon');
+            menuItems = document.querySelectorAll('.nav__list-item');
+            applyListeners();
+        };
+        var applyListeners = function applyListeners() {
+            menu.addEventListener('click', function () {
+                return toggleClass(body, 'nav-active');
+            });
+        };
+        var toggleClass = function toggleClass(element, stringClass) {
+            if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+        };
+        init();
+    }();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+
+
+
 
 <script src="{% static 'js/generated-default-footer_1605622709300.js' %}" ></script>
 <script src="{% static 'js/attractions.js' %}" ></script>

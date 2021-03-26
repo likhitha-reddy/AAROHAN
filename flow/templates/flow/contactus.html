@@ -1,0 +1,128 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aarohan 2021</title>
+    <link rel="icon" type="image/png" href="{% static 'img/final-logo.png' %}">
+
+    <!-- Bootstrap   -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/c3db3ba7c7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}">
+</head>
+<body>
+<header class="cd-header">
+    <div class="header-wrapper">
+        <div class="logo-wrap">
+            <!--                        <a href="#" class="hover-target"><span>AAROHAN</span></a>-->
+        </div>
+        <div class="nav-but-wrap">
+            <div class="menu-icon hover-target">
+                <span class="menu-icon__line menu-icon__line-left"></span>
+                <span class="menu-icon__line"></span>
+                <span class="menu-icon__line menu-icon__line-right"></span>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="nav">
+    <div class="nav__content">
+        <ul class="nav__list">
+            <li class="nav__list-item"><a href="home" class="hover-target">home</a></li>
+            <li class="nav__list-item"><a href="aboutus" class="hover-target">about us</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">events</a></li>
+            <li class="nav__list-item"><a href="attractions" class="hover-target">attractions</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">team</a></li>
+            <li class="nav__list-item active-nav"><a href="contactus" class="hover-target">contact us</a></li>
+        </ul>
+    </div>
+</div>
+<div class="desktop">
+    <img class="contactUsBg" src="{% static 'img/contact-us.jpg' %}" alt="contact us">
+</div>
+<div class="mobile">
+    <img class="contactUsBg" src="{% static 'img/contact-us-phone.jpg' %}" alt="contact us">
+</div>
+
+<div class="container-fluid contactUsDiv">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="contactUsBox">
+                <div class="contactUsTitle">
+                    Contact Us
+                </div>
+                <div>
+                    <a class="contactMail" href="mailto:shashwat@ccanitd.in">
+                        <i class="fas fa-envelope mail-icon"></i>
+                        SHASHWAT BHATTACHARJEE
+                    </a>
+                    <a class="contactMail" href="mailto:lr.17u10147@btech.nitdgp.ac.in">
+                        <i class="fas fa-envelope mail-icon"></i>
+                        LIMAN RAHMAN
+                    </a>
+                    <a class="contactMail" href="mailto:as.17u10515@btech.nitdgp.ac.in">
+                        <i class="fas fa-envelope mail-icon"></i>
+                        AADARSH SHAW
+                    </a>
+                    <a class="contactMail" href="mailto:nv.17u10696@btech.nitdgp.ac.in">
+                        <i class="fas fa-envelope mail-icon"></i>
+                        NIKHIL VASHISTHA
+                    </a>
+                    <a class="contactMail" href="mailto:uc.17u10145@btech.nitdgp.ac.in">
+                        <i class="fas fa-envelope mail-icon"></i>
+                        UTKARSH CHAURASIA
+                    </a>
+                </div>
+                <div style="margin-top:5%; margin-left: -2%;">
+                    <a class="contactMail" href="mailto:arhn@nitdgp.ac.in" style="display: inline">
+                        <img src="{% static 'img/final-logo.png' %}" alt="arhn-logo" height="39px" width="39px"
+                             style="display: inline">
+                        arhn@nitdgp.ac.in
+                    </a>
+                </div>
+                <div class="socialIconsDiv">
+                    <a href="#"> <i class="fab fa-facebook-square socialIcon"></i></a>
+                    <a href="#"> <i class="fab fa-instagram socialIcon"></i></a>
+                    <a href="#"> <i class="fab fa-youtube socialIcon"></i></a>
+                    <a href="#"> <i class="fab fa-twitter-square socialIcon"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+<script>
+    var app = function () {
+        var body = undefined;
+        var menu = undefined;
+        var menuItems = undefined;
+        var init = function init() {
+            body = document.querySelector('body');
+            menu = document.querySelector('.menu-icon');
+            menuItems = document.querySelectorAll('.nav__list-item');
+            applyListeners();
+        };
+        var applyListeners = function applyListeners() {
+            menu.addEventListener('click', function () {
+                return toggleClass(body, 'nav-active');
+            });
+        };
+        var toggleClass = function toggleClass(element, stringClass) {
+            if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+        };
+        init();
+    }();
+</script>
+</body>
+</html>
