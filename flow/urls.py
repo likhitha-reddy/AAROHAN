@@ -13,5 +13,8 @@ urlpatterns = [
     path('attractions',attractions_page,name="attractions"),
     path('teams',team_page,name="teams"),
     path('timeline', timeline, name="timeline"),
-    path('timeline/<id>', timeline_detail, name="timeline_detail")
+    path('timeline/<id>', timeline_detail, name="timeline_detail"),
+    path('judge-auth', signin, name="signin"),
+    path('judgeprojects', judge_projects, name="judgeprojects"),
+    path('projectreviews', view_reviews, name="projectreviews")
 ]

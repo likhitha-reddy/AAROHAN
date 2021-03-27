@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aarohan 2021</title>
+
+    <!-- Bootstrap CSS
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.24/datatables.min.css" />
+</head>
+
+<body class="table-dark ">
+    <table class="table table-hover table-striped table-bordered table-dark" id="onlytableinthispagesowhy">
+        <thead>
+            <tr>
+                <th scope="col">Project Name</th>
+                <th scope="col">Team Name</th>
+                <th scope="col">Grand Total</th>
+                <th scope="col">Average Marketability</th>
+                <th scope="col">Average Feasibility</th>
+                <th scope="col">Average Technicality</th>
+                <th scope="col" style="width: 300px;">Detailed Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects%}
+            <tr>
+                <td scope="col">{{project.name}}</td>
+                <td scope="col">{{project.team_name}}</td>
+                <td scope="col">{{project.grand_total}}</td>
+                <td scope="col">{{project.avg_mark}}</td>
+                <td scope="col">{{project.avg_feas}}</td>
+                <td scope="col">{{project.avg_tech}}</td>
+                <td scope="col" style="max-height:100px; overflow-y: auto;">
+                    <div class="container">
+                        {% for review in project.reviews %}
+                        <p>[ TOT: {{review.total}} | M: {{review.mark}} | T: {{review.tech}} | F: {{review.feas}}  | J: {{review.user}} ]</p>
+                        {% endfor %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.24/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#onlytableinthispagesowhy').DataTable();
+            console.log("i made a mistake making that name")
+        });
+    </script>
+</body>
+
+</html>

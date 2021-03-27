@@ -1,4 +1,7 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator 
+from django.contrib.auth.models import User
+
 
 class Timeline(models.Model):
     day_number = models.IntegerField(primary_key=True)
@@ -99,3 +102,22 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TechmelaProject(models.Model):
+    name = models.CharField(max_length=30)
+    team_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return (self.name + " by Team:" + self.team_name)
+
+
+class Review(models.Model):
+    project = models.ForeignKey(TechmelaProject, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    mark = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10), MinValueValidator(0)])
+    feas = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10), MinValueValidator(0)])
+    tech = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10), MinValueValidator(0)])
+
+    def __str__(self):
+        return ("Review of " + self.project.name + " by " + self.user.username)
