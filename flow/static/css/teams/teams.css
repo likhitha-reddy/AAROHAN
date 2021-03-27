@@ -81,10 +81,16 @@ html {
     justify-content: space-evenly;
     text-align: right;
     position: absolute;
-    bottom: 40vh;
+    bottom: 50vh;
     /* max-width: 600px; */
     min-width: 300px;
     width: 50vw;
+  }
+
+  @media only screen and (max-width:576px){
+    .cards{
+      bottom: 40vh;
+    }
   }
 
   .card .holo {
@@ -124,21 +130,21 @@ html {
   .member-details .member-name{
     margin-bottom: -20px;
     font-size: calc(15px + 1vh);
-    line-height: calc(20px + 3vh);
+    line-height: calc(15px + 0vh);
     position: relative;
   }
 
   .member-details .member-position{
     margin-bottom: -15px;
     font-size: calc(10px + 1vh);
-    line-height: calc(10px + 3vh);
+    line-height: calc(1px + 3vh);
     position: relative;
   }
 
   .member-details .member-club{
     margin-bottom: -5px;
     font-size: calc(10px + 1vh);
-    line-height: calc(10px + 3vh);
+    line-height: calc(1px + 2vh);
     position: relative;
   }
   
@@ -381,8 +387,8 @@ html {
 		--text-glitch-y1: 30%;
 		--text-glitch-y2: 35%;
 		--text-glitch-y3: 50%;
-		--text-glitch-y4: 55%;
-		animation: glitch 0.2s infinite;
+		/* --text-glitch-y4: 55%; */
+		/* animation: glitch 0.2s infinite; */
 	  }
 	  @keyframes glitch {
 		100% {

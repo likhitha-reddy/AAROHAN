@@ -28,6 +28,27 @@
   justify-content: center;
 }
 
+.fa-backward{
+  bottom: 40px;
+  position: absolute;
+  left: 10vw;
+  z-index: 10000;
+  height: 40px;
+  transform: rotate(180deg);
+}
+
+.fa-forward{
+  bottom: 40px;
+  position: absolute;
+  right: 10vw;
+  z-index: 10000;
+  height: 40px;
+}
+
+.fas:hover{
+  cursor: pointer;
+}
+
 .teams-container{
     width: 100%;
     display: flex;
@@ -172,7 +193,6 @@
 
 h1 {
   padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
 }
 
 .timeline {

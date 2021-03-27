@@ -56,17 +56,3 @@
       wrapper.style.overflow = "auto";}, 700);
     }
   });
-  $(".content").on("click", function () {
-    // let pos = document.getElementsByClassName("timeline-item--active")[0].id;
-    document.getElementById(pos).scrollIntoView();
-    $page.removeClass("shazam");
-    // var wrapper = document.getElementById("wrapper");
-    // wrapper.style.overflow = "auto";
-  });
-  
-  $(".content").hover( function () {
-    console.log("hi!")
-    // let pos = document.getElementsByClassName("timeline-item--active")[0].id;
-   
-  });
-  
