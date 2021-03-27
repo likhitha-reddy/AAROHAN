@@ -10,7 +10,10 @@ console.log(members)
 
 var no_of_categories=teams.length;
 
-const changeColor=()=>{
+var left=document.getElementsByClassName('fa-backward')[0]
+var right=document.getElementsByClassName('fa-forward')[0]
+
+const changeTeams=()=>{
     var no_of_cards=members[category].length;
 
     console.log(category,"category")
@@ -93,14 +96,33 @@ const changeColor=()=>{
     document.getElementById("team-category").setAttribute("data-text",teamCategory)
     
     document.getElementById("color-css").href=`../static/css/teams/teams${category%3+1}.css`
+}
+
+left.addEventListener("click", ()=>{
+    category--;
+    if(category<0)
+    category=no_of_categories-1
+    changeTeams()
+})
+
+right.addEventListener("click", ()=>{
+    category++;
+    if(category==no_of_categories)
+    category=0
+    changeTeams()
+})
+
+
+const changeColor=()=>{
+    changeTeams()
+
     category++;
     if(category==no_of_categories)
         category=0
- 
+
     setTimeout(()=>{
         changeColor()
-    },10000)
+    },20000)
 }
 
 changeColor()
-  
