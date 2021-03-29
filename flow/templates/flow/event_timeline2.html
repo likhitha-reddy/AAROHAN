@@ -337,6 +337,26 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{% static 'events_day.js' %}"></script>
 
+    <script>
+        $(document).ready(() => {
+            var filler = `<div class="timeline-item" id='{{ forloop.counter0 }}' data-text="{{event.date_time}}">
+                            <div class="timeline__content"><img class="timeline__img" src="{{event.logo.url}}" />
+                                <h2 class="timeline__content-title">{{event.eventName}}</h2>
+                                <p class="timeline__content-desc">{{event.description}}</p>
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Register" hidden/>
+                                </div>
+                            </div>
+                        </div>`
+            if(screen.height > 1009) {
+                $('.timeline').append(filler);
+            }
+            if(screen.height > 876) {
+                $('.timeline').append(filler);
+            }
+        })
+    </script>
 
 </body>
 
