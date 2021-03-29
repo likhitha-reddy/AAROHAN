@@ -16,5 +16,6 @@ urlpatterns = [
     path('timeline/<id>', timeline_detail, name="timeline_detail"),
     path('judge-auth', signin, name="signin"),
     path('judgeprojects', judge_projects, name="judgeprojects"),
-    path('projectreviews', view_reviews, name="projectreviews")
+    path('projectreviews', view_reviews, name="projectreviews"),
+    path('techmela', techmela, name="techmela"),
 ]

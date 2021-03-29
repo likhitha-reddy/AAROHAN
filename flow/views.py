@@ -171,3 +171,6 @@ def view_reviews(request):
             setattr(context["projects"][idx], "avg_tech", avg_mark/lenx)
         print(context)
     return render(request, 'flow/reviews.html', context)
+
+def techmela(request):
+    return render(request, "flow/techmela.html")
