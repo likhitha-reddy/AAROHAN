@@ -35,7 +35,7 @@
                         <div class="timeline-item" id='{{ forloop.counter0 }}' data-text="{{event.date_time}}">
                             <div class="timeline__content"><img class="timeline__img" src="{{event.logo.url}}" />
                                 <h2 class="timeline__content-title">{{event.eventName}}</h2>
-                                <p class="timeline__content-desc">{{event.description}}</p>
+                                <p class="timeline__content-desc">{{ event.description | linebreaksbr }}</p>
                                 {%if event.registration_open%}
                                 <div class="button-wrapper slide">
                                     <div class="button6div"></div>

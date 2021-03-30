@@ -503,7 +503,7 @@ color: wheat;
         overflow-x: hidden;
     }
     .content {
-        min-width: 1200px;
+        min-width: 1380px;
     }
     .shazam .content {
         transform: rotate(40deg);
@@ -515,7 +515,7 @@ color: wheat;
         overflow-x: hidden;
     }
     .content {
-        min-width: 1440px;
+        min-width: 1540px;
     }
     .shazam .content {
         transform: rotate(40deg);
@@ -528,7 +528,7 @@ color: wheat;
         overflow-x: hidden;
     }
     .content {
-        min-width: 1600px;
+        min-width: 1720px;
     }
     .shazam .content {
         transform: rotate(25deg);
@@ -541,7 +541,7 @@ color: wheat;
         overflow-x: hidden;
     }
     .content {
-        min-width: 1920px;
+        min-width: 2050px;
     }
     .shazam .content {
         transform: rotate(30deg);
