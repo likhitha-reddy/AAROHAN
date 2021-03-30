@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="{% static 'css/techmela.css' %}">
@@ -21,335 +22,292 @@
     <script src="https://kit.fontawesome.com/c3db3ba7c7.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
-<div id="particles-js"></div>
-<button id="launchModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        style="display: none;">
-    Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade modal-fullscreen-sm-down" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title container-fluid modalPrjTitle" id="exampleModalLabel"
-                    style="text-align: center;font-weight: bold; font-size: 20px;">Project title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<body>
+    <div id="particles-js"></div>
+    <button id="launchModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        style="display: none;">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen-sm-down" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title container-fluid modalPrjTitle" id="exampleModalLabel"
+                        style="text-align: center;font-weight: bold; font-size: 20px;">Project title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <!--  video-->
+                                <div class="projectVideo">
+                                    <iframe id="modalPrjVideo" class="prjVideo" src="">
+                                    </iframe>
+                                    <iframe id="modalPrjPdf" class="prjVideo" src="">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <!--  desc-->
+                                <p id="modalPrjDesc">Project Description</p>
+
+                                <a id="pdfDownloadAnchor" target="_blank" href="#" style=" text-decoration: none;">
+                                    <div style=" margin-top: 2vh;">
+                                        <i style="font-size: 2rem; color: red;" class="far fa-file-pdf"></i>
+                                        <div
+                                            style="display: inline; color: dodgerblue;margin-top: 10px; margin-left:10px;position: absolute;">
+                                            Download full details of the project
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
+        </div>
+    </div>
+
+
+    <div>
+        <h3 class="mainHeading" style="text-align: center; ">
+            <img class="techmelaTitleImg" src="{% static 'img/techmelaTitle.png' %}" alt="techmela-title" />
+        </h3>
+        <h5 class="mainSubheading" style="text-align: center;">Brought to you by Research & Development Cell, CCA, NIT
+            Durgapur</h5>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="text-align: center;">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Robotics
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Assitive Technology
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Software Projects
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="sectionHeading" style="text-align: center;">
+                    Robotics
+                </div>
+
+
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-5">
-                            <!--  video-->
-                            <div class="projectVideo">
-                                <iframe id="modalPrjVideo" class="prjVideo"
-                                        src="">
-                                </iframe>
-                                <iframe id="modalPrjPdf" class="prjVideo"
-                                        src="">
-                                </iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-2"></div>
-                        <div class="col-md-5">
-                            <!--  desc-->
-                            <p id="modalPrjDesc">Project Description</p>
+                        <div class="col"></div>
+                        <div class="col-md-10">
+                            <div class="page-content">
+                                {% for project in robotics %}
+                                <div class="card" style="background-image: url('{{ project.project_image.url }}');">
+                                    <div class="content">
+                                        <h2 class="title">{{ project.title }}</h2>
+                                        <p class="copy">{{ project.description }}</p>
 
-                            <a id="pdfDownloadAnchor" target="_blank" href="#" style=" text-decoration: none;">
-                                <div style=" margin-top: 2vh;">
-                                    <i style="font-size: 2rem; color: red;" class="far fa-file-pdf"></i>
-                                    <div style="display: inline; color: dodgerblue;margin-top: 10px; margin-left:10px;position: absolute;">
-                                        Download full details of the project
+                                        <!-- While integrating with backend pass the django template vars in the  showDetails function -->
+
+                                        <button
+                                            onclick="showDetails('{{ project.title }}','{{ project.description }}','{{project.video_link}}', '{{ project.pdf_link }}')"
+                                            class="btn detailsButton">
+                                            Show Details
+                                        </button>
+
+                                        <button class="like-button" onclick="console.log('Like')">
+                                            <div class="like-wrapper">
+                                                <div class="ripple"></div>
+                                                <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z">
+                                                    </path>
+                                                </svg>
+                                                <div class="particles" style="--total-particles: 6">
+                                                    <div class="particle" style="--i: 1; --color: #7642F0"></div>
+                                                    <div class="particle" style="--i: 2; --color: #AFD27F"></div>
+                                                    <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
+
+                                                    <div class="particle" style="--i: 4; --color: #D0516B"></div>
+                                                    <div class="particle" style="--i: 5; --color: #5686F2"></div>
+                                                    <div class="particle" style="--i: 6; --color: #D53EF3"></div>
+                                                </div>
+                                                <span class="no">3</span>
+                                            </div>
+                                        </button>
+
+
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div>
-    <h3 class="mainHeading" style="text-align: center; ">
-        <img class="techmelaTitleImg" src="{% static 'img/techmelaTitle.png' %}" alt="techmela-title"/>
-    </h3>
-    <h5 class="mainSubheading" style="text-align: center;">Brought to you by Research & Development Cell, CCA, NIT
-        Durgapur</h5>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="text-align: center;">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Robotics
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Assitive Technology
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Software Projects
-            </button>
-        </li>
-    </ul>
-
-    <div class="tab-content" id="pills-tabContent">
-
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="sectionHeading" style="text-align: center;">
-                Robotics
-            </div>
-
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-md-10">
-                        <div class="page-content">
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-
-                                    <!-- While integrating with backend pass the django template vars in the  showDetails function -->
-
-                                    <button onclick="showDetails('prj title1','prj desc1','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview', 'https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">
-                                        Show Details
-
-
-                                    </button>
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-
-                                </div>
-                            </div>
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-                                    <button onclick="showDetails('prj title2','prj desc2','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview','https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">Show Details
-                                    </button>
-
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-                                </div>
-                            </div>
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-                                    <button onclick="showDetails('prj title3','prj desc3','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview','https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">Show Details
-                                    </button>
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-                                </div>
-                            </div>
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-                                    <button onclick="showDetails('prj title4','prj desc4','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview','https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">Show Details
-                                    </button>
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-                                </div>
-                            </div>
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-                                    <button onclick="showDetails('prj title5','prj desc5','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview','https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">
-                                        Show Details
-                                    </button>
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-                                </div>
-                            </div>
-                            <div class="card"
-                                 style="background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
-                                <div class="content">
-                                    <h2 class="title">Project title</h2>
-                                    <p class="copy">Short description</p>
-                                    <button onclick="showDetails('prj title6','prj desc6','https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview','https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview')"
-                                            class="btn detailsButton">Show Details
-                                    </button>
-
-                                    <button class="like-button">
-                                        <div class="like-wrapper">
-                                            <div class="ripple"></div>
-                                            <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                            </svg>
-                                            <div class="particles" style="--total-particles: 6">
-                                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                            </div>
-                                            <span class="no">3</span>
-                                        </div>
-                                    </button>
-
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
+                        <div class="col"></div>
+
                     </div>
-                    <div class="col"></div>
-
                 </div>
+
+
             </div>
 
 
-        </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="sectionHeading" style="text-align: center;">
+                    Assitive Technology
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-md-10">
+                            <div class="page-content">
+                                {% for project in assistive %}
+                                <div class="card" style="background-image: url('{{ project.project_image.url }}');">
+                                    <div class="content">
+                                        <h2 class="title">{{ project.title }}</h2>
+                                        <p class="copy">{{ project.description }}</p>
+
+                                        <!-- While integrating with backend pass the django template vars in the  showDetails function -->
+
+                                        <button
+                                            onclick="showDetails('{{ project.title }}','{{ project.description }}','{{project.video_link}}', '{{ project.pdf_link }}')"
+                                            class="btn detailsButton">
+                                            Show Details
+                                        </button>
+
+                                        <button class="like-button">
+                                            <div class="like-wrapper">
+                                                <div class="ripple"></div>
+                                                <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z">
+                                                    </path>
+                                                </svg>
+                                                <div class="particles" style="--total-particles: 6">
+                                                    <div class="particle" style="--i: 1; --color: #7642F0"></div>
+                                                    <div class="particle" style="--i: 2; --color: #AFD27F"></div>
+                                                    <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
+
+                                                    <div class="particle" style="--i: 4; --color: #D0516B"></div>
+                                                    <div class="particle" style="--i: 5; --color: #5686F2"></div>
+                                                    <div class="particle" style="--i: 6; --color: #D53EF3"></div>
+                                                </div>
+                                                <span class="no">3</span>
+                                            </div>
+                                        </button>
 
 
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="sectionHeading" style="text-align: center;">
-                Assitive Technology
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col"></div>
+
+                    </div>
+                </div>
+                {# add similar to robotics section #}
             </div>
 
-        {#  add similar to robotics section #}
-        </div>
+
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="sectionHeading" style="text-align: center;">
+                    Software Projects
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-md-10">
+                            <div class="page-content">
+                                {% for project in software %}
+                                <div class="card" style="background-image: url('{{ project.project_image.url }}');">
+                                    <div class="content">
+                                        <h2 class="title">{{ project.title }}</h2>
+                                        <p class="copy">{{ project.description }}</p>
+
+                                        <!-- While integrating with backend pass the django template vars in the  showDetails function -->
+
+                                        <button
+                                            onclick="showDetails('{{ project.title }}','{{ project.description }}','{{project.video_link}}', '{{ project.pdf_link }}')"
+                                            class="btn detailsButton">
+                                            Show Details
+                                        </button>
+
+                                        <button class="like-button">
+                                            <div class="like-wrapper">
+                                                <div class="ripple"></div>
+                                                <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z">
+                                                    </path>
+                                                </svg>
+                                                <div class="particles" style="--total-particles: 6">
+                                                    <div class="particle" style="--i: 1; --color: #7642F0"></div>
+                                                    <div class="particle" style="--i: 2; --color: #AFD27F"></div>
+                                                    <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
+
+                                                    <div class="particle" style="--i: 4; --color: #D0516B"></div>
+                                                    <div class="particle" style="--i: 5; --color: #5686F2"></div>
+                                                    <div class="particle" style="--i: 6; --color: #D53EF3"></div>
+                                                </div>
+                                                <span class="no">3</span>
+                                            </div>
+                                        </button>
 
 
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="sectionHeading" style="text-align: center;">
-                Software Projects
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col"></div>
+
+                    </div>
+                </div>
+                {# add similar to robotics section #}
             </div>
 
-            {#  add similar to robotics section #}
         </div>
-
     </div>
-</div>
-<div class="container-fluid">
-    <div class="footerInfo">Made with love by WDCT ❤️</div>
-</div>
+    <div class="container-fluid">
+        <div class="footerInfo">Made with love by WDCT ❤️</div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-<script>
-    const showDetails = (prjTitle, prjDesc, prjVideo, prjPdf) => {
-        console.log("Show Details", prjTitle, prjDesc, prjVideo);
-        document.getElementById("exampleModalLabel").innerText = prjTitle;
-        document.getElementById("modalPrjVideo").setAttribute("src", prjVideo);
-        document.getElementById("modalPrjPdf").setAttribute("src", prjPdf);
-        document.getElementById("modalPrjDesc").innerText = prjDesc;
-        document.getElementById("pdfDownloadAnchor").setAttribute("href", prjPdf);
-        document.getElementById("launchModal").click();
-    };
-    let b = document.querySelector('button');
-    setTimeout(() => b.focus(), 100);
-    setTimeout(() => b.blur(), 1000);
-</script>
-<script src='https://cldup.com/S6Ptkwu_qA.js'></script>
-<script src="{% static 'js/particlejs1.js' %}"></script>
+    <script>
+        const showDetails = (prjTitle, prjDesc, prjVideo, prjPdf) => {
+            console.log("Show Details", prjTitle, prjDesc, prjVideo);
+            document.getElementById("exampleModalLabel").innerText = prjTitle;
+            document.getElementById("modalPrjVideo").setAttribute("src", prjVideo);
+            document.getElementById("modalPrjPdf").setAttribute("src", prjPdf);
+            document.getElementById("modalPrjDesc").innerText = prjDesc;
+            document.getElementById("pdfDownloadAnchor").setAttribute("href", prjPdf);
+            document.getElementById("launchModal").click();
+        };
+        let b = document.querySelector('button');
+        setTimeout(() => b.focus(), 100);
+        setTimeout(() => b.blur(), 1000);
+        Array.from(document.getElementsByClassName('like-button')).forEach(function (element) { element.addEventListener('click', () => { console.log("Heeloo") }) });
+    </script>
+    <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
+    <script src="{% static 'js/particlejs1.js' %}"></script>
 </body>
+
 </html>

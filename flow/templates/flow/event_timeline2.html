@@ -10,7 +10,7 @@
     <title>Events Timeline</title>
     <link rel="shortcut icon" type="image/jpg" href="{% static 'aarhnLogo.png' %}" />
 </head>
- 
+
 <body id="wrapper">
     <div class="wrapper">
         <span class="menu_toggle">
@@ -36,7 +36,7 @@
                             <div class="timeline__content"><img class="timeline__img" src="{{event.logo.url}}" />
                                 <h2 class="timeline__content-title">{{event.eventName}}</h2>
                                 <p class="timeline__content-desc">{{ event.description | linebreaksbr }}</p>
-                                {%if event.registration_open%}
+                                {%if event.registration_link%}
                                 <div class="button-wrapper slide">
                                     <div class="button6div"></div>
                                     <input class="button6" type="button" name="button6" value="Register"
@@ -44,6 +44,12 @@
                                 </div>
                                 <!-- <a href="{{event.registration_link}}"><button class="register_here">Register
                                         Here</button></a> -->
+                                {% elif event.event_link %}
+                                <div class="button-wrapper slide">
+                                    <div class="button6div"></div>
+                                    <input class="button6" type="button" name="button6" value="Visit"
+                                        onclick="window.location.href='{{ event.event_link }}'" />
+                                </div>
                                 {%endif%}
                             </div>
                         </div>
@@ -70,10 +76,10 @@
                                 </div>
                             </div>
                         </div>`
-            if(screen.height > 1009) {
+            if (screen.height > 1009) {
                 $('.timeline').append(filler);
             }
-            if(screen.height > 876) {
+            if (screen.height > 876) {
                 $('.timeline').append(filler);
             }
         })
