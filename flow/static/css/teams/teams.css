@@ -159,17 +159,17 @@ html {
     width: 39vw;
     max-width: 590px;
     min-width: 290px;
-    height: 3vh;
+    height: 2vh;
     margin: -5px auto 0;
     background-color: rgba(0, 252, 252, 0.35);
     border-radius: 100%;
     filter: blur(1.5px);
-    transform: perspective(100px) rotateX(-30deg);
+    transform: perspective(70px) rotateX(-30deg);
     transform-style: preserve-3d;
     -webkit-animation: holographic 1.5s infinite alternate;
-            animation: holographic 1.5s infinite alternate;
+    animation: holographic 1.5s infinite alternate;
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .holo:after {
     /* position: absolute; */
