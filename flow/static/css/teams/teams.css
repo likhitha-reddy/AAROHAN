@@ -91,6 +91,10 @@ html {
     .cards{
       bottom: 40vh;
     }
+    .glitch__layer, .glitch{
+      width: calc(40px + 6vw);
+      height: calc(20px + 7vh);
+    }
   }
 
   .card .holo {
@@ -112,7 +116,7 @@ html {
   .team-category{
     font-size: calc(20px + 2vw);
     position: relative;
-    bottom:-90vh;
+    bottom:-80vh;
     font-family: 'Gruppo', cursive;
     font-weight: bolder;
   }
