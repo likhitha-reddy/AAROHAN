@@ -18,7 +18,6 @@ def index(request):
     return render(request, 'flow/index.html', context)
 
 def home(request):
-    events = EventCategory.objects.all()
     workshops = Workshops.objects.all()
     faqs = FAQ.objects.all()
     about = About.objects.all()
