@@ -473,26 +473,77 @@ color: wheat;
     }
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 577px) {
     .wrapper {
         overflow-x: hidden;
     }
     .content {
-        min-width: 1440px;
+        min-width: 577px;
     }
     .shazam .content {
-        transform: rotate(25deg);
+        transform: rotate(30deg);
     }
 }
+
+@media only screen and (min-width: 800px) {
+    .wrapper {
+        overflow-x: hidden;
+    }
+    .content {
+        min-width: 800px;
+    }
+    .shazam .content {
+        transform: rotate(30deg);
+    }
+}
+
 
 @media only screen and (min-width: 1200px) {
     .wrapper {
         overflow-x: hidden;
     }
     .content {
-        min-width: 1400px;
+        min-width: 1380px;
     }
     .shazam .content {
-        transform: rotate(40deg);
+        transform: rotate(35deg);
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .wrapper {
+        overflow-x: hidden;
+    }
+    .content {
+        min-width: 1540px;
+    }
+    .shazam .content {
+        transform: rotate(35deg);
+    }
+}
+
+
+@media only screen and (min-width: 1600px) {
+    .wrapper {
+        overflow-x: hidden;
+    }
+    .content {
+        min-width: 1720px;
+    }
+    .shazam .content {
+        transform: rotate(25deg);
+    }
+}
+
+
+@media only screen and (min-width: 1920px) {
+    .wrapper {
+        overflow-x: hidden;
+    }
+    .content {
+        min-width: 2050px;
+    }
+    .shazam .content {
+        transform: rotate(30deg);
     }
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aarohan 2021</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid bg-dark" id="lassan" style="background-color: dark-gray; color: white">
+    <div class="d-flex flex-column " style="align-items: center;">
+        <div class="d-flex justify-content-center" style="padding-top: 40px;">
+            <h3>List of Techmela Projects</h3>
+        </div>
+        {% if msg is not None %}
+        <div>
+            <h3 style="{% if err %}color: red{% else %} color: green{% endif %}">{{ msg }}</h3>
+        </div>
+        {% endif %}
+        {% for project in projects %}
+        {% if forloop.first %}<div class="d-flex flex-row" style="padding: 0px;">{% endif %}
+            <div class="p-4" style="padding: 0px">
+                <div class="card bg-dark" style="width: 18rem; padding: 0px; color:white; border-color: green">
+                    <div class="card-body" id="{{project.id}}judgemodal">
+                        <h5 class="card-title">{{project.name}}</h5>
+                        <p class="card-text">{{project.team_name}}</p>
+                        <button type="button" class="btn btn-primary modalbutton" id="modalbutton"
+                            data-modalid="{{project.id}}judgeModal" {%if not project.show%} disabled {%endif%}>Judge
+                            Project</button>
+                        <div class="modal fade" id="{{project.id}}judgeModal" tabindex="-1" role="dialog"
+                            aria-labelledby="judgeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog bg-dark" role="document">
+                                <div class="modal-content bg-dark">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Judge {{ project.name }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="{% url 'judgeprojects' %}">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label for="mark">Marketability: </label>
+                                                <input type="number" class="form-control" id="mark" name="mark" min="0" max="10" placeholder="Marketability" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="mark">Feasibility: </label>
+                                                <input type="number" class="form-control" id="feas" name="feas" min="0" max="10" placeholder="Feasibility" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="mark">Technicality: </label>
+                                                <input type="number" class="form-control" id="tech" name="tech" min="0" max="10" placeholder="Technicality" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="project" name="project" value="{{ project.id }}" required hidden>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="d-flex flex-row" style="padding: 0px;">{% endif %}
+            {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '#modalbutton', (event) => {
+                var modal_id = event.currentTarget.dataset.modalid
+                $("#" + modal_id).modal('show')
+            })
+            $(document).on('click', '.close', (event) => {
+                var modal_id = event.currentTarget.parentNode.parentNode.parentNode.parentNode.id
+                $("#" + modal_id).modal('hide')
+            })
+        })
+    </script>
+</body>
+
+</html>
