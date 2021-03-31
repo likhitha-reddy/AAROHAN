@@ -55,11 +55,9 @@
                             });
                         });
                         setTimeout(init, 1);
-
                     }
 
                     //section 3
-                    console.log('Anchorlink is ', anchorLink)
                     if (anchorLink == 'arena') {
                         //section 3
                         $('#section3').find('.intro').delay(100).animate({
@@ -187,8 +185,8 @@
         <!--  Workshops  -->
         <div class="section" id="section2" style="overflow: hidden;">
             <div class="intro desktop" style="margin-top:10%;">
-                <div class="drag-container">
-                    <div class="spin-container">
+                <div class="drag-container" name="workshop-drag">
+                    <div class="spin-container" name="workshop-spin">
                         <!-- Add your images (or video) here -->
                         <!--  If you are adding too many items here change the radius variable in workshop.js file-->
                         {% for w in workshops %}
@@ -199,7 +197,7 @@
                         {% endfor %}
                         <!-- Text at center of ground -->
                     </div>
-                    <div id="ground"><img style="border-radius: 50%;opacity: 0.4;"
+                    <div class="ground"><img style="border-radius: 50%;opacity: 0.4;"
                             src="{% static 'img/final-logo.png' %}" alt="">
                     </div>
                 </div>
@@ -268,7 +266,7 @@
                         </a>
                         {% endfor %}
                     </div>
-                    <div id="ground" name='ground1'><img style="border-radius: 50%;opacity: 0.4;"
+                    <div class="ground" name='ground1'><img style="border-radius: 50%;opacity: 0.4;"
                             src="{% static 'img/final-logo.png' %}" alt="">
                     </div>
                 </div>
@@ -331,6 +329,7 @@
     <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>-->
     <script src="{% static 'js/workshop.js' %}"></script>
     <script src="{% static 'js/arena.js' %}"></script>
+
     <script>
         var app = function () {
             var body = undefined;
@@ -358,3 +357,4 @@
 </body>
 
 </html>
+

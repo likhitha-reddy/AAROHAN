@@ -139,11 +139,11 @@ a:hover {
 		-moz-border-radius-bottomleft: 0;
 		-moz-border-radius-bottomright: 0;
 	}
-	#ground {
+	.ground {
 		width: 50% !important;
 		height: 50% !important;
 	}
-	#spin-container>a>img {
+	.spin-container>a>img {
 		width: 60%;
 		height: 60%;
 	}
