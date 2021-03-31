@@ -85,6 +85,8 @@ class MajorAttractions(models.Model):
     description = models.TextField(
         help_text="Enter the description of the attraction here")
     logo = models.ImageField(blank=True, upload_to="mjr_attrs/")
+    url = models.CharField(max_length=100, blank=True,
+                           help_text='URL of major attractions')
 
     def __str__(self):
         return self.name
@@ -129,7 +131,8 @@ class TechmelaProject(models.Model):
     title = models.CharField(max_length=30, default="Title here")
     team_name = models.CharField(max_length=20)
     description = models.TextField(default="Description here")
-    pdf_link = models.URLField(default="https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview")
+    pdf_link = models.URLField(
+        default="https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/preview")
     video_link = models.URLField(
         default="https://drive.google.com/file/d/1KFFhLqRLhdF27KwVVe0npoVX0lNLPhpM/preview")
     project_domain_choice = (
@@ -139,7 +142,8 @@ class TechmelaProject(models.Model):
     )
     domain = models.CharField(
         max_length=30, choices=project_domain_choice, default='Robotics')
-    project_image = models.ImageField(upload_to="techmela_projects/", null=True, blank=True)
+    project_image = models.ImageField(
+        upload_to="techmela_projects/", null=True, blank=True)
 
     def __str__(self):
         return (self.title + " by Team:" + self.team_name)
@@ -157,3 +161,15 @@ class Review(models.Model):
 
     def __str__(self):
         return ("Review of " + self.project.name + " by " + self.user.username)
+
+
+class Arena(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField(
+        blank=True, help_text="Enter the description of the attraction here")
+    logo = models.ImageField(blank=True, upload_to="arena/")
+    url = models.CharField(max_length=100, blank=True,
+                           help_text='URL of Arena item')
+
+    def __str__(self):
+        return self.description

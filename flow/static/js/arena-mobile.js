@@ -1,10 +1,10 @@
-// for mobile workshop section carousel
+// for mobile arena section carousel
 ;(function () {
   'use strict'
 
-  var carousel = document.getElementsByClassName('carousel')[0],
+  var carousel = document.getElementsByClassName('carousel')[1],
     slider = carousel.getElementsByClassName('carousel__slider')[0],
-    items = carousel.getElementsByClassName('carousel__slider__item'),
+    items = carousel.getElementsByClassName('arena-mobile'),
     prevBtn = carousel.getElementsByClassName('carousel__prev')[0],
     nextBtn = carousel.getElementsByClassName('carousel__next')[0]
 

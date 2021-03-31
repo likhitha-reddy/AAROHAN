@@ -76,7 +76,7 @@
 }
 
 
-#drag-container, #spin-container {
+.drag-container, .spin-container {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -88,7 +88,7 @@
     transform: rotateX(-10deg);
 }
 
-#drag-container img, #drag-container video {
+.drag-container img, .drag-container video {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     position: absolute;
@@ -104,13 +104,13 @@
     -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
 }
 
-#drag-container img:hover, #drag-container video:hover {
+.drag-container img:hover, .drag-container video:hover {
     -webkit-box-shadow: 0 0 15px #30D692;
     box-shadow: 0 0 15px #30D692;
     -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
 }
 
-#drag-container p {
+.drag-container p {
     font-family: Serif;
     position: absolute;
     top: 100%;
@@ -120,7 +120,7 @@
     color: #30D692;
 }
 
-#ground {
+.ground {
     border-radius: 5px;
     width: 100px;
     height: 100px;
