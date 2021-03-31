@@ -53,7 +53,7 @@ def workshops(request):
 def sponsor_view(request):
     sponsors = Sponsors.objects.all()
     context = {'sponsors': sponsors}
-    return render(request, 'flow/sponsors', context)
+    return render(request, 'flow/sponsor.html', context)
 
 
 def about_page(request):
