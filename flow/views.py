@@ -22,12 +22,13 @@ def index(request):
 
 def home(request):
     workshops = Workshops.objects.all()
+    arena = Arena.objects.all()
     faqs = FAQ.objects.all()
     about = About.objects.all()
     sponsors = Sponsors.objects.all()
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs,
-               'about': about, 'sponsors': sponsors, 'attractions': attractions}
+               'about': about, 'sponsors': sponsors, 'attractions': attractions, 'arena' : arena}
     return render(request, 'flow/home.html', context)
 
 

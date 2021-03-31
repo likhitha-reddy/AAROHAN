@@ -9,7 +9,7 @@
 
     <!-- Bootstrap   -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'css/workshop.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -18,8 +18,8 @@
     <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
     <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.9.0/css/all.css'>
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,700"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.pagepiling.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.pagepiling.css' %}" />
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -32,13 +32,13 @@
         $(document).ready(function () {
             $('#pagepiling').pagepiling({
                 menu: '#menu',
-                anchors: ['home', 'workshops', 'page3'],
-                sectionsColor: ['#141615', '#141615', '#bfda00'],
+                anchors: ['home', 'workshops', 'arena'],
+                sectionsColor: ['#141615', '#141615', '#141615'],
                 navigation: {
                     'textColor': '#f2f2f2',
                     'bulletsColor': '#ccc',
                     'position': 'right',
-                    'tooltips': ['Home', 'Workshops and Club Events', 'Section 3']
+                    'tooltips': ['Home', 'Workshops', 'Arena']
                 },
 
                 afterLoad: function (anchorLink, index) {
@@ -59,11 +59,17 @@
                     }
 
                     //section 3
-                    if (anchorLink == 'page3') {
+                    console.log('Anchorlink is ', anchorLink)
+                    if (anchorLink == 'arena') {
                         //section 3
                         $('#section3').find('.intro').delay(100).animate({
                             left: '0%'
-                        }, 1500, 'easeOutExpo');
+                        }, 1500, 'easeOutExpo', function () {
+                            $('#section3').find('p').first().fadeIn(700, function () {
+                                $('#section3').find('p').last().fadeIn(600);
+                            });
+                        });
+                        setTimeout(init, 1);
                     }
 
                     deleteLog = true;
@@ -74,332 +80,281 @@
 
 
 </head>
+
 <body>
 
-<!-- Navbar -->
-<header class="cd-header mobile">
-    <div class="header-wrapper">
-        <div class="logo-wrap">
-            <!--                        <a href="#" class="hover-target"><span>AAROHAN</span></a>-->
-        </div>
-        <div class="nav-but-wrap">
-            <div class="menu-icon hover-target">
-                <span class="menu-icon__line menu-icon__line-left"></span>
-                <span class="menu-icon__line"></span>
-                <span class="menu-icon__line menu-icon__line-right"></span>
+    <!-- Navbar -->
+    <header class="cd-header mobile">
+        <div class="header-wrapper">
+            <div class="logo-wrap">
+                <!--                        <a href="#" class="hover-target"><span>AAROHAN</span></a>-->
             </div>
+            <div class="nav-but-wrap">
+                <div class="menu-icon hover-target">
+                    <span class="menu-icon__line menu-icon__line-left"></span>
+                    <span class="menu-icon__line"></span>
+                    <span class="menu-icon__line menu-icon__line-right"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="nav">
+        <div class="nav__content">
+            <ul class="nav__list">
+                <li class="nav__list-item active-nav"><a href="home" class="hover-target">home</a></li>
+                <li class="nav__list-item"><a href="aboutus" class="hover-target">about us</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">events</a></li>
+                <li class="nav__list-item"><a href="attractions" class="hover-target">attractions</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">team</a></li>
+                <li class="nav__list-item"><a href="contactus" class="hover-target">contact us</a></li>
+            </ul>
         </div>
     </div>
-</header>
-<div class="nav">
-    <div class="nav__content">
-        <ul class="nav__list">
-            <li class="nav__list-item active-nav"><a href="home" class="hover-target">home</a></li>
-            <li class="nav__list-item"><a href="aboutus" class="hover-target">about us</a></li>
-            <li class="nav__list-item"><a href="#" class="hover-target">events</a></li>
-            <li class="nav__list-item"><a href="attractions" class="hover-target">attractions</a></li>
-            <li class="nav__list-item"><a href="#" class="hover-target">team</a></li>
-            <li class="nav__list-item"><a href="contactus" class="hover-target">contact us</a></li>
-        </ul>
-    </div>
-</div>
-<div id="pagepiling">
-    <!--  Home  -->
-    <div class="section" id="section1">
-        <div class="container-fluid desktop" style="height: 100vh;">
-            <div class="row">
-                <div class="col">
-                    <a href="#">
-                        <div class="nav-card posAndShapeEvents btn-link">
-                            <div class="glitch" data-text="Events">Events</div>
-                        </div>
-                    </a>
-                    <a href="aboutus">
-                        <div class="nav-card posAndShapeAboutUs btn-link">
-                            <div class="glitch" data-text="Aboutus">About us</div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="nav-card posAndShapeLive btn-link" style=" font-size: 40px;">
-                            <div class="glitch" data-text="Live">Live</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <img id="matrix-gif" class="matrix-gif" src="{% static '/img/matrix.gif' %}" alt="matrix-gif"/>
-                    <img id="central-illustration" class="central-illustration"
-                         src="{% static 'img/central-illust2.png' %}"
-                         alt="central-llustration"/>
-                </div>
-                <div class="col">
-                    <a href="contactus">
-                        <div class="nav-card posAndShapeContactUs btn-link"
-                             style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 0;border-top-right-radius: 0;">
-                            <div class="glitch" data-text="Contactus">Contact us</div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="nav-card posAndShapeTeam btn-link">
-                            <div class="glitch" data-text="Team">Team</div>
-                        </div>
-                    </a>
-                    <a href="attractions">
-                        <div class="nav-card posAndShapeAttractions btn-link"
-                             style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 0;border-top-right-radius: 0;">
-                            <div class="glitch" data-text="Attractions">Attractions</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid mobile" style="height: 100vh;">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-md-4">
-                    <img id="matrix-gif" class="matrix-gif" src="{% static 'img/matrix.gif' %}" alt="matrix-gif"/>
-                    <img id="central-illustration" class="central-illustration"
-                         src="{% static 'img/central-illust.png' %}"
-                         alt="central-llustration"/>
-                    <a href="#">
-                        <div class="nav-card posAndShapeLive" style=" font-size: 40px;">
-                            <div class="glitch" data-text="Live">Live</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-
-                </div>
-            </div>
-        </div>
-
-        <div class='cursor' id="cursor"></div>
-        <div class='cursor2' id="cursor2"></div>
-        <div class='cursor3' id="cursor3"></div>
-
-    </div>
-
-    <!--  Workshops  -->
-    <div class="section" id="section2" style="overflow: hidden;">
-        <div class="intro desktop" style="margin-top:10%;">
-            <div id="drag-container">
-                <div id="spin-container">
-                    <!-- Add your images (or video) here -->
-                    <!--  If you are adding too many items here change the radius variable in workshop.js file-->
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/1.jpeg' %}" alt="">
-                    </a>
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/2.jpeg' %}" alt="">
-                    </a>
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/3.jpeg' %}" alt="">
-                    </a>
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/4.jpeg' %}" alt="">
-                    </a>
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/5.jpeg' %}" alt="">
-                    </a>
-                    <a href="#">
-                        <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;"
-                             src="{% static 'img/6.jpeg' %}" alt="">
-                    </a>
-
-
-                    <!-- Text at center of ground -->
-                </div>
-                <div id="ground"><img style="border-radius: 50%;opacity: 0.4;" src="{% static 'img/final-logo.png' %}"
-                                      alt="">
-                </div>
-            </div>
-            <div class="shell">
-                <div class="shell-body">
-                    <div class="shell heading">
-                        <p class="text">
-                            <span>
-                                workshops and club events
-                            </span>
-                        </p>
+    <div id="pagepiling">
+        <!--  Home  -->
+        <div class="section" id="section1">
+            <div class="container-fluid desktop" style="height: 100vh;">
+                <div class="row">
+                    <div class="col">
+                        <a href="#">
+                            <div class="nav-card posAndShapeEvents btn-link">
+                                <div class="glitch" data-text="Events">Events</div>
+                            </div>
+                        </a>
+                        <a href="aboutus">
+                            <div class="nav-card posAndShapeAboutUs btn-link">
+                                <div class="glitch" data-text="Aboutus">About us</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav-card posAndShapeLive btn-link" style=" font-size: 40px;">
+                                <div class="glitch" data-text="Live">Live</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <img id="matrix-gif" class="matrix-gif" src="{% static '/img/matrix.gif' %}" alt="matrix-gif" />
+                        <img id="central-illustration" class="central-illustration"
+                            src="{% static 'img/central-illust2.png' %}" alt="central-llustration" />
+                    </div>
+                    <div class="col">
+                        <a href="contactus">
+                            <div class="nav-card posAndShapeContactUs btn-link"
+                                style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 0;border-top-right-radius: 0;">
+                                <div class="glitch" data-text="Contactus">Contact us</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav-card posAndShapeTeam btn-link">
+                                <div class="glitch" data-text="Team">Team</div>
+                            </div>
+                        </a>
+                        <a href="attractions">
+                            <div class="nav-card posAndShapeAttractions btn-link"
+                                style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 0;border-top-right-radius: 0;">
+                                <div class="glitch" data-text="Attractions">Attractions</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="intro mobile">
-            <div class="workshopsMobContainer">
-                <div class="bgImgDiv">
-                    <img class="bgImg" src="{% static 'img/final-logo.png' %}" alt="arhn-logo">
-                </div>
 
-                <div class="carousel" style="top:30%;">
-                    <div class="carousel__body">
-                        <div class="carousel__prev"><i class="far fa-angle-left"></i></div>
-                        <div class="carousel__next"><i class="far fa-angle-right"></i></div>
-                        <div class="carousel__slider">
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/1.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
+            <div class="container-fluid mobile" style="height: 100vh;">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-md-4">
+                        <img id="matrix-gif" class="matrix-gif" src="{% static 'img/matrix.gif' %}" alt="matrix-gif" />
+                        <img id="central-illustration" class="central-illustration"
+                            src="{% static 'img/central-illust.png' %}" alt="central-llustration" />
+                        <a href="#">
+                            <div class="nav-card posAndShapeLive" style=" font-size: 40px;">
+                                <div class="glitch" data-text="Live">Live</div>
                             </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/2.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/3.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/4.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius:0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/5.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <a href="#">
-                                            <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
-                                                 src="{% static 'img/6.jpeg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <h1>7</h1>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <h1>8</h1>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <h1>9</h1>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
-                            <div class="carousel__slider__item">
-                                <div class="item__3d-frame">
-                                    <div class="item__3d-frame__box item__3d-frame__box--front">
-                                        <h1>10</h1>
-                                    </div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                                    <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                                </div>
-                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class='cursor' id="cursor"></div>
+            <div class='cursor2' id="cursor2"></div>
+            <div class='cursor3' id="cursor3"></div>
+
+        </div>
+
+        <!--  Workshops  -->
+        <div class="section" id="section2" style="overflow: hidden;">
+            <div class="intro desktop" style="margin-top:10%;">
+                <div class="drag-container">
+                    <div class="spin-container">
+                        <!-- Add your images (or video) here -->
+                        <!--  If you are adding too many items here change the radius variable in workshop.js file-->
+                        {% for w in workshops %}
+                        <a href="{{ w.registration_link }}">
+                            <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;" src="{{ w.logo.url }}"
+                                alt="">
+                        </a>
+                        {% endfor %}
+                        <!-- Text at center of ground -->
+                    </div>
+                    <div id="ground"><img style="border-radius: 50%;opacity: 0.4;"
+                            src="{% static 'img/final-logo.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="shell">
+                    <div class="shell-body">
+                        <div class="shell heading">
+                            <p class="text">
+                                <span>
+                                    Workshops
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
-
-                <div class="workshopsTitleContainer container-fluid">
-                    <div class="workshopsTitle">
-                        WORKSHOPS AND CLUB EVENTS
+            </div>
+            <div class="intro mobile">
+                <div class="workshopsMobContainer">
+                    <div class="bgImgDiv">
+                        <img class="bgImg" src="{% static 'img/final-logo.png' %}" alt="arhn-logo">
                     </div>
+
+                    <div class="carousel" style="top:30%;">
+                        <div class="carousel__body">
+                            <div class="carousel__prev"><i class="far fa-angle-left"></i></div>
+                            <div class="carousel__next"><i class="far fa-angle-right"></i></div>
+                            <div class="carousel__slider">
+                                {% for w in workshops %}
+                                <div class="carousel__slider__item">
+                                    <div class="item__3d-frame">
+                                        <div class="item__3d-frame__box item__3d-frame__box--front">
+                                            <a href="{{ w.registration_link }}">
+                                                <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
+                                                    src="{{ w.logo.url }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                        <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workshopsTitleContainer container-fluid">
+                        <div class="workshopsTitle">
+                            WORKSHOPS
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
+
+        <div class="section" id="section3">
+            <div class="intro desktop" style="margin-top:10%;">
+                <div class="drag-container" name="arena-drag">
+                    <div class="spin-container" name="arena-spin">
+                        <!-- Add your images (or video) here -->
+                        <!--  If you are adding too many items here change the radius variable in workshop.js file-->
+                        {% for a in arena %}
+                        <a href="{{ a.url }}">
+                            <img style="border-radius: 25px;box-shadow: 0px 0px 20px #30D692;;" src="{{ a.logo.url }}"
+                                alt="">
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div id="ground" name='ground1'><img style="border-radius: 50%;opacity: 0.4;"
+                            src="{% static 'img/final-logo.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="shell">
+                    <div class="shell-body">
+                        <div class="shell heading">
+                            <p class="text">
+                                <span>
+                                    Arena
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro mobile">
+                <div class="workshopsMobContainer">
+                    <div class="bgImgDiv">
+                        <img class="bgImg" src="{% static 'img/final-logo.png' %}" alt="arhn-logo">
+                    </div>
+
+                    <div class="carousel" style="top:30%;">
+                        <div class="carousel__body">
+                            <div class="carousel__prev"><i class="far fa-angle-left"></i></div>
+                            <div class="carousel__next"><i class="far fa-angle-right"></i></div>
+                            <div class="carousel__slider">
+                                {% for a in arena %}
+                                <div class="carousel__slider__item arena-mobile">
+                                    <div class="item__3d-frame">
+                                        <div class="item__3d-frame__box item__3d-frame__box--front">
+                                            <a href="{{ a.url }}">
+                                                <img style="border-radius: 0;box-shadow: 0px 0px 20px #30D692;;"
+                                                    src="{{ a.logo.url }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                        <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workshopsTitleContainer container-fluid">
+                        <div class="workshopsTitle">
+                            ARENA
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-    <!--    Section 3 -->
-    <!--    <div class="section" id="section3">-->
-    <!--        <div class="intro">-->
-    <!--            <h1>Section 3</h1>-->
-    <!--            <p>section3</p>-->
-    <!--        </div>-->
-    <!--    </div>-->
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>-->
-<script src="{% static 'js/workshop.js' %}"></script>
-<script>
-    var app = function () {
-        var body = undefined;
-        var menu = undefined;
-        var menuItems = undefined;
-        var init = function init() {
-            body = document.querySelector('body');
-            menu = document.querySelector('.menu-icon');
-            menuItems = document.querySelectorAll('.nav__list-item');
-            applyListeners();
-        };
-        var applyListeners = function applyListeners() {
-            menu.addEventListener('click', function () {
-                return toggleClass(body, 'nav-active');
-            });
-        };
-        var toggleClass = function toggleClass(element, stringClass) {
-            if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-        };
-        init();
-    }();
-</script>
-<script src="{% static 'js/home.js' %}"></script>
+    <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>-->
+    <script src="{% static 'js/workshop.js' %}"></script>
+    <script src="{% static 'js/arena.js' %}"></script>
+    <script>
+        var app = function () {
+            var body = undefined;
+            var menu = undefined;
+            var menuItems = undefined;
+            var init = function init() {
+                body = document.querySelector('body');
+                menu = document.querySelector('.menu-icon');
+                menuItems = document.querySelectorAll('.nav__list-item');
+                applyListeners();
+            };
+            var applyListeners = function applyListeners() {
+                menu.addEventListener('click', function () {
+                    return toggleClass(body, 'nav-active');
+                });
+            };
+            var toggleClass = function toggleClass(element, stringClass) {
+                if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+            };
+            init();
+        }();
+    </script>
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/arena-mobile.js' %}"></script>
 </body>
+
 </html>

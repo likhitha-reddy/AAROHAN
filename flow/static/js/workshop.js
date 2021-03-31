@@ -27,8 +27,8 @@ var bgMusicControls = true; // Show UI music control
 // animation start after 1000 miliseconds
 // setTimeout(init, 1000);
 
-var odrag = document.getElementById('drag-container');
-var ospin = document.getElementById('spin-container');
+var odrag = document.getElementsByClassName('drag-container')[0];
+var ospin = document.getElementsByClassName('spin-container')[0];
 var aImg = ospin.getElementsByTagName('img');
 var aVid = ospin.getElementsByTagName('video');
 var aEle = [...aImg, ...aVid]; // combine 2 arrays
@@ -41,14 +41,6 @@ ospin.style.height = imgHeight + "px";
 var ground = document.getElementById('ground');
 ground.style.width = radius * 3 + "px";
 ground.style.height = radius * 3 + "px";
-
-function init(delayTime) {
-  for (var i = 0; i < aEle.length; i++) {
-    aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
-    aEle[i].style.transition = "transform 1s";
-    aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
-  }
-}
 
 function applyTranform(obj) {
   // Constrain the angle of camera (between 0 and 180)
