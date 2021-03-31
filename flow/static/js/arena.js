@@ -48,7 +48,11 @@ function init (delayTime) {
   }
   for (var i = 0; i < aEle1.length; i++) {
     aEle1[i].style.transform =
-      'rotateY(' + i * (360 / aEle1.length) + 'deg) translateZ(' + radius + 'px)'
+      'rotateY(' +
+      i * (360 / aEle1.length) +
+      'deg) translateZ(' +
+      radius +
+      'px)'
     aEle1[i].style.transition = 'transform 1s'
     aEle1[i].style.transitionDelay = delayTime || (aEle1.length - i) / 4 + 's'
   }
@@ -102,6 +106,11 @@ document.onpointerdown = function (e) {
   var sX = e.clientX,
     sY = e.clientY
 
+  clearInterval(odrag.timer)
+  e = e || window.event
+  var sX = e.clientX,
+    sY = e.clientY
+
   this.onpointermove = function (e) {
     e = e || window.event
     var nX = e.clientX,
@@ -111,6 +120,17 @@ document.onpointerdown = function (e) {
     tX += desX * 0.1
     tY += desY * 0.1
     applyTranform1(odrag1)
+    sX = nX
+    sY = nY
+
+    e = e || window.event
+    var nX = e.clientX,
+      nY = e.clientY
+    desX = nX - sX
+    desY = nY - sY
+    tX += desX * 0.1
+    tY += desY * 0.1
+    applyTranform(odrag)
     sX = nX
     sY = nY
   }
@@ -128,9 +148,49 @@ document.onpointerdown = function (e) {
         playSpin1(true)
       }
     }, 17)
+    odrag.timer = setInterval(function () {
+      desX *= 0.95
+      desY *= 0.95
+      tX += desX * 0.1
+      tY += desY * 0.1
+      applyTranform(odrag)
+      playSpin(false)
+      if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+        clearInterval(odrag.timer)
+        playSpin(true)
+      }
+    }, 17)
     this.onpointermove = this.onpointerup = null
   }
 
+  // this.onpointermove = function (e) {
+  //   e = e || window.event
+  //   var nX = e.clientX,
+  //     nY = e.clientY
+  //   desX = nX - sX
+  //   desY = nY - sY
+  //   tX += desX * 0.1
+  //   tY += desY * 0.1
+  //   applyTranform(odrag)
+  //   sX = nX
+  //   sY = nY
+  // }
+
+  // this.onpointerup = function (e) {
+  //   odrag.timer = setInterval(function () {
+  //     desX *= 0.95
+  //     desY *= 0.95
+  //     tX += desX * 0.1
+  //     tY += desY * 0.1
+  //     applyTranform(odrag)
+  //     playSpin(false)
+  //     if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+  //       clearInterval(odrag.timer)
+  //       playSpin(true)
+  //     }
+  //   }, 17)
+  //   this.onpointermove = this.onpointerup = null
+  // }
   return false
 }
 
