@@ -14,10 +14,12 @@ var left=document.getElementsByClassName('fa-backward')[0]
 var right=document.getElementsByClassName('fa-forward')[0]
 
 const changeTeams=()=>{
+    cat=category
+    console.log("category idx", category)
     var no_of_cards=members[category].length;
 
-    console.log(category,"category")
-    console.log("changing category",teams[category].name,no_of_cards,members[category][0])
+    // console.log(category,"category")
+    // console.log("changing category",teams[category].name,no_of_cards,members[category][0])
 
     document.getElementById("cards").innerHTML="";
 
@@ -60,10 +62,7 @@ const changeTeams=()=>{
             console.log(category,"cat now")
 
             let card_no=card.getAttribute("card_no")
-            if(category==0)
-            cat=no_of_categories-1
-            else
-            cat=category-1
+           
             console.log("card no", members[cat][card_no-1].name)
             let name= `${members[cat][card_no-1].name}`
             let club= `${members[cat][card_no-1].choice}`
@@ -98,7 +97,21 @@ const changeTeams=()=>{
     document.getElementById("color-css").href=`../static/css/teams/teams${category%3+1}.css`
 }
 
+changeTeams()
+
+const changeColor=()=>{
+    category++;
+    if(category==no_of_categories)
+        category=0
+    console.log("changing color")
+    changeTeams()
+}
+
+var interval= setInterval(changeColor,10000)
+
 left.addEventListener("click", ()=>{
+    clearInterval(interval)
+    interval = setInterval(changeColor,10000)
     category--;
     if(category<0)
     category=no_of_categories-1
@@ -106,23 +119,10 @@ left.addEventListener("click", ()=>{
 })
 
 right.addEventListener("click", ()=>{
+    clearInterval(interval)
+    interval = setInterval(changeColor,10000)
     category++;
     if(category==no_of_categories)
     category=0
     changeTeams()
 })
-
-
-const changeColor=()=>{
-    changeTeams()
-
-    category++;
-    if(category==no_of_categories)
-        category=0
-
-    setTimeout(()=>{
-        changeColor()
-    },20000)
-}
-
-changeColor()
