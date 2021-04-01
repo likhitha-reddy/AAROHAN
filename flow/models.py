@@ -82,9 +82,10 @@ class FAQ(models.Model):
 
 class MajorAttractions(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    title = models.CharField(max_length=200, blank=True)
     description = models.TextField(
         help_text="Enter the description of the attraction here")
-    logo = models.ImageField(blank=True, upload_to="mjr_attrs/")
+    image = models.ImageField(blank=True, upload_to="mjr_attrs/")
     url = models.CharField(max_length=1024, blank=True,
                            help_text='URL of major attractions')
 

@@ -18,4 +18,5 @@ urlpatterns = [
     path('judgeprojects', judge_projects, name="judgeprojects"),
     path('projectreviews', view_reviews, name="projectreviews"),
     path('techmela', techmela, name="techmela"),
+    path('aboutus', aboutus, name="aboutus"),
 ]
