@@ -93,7 +93,7 @@ html {
   @media only screen and (max-width:576px){
     .cards{
       bottom: 40vh;
-      height: 500px;
+      height: 400px;
       overflow-y: scroll !important;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none;  /* IE 10+ */
