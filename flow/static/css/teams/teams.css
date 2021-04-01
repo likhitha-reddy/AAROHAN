@@ -80,7 +80,7 @@ html {
   .cards{
     display: flex;
     flex-direction: row-reverse;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     text-align: right;
     position: absolute;
