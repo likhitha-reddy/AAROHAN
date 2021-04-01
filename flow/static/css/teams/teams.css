@@ -46,7 +46,7 @@ html {
     height: 40vh;
   }
   
-  .glitch__layer, .glitch{
+  .glitch, .glitch__layer{
     /* position: absolute; */
     width: calc(70px + 6vw);
     height: calc(50px + 7vh);
@@ -59,6 +59,10 @@ html {
             animation: float 1s infinite alternate;
     overflow: hidden;
     border-radius: 10px;
+  }
+
+  .glitch__layer{
+    display: none;
   }
 
   .white{
@@ -241,38 +245,7 @@ html {
 	z-index: 1;
 	display: block;
 } */
-.glitch__layers {
-	position: absolute;
-	z-index: 2;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-.glitch__layer {
-    margin-top: 0;
-    padding: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background-image: url(https://ca-times.brightspotcdn.com/dims4/default/34ec65e/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F23%2F1e%2Fc0aa18c602cbb34fd52f7fbbcea6%2Fla-et-grammys-winners-backstage-20160215-016);
-	background-repeat: no-repeat;
-	background-position: 0 0;
-}
-.glitch__layer:nth-child(1) {
-	transform: translateX(-5%);
-	animation: glitch-anim-1 2s infinite linear alternate;
-}
-.glitch__layer:nth-child(2) {
-	transform: translateX(3%) translateY(3%);
-	animation: glitch-anim-2 2.3s -.8s infinite linear alternate;
-}
-.glitch__layer:nth-child(3) {
-	transform: translateX(5%);
-	animation: glitch-anim-flash 1s infinite linear;
-}
+
 @keyframes glitch-anim-1 {
 	0% {
 		clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%);

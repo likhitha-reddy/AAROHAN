@@ -52,7 +52,7 @@ const changeTeams=()=>{
         let teamCategory=document.getElementById("team-category")
         
         card.addEventListener("mouseover",()=>{
-            card.classList.add("sparkle")
+            // card.classList.add("sparkle")
             card.style.zIndex=2
 
             let memberName=document.getElementById("member-name")
@@ -80,7 +80,7 @@ const changeTeams=()=>{
             teamCategory.style.display="none"
         })
         card.addEventListener("mouseleave",()=>{
-            card.classList.remove("sparkle")
+            // card.classList.remove("sparkle")
             card.style.zIndex=0;
 
             memberDetails.style.display="none"
