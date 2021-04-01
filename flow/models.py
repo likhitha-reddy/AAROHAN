@@ -106,7 +106,7 @@ class TeamCategory(models.Model):
 
 class TeamMember(models.Model):
     team = models.ManyToManyField(TeamCategory)
-    name = models.CharField(max_length=50, unique=True,
+    name = models.CharField(max_length=50,
                             help_text="Enter the name of the member here")
     position = models.CharField(
         max_length=50, help_text="Enter the position of the person", blank=True)
