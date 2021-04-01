@@ -12,7 +12,6 @@ html {
     margin: 0;
     height: 100%;
     position: absolute;
-    overflow: hidden;
   }
 
   .hologram{
@@ -90,14 +89,17 @@ html {
     min-width: 300px;
     width: 50vw;
   }
-
+  
   @media only screen and (max-width:576px){
     .cards{
       bottom: 40vh;
+      height: 500px;
+      overflow-y: scroll !important;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
     }
-    .glitch__layer, .glitch{
-      width: calc(40px + 6vw);
-      height: calc(20px + 7vh);
+    .cards::-webkit-scrollbar { /* WebKit */
+      width: 0px;
     }
   }
 
@@ -163,12 +165,12 @@ html {
     width: 39vw;
     max-width: 590px;
     min-width: 290px;
-    height: 1.3vh;
+    height: .5vh;
     margin: -5px auto 0;
     background-color: rgba(0, 252, 252, 0.35);
     border-radius: 100%;
     filter: blur(1.5px);
-    transform: perspective(70px) rotateX(-30deg);
+    transform: perspective(170px) rotateX(-30deg);
     transform-style: preserve-3d;
     -webkit-animation: holographic 1.5s infinite alternate;
     animation: holographic 1.5s infinite alternate;
@@ -238,7 +240,7 @@ html {
 
 .glitch {
 	/* position: relative; */
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 /* .glitch img {
 	position: relative;
