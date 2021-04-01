@@ -74,7 +74,7 @@ def faq_page(request):
 
 def attractions_page(request):
     attractions = MajorAttractions.objects.all()
-    context = {'attractions': attractions}
+    context = {'major_attrs_slide': attractions}
     return render(request, 'flow/attractions.html', context)
 
 
@@ -200,3 +200,6 @@ def techmela(request):
     software = TechmelaProject.objects.filter(domain="Software Projects")
 
     return render(request, "flow/techmela.html", {'robotics': robotics, 'assistive': assistive, 'software' : software})
+
+def aboutus(request):
+    return render(request, "flow/aboutus.html")
