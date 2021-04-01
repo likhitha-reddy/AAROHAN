@@ -331,7 +331,6 @@ body {
         text-align: center !important;
         width: 60px;
         border: none !important;
-        content: '01/04/21 \A 10:00 '
     }
     .timeline-item:last-child {
         padding-bottom: 40px;
