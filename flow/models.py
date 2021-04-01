@@ -22,9 +22,9 @@ class Events(models.Model):
     date_time = models.DateTimeField()
     venue = models.CharField(max_length=50, null=False, blank=True)
     registration_link = models.CharField(
-        max_length=50, blank=True, help_text="Enter the registration link here")
+        max_length=1024, blank=True, help_text="Enter the registration link here")
     event_link = models.CharField(
-        max_length=50, blank=True, help_text="If there is no registration, then website link")
+        max_length=1024, blank=True, help_text="If there is no registration, then website link")
 
     def __str__(self):
         return self.eventName
@@ -43,7 +43,7 @@ class Workshops(models.Model):
     contact = models.CharField(max_length=50)
     registration_open = models.BooleanField(default=True)
     registration_link = models.CharField(
-        max_length=50, blank=True, help_text="Enter the registration link here")
+        max_length=1024, blank=True, help_text="Enter the registration link here")
 
     def __str__(self):
         return self.workshopName
@@ -85,7 +85,7 @@ class MajorAttractions(models.Model):
     description = models.TextField(
         help_text="Enter the description of the attraction here")
     logo = models.ImageField(blank=True, upload_to="mjr_attrs/")
-    url = models.CharField(max_length=100, blank=True,
+    url = models.CharField(max_length=1024, blank=True,
                            help_text='URL of major attractions')
 
     def __str__(self):
