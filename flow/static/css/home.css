@@ -65,8 +65,10 @@ body {
 .arnav {
   position: fixed;
   top: 0;
+  width: 100%;
+  right: 0;
   left: 0;
-  z-index: 100;
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000000;
   margin-top: 0.75rem;
   padding-right: 0.4rem;
   display: flex;

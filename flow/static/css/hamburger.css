@@ -2,6 +2,7 @@ svg {
     height: 80px;
     width: 80px;
     position: absolute;
+    z-index: 1000000000;
   }
   .plates {
     display: flex;
@@ -126,6 +127,8 @@ svg {
   }
   .showOnPhone{
     display: none !important;
+    margin-top: 0.8rem !important;
+    z-index: 1000000000 !important;
   }
   @media(max-width:991px){
     .showOnPhone{
