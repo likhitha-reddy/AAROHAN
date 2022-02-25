@@ -47,7 +47,8 @@ def events(request, id):
 def workshops(request):
     workshops = Workshops.objects.all()
     context = {'workshops': workshops}
-    return render(request, "flow/workshops.html", context)
+    print(context)
+    return render(request, "flow/workshop.html", context)
 
 
 def sponsor_view(request):
@@ -203,3 +204,16 @@ def techmela(request):
 
 def aboutus(request):
     return render(request, "flow/aboutus.html")
+
+def socialInitiative_view(request):
+    socialinitiative = SocialInitiatives.objects.all()
+    context = {'socialinitiative': socialinitiative}
+    print(context)
+    return render(request, "flow/socialinitiative.html", context)
+
+def industrialvisit_view(request):
+    socialinitiative = SocialInitiatives.objects.all()
+    context = {'socialinitiative': socialinitiative}
+    print(context)
+    return render(request, "flow/socialinitiative.html", context)
+
