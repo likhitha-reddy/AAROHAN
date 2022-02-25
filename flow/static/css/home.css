@@ -8,14 +8,17 @@ html{
   overflow: hidden;
 }
 body {
-  background: #66f;
+  background: #000;
   z-index: 100;
   margin: 0;
   padding: 0;
   height: 100vh !important;
   overflow: hidden !important;
 }
-
+.curpo{cursor: pointer;}
+.dropdown-menu li{
+  font-size: 0.9rem;
+}
 #loading {
   height: 100vh;
   background: #000;
@@ -100,8 +103,8 @@ body {
   color: #f1f1f1;
   text-decoration: none;
   display: block;
-  font-size: 1.3rem;
-  margin: 0 1.6rem;
+  font-size: 1.2rem;
+  margin: 0 1.4rem;
   animation: navAnime 0.7s ease;
   transition: 0.7s;
 }
@@ -363,12 +366,12 @@ body {
     font-size: 4rem;
   }
   .offcanvas .options {
-    margin-top: 1.5rem;
+    margin-top: 4.6rem;
     padding: 0 0;
   }
   .offcanvas .options a {
     margin: 1rem 0;
-    padding: 14px 0;
+    padding: 14px 1rem;
     text-align: center;
     font-size: 1.25rem;
   }

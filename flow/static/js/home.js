@@ -33,7 +33,7 @@ function closeAfterSometimeMob(){
     document.getElementById('ocanva').classList.toggle('active')
     // setTimeout(() => {
         offsetShowBtnHidden.click()
-    // }, 650);
+        // }, 650);
 }
 function loadend() {
     document.getElementById('loading').style.display= "none";
