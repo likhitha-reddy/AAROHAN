@@ -1,0 +1,15 @@
+<div class="section" id="section2">
+  <div class="workshop">
+    <h1 class="title">Workshops</h1>
+    <div class="workshop-wrap">
+      {% for w in workshops %}
+      <a href="{{ w.registration_link }}">
+        <img src="{{ w.logo.url }}" alt="" />
+        <div class="workshop-name">
+          <p>{{ w.workshopName }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
