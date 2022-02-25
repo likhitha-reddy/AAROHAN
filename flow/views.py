@@ -47,7 +47,27 @@ def events(request, id):
 def workshops(request):
     workshops = Workshops.objects.all()
     context = {'workshops': workshops}
-    return render(request, "flow/workshops.html", context)
+    print(context)
+    return render(request, "flow/workshop.html", context)
+
+def socialInitiative_view(request):
+    socialinitiative = SocialInitiatives.objects.all()
+    # context = {'socialinitiative': socialinitiative}
+    data=[]
+    for i in socialinitiative:
+        photos = i.socialImages.all()
+        newdictionary = {"socialinitiative":i}
+        newdictionary.update({"photos":photos})
+        data.append(newdictionary)        
+    print(data)
+    return render(request, "flow/socialinitiative.html", {"data":data})
+
+def industrialvisit_view(request):
+    industrialvisits = IndustrialVisits.objects.all()
+    data = {'industrialvisits': industrialvisits}
+    print(data)
+    return render(request, "flow/industrialvisits.html", data)
+
 
 
 def sponsor_view(request):
@@ -203,3 +223,4 @@ def techmela(request):
 
 def aboutus(request):
     return render(request, "flow/aboutus.html")
+

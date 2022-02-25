@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="section" id="section2">
+        <div class="workshop">
+          <h1 class="title">Social</h1>
+          <div class="workshop-wrap">
+            {% for w in data %}
+            <a href="#">
+              <img src="{{w.socialinitiative.poster.url}}" alt="" />
+              <div class="workshop-name">
+                <p>{{ w.socialinitiative.name }}</p>
+                <p>{{ w.socialinitiative.description }}
+
+                   
+                </p>
+
+                <h3>
+                    {{w.photos|length}}
+                    </h3>
+              </div>
+              
+            </a>
+                 {% if w.photos|length > 0  %}
+                    {% for img in w.photos %}
+                        {% if img.image.url %} 
+                        <img src="{{img.image.url}}" alt="" /> 
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            
+          </div>
+        </div> 
+    
+</body>
+</html>
