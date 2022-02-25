@@ -84,7 +84,7 @@ body {
   width: 100%;
   right: 0;
   left: 0;
-  z-index: 100000000000000000000000000000000000000000000000000000000000000000000;
+  z-index: 100;
   margin-top: 0.75rem;
   padding-right: 0.4rem;
   display: flex;
@@ -96,6 +96,15 @@ body {
     margin-top: 0;
     padding-right: 0;
   }   
+
+}
+@media (max-width:900px){
+  .arnav{
+    margin-top: 0;
+    padding-right: 0;
+    z-index: 1000000000000000000;
+  }   
+
 }
 .arnav .left-navbar img {
   height: 90px;

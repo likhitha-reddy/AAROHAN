@@ -209,7 +209,7 @@
 
 
 <div class="section">
-  <h1 class="title mb-4">Industry</h1>
+  <h1 class="title mb-4">Industrial Visits</h1>
   <div class="workshop container">
     <div class="workshop-wrap py-3">
       <div class="cards">
@@ -222,20 +222,35 @@
               {% comment %} <div class="title">{{ w.name }}</div> {% endcomment %}
               <div class="pic"><img src="{{w.image.url}}"></div>
           
-              <div class="desc">My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown </div>
+              <div class="desc">{{w.subheading}}</div>
           
               </article>
               <div class="actions">
-                  <button class="btn w-100"><span>View</span>
+                  <button data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}" class="btn w-100"><span>View</span>
                     <span class="icon w-100">View</span>
                   </button>
                 </div>
+          </div>
+          <!-- Modal -->
+          <div class="fade modal" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ w.name }}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe class="w-100" src="{{w.video_link}}" style="min-height:350px" allow="autoplay"></iframe>
+                </div>
+              </div>
+            </div>
           </div>
           {% endfor %}
       </div>
     </div>
   </div> 
 </div>
+
 
 
 
@@ -252,7 +267,23 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'js/home.js' %}"></script>
-     
+    <script>
+      const btnFunction = (data)=>{      
+        var exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget
+  
+          var recipient = button.getAttribute('data-bs-whatever')
+  
+          var modalTitle = exampleModal.querySelector('.modal-title')
+  
+          modalTitle.textContent = 'New message to ' + data.name
+          console.log(data)
+
+        })
+      }
+      
+    </script>
 
     
 </body>
