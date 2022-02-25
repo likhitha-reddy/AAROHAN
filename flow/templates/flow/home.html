@@ -49,7 +49,7 @@
         </div>
         <div class="root" id="root">
           <div class="arnav">
-              <a class="left-navbar" href="#">
+              <a class="left-navbar" href="#home">
                   <img src="{% static 'img/final-logo.png' %}" alt="Aarohan" id="navlogo">
               </a>
               <ul class="right-navbar">
@@ -203,18 +203,32 @@
           <div id="pagepiling">
             <div class="section" id="section1">
                         
-              <video class="videoBg" autoplay muted loop id="video">
+              {% comment %} <video class="videoBg" autoplay muted loop id="video">
                   <source src="https://aarohan.s3.ap-south-1.amazonaws.com/bgVideo.mp4" type="video/mp4">
-              </video>
+              </video> {% endcomment %}
               <div class="content" id="aarohanheading">
                   <h1>AAROHAN 2022</h1>
                   <p>Official Techno-Management Fest <br> NIT Durgapur</p>
+                  <a href="#workshops">
+                    <img class="arrow" src="{% static 'img/downArrow.svg' %}" alt="" />
+                  </a>
               </div>  
-            </div>
-          
+            </div>          
 
             <div class="section" id="section2">
-              Hellooo
+              <div class="workshop">
+                <h1 class="title">Workshops</h1>
+                <div class="workshop-wrap">
+                    {% for w in workshops %}
+                      <a href="{{ w.registration_link }}">
+                          <img src="{{ w.logo.url }}" alt="">
+                          <div class="workshop-name">
+                            <p>{{ w.workshopName }}</p>
+                          </div>
+                      </a>
+                    {% endfor %}
+                </div>
+              </div>              
             </div>
           </div>          
         </div>
