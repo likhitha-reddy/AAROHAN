@@ -29,7 +29,7 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="{% static 'indutstrialvisits.css' %}" />
+    <link rel="stylesheet" href="{% static 'industrialvisits.css' %}" />
 </head>
 <body>
   <div class="arnav" id="moar">
@@ -37,15 +37,6 @@
         <img src="{% static 'img/final-logo.png' %}" alt="Aarohan" id="navlogo">
     </a>
     <ul class="right-navbar">
-        <a class="botHover" href="/#" role="button" id="showini"
-           data-bs-toggle="dropdown" aria-expanded="false"
-          >
-          Initiative
-        </a>
-        <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
-          <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'socialInitiatives' %}')" >Corporate Social Responsibilities</li>
-          <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'industrialvisits' %}')"  >Industrial Visits</li>
-        </ul>
 
         <a class="botHover" href="#" role="button" id="showevents" data-bs-toggle="dropdown" aria-expanded="false" 
         >
@@ -54,6 +45,16 @@
         <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showevents">
           <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'timeline' %}')">Events</li>
           <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'workshops' %}')" >Workshops</li>
+        </ul>
+
+        <a class="botHover" href="/#" role="button" id="showini"
+           data-bs-toggle="dropdown" aria-expanded="false"
+          >
+          Initiatives
+        </a>
+        <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
+          <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'socialInitiatives' %}')" >Corporate Social Responsibilities</li>
+          <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'industrialvisits' %}')"  >Industrial Visits</li>
         </ul>
 
         <a class="botHover" href="/attractions">Attractions</a>
@@ -193,10 +194,10 @@
         </div>
     </div>
     <div class="options">
-      <a class="showOnPhone" href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
-      <a class="showOnPhone" href="{% url 'industrialvisits' %}">Industrial Visits</a>
       <a class="showOnPhone" href="/timeline">Events</a>
       <a class="showOnPhone" href="{% url 'workshops' %}">Workshops</a>
+      <a class="showOnPhone" href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
+      <a class="showOnPhone" href="{% url 'industrialvisits' %}">Industrial Visits</a>
       <a class="showOnPhone" href="/attractions">Attractions</a>
       <a class="showOnPhone" href="/aboutus">About Us</a>
       <a class="showOnPhone" href="/contactus">Contact Us</a>
@@ -232,7 +233,7 @@
                 </div>
           </div>
           <!-- Modal -->
-          <div class="fade modal" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="fade modal px-2 w-100 w-lg-75" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
