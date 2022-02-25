@@ -13,6 +13,7 @@ admin.site.register(Timeline)
 admin.site.register(TechmelaProject)
 admin.site.register(Review)
 admin.site.register(Arena)
+admin.site.register(IndustrialVisits)
 
 #Social Initiatives
 class SocialInitiativesPhotosAdmin(admin.StackedInline):

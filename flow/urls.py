@@ -7,14 +7,14 @@ urlpatterns = [
     path('events/<id>', events, name="category"),
     path('workshops', workshops, name="workshops"),
     path(
-        "socialinitiatives",
+        "social-initiatives",
         socialInitiative_view,
         name="socialInitiatives",
     ),
     path(
-        "industrialvisit",
+        "industrial-visits",
         industrialvisit_view,
-        name="industrialvisit",
+        name="industrialvisits",
     ),
     # path('workshops', workshops, name="workshops"),
     path('faq', faq_page, name="faq"),

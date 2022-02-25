@@ -54,6 +54,13 @@ class SocialInitiatives(models.Model):
     date_time = models.DateTimeField(null=True)
     webinar_link = models.CharField(max_length=1024, blank=True, null=True)
     app_link = models.CharField(max_length=1024, blank=True, null=True)
+    poster = models.ImageField(blank=True, null=True, upload_to="social_images/")
+
+class IndustrialVisits(models.Model):
+    name = models.CharField(max_length=250, unique=True)
+    image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
+    video_link = models.CharField(max_length=1024, blank=True, null=True)
+
 
 class SocialInitiativesPhotos(models.Model):
     social_name = models.ForeignKey(SocialInitiatives, on_delete=models.CASCADE, related_name="socialImages")
