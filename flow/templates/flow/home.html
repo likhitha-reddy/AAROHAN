@@ -22,12 +22,30 @@
           <img src="{% static 'img/final-logo.png' %}" alt="Aarohan">
         </div>
         <div class="root" id="root">
-          <div class="arnav">
+          <div class="arnav" id="moar">
               <a class="left-navbar" href="#home">
                   <img src="{% static 'img/final-logo.png' %}" alt="Aarohan" id="navlogo">
               </a>
               <ul class="right-navbar">
-                  <a class="botHover" href="/timeline">Events</a>
+                  <a class="botHover" href="/#" role="button" id="showini"
+                     data-bs-toggle="dropdown" aria-expanded="false"
+                    >
+                    Initiative
+                  </a>
+                  <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
+                    <li class="curpo px-3 py-1 text-info" >Corporate Social Responsibilities</li>
+                    <li class="curpo px-3 py-1 text-info" >Industrial Visits</li>
+                  </ul>
+
+                  <a class="botHover" href="#" role="button" id="showevents" data-bs-toggle="dropdown" aria-expanded="false" 
+                  >
+                    Events
+                  </a>
+                  <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showevents">
+                    <li class="curpo px-3 py-1 text-info" >Events</li>
+                    <li class="curpo px-3 py-1 text-info" >Workshops</li>
+                  </ul>
+
                   <a class="botHover" href="/attractions">Attractions</a>
                   <a class="botHover" href="/aboutus">About Us</a>
                   <a class="botHover" href="/contactus">Contact Us</a>
@@ -164,7 +182,10 @@
                   </div>
               </div>
               <div class="options">
+                <a class="showOnPhone" href="/">Corporate Social Responsibilities</a>
+                <a class="showOnPhone" href="/">Industrial Visits</a>
                 <a class="showOnPhone" href="/timeline">Events</a>
+                <a class="showOnPhone" href="/workshop">Workshops</a>
                 <a class="showOnPhone" href="/attractions">Attractions</a>
                 <a class="showOnPhone" href="/aboutus">About Us</a>
                 <a class="showOnPhone" href="/contactus">Contact Us</a>
@@ -190,6 +211,5 @@
             crossorigin="anonymous"></script>
         <script src="{% static 'js/home.js' %}"></script>
     </body>
-
 </html>
 
