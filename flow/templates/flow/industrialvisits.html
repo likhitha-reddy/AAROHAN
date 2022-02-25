@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    {% comment %} <link rel="stylesheet" href="{% static 'css/workshop.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/workshop.css' %}" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -208,26 +208,13 @@
 
 
 
-
-
-<div class="section" id="section2">
-  <div class="workshop">
-    <h1 class="title">Industry</h1>
-    <div class="workshop-wrap">
-      {% comment %} {% for w in industrialvisits %}
-      <a href="#">
-        <img src="{{w.image.url}}" alt="" />
-        <div class="workshop-name">
-          <p>{{ w.name }}</p>
-          <iframe src="{{w.video_link}}" width="640" height="480" allow="autoplay"></iframe>
-        </div>
-        
-      </a>
-      {% endfor %} {% endcomment %}
-      
+<div class="section">
+  <h1 class="title mb-4">Industry</h1>
+  <div class="workshop container">
+    <div class="workshop-wrap py-3">
       <div class="cards">
           {% for w in industrialvisits %}
-          <div class="card">
+          <div class="col-12 col-lg-4 card">
               <span class="close"></span>
               <span class="arrow"></span>
               <article>
@@ -239,16 +226,24 @@
           
               </article>
               <div class="actions">
-                  <button class="btn"><span>Read More</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
-                  <button class="btn"><span>View</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
-            
+                  <button class="btn w-100"><span>View</span>
+                    <span class="icon w-100">View</span>
+                  </button>
                 </div>
           </div>
           {% endfor %}
-        </div>
-      
+      </div>
     </div>
   </div> 
+</div>
+
+
+
+
+
+
+
+
 
     <!-- Bootstrap Js and Popper JS -->
     <script
