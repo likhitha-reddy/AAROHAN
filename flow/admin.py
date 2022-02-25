@@ -13,3 +13,13 @@ admin.site.register(Timeline)
 admin.site.register(TechmelaProject)
 admin.site.register(Review)
 admin.site.register(Arena)
+admin.site.register(IndustrialVisits)
+
+#Social Initiatives
+class SocialInitiativesPhotosAdmin(admin.StackedInline):
+    model = SocialInitiativesPhotos
+
+class SocialInitiativesAdmin(admin.ModelAdmin):
+    inlines = [SocialInitiativesPhotosAdmin]
+    list_display = ('name',)
+admin.site.register(SocialInitiatives , SocialInitiativesAdmin)
