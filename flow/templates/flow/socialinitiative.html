@@ -241,6 +241,13 @@
     .modal-dialog{
       max-width: unset;
     }
+    iframe{
+      min-height: 225px !important;
+    }
+    .modal-body{
+      padding-left:  0.5rem;
+      padding-right: 0.5rem;
+    }
   }
 </style>
 
@@ -256,16 +263,19 @@
               <div class="modal-body">
                 
                 <div class="container-fluid">
-                    <img class="w-100" src="{{w.socialinitiative.poster.url}}">
+                    <img class="w-100 rounded" style="max-height: 432px;object-fit: contain;" src="{{w.socialinitiative.poster.url}}">
                     <p class="my-3 text-justify">{{w.socialinitiative.description}}</p>
 
                     <h3>Glimpses</h3>
                   <hr>
+                    {% if w.socialinitiative.video_link %}
+                      <iframe class="d-block rounded mx-auto w-100 my-3" style="min-height: 340px;" src="{{w.socialinitiative.video_link}}" frameborder="0"></iframe>
+                    {% endif %}
                     <div class="row img-cont">
                       {% if w.photos|length > 0  %}
                         {% for img in w.photos %}
                             {% if img.image.url %}
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-6">
                                   <img class="w-100 rounded mx-1 my-2" src="{{img.image.url}}"  alt="" />
                                 </div>
                             {% endif %}
@@ -308,7 +318,8 @@
           slideShadows: true,
         },
         autoplay:{
-          delay: 1500
+          delay: 1500,
+          disableOnInteraction: false
         },
         pagination: {
           el: ".swiper-pagination",

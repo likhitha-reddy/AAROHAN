@@ -225,7 +225,7 @@
               {% comment %} <div class="title">{{ w.name }}</div> {% endcomment %}
               <div class="pic"><img src="{{w.image.url}}"></div>
           
-              <div class="desc">{{w.subheading}}</div>
+              <div class="desc">{{w.subheading|truncatechars:120}}</div>
           
               </article>
               <div class="actions">
@@ -255,7 +255,6 @@
     }
   }
 </style>
-
 
 
 
@@ -311,7 +310,8 @@
           slideShadows: true,
         },
         autoplay:{
-          delay: 1500
+          delay: 1500,
+          disableOnInteraction: false
         },
         pagination: {
           el: ".swiper-pagination",

@@ -20,6 +20,9 @@ body {
   animation: wdct-special 0.5s ease;
   transition: 0.5s;
 }
+.bg-transparent{
+  background: #060936 !important;
+}
 @keyframes wdct-special{
   from{
     opacity: 0.5;
