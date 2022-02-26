@@ -68,6 +68,9 @@ class SocialInitiativesPhotos(models.Model):
     social_name = models.ForeignKey(SocialInitiatives, on_delete=models.CASCADE, related_name="socialImages")
     image = models.ImageField(blank=True, null=True, upload_to="social_images/")
 
+class IndustrialVisitsPhotos(models.Model):
+    industrial_name = models.ForeignKey(IndustrialVisits, on_delete=models.CASCADE, related_name="industrialImages")
+    image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
 
 class Sponsors(models.Model):
     name = models.CharField(max_length=255)
