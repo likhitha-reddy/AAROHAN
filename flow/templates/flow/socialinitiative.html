@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <link rel="stylesheet" href="{% static 'css/workshop.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/socialinitiative.css' %}" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -209,11 +210,28 @@
         <div class="workshop container">
           <div class="workshop-wrap py-3">
 
+ 
+
             <div class="swiper mySwiper container cards ">
               <div class="swiper-wrapper">
               {% for w in data %}
-                <div class="swiper-slide col-12 col-lg-4 card">
-                  <span class="close"></span>
+                  <div class="first hero swiper-slide">
+                    <img class="hero-profile-img" src="{{w.socialinitiative.poster.url}}" alt="">
+                    <div class="hero-description-bk"></div>
+                    <div class="hero-logo">
+                      <img src="{% static 'img/logo_square.jpg' %}" alt="">
+                    </div>
+                    <div class="hero-description">
+                      <p>{{w.socialinitiative.description|truncatechars:70 }}</p>
+                    </div>
+                    <div  class="hero-date">
+                      <p>{{ w.socialinitiative.name }}</p>
+                    </div>
+                    <div class="hero-btn">
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}">Learn More</a>
+                    </div>
+                  </div>
+                  {% comment %} <span class="close"></span>
                   <span class="arrow"></span>
                   <article>
                     <h2>{{ w.socialinitiative.name }}</h2>
@@ -226,9 +244,9 @@
                         <span class="icon w-100">View More</span>
                       </button>
                     </div>
-                </div>
+                </div> {% endcomment %}
               {% endfor %}
-            </div>            
+            </div>          
           </div>
           </div>
         </div> 
