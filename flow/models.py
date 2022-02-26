@@ -55,9 +55,11 @@ class SocialInitiatives(models.Model):
     webinar_link = models.CharField(max_length=1024, blank=True, null=True)
     app_link = models.CharField(max_length=1024, blank=True, null=True)
     poster = models.ImageField(blank=True, null=True, upload_to="social_images/")
+    video_link = models.CharField(max_length=1024, blank=True, null=True)
 
 class IndustrialVisits(models.Model):
     name = models.CharField(max_length=250, unique=True)
+    subheading = models.CharField(max_length=500,blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
     video_link = models.CharField(max_length=1024, blank=True, null=True)
 
