@@ -283,10 +283,10 @@
                       </div>
                       {% endif %}
                     </div>
-
+                    
+                    <p class="my-3 text-center fs-4">{{ w.socialinitiative.date_time|date }}</p>
 
                     <p class="my-3 text-justify">{{w.socialinitiative.description}}</p>
-
                     {% if w.socialinitiative.video_link or w.photos|length > 0   %}
                     <h3>Glimpses</h3>
                     <hr>
@@ -294,6 +294,7 @@
                     {% if w.socialinitiative.video_link %}
                       <iframe class="d-block rounded mx-auto w-100 my-3" style="min-height: 340px;" src="{{w.socialinitiative.video_link}}" frameborder="0"></iframe>
                     {% endif %}
+
                     <div class="row img-cont">
                       {% if w.photos|length > 0  %}
                         {% for img in w.photos %}
