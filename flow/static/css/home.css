@@ -190,18 +190,6 @@ body {
   animation: bounce 0.8s ease-in-out alternate-reverse infinite;
 }
 
-.arrow {
-  animation: bounce 0.8s ease-in-out alternate-reverse infinite;
-  width: 50px;
-  height: 50px;
-}
-
-@media (max-width: 991px) {
-  .arrow {
-    width: 30px;
-    height: 30px;
-  }
-}
 
 /* OFFCANVAS CSS */
 @keyframes OffEnd {
@@ -228,8 +216,7 @@ body {
 .offcanvas.show {
   animation: OffShow 1s !important;
   transition: 1s ease !important;
-  overflow-y: scroll !important;
-  -ms-overflow-style: none;
+  /* overflow-y: scroll !important; */
   scrollbar-width: none;
 }
 .offcanvas.show::-webkit-scrollbar {
@@ -331,10 +318,13 @@ body {
     animation: OffShow 0.5s !important;
     transition: 0.5s !important;
     min-height: 100vh;
-    padding-bottom: 100px !important;
-    overflow-y: scroll !important;
+    /* overflow-y: scroll !important; */
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .offcanvas.show .options{
+    overflow-y: scroll;
+    height: auto;
   }
   .offcanvas.show::-webkit-scrollbar {
     display: none;
@@ -342,6 +332,7 @@ body {
   .offcanvas-end {
     width: 100vw !important;
     padding: 1rem;
+    padding-bottom: 0;
   }
   .content {
     left: 0 !important;
