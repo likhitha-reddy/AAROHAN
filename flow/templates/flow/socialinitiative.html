@@ -208,15 +208,17 @@
         <h1 class="title mb-4">Corporate Social Responsibilities</h1>
         <div class="workshop container">
           <div class="workshop-wrap py-3">
-            <div class="cards">
+
+            <div class="swiper mySwiper container cards ">
+              <div class="swiper-wrapper">
               {% for w in data %}
-                <div class="col-12 col-lg-4 card">
+                <div class="swiper-slide col-12 col-lg-4 card">
                   <span class="close"></span>
                   <span class="arrow"></span>
                   <article>
                     <h2>{{ w.socialinitiative.name }}</h2>
                     <div class="pic"><img src="{{w.socialinitiative.poster.url}}"></div>                
-                    <div class="desc">{{w.socialinitiative.description}} </div>
+                    <div class="desc">{{w.socialinitiative.description|truncatechars:120 }} </div>
               
                   </article>
                   <div class="actions">
@@ -225,39 +227,60 @@
                       </button>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="fade modal bd-example-modal-lg" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ w.socialinitiative.name }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                          <p>{{w.socialinitiative.description}}</p>
-                          <div class="container-fluid">
-                            <div class="row">
-                              {% if w.photos|length > 0  %}
-                                {% for img in w.photos %}
-                                    {% if img.image.url %}
-                                      <div class="col-12">
-                                        <img src="{{img.image.url}}"  alt="" />
-                                      </div>  
-                                    {% endif %}
-                                {% endfor %}
-                              {% endif %}
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               {% endfor %}
             </div>            
-            
+          </div>
           </div>
         </div> 
     
+<style>
+  .modal-dialog{
+    max-width: 60vw;
+  }
+  @media(max-width:600px){
+    .modal-dialog{
+      max-width: unset;
+    }
+  }
+</style>
+
+{% for w in data %}
+        <!-- Modal -->
+        <div class="fade modal bd-example-modal-lg" style="z-index: 100000000000000000000000000000000000000000000000;" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ w.socialinitiative.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                
+                <div class="container-fluid">
+                    <img class="w-100" src="{{w.socialinitiative.poster.url}}">
+                    <p class="my-3 text-justify">{{w.socialinitiative.description}}</p>
+
+                    <h3>Glimpses</h3>
+                  <hr>
+                    <div class="row img-cont">
+                      {% if w.photos|length > 0  %}
+                        {% for img in w.photos %}
+                            {% if img.image.url %}
+                                <div class="col-12 col-lg-4">
+                                  <img class="w-100 rounded mx-1 my-2" src="{{img.image.url}}"  alt="" />
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endfor %}
+
+
+
         <!-- Bootstrap Js and Popper JS -->
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -265,22 +288,35 @@
           crossorigin="anonymous"
         ></script>
         <script src="{% static 'js/home.js' %}"></script>
-        <script>
-          const btnFunction = (data)=>{      
-            var exampleModal = document.getElementById('exampleModal')
-            exampleModal.addEventListener('show.bs.modal', function (event) {
-              var button = event.relatedTarget
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-              var recipient = button.getAttribute('data-bs-whatever')
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        initialSlide: 1,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        autoplay:{
+          delay: 1500
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
 
-              var modalTitle = exampleModal.querySelector('.modal-title')
 
-              modalTitle.textContent = 'New message to ' + data.name
-              console.log(data)
-
-            })
-          }
-          
-        </script>
 </body>
 </html>
+

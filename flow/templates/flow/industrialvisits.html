@@ -213,9 +213,11 @@
   <h1 class="title mb-4">Industrial Visits</h1>
   <div class="workshop container">
     <div class="workshop-wrap py-3">
-      <div class="cards">
+      <div class="swiper mySwiper container cards">
+        <div class="swiper-wrapper">
+
           {% for w in industrialvisits %}
-          <div class="col-12 col-lg-4 card">
+          <div class="swiper-slide col-12 col-lg-4 card">
               <span class="close"></span>
               <span class="arrow"></span>
               <article>
@@ -232,27 +234,48 @@
                   </button>
                 </div>
           </div>
-          <!-- Modal -->
-          <div class="fade modal px-2 w-100 w-lg-75" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ w.name }}</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe class="w-100" src="{{w.video_link}}" style="min-height:350px" allow="autoplay"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
           {% endfor %}
+        </div>
       </div>
     </div>
   </div> 
 </div>
 
 
+
+
+
+<style>
+  .modal-dialog{
+    max-width: 60vw;
+  }
+  @media(max-width:600px){
+    .modal-dialog{
+      max-width: unset;
+    }
+  }
+</style>
+
+
+
+
+
+<!-- Modal -->
+{% for w in industrialvisits %}
+<div class="fade modal px-2 w-100 w-lg-75" style="z-index: 100000000000000000000000000000000000000000000000;"  id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ w.name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <iframe class="w-100" src="{{w.video_link}}" style="min-height:300px" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
 
 
@@ -268,24 +291,33 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'js/home.js' %}"></script>
+  
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
     <script>
-      const btnFunction = (data)=>{      
-        var exampleModal = document.getElementById('exampleModal')
-        exampleModal.addEventListener('show.bs.modal', function (event) {
-          var button = event.relatedTarget
-  
-          var recipient = button.getAttribute('data-bs-whatever')
-  
-          var modalTitle = exampleModal.querySelector('.modal-title')
-  
-          modalTitle.textContent = 'New message to ' + data.name
-          console.log(data)
-
-        })
-      }
-      
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        initialSlide: 1,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        autoplay:{
+          delay: 1500
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
     </script>
-
     
 </body>
 </html>

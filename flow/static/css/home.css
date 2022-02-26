@@ -312,6 +312,10 @@ body {
     margin-right: 0.5rem;
   }
 }
+.offcanvas.show .options{
+  overflow-y: scroll;
+  height: auto;
+}
 @media (max-width: 600px) {
   
   .offcanvas.show {
@@ -321,10 +325,6 @@ body {
     /* overflow-y: scroll !important; */
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-  .offcanvas.show .options{
-    overflow-y: scroll;
-    height: auto;
   }
   .offcanvas.show::-webkit-scrollbar {
     display: none;
