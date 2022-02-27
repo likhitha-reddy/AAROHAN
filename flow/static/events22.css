@@ -101,6 +101,10 @@ body {
     margin: 0 auto;
 } */
 
+.offcanvas {
+  z-index: 100009;
+}
+
 .active {
   background: rgb(255, 26, 133);
   z-index: 40000;
