@@ -59,7 +59,7 @@ body {
 
 .days h3 {
   margin: 10px;
-  font-size: 1.17rem;
+  font-size: 1.17rem !important;
 }
 .day {
   width: 160px;
