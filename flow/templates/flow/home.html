@@ -33,7 +33,7 @@
                     Events
                   </a>
                   <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showevents">
-                    <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'timeline' %}')">Events</li>
+                    <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'events' %}')">Events</li>
                     <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'workshops' %}')" >Workshops</li>
                   </ul>
 
@@ -183,7 +183,7 @@
                   </div>
               </div>
               <div class="options">                
-                <a class="showOnPhone" href="/timeline">Events</a>
+                <a class="showOnPhone" href="/events">Events</a>
                 <a class="showOnPhone" href="{% url 'workshops' %}">Workshops</a>
                 <a class="showOnPhone" href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
                 <a class="showOnPhone" href="{% url 'industrialvisits' %}">Industrial Visits</a>
