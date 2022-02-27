@@ -84,7 +84,10 @@
 @media(max-width:600px){
   .swiper {
     padding: 0 0 !important;
-    margin-top: 85px;
+  }
+  .testimonial-item p
+  {
+    font-size:24px;
   }
 }
  .testimonial-item {
@@ -93,9 +96,9 @@
   margin: 30px 30px;
   box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
   background: #010936;
-  background: -webkit-linear-gradient(bottom, #010936, #3c0136);
-  background: -moz-linear-gradient(bottom, #010936, #3c0136);
-  background: linear-gradient(top, #010936, #3c0136);
+  /* background: -webkit-linear-gradient(bottom, #010936, #3c0136);
+  background: -moz-linear-gradient(bottom, #010936, #3c0136); */
+  background: linear-gradient(89.97deg, #f49867 1.84%, #ae67fa 102.67%);;
   min-height: 320px;
   display: flex;
   flex-direction: column;
@@ -119,7 +122,7 @@
  .testimonial-item h3 {
   font-size: 18px;
   font-weight: 400;
-  margin: 10px 0 5px 0;
+  margin: 20px 0 10px 0;
   font-size:12px;
   color: #fff;
 }
@@ -130,13 +133,26 @@
   font-weight: 600;
   margin: 0;
   text-decoration: none;
+  border: 1.5px solid #fff;
+  padding:5px 10px; 
+  margin-top:30px !important;
+  border-radius: 10px;
+}
+.testimonial-item a:hover {
+  font-size: 14px;
+  color: #3c0136  !important;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(89.97deg, #ae67fa  1.84%, #f49867 102.67%);
+  text-decoration: none;
 }
  .testimonial-item p {
   font-style: italic;
   margin: 0 auto 15px auto;
-  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);;
+  background: linear-gradient(89.97deg, #fff 1.84%, #fafafa 102.67%);
   background-clip: text;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -150,10 +166,10 @@
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #4154f1;
+  border: 1px solid #3c0136;
 }
  .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #4154f1;
+  background-color: #3c0136;
 }
  .swiper-slide {
   opacity: .3;
