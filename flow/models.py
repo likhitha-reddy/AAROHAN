@@ -11,7 +11,7 @@ class Timeline(models.Model):
 
 
 class Events(models.Model):
-    eventDay = models.ForeignKey(Timeline, on_delete=models.DO_NOTHING)
+    eventDay = models.ForeignKey(Timeline, on_delete=models.DO_NOTHING, default=1)
     eventName = models.CharField(
         max_length=50, unique=True, help_text="Enter the name of the event")
     eventId = models.CharField(
@@ -105,7 +105,7 @@ class MajorAttractions(models.Model):
     title = models.CharField(max_length=200, blank=True)
     description = models.TextField(
         help_text="Enter the description of the attraction here")
-    image = models.ImageField(blank=True, upload_to="mjr_attrs/")
+    image = models.ImageField(blank=True, upload_to="mjr_attrs/", null=True)
     url = models.CharField(max_length=1024, blank=True,
                            help_text='URL of major attractions')
 

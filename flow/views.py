@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
+import json
 
 from .models import *
 # Create your views here.
@@ -32,14 +33,16 @@ def home(request):
     return render(request, 'flow/home.html', context)
 
 
-def events(request, id):
-    context = {}
+def events(request):
     try:
-        categrory = EventCategory.objects.get(groupId=id)
-        events = Events.objects.filter(eventGroup=categrory)
-        context['events'] = events
-        context['group'] = categrory
-        return render(request, 'flow/events.html', context)
+        days = Timeline.objects.values()
+        days = [day for day in days]
+
+        evnt = []
+        for d in days:
+            evnt.append([eve for eve in Events.objects.filter(eventDay__day_number__exact=d["day_number"]).order_by('date_time').values()])
+        
+        return render(request, 'flow/events.html', {'events':evnt, 'days':list(days)})
     except ObjectDoesNotExist:
         raise Http404
 
@@ -110,7 +113,7 @@ def team_page(request):
         category_members = [member for member in category]
         members_list.append(category_members)
     context = {'teams': umbrellas, 'members': members_list}
-    return render(request, "flow/teampage.html", context)
+    return render(request, "flow/team22.html", context)
 
 
 def timeline(request):
