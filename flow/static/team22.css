@@ -32,6 +32,12 @@ h3 {
 .team_text--wrap {
     color: #fff;
 }
+
+.game_list--wrapper {
+    height: calc(100vh - 190px);
+    overflow-y: auto;
+}
+
 audio,
 canvas {
     display: inline-block;
