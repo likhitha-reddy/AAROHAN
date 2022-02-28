@@ -4,20 +4,16 @@
   font-family: Monument;
   src: url('../fonts/MonumentExtended-Regular.otf');
 }
-html,
-body {
-  overflow: auto !important;
-}
-
-body {
-  overflow-x: hidden;
-}
 
 * {
   box-sizing: border-box !important;
   margin: 0;
   padding: 0;
   font-family: unset !important;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .arnav {
@@ -37,10 +33,18 @@ body {
 
 .container {
   width: 100%;
-  min-height: 100vh;
+  margin-top: 110px;
   max-width: 1280px;
-  margin: auto;
-  margin-top: 6rem;
+  height: calc(100vh - 110px);
+  margin-inline: auto;
+  overflow: unset;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .container .header {
@@ -51,7 +55,7 @@ body {
   color: rgb(237, 218, 255);
   text-transform: uppercase;
   text-shadow: rgb(183, 111, 251) 0 0 35px;
-  margin-block: 3rem;
+  margin-block: 1.5rem;
 }
 
 .attraction-container {
@@ -242,7 +246,7 @@ body {
   }
 
   .container {
-    padding: 1rem;
+    padding-inline: 1rem;
   }
 
   .container .header {
