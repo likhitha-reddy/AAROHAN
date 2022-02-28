@@ -22,12 +22,12 @@
 
     <link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/workshop.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/workshop.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/socialinitiative.css' %}" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="{% static 'industrialvisits.css' %}" />
 </head>
 <body>
     <div class="arnav" id="moar">
@@ -209,11 +209,28 @@
         <div class="workshop container">
           <div class="workshop-wrap py-3">
 
+ 
+
             <div class="swiper mySwiper container cards ">
               <div class="swiper-wrapper">
               {% for w in data %}
-                <div class="swiper-slide col-12 col-lg-4 card">
-                  <span class="close"></span>
+                  <div class="first hero swiper-slide">
+                    <img class="hero-profile-img" src="{{w.socialinitiative.poster.url}}" alt="">
+                    <div class="hero-description-bk"></div>
+                    <div class="hero-logo">
+                      <img src="{% static 'img/logo_square.jpg' %}" alt="">
+                    </div>
+                    <div class="hero-description">
+                      <p>{{w.socialinitiative.description|truncatechars:70 }}</p>
+                    </div>
+                    <div  class="hero-date">
+                      <p>{{ w.socialinitiative.name }}</p>
+                    </div>
+                    <div class="hero-btn">
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}">Learn More</a>
+                    </div>
+                  </div>
+                  {% comment %} <span class="close"></span>
                   <span class="arrow"></span>
                   <article>
                     <h2>{{ w.socialinitiative.name }}</h2>
@@ -226,9 +243,9 @@
                         <span class="icon w-100">View More</span>
                       </button>
                     </div>
-                </div>
+                </div> {% endcomment %}
               {% endfor %}
-            </div>            
+            </div>          
           </div>
           </div>
         </div> 
@@ -236,6 +253,26 @@
 <style>
   .modal-dialog{
     max-width: 60vw;
+  }
+
+  .modal-content {
+    background:transparent !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color:#fff !important;
+    padding:10px;
+  }
+  .btn-primary
+  {
+    color: #3c0136  !important;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1.5px solid #fff;
+    background: linear-gradient(89.97deg, #ae67fa  1.84%, #f49867 102.67%) !important;
   }
   @media(max-width:600px){
     .modal-dialog{
@@ -257,8 +294,8 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{ w.socialinitiative.name }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title" id="exampleModalLabel">{{ w.socialinitiative.name }}</h3>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <style>
@@ -274,26 +311,27 @@
                     <div class="btn-conttainer mt-3">
                       {% if w.socialinitiative.webinar_link %}
                       <div class="my-2 mx-3">
-                        <a class="btn btn-primary text-white mx-auto d-block" href="{{w.socialinitiative.webinar_link}}">  Webinar Link </a>
+                        <a class="btn btn-primary  mx-auto d-block" href="{{w.socialinitiative.webinar_link}}">  Webinar Link </a>
                       </div>
                       {% endif %}
                       {% if w.socialinitiative.app_link %}
                       <div class="my-2 mx-3">
-                        <a class="btn btn-primary text-white mx-auto d-block" href="{{w.socialinitiative.app_link}}">  App Link </a>
+                        <a class="btn btn-primary  mx-auto d-block" href="{{w.socialinitiative.app_link}}">  App Link </a>
                       </div>
                       {% endif %}
                     </div>
-
+                    
+                    <p class="my-3 text-center fs-4">{{ w.socialinitiative.date_time|date }}</p>
 
                     <p class="my-3 text-justify">{{w.socialinitiative.description}}</p>
-
                     {% if w.socialinitiative.video_link or w.photos|length > 0   %}
-                    <h3>Glimpses</h3>
+                    <h4>Glimpses</h4>
                     <hr>
                     {% endif %}
                     {% if w.socialinitiative.video_link %}
                       <iframe class="d-block rounded mx-auto w-100 my-3" style="min-height: 340px;" src="{{w.socialinitiative.video_link}}" frameborder="0"></iframe>
                     {% endif %}
+
                     <div class="row img-cont">
                       {% if w.photos|length > 0  %}
                         {% for img in w.photos %}

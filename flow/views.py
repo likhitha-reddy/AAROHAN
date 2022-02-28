@@ -55,7 +55,6 @@ def workshops(request):
 
 def socialInitiative_view(request):
     socialinitiative = SocialInitiatives.objects.all()
-    # context = {'socialinitiative': socialinitiative}
     data=[]
     for i in socialinitiative:
         photos = i.socialImages.all()
@@ -67,11 +66,15 @@ def socialInitiative_view(request):
 
 def industrialvisit_view(request):
     industrialvisits = IndustrialVisits.objects.all()
-    data = {'industrialvisits': industrialvisits}
+    data=[]
+    for i in industrialvisits:
+        photos = i.industrialImages.all()
+        newdictionary = {"industrialvisit":i}
+        newdictionary.update({"photos":photos})
+        data.append(newdictionary) 
     print(data)
-    return render(request, "flow/industrialvisits.html", data)
-
-
+    return render(request, "flow/industrialvisits.html", {"data":data})
+    
 
 def sponsor_view(request):
     sponsors = Sponsors.objects.all()

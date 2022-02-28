@@ -59,15 +59,19 @@ class SocialInitiatives(models.Model):
 
 class IndustrialVisits(models.Model):
     name = models.CharField(max_length=250, unique=True)
-    subheading = models.CharField(max_length=500,blank=True, null=True)
+    subheading = models.TextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
     video_link = models.CharField(max_length=1024, blank=True, null=True)
+    date_time = models.DateTimeField(null=True)
 
 
 class SocialInitiativesPhotos(models.Model):
     social_name = models.ForeignKey(SocialInitiatives, on_delete=models.CASCADE, related_name="socialImages")
     image = models.ImageField(blank=True, null=True, upload_to="social_images/")
 
+class IndustrialVisitsPhotos(models.Model):
+    industrial_name = models.ForeignKey(IndustrialVisits, on_delete=models.CASCADE, related_name="industrialImages")
+    image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
 
 class Sponsors(models.Model):
     name = models.CharField(max_length=255)
