@@ -1,396 +1,376 @@
 <!DOCTYPE html>
 {% load static %}
-<!--[if lt IE 7]>
-<html lang="en" class="no-js linux lt-ie9 lt-ie8 lt-ie7 oldie"> <![endif]-->
-<!--[if IE 7]>
-<html lang="en" class="no-js linux lt-ie9 lt-ie8 oldie"> <![endif]-->
-<!--[if IE 8]>
-<html lang="en" class="no-js linux lt-ie9 oldie"> <![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="no-js linux lt-ie10 oldie"> <![endif]-->
-<!--[if gt IE 9]><!-->
-<html lang="en" class="no-js linux">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aarohan 2021</title>
-    <link rel="icon" type="image/png" href="{% static 'img/final-logo.png' %}">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <title>Attractions | Aarohan 2022</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Volkhov:400italic%7CTitillium+Web:400,300italic,700,600"
-        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
-    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{% static 'css/generated-default_1605622710609.css' %}">
     <link rel="stylesheet" href="{% static 'css/attractions.css' %}">
-
-    <script>
-        (function (w) {
-            w.F = w.F || {};
-            w.F.CONFIG = {
-                PATH_URL: '/',
-                ROOT_URL: 'https://sourdoreille.net/',
-                THEME_URL: 'https://sourdoreille.net/2016/wp-content/themes/sourdoreille/',
-                DEBUG: false,
-                DISABLE_AJAX: false,
-                IS_HOME_EDITING: false,
-                YT_PLAYLIST_ID: 'PLRHgE_JJTJgv88XDzSvjzHfacHtmdAjtG',
-                YT_API_KEY: 'AIzaSyC7YpDj7Sc76v-jZ6ttAHYfqfJ2hOd5wc0'
-            };
-            F.HEIGHT_STICKY = 27;
-            F.HEIGHT_HEADER = 72;
-            w.F._ = { wW: w.innerWidth, wH: w.innerHeight || document.documentElement.offsetHeight, scrollTop: 0 };
-            F.breakpoints = { SMALL_DESKTOP: 1150, TABLETTE: 1024, MOBILE: 840 };
-            w.F.isSmallDesktop = function () {
-                return F._.wW <= F.breakpoints.SMALL_DESKTOP;
-            };
-            w.F.isTablette = function () {
-                return F._.wW <= F.breakpoints.TABLETTE;
-            };
-            w.F.isMobile = function () {
-                return F._.wW <= F.breakpoints.MOBILE;
-            };
-
-            w.F.PAGES_VIEWS = {
-                home: 'Home',
-                post: 'Post',
-                search: 'Search',
-                festivals: 'Festivals',
-                archive: 'List',
-                corporate: 'Corpo'
-            };
-        })(window);
-    </script>
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <script src="{% static 'js/generated-default-header_1605622709300.js' %}"></script>
 </head>
 
-<body class="home blog group-blog">
-    <header class="cd-header">
-        <div class="header-wrapper">
-            <div class="logo-wrap">
-                <!--                        <a href="#" class="hover-target"><span>AAROHAN</span></a>-->
+<body>
+    <video loop autoplay muted id="bg-vid">
+        <source src="{% static 'videos/bgattractions.mp4'%}" type="video/mp4" />
+    </video>
+    <div class="arnav" id="moar">
+        <a class="left-navbar" href="/">
+          <img
+            src="{% static 'img/final-logo.png' %}"
+            alt="Aarohan"
+            id="navlogo"
+          />
+        </a>
+        <ul class="right-navbar">
+          <a
+            class="botHover"
+            href="#"
+            role="button"
+            id="showevents"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Events
+          </a>
+          <ul
+            class="dropdown-menu bg-transparent border-info mt-2"
+            aria-labelledby="showevents"
+          >
+            <li
+              class="curpo px-3 py-1 text-info"
+              onclick="window.location.href=('{% url 'events' %}')"
+            >
+              Events
+            </li>
+            <li
+              class="curpo px-3 py-1 text-info"
+              onclick="window.location.href=('{% url 'workshops' %}')"
+            >
+              Workshops
+            </li>
+          </ul>
+  
+          <a
+            class="botHover"
+            href="/#"
+            role="button"
+            id="showini"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Initiatives
+          </a>
+          <ul
+            class="dropdown-menu bg-transparent border-info mt-2"
+            aria-labelledby="showini"
+          >
+            <li
+              class="curpo px-3 py-1 text-info"
+              onclick="window.location.href=('{% url 'socialInitiatives' %}')"
+            >
+              Corporate Social Responsibilities
+            </li>
+            <li
+              class="curpo px-3 py-1 text-info"
+              onclick="window.location.href=('{% url 'industrialvisits' %}')"
+            >
+              Industrial Visits
+            </li>
+          </ul>
+  
+          <a class="botHover" href="/attractions">Attractions</a>
+          <a class="botHover" href="/aboutus">About Us</a>
+          <a class="botHover" href="/contactus">Contact Us</a>
+          <a class="botHover" href="/sponsors">Sponsors</a>
+          <a class="botHover" href="/teams">Teams</a>
+          <button
+            class="d-none"
+            id="shownBtn"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            s
+          </button>
+          <a class="showOnPhone" style="z-index: 10000000000000; cursor: pointer">
+            <svg>
+              <defs>
+                <filter id="gooeyness">
+                  <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="2.2"
+                    result="blur"
+                  />
+                  <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                    result="gooeyness"
+                  />
+                  <feComposite
+                    in="SourceGraphic"
+                    in2="gooeyness"
+                    operator="atop"
+                  />
+                </filter>
+              </defs>
+            </svg>
+            <div
+              class="plate plate2"
+              onclick="closeAfterSometimeMob()"
+              id="ocanva"
+            >
+              <svg
+                class="burger"
+                version="1.1"
+                height="100"
+                width="100"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  class="line aqua line1"
+                  d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+                />
+                <path
+                  class="line aqua line2"
+                  d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+                />
+                <path
+                  class="line aqua line3"
+                  d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+                />
+                <path
+                  class="line aqua line4"
+                  d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+                />
+                <path
+                  class="line aqua line5"
+                  d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+                />
+                <path
+                  class="line aqua line6"
+                  d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+                />
+              </svg>
+              <svg
+                class="x"
+                version="1.1"
+                height="100"
+                width="100"
+                viewBox="0 0 100 100"
+              >
+                <path class="line aqua" d="M 34,32 L 66,68" />
+                <path class="line aqua" d="M 66,32 L 34,68" />
+              </svg>
             </div>
-            <div class="nav-but-wrap">
-                <div class="menu-icon hover-target">
-                    <span class="menu-icon__line menu-icon__line-left"></span>
-                    <span class="menu-icon__line"></span>
-                    <span class="menu-icon__line menu-icon__line-right"></span>
-                </div>
-            </div>
+          </a>
+        </ul>
+      </div>
+      <!-- OFFCANVAS For Profile Click Event-->
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="profile">
+          <div class="btn-container showOnPc">
+            <button
+              class="d-none"
+              id="hiddenBtn"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            >
+              ss
+            </button>
+            <button class="canva-in" type="button">
+              <svg>
+                <defs>
+                  <filter id="gooeyness">
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="2.2"
+                      result="blur"
+                    />
+                    <feColorMatrix
+                      in="blur"
+                      mode="matrix"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                      result="gooeyness"
+                    />
+                    <feComposite
+                      in="SourceGraphic"
+                      in2="gooeyness"
+                      operator="atop"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+              <div
+                class="plate plate2 active showOnPc"
+                onclick="closeAfterSometimePC()"
+                id="pcham"
+              >
+                <svg
+                  class="burger"
+                  version="1.1"
+                  height="100"
+                  width="100"
+                  viewBox="0 0 100 100"
+                >
+                  <path
+                    class="line line1"
+                    d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+                  />
+                  <path
+                    class="line line2"
+                    d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+                  />
+                  <path
+                    class="line line3"
+                    d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+                  />
+                  <path
+                    class="line line4"
+                    d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+                  />
+                  <path
+                    class="line line5"
+                    d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+                  />
+                  <path
+                    class="line line6"
+                    d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+                  />
+                </svg>
+                <svg
+                  class="x"
+                  version="1.1"
+                  height="100"
+                  width="100"
+                  viewBox="0 0 100 100"
+                >
+                  <path class="line" d="M 34,32 L 66,68" />
+                  <path class="line" d="M 66,32 L 34,68" />
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
-    </header>
-    <div class="nav">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item"><a href="/" class="hover-target">home</a></li>
-                <li class="nav__list-item"><a href="/aboutus" class="hover-target">about us</a></li>
-                <li class="nav__list-item"><a href="/timeline" class="hover-target">events</a></li>
-                <li class="nav__list-item active-nav"><a href="/attractions" class="hover-target">attractions</a></li>
-                <li class="nav__list-item"><a href="/teams" class="hover-target">team</a></li>
-                <li class="nav__list-item"><a href="/contactus" class="hover-target">contact us</a></li>
-            </ul>
+        <div class="options">
+          <a class="showOnPhone" href="/events">Events</a>
+          <a class="showOnPhone" href="{% url 'workshops' %}">Workshops</a>
+          <a class="showOnPhone" href="{% url 'socialInitiatives' %}"
+            >Corporate Social Responsibilities</a
+          >
+          <a class="showOnPhone" href="{% url 'industrialvisits' %}"
+            >Industrial Visits</a
+          >
+          <a class="showOnPhone" href="/attractions">Attractions</a>
+          <a class="showOnPhone" href="/aboutus">About Us</a>
+          <a class="showOnPhone" href="/contactus">Contact Us</a>
+          <a class="showOnPhone" href="/sponsors">Sponsors</a>
+          <a class="showOnPhone" href="/teams">Teams</a>
+        </div>
+      </div>
+
+    <div class="container">
+        <h1 class="header">Attractions</h1>
+        <div class="attraction-container">
+            {% for item in major_attrs_slide %}
+            <div class="attraction-card">
+                <img src="{{ item.image.url }}"
+                    alt="image" class="attraction-card-img" />
+                <p class="attraction-card-date">{{item.date}}</p>
+                <h2 class="attraction-card-name">
+                   {{item.name}}
+                </h2>
+                <p class="attraction-card-title">{{item.title}}</p>
+                <p class="attraction-card-description" hidden> Something more abt the attraction. Write a lot more
+                  {{item.description}}
+                </p>
+                <p class="attraction-card-btn">Know More</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
+    </div>
 
-    <body class="noisy"></body>
-    <div class="emblem"><span class="icon-information"></span></div>
-    <div class="frame">
-        <div class="cont">
-            <div class="over3 "></div>
-            <div class="over box"></div>
-            <div class="over2 box"></div>
-        </div>
-        <div id="content" class="site-content wrapper">
-            <div id="home-wrapper">
-                <div id="home-slider-wrapper">
-                    <div id="home-slider" class="scroll-anim" data-scroll-class="Paralax">
-                        {% for item in major_attrs_slide %}
-                        <div class="home-slide-item  current  home-slide-item--gradiant">
-                            <div class="home-slide-item-paralax bkg-full paralax" data-start-y="0" data-end-y="120"
-                                data-start-scroll="0%" data-end-scroll="0%">
-                                <div class="home-slide-item-bkg-mask bkg-full">
-                                    <div class="home-slide-item-bkg bkg-full">
-                                        <div class="home-slide-item-bkg-img bkg-full bkg-cover"
-                                            style="background-image:url('{{ item.image.url }}')">
+    <!-- The modal -->
+    <div class="modal">
+        <div class="modal-container">
+            <span class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </span>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wrapper wrapper--medium home-slide-item-text">
-                                <div class="inner">
-                                    <a title="Lire l'article Th&eacute;o Muller, explorations sonores et politiques"
-                                        href="/attractions" class="home-slide-content has-hover-text">
-                                        <div class="hover-text hover-text--lire"><span>LI</span><span>RE</span></div>
-                                        <div class="home-slider-item-content">
-                                            <ul class="categories">
-                                                <li class="main-category">Aarohan</li>
+            <img alt="image" class="modal-img" />
+            <div class="modal-content">
+                <p class="modal-date"></p>
 
-                                            </ul>
-                                            <h3>MAJOR ATTRACTIONS</h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                <h2 class="modal-title">
 
+                </h2>
 
-                    <div class="wrapper wrapper--medium" id="slider-home-pagers-wrapper">
-                        <div id="slider-home-pagers">
-                            {% for item in major_attrs_slide %}
-                            <span class="current">
-                                <span id="startCarousel" class="bkg-wrapper">
-                                    <span class="bkg-full">
-                                        <span class="bkg bkg-cover bkg-full"
-                                            style="background-image: url('{{ item.image.url }}')"></span>
-                                    </span>
-                                </span>
-                                <span class="progress"></span>
-                            </span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="wrapper wrapper--large" id="slider-home-cache-bottom">
-                    </div>
-                </div>
+                <p class="modal-name">
 
+                </p>
 
-                <div class="wrapper wrapper--large" id="home-content">
-                    {% for item in major_attrs_slide %}
-                    {% if forloop.counter|divisibleby:2 %}
-                    <a class="home-list-item has-hover-text home-list-type--lire home-list-item--normal"
-                        href="/attractions" data-bs-toggle="modal" data-bs-target="#modal{{ forloop.counter }}" type="button"
-                        title="attraction page of aarohan">
-                        <div class="home-list-item-image bkg-cover"
-                            style="background-image: url('{{ item.image.url }}');">
-                            <div class="bkg-full  home-list-item-image-nb">
-                                <div class="bkg-cover bkg-full bkg-nb"
-                                    style="background-image: url('{{ item.image.url }}');">
-                                </div>
-                                <div class="hover-text hover-text--lire"><span>LI</span><span>RE</span></div>
-                            </div>
-                        </div>
-
-                        <div class="home-list-item-content">
-                            <div class="info">
-                                <ul class="categories">
-                                    <li>{{ item.name }}</li>
-                                </ul>
-                                <span class="date">{{ item.date }}</span>
-                            </div>
-                            <h4>{{ item.title }}</h4>
-                            <span class="btn cta">
-                                <span>show details</span>
-                            </span>
-
-                        </div>
-                    </a>
-                    {% else %}
-                    <a class="home-list-item has-hover-text home-list-type--lire home-list-item--alternate"
-                        href="/attractions" data-bs-toggle="modal" data-bs-target="#modal{{ forloop.counter }}" type="button"
-                        title="aarohan attraction page">
-                        <div class="home-list-item-image bkg-cover"
-                            style="background-image: url('{{ item.image.url }}');">
-                            <div class="bkg-full  home-list-item-image-nb">
-                                <div class="bkg-cover bkg-full bkg-nb"
-                                    style="background-image: url('{{ item.image.url }}');">
-                                </div>
-                                <div class="hover-text hover-text--lire"><span>aaro</span><span>han</span></div>
-                            </div>
-                        </div>
-
-                        <div class="home-list-item-content">
-                            <div class="info">
-                                <ul class="categories">
-                                    <li>{{ item.name }}</li>
-                                </ul>
-                                <span class="date">{{ item.date }}</span>
-                            </div>
-                            <h4>{{ item.title }}</h4>
-                            <span class="btn cta">
-                                <span>show details</span>
-                            </span>
-                        </div>
-                    </a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                <p class="modal-desc">
+                </p>
             </div>
         </div>
+    </div>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/home.js' %}"></script>
+    <script>
+        const modal = document.querySelector('.modal')
+        const openBtns = document.querySelectorAll('.attraction-card-btn')
+        const closeBtn = document.querySelector('.close-btn')
 
-        <!-- Button trigger modal -->
+        const modalImg = document.querySelector('.modal-img')
+        const modalDate = document.querySelector('.modal-date')
+        const modalName = document.querySelector('.modal-name')
+        const modalTitle = document.querySelector('.modal-title')
+        const modalDesc = document.querySelector('.modal-desc')
 
-
-        <!-- Modal -->
-        <div class=" modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-xl ">
-                <div class="modal-content ">
-                    <div class="modal-header center" style="display:block">
-                        <h2 class="modal-title" id="exampleModalLabel"><b>Event Name</b></h2>
-
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-sm">
-                                    <img src="https://sourdoreille.net/2016/wp-content/uploads/2021/03/sgc-2-christophe-urbain-730x370.jpg"
-                                        class="img-fluid" />
-                                </div>
-                                <div class="col-sm">
-                                    Documentation and examples for opting images into responsive behavior (so they never
-                                    become larger than their parent elements) and add lightweight styles to them—all via
-                                    classes.
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer center " style="display:block">
-                        <button type="button" class="btn btn-primary cta" data-bs-dismiss="modal">Close</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Modal -->
-        {% for item in major_attrs_slide %}
-        <div class="modal fade" id="modal{{ forloop.counter }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header center" style="display:block">
-                        <h2 class="modal-title" id="staticBackdropLabel"><b>{{ item.name }}</b></h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-sm">
-                                    <img src="{{ item.image.url }}"
-                                        class="img-fluid" />
-                                </div>
-                                <div class="col-sm">
-                                    {{ item.description }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer center " style="display:block">
-                        <button type="button" class="btn btn-primary cta" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-        <script src="{% static 'js/1.11.3-jquery.min.js' %}"></script>
-
-        <script src="{% static 'js/widgets.js' %}"></script>
-        <script>
-            window.jQuery || document.write('<script src="https://sourdoreille.net/2016/wp-content/themes/sourdoreille/scripts/vendor/jquery-1.11.3.min.js"><\/script>');
-
-            F._page = {
-                "id": null,
-                "content": null,
-                "title": "",
-                "seoTitle": "",
-                "seoDesc": "",
-                "bodyClass": "",
-                "pageType": "home",
-                "data": [],
-                "noJSCache": false
-            };
-
-
-            var t1 = new TimelineMax({
-                onComplete: function () {
-                    console.log('finsted')
-                }
+        openBtns.forEach(openBtn => {
+            openBtn.addEventListener('click', e => {
+                const details = e.target.parentNode
+                console.log(details);
+                modalImg.src = details.querySelector('.attraction-card-img').src
+                modalTitle.textContent = details.querySelector('.attraction-card-title').textContent
+                modalName.textContent = details.querySelector('.attraction-card-name').textContent
+                modalDate.textContent = details.querySelector('.attraction-card-date').textContent
+                modalDesc.textContent = details.querySelector('.attraction-card-description').textContent
+                console.log(modalTitle.textContent + ' ' + modalDesc.textContent);
+                modal.style.display = "grid"
             })
+        })
 
-            t1.to('.over3', 0, { scaleX: 1, ease: Power1.easeInOut }, 0);
-            t1.to('.over', 0.5, { scaleX: 1, ease: Power1.easeInOut }, 0);
-            t1.to('.over2', 0.5, { scaleX: 1, ease: Power1.easeInOut }, 0.3);
-            t1.to('.over', 0.5, { width: "0%", ease: Power1.easeInOut }, 0.5);
-            t1.to('.over2', 0.5, { width: "0%", ease: Power1.easeInOut }, 1);
-            t1.to('.over3', 0.5, { width: "0%", ease: Power1.easeInOut }, 1);
+        closeBtn.addEventListener('click', _ => {
+            modal.style.display = "none"
+        })
 
-
-            document.getElementByClassName('cta').addEventListener('click', function () {
-                console.log('clicked');
-                t1.reversed(!t1.reversed());
-                if (t1.reversed()) {
-                    t1.reverse();
-                }
-                else {
-                    t1.play();
-                }
-
-
-
-            })
-
-
-        </script>
-        <script>
-            var app = function () {
-                var body = undefined;
-                var menu = undefined;
-                var menuItems = undefined;
-                var init = function init() {
-                    body = document.querySelector('body');
-                    menu = document.querySelector('.menu-icon');
-                    menuItems = document.querySelectorAll('.nav__list-item');
-                    applyListeners();
-                };
-                var applyListeners = function applyListeners() {
-                    menu.addEventListener('click', function () {
-                        return toggleClass(body, 'nav-active');
-                    });
-                };
-                var toggleClass = function toggleClass(element, stringClass) {
-                    if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-                };
-                init();
-            }();
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
-            integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
-            integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
-            crossorigin="anonymous"></script>
-
-
-
-
-
-        <script src="{% static 'js/generated-default-footer_1605622709300.js' %}"></script>
-        <script src="{% static 'js/attractions.js' %}"></script>
-
+        window.addEventListener('click', e => {
+            if (e.target == modal) {
+                modal.style.display = "none"
+            }
+        })
+    </script>
 </body>
 
 </html>
-
-
-
-
-<!--
-    <div id="overlay-loader-red" class="overlay-loader" style="transform: translate3d(-360px, 0px, 0px); display: none;">
-        <div class="overlay-loader-inner" style="transform: translate3d(360px, 0px, 0px);">
-            <span class="loader-logo logo">SOURDOREILLE</span>
-        </div>
-    </div>
--->
