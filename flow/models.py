@@ -59,7 +59,7 @@ class SocialInitiatives(models.Model):
 
 class IndustrialVisits(models.Model):
     name = models.CharField(max_length=250, unique=True)
-    subheading = models.TextField()
+    subheading = models.TextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="industrial_images/")
     video_link = models.CharField(max_length=1024, blank=True, null=True)
     date_time = models.DateTimeField(null=True)
