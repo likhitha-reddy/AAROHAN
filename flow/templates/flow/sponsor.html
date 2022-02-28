@@ -14,14 +14,114 @@
 	<link rel="shortcut icon" type="image/jpg" href="{% static 'aarhnLogo.png' %}" />
 	<link rel="stylesheet" href="{% static 'events_day.css' %}">
 	<style>
-		.sponsorImg {
-			max-width: 160px;
-			max-height: 160px;
+		.sponsorBox{
+			justify-content: center !important;
+			align-items: center !important;
+			background-size: cover!important;
+			margin-bottom: 50px !important;
+			border-radius: 25px 0px;  
+			width: 100%; 
+			background:rgb(0,0,0,0.7); 
+			border: 2px solid rgb(170, 0, 248) !important;
+			outline: none;
+border-color: rgb(240, 0, 248);
+box-shadow: 0 0 10px rgb(248, 0, 194);
 		}
 
+		.sponsorImg {
+			max-width: 225px;
+			max-height: 225px;
+			/* animation: mymove 5s ease-in;
+			animation-delay: 0.2s; */
+		}
+
+		.sponsorImg :hover{
+			max-width: 180px;
+			animation-delay: 0.1s;
+		}
+
+		#myVideo {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+		}
+
+		#spons{
+			display: flex;
+			justify-content: center !important;
+			align-items: center !important;
+			margin-left: 100px !important;
+			margin-bottom: 100px !important;
+			background:rgb(0,0,0,0); 
+			border-radius: 105px 0px;  
+			width: 100%; 
+			position: absolute;
+			/* border: 2px solid rgb(170, 0, 248) !important;
+			outline: none;
+border-color: rgb(240, 0, 248);
+box-shadow: 0 0 10px rgb(248, 0, 194); */   
+
+		}
+
+		.desktop-laptop{
+			display:flex;flex-direction: row;
+		}
+		
+
 		@media only screen and (max-width: 600px) {
+			
+			.desktop-laptop{
+				display: none;
+			}
+			
 			.sponsorBox {
-				padding: 14px;
+				margin-left: 4% !important;
+				margin-right: 4% !important;
+			}
+			.sponsorImg {
+				max-width: 150px;
+				max-height: 150px;
+				display: flex;
+				flex-direction: column;
+			}
+			#spons{
+				margin-left: 0px !important;
+				height: auto !important; 
+
+			}
+			#underline{
+				width: 49% !important;
+			}
+		}
+		@media only screen and (max-width: 450px) {
+			
+			.desktop-laptop{
+				display: none;
+			}
+
+			.sponsorImg {
+				max-width: 160px;
+				max-height: 160px;
+				display: flex;
+				flex-direction: column;
+			}
+			#spons{
+				margin-left: 0px !important;
+				height: auto !important; 
+
+			}
+			#underline{
+				width: 60% !important;
+			}
+
+			
+		}
+
+		@media only screen and (min-width: 1200px) {
+			.mobile-phone {
+				display: none;
 			}
 		}
 	</style>
@@ -29,38 +129,231 @@
 
 <body id="wrapper">
 	<div class="wrapper">
-		<span class="menu_toggle">
-			<i class="menu_open fa fa-bars fa-lg"></i>
-			<i class="menu_close fa fa-times fa-lg"></i>
-		</span>
-		<ul id="menuitems" class="menu_items">
-			<li><a href="/teams"><i class="icon fa fa-users fa-2x"></i> Teams </a></li>
-			<li><a href="/sponsors"><i class="icon fa fa-inr fa-2x"></i> Sponsors</a></li>
-			<li><a href="https://techmela.arhn.co.in//techmela"><i class="icon fa fa-star fa-2x"></i> Attractions</a></li>
-			<li><a href="/timeline"><i class="icon fa fa-calendar fa-2x"></i> Timeline </a></li>
-			<li><a href="/#workshops"><i class="icon fa fa-podcast fa-2x"></i> Workshops</a></li>
-		</ul>
-		<div class="content" style="background-image: url('{% static 'img/green1.jpg' %}')">
-			<div class="sc">
-				<div class="container-fluid mt-4" id="title" style="color:#39ff14;">
+
+		<video autoplay muted loop id="myVideo">
+			<source src="{% static 'videos/bg.mp4'%}" type="video/mp4">
+		  </video>
+		
+	
+		<!-- <div class="content" style="background-image: url('sponsors/sponsors.jpg'); background-position: center; background-size: cover; "> -->
+			<div class="sc" >
+				<div class="container-fluid mt-4" id="title" style="color:#fff;position: absolute;">
+
 					<h1><strong>OUR SPONSORS</strong></h1>
-					<img class="mt-0" style="width:17vw;max-height:6px;position:relative;bottom:12px;"
-						src="{% static 'img/d2.svg' %}">
+					<img id="underline" class="mt-0" style="width:16vw;max-height:15px;position:relative;bottom:12px;"
+						src="sponsors/d2.svg">
 				</div>
-				<div id="spons" class="container mt-3 pt-3 pb-3" style="background:rgb(255,255,255,0.9);">
-					<div class="row m-4">
-						{% for sponsor in sponsors %}
+
+				<br><br><br><br><br><br>
+				<div id="spons" class="sponsvg container mt-3 pt-3 pb-3" >
+					
+						<!-- {% for sponsor in sponsors %}
 						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
 							<a href="{{ sponsor.url }}"><img class="sponsorImg m-auto" src="{{ sponsor.image.url }}">
-								<center style="color:black;"><strong>{{sponsor.name}}</strong></center>
+								<center style="color:white;"><strong>{{sponsor.name}}</strong></center>
+
 							</a>
 						</div>
-						{% endfor %}
+						{% endfor %} -->
+					 
+					  
+				<div class="desktop-laptop" >     
+					<div class="row m-4" style="display:inline; max-height: 200px;">
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Polygon.png' %}" style="margin-top: 100px !important;margin-bottom: 80px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Polygon</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/devfolio.png' %}" style="margin-top: 100px !important;margin-bottom: 80px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Devfolio</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/
+								LOGO-05.png' %}" style="margin-top: 53px !important;margin-bottom: 50px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Coding Ninja</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/
+								GFG LOGO-3.png' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Geeks for Geeks</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/LWT LOGO.png' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Learing while Travelling</strong></center>
+
+							</a>
+						</div>
+						
+					</div> 
+					<div class="row m-4" style="display:inline; ">
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/tezos.png' %}" style="margin-top: 90px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Tezos</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Celo_Logo_Color.png' %}" style="margin-top: 85px !important;margin-bottom: 50px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Celo</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Full blue.png' %}" style="margin-top: 90px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Labkafe</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/WhatsApp Image 2022-02-26 at 17.57.30.jpeg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Story Mirror</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Jf6xdg_N_400x400.jpg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Step Set Go </strong></center>
+
+							</a>
+						</div>
+					</div> 
+					<div class="row m-4" style="display:inline; ">
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Filecoin.png' %}" style="margin-top: 95px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Filecoin</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Merchtastic.png' %}" style="margin-top: 60px !important;margin-bottom: 50px !important; margin-left:50px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Merchtastic</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/logo1.png' %}" style="margin-top: 90px !important;margin-bottom: 75px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Funstox</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Organic Tasteful.jpg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Organic Tasteful</strong></center>
+
+							</a>
+						</div>
+					</div>   
+				</div>  
+				
+				<div class="mobile-phone">     
+					<div class="row m-4" style="display:inline; ">
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Polygon.png' %}" style="margin-top: 100px !important;margin-bottom: 80px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Polygon</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/devfolio.png' %}" style="margin-top: 100px !important;margin-bottom: 80px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Devfolio</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/
+								LOGO-05.png' %}" style="margin-top: 53px !important;margin-bottom: 50px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Coding Ninja</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/
+								GFG LOGO-3.png' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Geeks for Geeks</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/LWT LOGO.png' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Learing while Travelling</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/tezos.png' %}" style="margin-top: 90px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Tezos</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Celo_Logo_Color.png' %}" style="margin-top: 85px !important;margin-bottom: 50px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Celo</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Full blue.png' %}" style="margin-top: 90px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Labkafe</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/WhatsApp Image 2022-02-26 at 17.57.30.jpeg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Story Mirror</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Jf6xdg_N_400x400.jpg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Step Set Go </strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Filecoin.png' %}" style="margin-top: 95px !important;margin-bottom: 70px !important; ">
+								<center style="color:white; margin-bottom:15px; "><strong>Filecoin</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Merchtastic.png' %}" style="margin-top: 60px !important;margin-bottom: 50px !important; margin-left:50px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Merchtastic</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/logo1.png' %}" style="margin-top: 90px !important;margin-bottom: 75px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Funstox</strong></center>
+
+							</a>
+						</div>
+						<div class="sponsorBox m-auto col-sm-6 col-md-4 col-lg-2">
+							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto" src="{% static 'sponsors/Organic Tasteful.jpg' %}" style="margin-top: 10px !important;margin-bottom: 10px !important;">
+								<center style="color:white; margin-bottom:15px; "><strong>Organic Tasteful</strong></center>
+
+							</a>
+						</div>
 					</div>
+					</div> 
+						
+						
+					  
+				</div> 
 				</div>
+				<br><br><br><br><br><br>
 			</div>
 		</div>
 	</div>
+</body>
+
 
 
 	<!-- JavaScript Bundle with Popper -->
