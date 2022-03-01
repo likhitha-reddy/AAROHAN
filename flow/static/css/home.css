@@ -292,7 +292,7 @@ body {
 }
 
 /* Responsive CSS */
-@media (max-width: 991px) {
+@media (max-width: 1220px) {
   .offcanvas-end {
     width: 85vw !important;
   }
