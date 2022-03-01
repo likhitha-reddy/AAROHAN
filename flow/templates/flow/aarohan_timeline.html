@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/timeline_css.css' %}">
+  <title>Timeline</title>
+  <link rel="shortcut icon" type="image/jpg" href="{% static 'aarhnLogo.png' %}" />
+</head>
+
+<body>
+  <video src="{% static 'videos/Untitled.mp4' %}" autoplay muted loop id="video">
+  </video>
+  <div class="timeline-container" id="timeline-1">
+    <div class="timeline-header">
+      <h2 class="timeline-header__title">AAROHAN TIMELINE</h2>
+      <h3 class="timeline-header__subtitle">For our 20th edition, we welcome everyone to the phenomenon that is Aarohan.
+        It is about time we get to ushering in The New Dimension.</h3>
+
+    </div>
+
+
+    <!-- MAIN PART OF THE PAGE , UNCOMMENT TO USE-->
+    <!-- 
+    <div class="timeline">
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>ELECTRA</h1>
+            </div>
+
+
+            <h2>DAY 1 - 4:30pm</h2>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>ELECTRA</h1>
+
+            </div>
+
+            <h2>DAY 1 - 4:30pm</h2>
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>ELECTRA</h1>
+
+            </div>
+
+            <h2>DAY 1 - 4:30pm</h2>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div> -->
+  </div>
+  <div class="wrapper">
+    <h1>Coming soon</span></h1>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    document.querySelector('video').playbackRate = 0.5;
+    /*(function ($) {
+      $.fn.timeline = function () {
+        var selectors = {
+          id: $(this),
+          item: $(this).find(".timeline-item"),
+          activeClass: "timeline-item--active",
+          img: ".timeline__img"
+        };
+        selectors.item.eq(0).addClass(selectors.activeClass);
+        selectors.id.css(
+          "background-image",
+          "url(" +
+          selectors.item
+            .first()
+            .find(selectors.img)
+            .attr("src") +
+          ")"
+        );
+        var itemLength = selectors.item.length;
+        $(window).scroll(function () {
+          var max, min;
+          var pos = $(this).scrollTop();
+          selectors.item.each(function (i) {
+            min = $(this).offset().top;
+            max = $(this).height() + $(this).offset().top;
+            var that = $(this);
+            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+              selectors.item.removeClass(selectors.activeClass);
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                selectors.item
+                  .last()
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+              );
+              selectors.item.last().addClass(selectors.activeClass);
+            } else if (pos <= max - 40 && pos >= min) {
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                $(this)
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+              );
+              selectors.item.removeClass(selectors.activeClass);
+              $(this).addClass(selectors.activeClass);
+            }
+          });
+        });
+      };
+    })(jQuery);
+
+    $("#timeline-1").timeline();*/
+
+  </script>
+</body>
+
+</html>

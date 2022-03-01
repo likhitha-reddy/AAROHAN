@@ -121,7 +121,7 @@ def team_page(request):
 
 def timeline(request):
     days = Timeline.objects.all()
-    return render(request, 'flow/timeline2.html', {'days': days})
+    return render(request, 'flow/aarohan_timeline.html', {'days': days})
 
 
 def timeline_detail(request, id):
