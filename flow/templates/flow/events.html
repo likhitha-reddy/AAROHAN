@@ -254,11 +254,11 @@
             str.addEventListener("click", () => {
                 for (var j = 0; j < man.length; j++) {
                     const check = man[j];
-                    if (check.classList.contains("active")) {
-                        check.classList.remove("active");
+                    if (check.classList.contains("active2")) {
+                        check.classList.remove("active2");
                     }
                 }
-                str.classList.add("active");
+                str.classList.add("active2");
                 const dy = str.getAttribute('day');
 
                 const crdiv = document.getElementById("cards");
