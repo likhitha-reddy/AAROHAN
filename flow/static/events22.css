@@ -288,6 +288,7 @@ body {
   text-transform: uppercase;
   width: 400px;
   height: 300px;
+  overflow-y: auto;
 }
 
 .modalCardWrapper h1 {
