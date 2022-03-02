@@ -106,6 +106,9 @@ body {
 .offcanvas {
   z-index: 100009;
 }
+.arnav {
+  z-index: 100010;
+}
 
 .active {
   background: rgb(255, 26, 133);
