@@ -222,7 +222,7 @@ body {
   display: flex !important;
   width: 100vw;
   height: 100vh;
-  z-index: 99999;
+  z-index: 1000000;
   position: fixed;
 }
 .modalCard {
@@ -283,7 +283,7 @@ body {
   align-items: center;
 }
 .modalCardWrapper p {
-  font-size: 18px;
+  font-size: 11px;
   line-height: 25px;
   text-transform: uppercase;
   width: 400px;
