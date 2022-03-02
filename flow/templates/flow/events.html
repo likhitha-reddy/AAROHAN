@@ -209,7 +209,7 @@
     <div class="days">
         {% for d in days %}
         <div class="day" day={{d.day_number}}>
-            <h3>DAY {{d.day_number}}</h3>
+            <h3>DAY {{d.day_number|add:"-1"}}</h3>
         </div>
         {% endfor %}
     </div>
