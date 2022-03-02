@@ -38,6 +38,10 @@ h3 {
     overflow-y: auto;
 }
 
+.card_heading{
+    font-size: 1.5rem !important;
+}
+
 audio,
 canvas {
     display: inline-block;
