@@ -111,9 +111,16 @@ body {
   letter-spacing: 5px;
   color: rgb(237, 218, 255);
   text-transform: uppercase;
-  margin-block: 2.5rem;
+  margin-block-start: 2.5rem;
+  margin-block-end: 1rem;
 }
-
+.contact-mail h4 {
+  font-family: 'Monument', display !important;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: rgb(237, 218, 255);
+  margin-top: -1rem;
+}
 .social-links-container {
   display: flex;
   gap: 2.5rem;
@@ -141,6 +148,7 @@ body {
 
 .contact-info h2 {
   font-size: 24px;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 650px) {
