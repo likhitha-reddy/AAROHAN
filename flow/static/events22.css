@@ -171,7 +171,8 @@ body {
   margin: 8px 0px 4px 0px;
 }
 .event h1 {
-  font-size: 18px;
+  font-size: 16px;
+  text-transform: uppercase;
   margin: 0px;
   background: -webkit-linear-gradient(-120deg, #00c0c7, #ff009d);
   -webkit-background-clip: text;
