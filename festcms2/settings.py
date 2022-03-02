@@ -26,7 +26,7 @@ try:
 except:
     SECRET_KEY = '434324'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #config('DEBUG',cast=bool)
+DEBUG = False #config('DEBUG',cast=bool)
 
 ALLOWED_HOSTS = ['*'] #config('ALLOWED_HOSTS',cast=Csv())
 
