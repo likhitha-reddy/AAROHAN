@@ -42,8 +42,8 @@
 		} */
 
 		.sponsorImg {
-			max-width: 225px;
-			max-height: 225px;
+			width: 170px;
+			height: auto;
 			/* animation: mymove 5s ease-in;
 			animation-delay: 0.2s; */
 		}
@@ -95,8 +95,8 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 				margin-right: 4% !important;
 			}
 			.sponsorImg {
-				max-width: 150px;
-				max-height: 150px;
+				width: 120px;
+				height: auto;
 				display: flex;
 				flex-direction: column;
 			}
@@ -137,6 +137,25 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 			.mobile-phone {
 				display: none;
 			}
+		}
+
+
+		.slogo {
+			padding: 15px;
+			background-color: rgba(0,0,0,0.4);
+			backdrop-filter: blur(3px);
+			border-radius: 20px;
+			border: 2px solid rgb(170, 0, 248) !important;
+			outline: none;
+			border-color: rgb(240, 0, 248);
+			box-shadow: 0 0 10px rgb(248, 0, 194);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: space-between;
+			margin: 20px;
+			height: 270px;
+			width: 210px;
 		}
 	</style>
 </head>
@@ -346,9 +365,9 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 						{% endfor %} -->
 
 
-				<div class="desktop-laptop">
-					<div class="row m-4" style="display:inline; max-height: 200px;">
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+				<div style="width: 100%; margin: 10px auto; max-width: 900px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Polygon.png' %}"
 									style="margin-top: 100px !important;margin-bottom: 80px !important; ">
@@ -356,7 +375,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/devfolio.png' %}"
 									style="margin-top: 100px !important;margin-bottom: 80px !important; ">
@@ -364,14 +383,14 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/LOGO-05.png' %}" style="margin-top: 53px !important;margin-bottom: 50px !important; ">
 								<center style="color:white; margin-bottom:15px; "><strong>Coding Ninja</strong></center>
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/GFG LOGO-3.png' %}" style="margin-top: 10px !important;margin-bottom: 10px !important; ">
 								<center style="color:white; margin-bottom:15px; "><strong>Geeks for Geeks</strong>
@@ -379,7 +398,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/LWT LOGO.png' %}"
 									style="margin-top: 10px !important;margin-bottom: 10px !important; ">
@@ -389,9 +408,9 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 							</a>
 						</div>
 
-					</div>
-					<div class="row m-4" style="display:inline; ">
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+
+
+						<div class="slogo"
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/tezos.png' %}"
 									style="margin-top: 90px !important;margin-bottom: 70px !important; ">
@@ -399,7 +418,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Celo_Logo_Color.png' %}"
 									style="margin-top: 85px !important;margin-bottom: 50px !important; ">
@@ -407,7 +426,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Full blue.png' %}"
 									style="margin-top: 90px !important;margin-bottom: 70px !important; ">
@@ -415,7 +434,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/WhatsApp Image 2022-02-26 at 17.57.30.jpeg' %}"
 									style="margin-top: 10px !important;margin-bottom: 10px !important; ">
@@ -423,7 +442,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Jf6xdg_N_400x400.jpg' %}"
 									style="margin-top: 10px !important;margin-bottom: 10px !important; ">
@@ -431,9 +450,8 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-					</div>
-					<div class="row m-4" style="display:inline; ">
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Filecoin.png' %}"
 									style="margin-top: 95px !important;margin-bottom: 70px !important; ">
@@ -441,15 +459,16 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Merchtastic.png' %}"
-									style="margin-top: 60px !important;margin-bottom: 50px !important; margin-left:50px !important;">
+									style="margin-top: 15px !important;margin-bottom: 10px !important; "
+									>
 								<center style="color:white; margin-bottom:15px; "><strong>Merchtastic</strong></center>
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/logo1.png' %}"
 									style="margin-top: 90px !important;margin-bottom: 75px !important;">
@@ -457,7 +476,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
+						<div class="slogo">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
 									src="{% static 'sponsors/Organic Tasteful.jpg' %}"
 									style="margin-top: 10px !important;margin-bottom: 10px !important;">
@@ -466,10 +485,10 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 
 							</a>
 						</div>
-					</div>
+
 				</div>
 
-				<div class="mobile-phone">
+				<!-- <div class="mobile-phone">
 					<div class="row m-4" style="display:inline; ">
 						<div class="sponsor-box m-auto col-sm-6 col-md-4 col-lg-2" style="display: block !important;">
 							<a href="{{ sponsor.url }}" style="text-decoration: none;"><img class="sponsorImg m-auto"
@@ -585,7 +604,7 @@ box-shadow: 0 0 10px rgb(248, 0, 194); */
 							</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 
 
