@@ -25,6 +25,7 @@ h3 {
 }
 .game_heading--wrap{
     margin-top: 110px !important;
+    margin-bottom: 1em !important;
 }
 .fixed_g-list--wrap {
     z-index: 100000 !important;
@@ -34,7 +35,7 @@ h3 {
 }
 
 .game_list--wrapper {
-    height: calc(100vh - 190px);
+    height: calc(100vh - 160px);
     overflow-y: auto;
 }
 

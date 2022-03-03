@@ -48,10 +48,10 @@ def events(request):
 
 
 def workshops(request):
-    workshops = Workshops.objects.all()
-    context = {'workshops': workshops}
-    print(context)
-    return render(request, "flow/workshop.html", context)
+    workshops = Workshops.objects.values()
+    workshops = [w for w in workshops]
+    print(list(workshops))
+    return render(request, "flow/workshop.html", {'workshops': list(workshops)})
 
 def socialInitiative_view(request):
     socialinitiative = SocialInitiatives.objects.all()
