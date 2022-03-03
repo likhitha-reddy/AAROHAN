@@ -140,10 +140,10 @@ class TeamMember(models.Model):
         ("CCA", "Centre for Cognitive Activities"),
         ("SAE", "SAE"),
         ("MNTC", "Maths n Tech Club"),
-        ("REC", "RECursion"),
+        ("RECURSION", "RECursion"),
     )
     choice = models.CharField(
-        max_length=5,
+        max_length=10,
         choices=club_choice,
         default="GLUG"
     )
