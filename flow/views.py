@@ -230,3 +230,11 @@ def techmela(request):
 def aboutus(request):
     return render(request, "flow/aboutus.html")
 
+def timelineDay1(request):
+     return render(request,"flow/aarohan_timeline.html")
+def timelineDay2(request):
+     return render(request,"flow/day2_timeline.html")
+def timelineDay3(request):
+    return render (request, "flow/day3_timeline.html")
+def timelineDay4(request):
+    return render (request, "flow/day4_timeline.html")

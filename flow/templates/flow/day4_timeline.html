@@ -1,0 +1,253 @@
+{% load static %}
+{% include 'flow/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="{% static 'css/timeline_css.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar2.css' %}">
+  <link rel="shortcut icon" type="image/jpg" href="{% static 'aarhnLogo.png' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'css/timeline_css.css' %}">
+  <title>Timeline</title>
+</head>
+
+<body>
+
+  <!-- OFFCANVAS For Profile Click Event-->
+
+  <video src="{% static 'videos/arhn_timeline.mp4' %}" autoplay muted loop id="video1">
+  </video>
+
+  {% block content %}
+  {% endblock %}
+
+
+  <div class="timeline-container" id="timeline-1">
+    <div class="timeline-header">
+      <h2 class="timeline-header__title">AAROHAN TIMELINE</h2>
+      <h3 class="timeline-header__subtitle">For our 20th edition, we welcome everyone to the phenomenon that is Aarohan.
+        It is about time we get to ushering in The New Dimension.</h3>
+        <div class="Dayz">
+        <a class="btn-ap" style="color:violet" href="{% url 'timelineDay1' %}">Day0</a>
+        <a class="btn-ap" style="color:violet" href="{% url 'timelineDay2' %}">Day1</a>
+        <a class="btn-ap" style="color:violet" href="{% url 'timelineDay3' %}">Day2</a>
+        <a class="btn-ap" style="color:violet" href="{% url 'timelineDay4' %}">Day3</a>
+      </div>
+    </div>
+
+
+    <!-- MAIN PART OF THE PAGE , UNCOMMENT TO USE-->
+
+    <div class="timeline">
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>Inquest</h1>
+            </div>
+             <h1 style="color:violet">9:00 am</h1>
+             <br>
+             <div class="event">
+              <h1>B-Plan</h1>
+            </div>
+             <h1 style="color:violet">9:30 am</h1>
+             <br>
+             <div class="event">
+              <h1>Ingenuitus</h1>
+            </div>
+             <div class="event">
+              <h1>REChase</h1>
+            </div>
+              <h1 style="color:violet">10:00 am</h1>
+              <br>
+            <br>
+              
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>Workshops</h1>
+            </div>
+            <h2> CATIA </h2>
+
+            <h2> Data Science</h2>
+
+            <h2> AI + AR </h2>
+            <h1 style="color:violet">10:00 am</h1>
+             <br>
+             <div class="event">
+              <h1>Tech Conference</h1>   
+            </div>
+            <h2> Advancing Technology and The Cyberfortess:An unfolding Battle<h2>
+            <h1 style="color:violet">12:00 noon</h1>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>Final</h1>
+
+            </div>
+         <h2 style="font-size:20px"> Robodify</h2>
+         <h2 style="font-size:20px"> Invictus</h2>
+         <h2 style="font-size:20px"> Electra</h2>
+            <h1 style="color:violet">11:00 am</h1>
+            <br>
+            <h2 style="font-size:20px"> Junkyard</h2>
+            <h2 style="font-size:20px"> Contraptions</h2>
+            <h1 style="color:violet">1:00 pm</h1>
+            <br>
+            <h2 style="font-size:20px"> Lights-Camera-Fiction</h2>
+            <h1 style="color:violet">3:00 pm</h1>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>Closing Ceremony</h1>
+            </div>
+            
+
+            <h2 > SM</h2>
+            <h2>MuC</h2>
+            <h1 style="color:violet">6-8 pm</h1>
+
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="">
+        <div class="card">
+          <div class="cardWrapper">
+            <div class="image-event">
+            </div>
+            <div class="event">
+              <h1>Stand Up Comedy</h1>
+            </div>
+            <h1 style="color:violet">8:00 pm</h1>
+
+            <div class="event">
+              <h1>Trivio</h1>
+            </div>
+            <h1 style="color:violet">10:00 pm</h1>
+            <div class="event">
+              <h1>Decathlon</h1>
+            </div>
+            <h1 style="color:violet">9:00 pm - 11:00 pm</h1>
+            <div class="event">
+              <h1>Watch Party</h1>
+            </div>
+            <h1 style="color:violet">11:00 pm</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% comment %} <div class="wrapper">
+    <h1>Coming soon</span></h1>
+  </div> {% endcomment %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    document.querySelector('video1').playbackRate = 0.5;
+    /*(function ($) {
+      $.fn.timeline = function () {
+        var selectors = {
+          id: $(this),
+          item: $(this).find(".timeline-item"),
+          activeClass: "timeline-item--active",
+          img: ".timeline__img"
+        };
+        selectors.item.eq(0).addClass(selectors.activeClass);
+        selectors.id.css(
+          "background-image",
+          "url(" +
+          selectors.item
+            .first()
+            .find(selectors.img)
+            .attr("src") +
+          ")"
+        );
+        var itemLength = selectors.item.length;
+        $(window).scroll(function () {
+          var max, min;
+          var pos = $(this).scrollTop();
+          selectors.item.each(function (i) {
+            min = $(this).offset().top;
+            max = $(this).height() + $(this).offset().top;
+            var that = $(this);
+            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+              selectors.item.removeClass(selectors.activeClass);
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                selectors.item
+                  .last()
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+              );
+              selectors.item.last().addClass(selectors.activeClass);
+            } else if (pos <= max - 40 && pos >= min) {
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                $(this)
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+              );
+              selectors.item.removeClass(selectors.activeClass);
+              $(this).addClass(selectors.activeClass);
+            }
+          });
+        });
+      };
+    })(jQuery);
+
+    $("#timeline-1").timeline();*/
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/home.js' %}"></script>
+</body>
+
+</html>

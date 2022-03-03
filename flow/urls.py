@@ -30,4 +30,9 @@ urlpatterns = [
     path('judgeprojects', judge_projects, name="judgeprojects"),
     path('projectreviews', view_reviews, name="projectreviews"),
     path('techmela', techmela, name="techmela"),
+
+    path('timeline_day1',timelineDay1,name="timelineDay1"),
+    path('timeline_day2',timelineDay2,name="timelineDay2"),
+    path('timeline_day3',timelineDay3,name="timelineDay3"),
+    path('timeline_day4',timelineDay4,name="timelineDay4")
 ]
