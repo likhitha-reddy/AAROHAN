@@ -105,12 +105,14 @@ def attractions_page(request):
 
 
 def team_page(request):
-    umbrellas = TeamCategory.objects.all()
+    umbrellas = TeamCategory.objects.all().order_by('-teamId')
+    print(umbrellas)
     members = []
     for umbrella in umbrellas:
         members.append((TeamMember.objects.filter(team=umbrella).values()))
-    umbrellas = TeamCategory.objects.values()
+    umbrellas = TeamCategory.objects.values().order_by('-teamId')
     umbrellas = [umbrella for umbrella in umbrellas]
+    
     members_list = []
     for category in members:
         category_members = [member for member in category]
