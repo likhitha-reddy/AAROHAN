@@ -240,3 +240,7 @@ def timelineDay3(request):
     return render (request, "flow/day3_timeline.html")
 def timelineDay4(request):
     return render (request, "flow/day4_timeline.html")
+
+
+def merch(request):
+    return render (request, "flow/merch.html")

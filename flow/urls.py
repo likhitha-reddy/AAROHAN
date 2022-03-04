@@ -34,5 +34,7 @@ urlpatterns = [
     path('timeline_day1',timelineDay1,name="timelineDay1"),
     path('timeline_day2',timelineDay2,name="timelineDay2"),
     path('timeline_day3',timelineDay3,name="timelineDay3"),
-    path('timeline_day4',timelineDay4,name="timelineDay4")
+    path('timeline_day4',timelineDay4,name="timelineDay4"),
+
+    path('buymerch',merch,name="merch"),
 ]
