@@ -26,7 +26,7 @@ try:
 except:
     SECRET_KEY = '434324'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #config('DEBUG',cast=bool)
+DEBUG = config('DEBUG',cast=bool)
 
 ALLOWED_HOSTS = ['*'] #config('ALLOWED_HOSTS',cast=Csv())
 
@@ -121,7 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')

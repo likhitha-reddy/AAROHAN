@@ -106,7 +106,6 @@ def attractions_page(request):
 
 def team_page(request):
     umbrellas = TeamCategory.objects.all().order_by('-teamId')
-    print(umbrellas)
     members = []
     for umbrella in umbrellas:
         members.append((TeamMember.objects.filter(team=umbrella).values()))
@@ -175,7 +174,7 @@ def judge_projects(request):
                 context["err"] = True
         for idx, project in enumerate(context['projects']):
             review = Review.objects.all().filter(user=request.user, project=project)
-            if len(review) is 0:
+            if len(review) == 0:
                 setattr(context['projects'][idx], 'show', True)
             else:
                 setattr(context['projects'][idx], 'show', False)

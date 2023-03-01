@@ -1,307 +1,394 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
 
-<head>
-    <meta charset="UTF-8" />
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/jpg" href="{% static 'aarhnLogo.png' %}" />
-    <title>Events</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			type="image/jpg"
+			href="{% static 'aarhnLogo.png' %}"
+		/>
+		<title>Events</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
 
+		<link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
-    <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+		<link rel="stylesheet" href="{% static 'events22.css' %}" />
+		<link rel="stylesheet" href="{% static 'firefly.css' %}">
+	</head>
 
-    <link rel="stylesheet" href="{% static 'events22.css' %}" />
-</head>
+	<body style="background-image: url('{% static 'bg23.jpg' %}'); background-size: 100% 100%;">
 
-<body>
-    <div id="loading">
-        <img src="{% static 'img/final-logo.png' %}" alt="Aarohan">
-      </div>
-    <div class="arnav" id="moar">
-        <a class="left-navbar" href="#home">
-            <img src="{% static 'img/final-logo.png' %}" alt="Aarohan" id="navlogo">
-        </a>
-        <ul class="right-navbar">
-            <a class="botHover" href="/#" role="button" id="showini"
-               data-bs-toggle="dropdown" aria-expanded="false"
-              >
-              Initiative
-            </a>
-            <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
-              <li class="curpo px-3 py-1 text-info" >Corporate Social Responsibilities</li>
-              <li class="curpo px-3 py-1 text-info" >Industrial Visits</li>
-            </ul>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<div class="firefly"></div>
+		<!-- <div id="loading">
+			<img src="{% static 'img/final-logo.png' %}" alt="Aarohan" />
+		</div> -->
+		<div class="arnav" id="moar">
+			<a class="left-navbar" href="#home">
+				<img
+					src="{% static 'img/final-logo.png' %}"
+					alt="Aarohan"
+					id="navlogo"
+				/>
+			</a>
+			<ul class="right-navbar">
+				<a
+					class="botHover"
+					href="/#"
+					role="button"
+					id="showini"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					Initiative
+				</a>
+				<ul
+					class="dropdown-menu bg-transparent border-info mt-2"
+					aria-labelledby="showini"
+				>
+					<li class="curpo px-3 py-1 text-info">
+						<a href="{% url 'socialInitiatives' %}"
+							>Corporate Social Responsibilities</a
+						>
+					</li>
+					<li class="curpo px-3 py-1 text-info">
+						<a href="{% url 'industrialvisits' %}"
+							>Industrial Visits</a
+						>
+					</li>
+				</ul>
 
-            <a class="botHover" href="#" role="button" id="showevents" data-bs-toggle="dropdown" aria-expanded="false" 
-            >
-              Events
-            </a>
-            <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showevents">
-              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'events' %}')" >Events</li>
-              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'workshops' %}')" >Workshops</li>
-            </ul>
+				<a
+					class="botHover"
+					href="#"
+					role="button"
+					id="showevents"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					Events
+				</a>
+				<ul
+					class="dropdown-menu bg-transparent border-info mt-2"
+					aria-labelledby="showevents"
+				>
+					<li class="curpo px-3 py-1 text-info">
+						<a href="{% url 'events' %}">Events</a>
+					</li>
+					<li class="curpo px-3 py-1 text-info">
+						<a href="{% url 'workshops' %}">Workshops</a>
+					</li>
+				</ul>
 
-            <a class="botHover" href="/timeline">Timeline</a>
+				<a class="botHover" href="/timeline">Timeline</a>
 
-            <a class="botHover" href="/attractions">Attractions</a>
-            <a class="botHover" href="/aboutus">About Us</a>
-            <a class="botHover" href="/contactus">Contact Us</a>
-            <a class="botHover" href="/sponsors">Sponsors</a>
-            <a class="botHover" href="/teams">Teams</a>
-            <a class="botHover" href="/buymerch">Merchandise</a>
-            <button class="d-none" id="shownBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">s</button>
-            <a class="showOnPhone" style="z-index: 10000000000000;cursor: pointer;">
-                <svg>
-                    <defs>
-                      <filter id="gooeyness">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-                        <feColorMatrix
-                          in="blur"
-                          mode="matrix"
-                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
-                          result="gooeyness"
-                        />
-                        <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
-                      </filter>
-                    </defs>
-                </svg>
-                <div class="plate plate2" onclick="closeAfterSometimeMob()" id="ocanva">
-                    <svg
-                      class="burger"
-                      version="1.1"
-                      height="100"
-                      width="100"
-                      viewBox="0 0 100 100"
-                    >
-                      <path
-                        class="line aqua line1"
-                        d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
-                      />
-                      <path
-                        class="line aqua line2"
-                        d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
-                      />
-                      <path
-                        class="line aqua line3"
-                        d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
-                      />
-                      <path
-                        class="line aqua line4"
-                        d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
-                      />
-                      <path
-                        class="line aqua line5"
-                        d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
-                      />
-                      <path
-                        class="line aqua line6"
-                        d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
-                      />
-                    </svg>
-                    <svg
-                      class="x"
-                      version="1.1"
-                      height="100"
-                      width="100"
-                      viewBox="0 0 100 100"
-                    >
-                      <path class="line aqua" d="M 34,32 L 66,68" />
-                      <path class="line aqua" d="M 66,32 L 34,68" />
-                    </svg>
-                </div>
-            </a>
-        </ul>
-    </div>
-    <!-- OFFCANVAS For Profile Click Event-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="profile">
-            <div class="btn-container showOnPc">
-                <button class="d-none" id="hiddenBtn" data-bs-dismiss="offcanvas" aria-label="Close">ss</button>
-                <button class="canva-in" type="button">
-                    <svg>
-                        <defs>
-                          <filter id="gooeyness">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-                            <feColorMatrix
-                              in="blur"
-                              mode="matrix"
-                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
-                              result="gooeyness"
-                            />
-                            <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
-                          </filter>
-                        </defs>
-                    </svg>
-                    <div class="plate plate2 active showOnPc" onclick="closeAfterSometimePC()" id="pcham">
-                        <svg
-                          class="burger"
-                          version="1.1"
-                          height="100"
-                          width="100"
-                          viewBox="0 0 100 100"
-                        >
-                          <path
-                            class="line line1"
-                            d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
-                          />
-                          <path
-                            class="line line2"
-                            d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
-                          />
-                          <path
-                            class="line line3"
-                            d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
-                          />
-                          <path
-                            class="line line4"
-                            d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
-                          />
-                          <path
-                            class="line line5"
-                            d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
-                          />
-                          <path
-                            class="line line6"
-                            d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
-                          />
-                        </svg>
-                        <svg
-                          class="x"
-                          version="1.1"
-                          height="100"
-                          width="100"
-                          viewBox="0 0 100 100"
-                        >
-                          <path class="line" d="M 34,32 L 66,68" />
-                          <path class="line" d="M 66,32 L 34,68" />
-                        </svg>
-                    </div>
-                </button>
-            </div>
-        </div>
-        <div class="options">
-          <a class="showOnPhone" href="/">Corporate Social Responsibilities</a>
-          <a class="showOnPhone" href="/">Industrial Visits</a>
-          
-          <a class="showOnPhone" href="/events">Events</a>
-          <a class="showOnPhone" href="/workshops">Workshops</a>
-          <a class="showOnPhone" href="/timeline">Timeline</a>
-          <a class="showOnPhone" href="/attractions">Attractions</a>
-          <a class="showOnPhone" href="/aboutus">About Us</a>
-          <a class="showOnPhone" href="/contactus">Contact Us</a>
-          <a class="showOnPhone" href="/sponsors">Sponsors</a>
-          <a class="showOnPhone" href="/teams">Teams</a>
-          <a class="showOnPhone" href="/buymerch">Merchandise</a>
-        </div>
-    </div>
-    <video autoplay muted loop id="myVideo">
-        <source src="{% static 'bgvideoevents.mp4' %}" type="video/mp4" />
-    </video>
-    <div class="bg_blur"></div>
-    <div class="bg_grain"></div>
+				<a class="botHover" href="/attractions">Attractions</a>
+				<a class="botHover" href="/aboutus">About Us</a>
+				<a class="botHover" href="/contactus">Contact Us</a>
+				<a class="botHover" href="/sponsors">Sponsors</a>
+				<a class="botHover" href="/teams">Teams</a>
+				<a class="botHover" href="/buymerch">Merchandise</a>
+				<button
+					class="d-none"
+					id="shownBtn"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#offcanvasRight"
+					aria-controls="offcanvasRight"
+				>
+					s
+				</button>
+				<a
+					class="showOnPhone"
+					style="z-index: 10000000000000; cursor: pointer"
+				>
+					<svg>
+						<defs>
+							<filter id="gooeyness">
+								<feGaussianBlur
+									in="SourceGraphic"
+									stdDeviation="2.2"
+									result="blur"
+								/>
+								<feColorMatrix
+									in="blur"
+									mode="matrix"
+									values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+									result="gooeyness"
+								/>
+								<feComposite
+									in="SourceGraphic"
+									in2="gooeyness"
+									operator="atop"
+								/>
+							</filter>
+						</defs>
+					</svg>
+					<div
+						class="plate plate2"
+						onclick="closeAfterSometimeMob()"
+						id="ocanva"
+					>
+						<svg
+							class="burger"
+							version="1.1"
+							height="100"
+							width="100"
+							viewBox="0 0 100 100"
+						>
+							<path
+								class="line aqua line1"
+								d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+							/>
+							<path
+								class="line aqua line2"
+								d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+							/>
+							<path
+								class="line aqua line3"
+								d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+							/>
+							<path
+								class="line aqua line4"
+								d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+							/>
+							<path
+								class="line aqua line5"
+								d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+							/>
+							<path
+								class="line aqua line6"
+								d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+							/>
+						</svg>
+						<svg
+							class="x"
+							version="1.1"
+							height="100"
+							width="100"
+							viewBox="0 0 100 100"
+						>
+							<path class="line aqua" d="M 34,32 L 66,68" />
+							<path class="line aqua" d="M 66,32 L 34,68" />
+						</svg>
+					</div>
+				</a>
+			</ul>
+		</div>
+		<!-- OFFCANVAS For Profile Click Event-->
+		<div
+			class="offcanvas offcanvas-end"
+			tabindex="-1"
+			id="offcanvasRight"
+			aria-labelledby="offcanvasRightLabel"
+		>
+			<div class="profile">
+				<div class="btn-container showOnPc">
+					<button
+						class="d-none"
+						id="hiddenBtn"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					>
+						ss
+					</button>
+					<button class="canva-in" type="button">
+						<svg>
+							<defs>
+								<filter id="gooeyness">
+									<feGaussianBlur
+										in="SourceGraphic"
+										stdDeviation="2.2"
+										result="blur"
+									/>
+									<feColorMatrix
+										in="blur"
+										mode="matrix"
+										values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+										result="gooeyness"
+									/>
+									<feComposite
+										in="SourceGraphic"
+										in2="gooeyness"
+										operator="atop"
+									/>
+								</filter>
+							</defs>
+						</svg>
+						<div
+							class="plate plate2 active showOnPc"
+							onclick="closeAfterSometimePC()"
+							id="pcham"
+						>
+							<svg
+								class="burger"
+								version="1.1"
+								height="100"
+								width="100"
+								viewBox="0 0 100 100"
+							>
+								<path
+									class="line line1"
+									d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+								/>
+								<path
+									class="line line2"
+									d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+								/>
+								<path
+									class="line line3"
+									d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+								/>
+								<path
+									class="line line4"
+									d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+								/>
+								<path
+									class="line line5"
+									d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+								/>
+								<path
+									class="line line6"
+									d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+								/>
+							</svg>
+							<svg
+								class="x"
+								version="1.1"
+								height="100"
+								width="100"
+								viewBox="0 0 100 100"
+							>
+								<path class="line" d="M 34,32 L 66,68" />
+								<path class="line" d="M 66,32 L 34,68" />
+							</svg>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="options">
+				<a class="showOnPhone" href="/"
+					>Corporate Social Responsibilities</a
+				>
+				<a class="showOnPhone" href="/">Industrial Visits</a>
 
-    {{days|json_script:'days'}}
-    {{events|json_script:'events'}}
+				<a class="showOnPhone" href="/events">Events</a>
+				<a class="showOnPhone" href="/workshops">Workshops</a>
+				<a class="showOnPhone" href="/timeline">Timeline</a>
+				<a class="showOnPhone" href="/attractions">Attractions</a>
+				<a class="showOnPhone" href="/aboutus">About Us</a>
+				<a class="showOnPhone" href="/contactus">Contact Us</a>
+				<a class="showOnPhone" href="/sponsors">Sponsors</a>
+				<a class="showOnPhone" href="/teams">Teams</a>
+				<a class="showOnPhone" href="/buymerch">Merchandise</a>
+			</div>
+		</div>
+		<video autoplay muted loop id="myVideo">
+			<source src="{% static 'bg23.jpg' %}" type="video/mp4" />
+		</video>
+		<div class="bg_blur"></div>
+		<div class="bg_grain"></div>
 
-    <div class="days">
-        {% for d in days %}
-        <div class="day" day={{d.day_number}}>
-            <h3>DAY {{d.day_number|add:"-1"}}</h3>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="cards" id="cards">
-        
-    </div>
-    <div class="modal"></div>
-    <!-- <div class="modal">
-        <div class="modalCard">
-            <div class="close">
-                <img src="{% static 'aarhnLogo.png' %}" alt="" class="cross">
-            </div>
-            <div class="modalCardWrapper">
-                <img src="{% static 'aarhnLogo.png' %}" alt="" />
-                <div class="">
-                    <p>
-                        The skew() function is specified with either one or two values, which represent the amount of
-                        skewing to be applied in each direction. If you only specify one value it is used for the x-axis
-                        and there will be no skewing on the y-axis. The skew() function is specified with either one or
-                        two values, which represent the amount of skewing to be applied in each direction. If you only
-                        specify one value it is used for the x-axis and there will be no skewing on the y-axis.
-                    </p>
-                    <h1>DIGITAL FORTRESS</h1>
-                    <div class="time">
-                        <h3>DAY 1</h3>
-                        <h3>6:00 PM</h3>
-                    </div>
-                    <div class="modalbutton">
-                        <div class="">REGISTER</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <script>
-        const man = document.querySelectorAll(".day");
+		{{days|json_script:'days'}} {{events|json_script:'events'}}
 
-        for (var i = 0; i < man.length; i++) {
+		<div class="days">
+			{% for d in days %}
+			<div class="day" day="{{d.day_number}}">
+				<h3>DAY {{d.day_number|add:"-1"}}</h3>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="cards" id="cards"></div>
+		<div class="modal"></div>
 
-            const str = man[i];
-            const days = JSON.parse(document.getElementById('days').textContent);
-            const events = JSON.parse(document.getElementById('events').textContent);
+		<script>
+			const man = document.querySelectorAll(".day");
 
+			for (var i = 0; i < man.length; i++) {
+				const str = man[i];
+				const days = JSON.parse(
+					document.getElementById("days").textContent
+				);
+				const events = JSON.parse(
+					document.getElementById("events").textContent
+				);
 
-            str.addEventListener("click", () => {
-                for (var j = 0; j < man.length; j++) {
-                    const check = man[j];
-                    if (check.classList.contains("active2")) {
-                        check.classList.remove("active2");
-                    }
-                }
-                str.classList.add("active2");
-                const dy = str.getAttribute('day');
+				str.addEventListener("click", () => {
+					for (var j = 0; j < man.length; j++) {
+						const check = man[j];
+						if (check.classList.contains("active2")) {
+							check.classList.remove("active2");
+						}
+					}
+					str.classList.add("active2");
+					const dy = str.getAttribute("day");
 
-                const crdiv = document.getElementById("cards");
-                crdiv.innerHTML = ``;
-                for (var b = 0; b < events[dy - 1].length; b++) {
-                    crdiv.innerHTML += `
+					const crdiv = document.getElementById("cards");
+					crdiv.innerHTML = ``;
+					for (var b = 0; b < events[dy - 1].length; b++) {
+						crdiv.innerHTML += `
                     <div class="card">
                         <div class="cardWrapper">
                             <img src="media/${events[dy - 1][b].logo}" alt="" />
                             <div class="event">
                                 <h1>${events[dy - 1][b].eventName}</h1>
-                                <h2>${new Date(events[dy - 1][b].date_time).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}</h2>
+                                <h2>${new Date(
+									events[dy - 1][b].date_time
+								).toLocaleString("en-US", {
+									hour: "numeric",
+									minute: "numeric",
+									hour12: true,
+								})}</h2>
                             </div>
                             <div class="buttons">
-                                <div class="button know" id="know" c1="${dy - 1}" c2="${b}">
+                                <div class="button know" id="know" c1="${
+									dy - 1
+								}" c2="${b}">
                                     <div class="">KNOW MORE</div>
                                 </div>
-                                <a style="text-decoration:none;" href="${events[dy - 1][b].registration_link}"><div class="button register">
+                                <a style="text-decoration:none;" href="${
+									events[dy - 1][b].registration_link
+								}"><div class="button register">
                                     <div class="">REGISTER</div>
                                 </div></a>
                             </div>
                         </div>
                     </div>
                     `;
+					}
 
-                }
+					const register = document.querySelectorAll(".know");
 
-                const register = document.querySelectorAll(".know");
+					for (var i = 0; i < register.length; i++) {
+						const c1 = parseInt(register[i].getAttribute("c1"));
+						const c2 = parseInt(register[i].getAttribute("c2"));
 
-                for (var i = 0; i < register.length; i++) {
-                    const c1 = parseInt(register[i].getAttribute("c1"));
-                    const c2 = parseInt(register[i].getAttribute("c2"));
-
-                    const str1 = register[i];
-                    str1.addEventListener("click", () => {
-                        const dv = document.querySelector(".modal");
-                        dv.innerHTML = `
+						const str1 = register[i];
+						str1.addEventListener("click", () => {
+							const dv = document.querySelector(".modal");
+							dv.innerHTML = `
                 <div class="modalCard">
                     <div class="close">
                         <img src="{% static 'cross.png' %}" alt="" class="cross">
@@ -314,48 +401,80 @@
                             </p>
                             <h1>${events[c1][c2].eventName}</h1>
                             <div class="time">
-                                <h3>${new Date(events[c1][c2].date_time).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}</h3>
+                                <h3>${new Date(
+									events[c1][c2].date_time
+								).toLocaleString("en-US", {
+									hour: "numeric",
+									minute: "numeric",
+									hour12: true,
+								})}</h3>
                             </div>
-                            <a style="text-decoration:none;" href="${events[c1][c2].registration_link}"><div class="modalbutton">
+                            <a style="text-decoration:none;" href="${
+								events[c1][c2].registration_link
+							}"><div class="modalbutton">
                                 <div class="">REGISTER</div>
                             </div></a>
                         </div>
                     </div>
                 </div>
-                `
+                `;
 
-                        dv.classList.add("modaldisplay");
+							dv.classList.add("modaldisplay");
 
-                        const closes = document.querySelectorAll(".cross");
+							const closes = document.querySelectorAll(".cross");
+
+							for (var i = 0; i < closes.length; i++) {
+								console.log(closes[i]);
+								const str2 = closes[i];
+								str2.addEventListener("click", () => {
+									const div =
+										document.querySelector(".modal");
+									div.classList.remove("modaldisplay");
+								});
+							}
+						});
+					}
+				});
+			}
+
+			window.onload = function () {
+				const man = document.querySelector(".day").click();
+			};
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<script src="{% static 'js/home.js' %}"></script>
+		
+		<!-- <div id="container"></div> -->
+		
+	</body>
+	<!-- <script>
+		var total=40,
+    container=document.getElementById('container'),
+    w=window.innerWidth,
+    h=window.innerHeight,
+    Tweens=[],
+    SPs=1;
 
 
-                        for (var i = 0; i < closes.length; i++) {
-                            console.log(closes[i]);
-                            const str2 = closes[i];
-                            str2.addEventListener("click", () => {
-                                const div = document.querySelector(".modal");
-                                div.classList.remove("modaldisplay");
-                            });
-                        }
 
-                    });
-                }
+for (var i=total;i--;){ 
+  var Div=document.createElement('div');
+  TweenLite.set(Div,{attr:{class:'dot'},x:R(w),y:R(h),opacity:0});
+  container.appendChild(Div); Anim(Div);  Tweens.push(Div);
+};
+
+function Anim(elm){ 
+  elm.Tween=TweenLite.to(elm,R(20)+10,{bezier:{values:[{x:R(w),y:R(h)},{x:R(w),y:R(h)}]},opacity:R(1),scale:R(1)+0.5,delay:R(2),onComplete:Anim,onCompleteParams:[elm]})
+};
+
+for(var i=total;i--;){
+  Tweens[i].Tween.play()};
 
 
-
-
-            });
-        }
-
-        window.onload = function(){
-            const man = document.querySelector(".day").click();
-        }
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
-    crossorigin="anonymous"></script>
-    <script src="{% static 'js/home.js' %}"></script>
-</body>
-
+function R(max){return Math.random()*max};
+	</script> -->
 </html>
