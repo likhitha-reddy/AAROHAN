@@ -6,8 +6,7 @@
 }
 
 body {
-  /* background-image: url('/media/bg.png'); */
-  background-image: url('/flow/static/attractions/media/bg.png');
+  background-image: url('/static/attractions/media/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
