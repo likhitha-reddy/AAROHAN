@@ -15,3 +15,5 @@ env
 .vscode
 */migrations
 .vscode
+/static
+.DS_Store

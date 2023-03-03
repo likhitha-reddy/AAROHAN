@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
+body {
+  font-family: "Tilt Neon", cursive;
+  overflow: hidden;
+}
+.bgimage {
+  background-image: url("../../images/contactus/Background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.form_container {
+  display: flex;
+  width: 50vw;
+  background-color: #280e09;
+  padding: 30px;
+  border-radius: 10px;
+  opacity: 0.8;
+  color: white;
+  position: absolute;
+  right: 10%;
+  top: 15%;
+  height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.form_container_left,
+.form_container_right {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.form_container_left > h2,
+.contact_info_container > h2 {
+  text-align: center;
+}
+.input_boxes {
+  background: none;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: white;
+  margin: 10px;
+}
+.input_boxes:focus {
+  border: none;
+  border-bottom: 1px solid white;
+  outline: 0;
+}
+.send_mesg_btn {
+  width: fit-content;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #e97957;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+.send_mesg_btn:hover {
+  background-color: #d63629;
+}
+.form_container_right {
+  flex: 0.5;
+  border-left: 1px solid lightgrey;
+  align-items: center;
+}
+.contact_info_box {
+  display: flex;
+  align-items: center;
+}
+.contact_info_text {
+  margin-left: 10px;
+  color: grey;
+  text-decoration: none;
+}
+.contact_info_box strong {
+  margin-left: 10px !important;
+}
+
+@media (max-width: 800px) {
+  .form_container {
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 85vw;
+  }
+  .form_container_right {
+    border-left: none;
+    border-top: 1px solid lightgrey;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    font-size: 4vw !important;
+  }
+  .form_container {
+    width: 83vw;
+    height: 85vh;
+    padding: 25px;
+    margin-top: 10px;
+  }
+  .form_container_left,
+  .form_container_right {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
