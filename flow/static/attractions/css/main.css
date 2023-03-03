@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
+
+@font-face {
+  font-family: 'Transformers';
+  src: url('/static/attractions/media/font.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +12,7 @@
 }
 
 body {
-  /* background-image: url('/media/bg.png'); */
-  background-image: url('/flow/static/attractions/media/bg.png');
+  background-image: url('/static/attractions/media/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -32,6 +37,7 @@ body::after {
   margin-inline: auto;
   user-select: none;
   filter: saturate(1.5);
+  font-family: 'Transformers', sans-serif;
 }
 
 .container {
