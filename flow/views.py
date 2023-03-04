@@ -18,7 +18,7 @@ def index(request):
     attractions = MajorAttractions.objects.all()
     context = {'workshops': workshops, 'faqs': faqs, 'about': about,
                'sponsors': sponsors, 'attractions': attractions}
-    return render(request, 'flow/homepage.html', context)
+    return render(request, 'flow/index.html', context)
 
 
 def home(request):
@@ -30,7 +30,7 @@ def home(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs,
                'about': about, 'sponsors': sponsors, 'attractions': attractions, 'arena' : arena}
-    return render(request, 'flow/home.html', context)
+    return render(request, 'flow/homepage.html', context)
 
 
 def events(request):
