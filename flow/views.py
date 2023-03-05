@@ -30,7 +30,7 @@ def home(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs,
                'about': about, 'sponsors': sponsors, 'attractions': attractions, 'arena' : arena}
-    return render(request, 'flow/home.html', context)
+    return render(request, 'flow/homepage.html', context)
 
 
 def events(request):
@@ -103,19 +103,16 @@ def attractions_page(request):
 
 
 def team_page(request):
+<<<<<<< HEAD
     umbrellas = TeamCategory.objects.all().order_by('-teamId')
+=======
+    umbrellas = TeamCategory.objects.all()
+>>>>>>> master
     members = []
     for umbrella in umbrellas:
-        members.append((TeamMember.objects.filter(team=umbrella).values()))
-    umbrellas = TeamCategory.objects.values().order_by('-teamId')
-    umbrellas = [umbrella for umbrella in umbrellas]
-    
-    members_list = []
-    for category in members:
-        category_members = [member for member in category]
-        members_list.append(category_members)
-    context = {'teams': umbrellas, 'members': members_list}
-    return render(request, "flow/team22.html", context)
+        members.append(TeamMember.objects.filter(team=umbrella))
+    context = {'teams':umbrellas,'members':members}
+    return render(request,"flow/teams.html",context)
 
 
 def timeline(request):

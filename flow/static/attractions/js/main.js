@@ -5,9 +5,6 @@ const modalImg = document.querySelector('.modal-image')
 const modalHeader = document.querySelector('.modal-header')
 const modalTitle = document.querySelector('.modal-title')
 const modalDesc = document.querySelector('.modal-desc')
-const modalContact = document.querySelector('.modal-contact')
-const modalDate = document.querySelector('.modal-date')
-const modalVenue = document.querySelector('.modal-venue')
 const modalLink = document.querySelector('.modal-btn')
 
 const openBtns = document.querySelectorAll('.card-btn')
@@ -17,12 +14,11 @@ openBtns.forEach((btn) => {
     try {
       modalImg.src = details.attributes._img.nodeValue
       modalHeader.textContent = details.attributes._name.nodeValue
-      modalTitle.textContent = details.attributes._id.nodeValue
+      modalTitle.textContent = details.attributes._title.nodeValue
       modalDesc.textContent = details.attributes._desc.nodeValue
-      modalContact.textContent = details.attributes._contact.nodeValue
-      modalDate.textContent = details.attributes._date.nodeValue
-      modalVenue.textContent = details.attributes._venue.nodeValue
-      modalLink.href = details.attributes._link.nodeValue
+      if (details.attributes._link.nodeValue)
+        modalLink.href = details.attributes._link.nodeValue
+      else modalLink.style.display = 'none'
     } catch (err) {}
     modalBg.classList.add('open-modal-bg')
     modal.classList.add('open-modal')
@@ -34,8 +30,4 @@ modalBg.addEventListener('click', (e) => {
     modalBg.classList.remove('open-modal-bg')
     modal.classList.remove('open-modal')
   }
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> master
