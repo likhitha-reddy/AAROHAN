@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Workshops</title>
 		<link rel="stylesheet" href="{% static 'firefly.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/socialInitiatives23.css' %}">
+    <link rel="stylesheet" href="{% static 'eventsAndInitiatives/industrialVisits.css' %}">
 	</head>
 	<body
 		style="
@@ -71,7 +71,7 @@
           <img src="{{w.industrialvisit.image.url}}" alt="" />
           <div class="">
             <p>
-              {{w.industrialvisit.description}}
+              {{w.industrialvisit.subheading|truncatechars:256}}
             </p>
             <h1>{{w.industrialvisit.name}}</h1>
             <div class="time">
@@ -88,7 +88,7 @@
           {% for p in w.photos %}
           {% if p.image %}
           <div class="gallery-item">
-             <img src="{p.image.url}" alt="">
+             <img src="{{p.image.url}}" alt="">
           </div>
           {% endif %}
           {% endfor %}

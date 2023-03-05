@@ -60,8 +60,7 @@ def socialInitiative_view(request):
         photos = i.socialImages.all()
         newdictionary = {"socialinitiative":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary)        
-    print(data)
+        data.append(newdictionary)
     return render(request, "flow/eventsAndInitiatives/socialInitiatives.html", {"data":data})
 
 def industrialvisit_view(request):
@@ -71,8 +70,7 @@ def industrialvisit_view(request):
         photos = i.industrialImages.all()
         newdictionary = {"industrialvisit":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary) 
-    print(data)
+        data.append(newdictionary)
     return render(request, "flow/eventsAndInitiatives/industrialVisits.html", {"data":data})
     
 
