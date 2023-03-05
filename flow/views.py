@@ -103,11 +103,7 @@ def attractions_page(request):
 
 
 def team_page(request):
-<<<<<<< HEAD
-    umbrellas = TeamCategory.objects.all().order_by('-teamId')
-=======
     umbrellas = TeamCategory.objects.all()
->>>>>>> master
     members = []
     for umbrella in umbrellas:
         members.append(TeamMember.objects.filter(team=umbrella))
