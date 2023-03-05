@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('/static/workshops/media/bg.png');
+  background-image: url('/static/workshops/media_workshops/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
