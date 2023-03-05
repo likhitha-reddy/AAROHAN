@@ -14,11 +14,12 @@
     <style>
       @font-face {
         font-family: 'Transformers';
-        src: url("{% static 'workshops/media/font.ttf' %}") format('truetype');
+        src: url("{% static 'workshops/media_workshops/font.ttf' %}")
+          format('truetype');
       }
 
       body {
-        background-image: url("{% static 'workshops/media/bg.png' %}");
+        background-image: url("{% static 'workshops/media_workshops/bg.png' %}");
       }
     </style>
     <link rel="stylesheet" href="{% static 'workshops/css/main.css' %}" />
@@ -111,14 +112,14 @@
         _desc="{{workshop.description}}"
         _venue="{{workshop.venue}}"
         _contact="Contact us at {{workshop.contact}}"
-        _img="media/{{workshop.logo }}"
+        _img="media_workshops/{{workshop.logo }}"
         {%if
         workshop.registration_link%}
         _link="{{workshop.registration_link}}"
         {%endif
         %}
       >
-        <img src="media/{{workshop.logo }}" class="card-image" />
+        <img src="media_workshops/{{workshop.logo }}" class="card-image" />
         <div class="card-text">
           {%if workshop.registration_open%}
           <p class="card-tag">Registration Open!</p>
