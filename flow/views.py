@@ -30,7 +30,7 @@ def home(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs,
                'about': about, 'sponsors': sponsors, 'attractions': attractions, 'arena' : arena}
-    return render(request, 'flow/home.html', context)
+    return render(request, 'flow/homepage.html', context)
 
 
 def events(request):
@@ -42,7 +42,7 @@ def events(request):
         for d in days:
             evnt.append([eve for eve in Events.objects.filter(eventDay__day_number__exact=d["day_number"]).order_by('date_time').values()])
         
-        return render(request, 'flow/events.html', {'events':evnt, 'days':list(days)})
+        return render(request, 'flow/eventsAndInitiatives/events.html', {'events':evnt, 'days':list(days)})
     except ObjectDoesNotExist:
         raise Http404
 
@@ -60,9 +60,8 @@ def socialInitiative_view(request):
         photos = i.socialImages.all()
         newdictionary = {"socialinitiative":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary)        
-    print(data)
-    return render(request, "flow/socialinitiative.html", {"data":data})
+        data.append(newdictionary)
+    return render(request, "flow/eventsAndInitiatives/socialInitiatives.html", {"data":data})
 
 def industrialvisit_view(request):
     industrialvisits = IndustrialVisits.objects.all()
@@ -71,9 +70,8 @@ def industrialvisit_view(request):
         photos = i.industrialImages.all()
         newdictionary = {"industrialvisit":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary) 
-    print(data)
-    return render(request, "flow/industrialvisits.html", {"data":data})
+        data.append(newdictionary)
+    return render(request, "flow/eventsAndInitiatives/industrialVisits.html", {"data":data})
     
 
 def sponsor_view(request):
@@ -105,20 +103,12 @@ def attractions_page(request):
 
 
 def team_page(request):
-    umbrellas = TeamCategory.objects.all().order_by('-teamId')
-    print(umbrellas)
+    umbrellas = TeamCategory.objects.all()
     members = []
     for umbrella in umbrellas:
-        members.append((TeamMember.objects.filter(team=umbrella).values()))
-    umbrellas = TeamCategory.objects.values().order_by('-teamId')
-    umbrellas = [umbrella for umbrella in umbrellas]
-    
-    members_list = []
-    for category in members:
-        category_members = [member for member in category]
-        members_list.append(category_members)
-    context = {'teams': umbrellas, 'members': members_list}
-    return render(request, "flow/team22.html", context)
+        members.append(TeamMember.objects.filter(team=umbrella))
+    context = {'teams':umbrellas,'members':members}
+    return render(request,"flow/teams.html",context)
 
 
 def timeline(request):
@@ -175,7 +165,7 @@ def judge_projects(request):
                 context["err"] = True
         for idx, project in enumerate(context['projects']):
             review = Review.objects.all().filter(user=request.user, project=project)
-            if len(review) is 0:
+            if len(review) == 0:
                 setattr(context['projects'][idx], 'show', True)
             else:
                 setattr(context['projects'][idx], 'show', False)

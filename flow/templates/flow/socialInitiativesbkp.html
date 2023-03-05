@@ -1,0 +1,360 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000" />
+    <title>Corporate Social Responsibilities</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'img/final-logo.png' %}"
+    />
+    <!-- Bootstrap   -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/workshop.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/socialinitiative.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+</head>
+<body>
+  <!-- <div id="loading">
+    <img src="{% static 'img/final-logo.png' %}" alt="Aarohan">
+  </div> -->
+
+    <div class="arnav" id="moar">
+        <a class="left-navbar" href="/">
+            <img src="{% static 'img/final-logo.png' %}" alt="Aarohan" id="navlogo">
+        </a>
+        <ul class="right-navbar">
+
+            <a class="botHover" href="#" role="button" id="showevents" data-bs-toggle="dropdown" aria-expanded="false" 
+            >
+              Events
+            </a>
+            <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showevents">
+              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'events' %}')">Events</li>
+              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'workshops' %}')" >Workshops</li>
+            </ul>
+
+            <a class="botHover" href="/timeline">Timeline</a>
+
+            <a class="botHover" href="/#" role="button" id="showini"
+              data-bs-toggle="dropdown" aria-expanded="false"
+              >
+              Initiatives
+            </a>
+            <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
+              <li class="curpo px-3 py-1 text-info"><a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a></li>
+              <li class="curpo px-3 py-1 text-info"><a href="{% url 'industrialvisits' %}">Industrial Visits</a></li>
+            </ul>
+
+            <a class="botHover" href="/attractions">Attractions</a>
+            <a class="botHover" href="/aboutus">About Us</a>
+            <a class="botHover" href="/contactus">Contact Us</a>
+            <a class="botHover" href="/sponsors">Sponsors</a>
+            <a class="botHover" href="/teams">Teams</a>
+            <a class="botHover" href="/buymerch">Merchandise</a>
+            
+            <button class="d-none" id="shownBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">s</button>
+            <a class="showOnPhone" style="z-index: 10000000000000;cursor: pointer;">
+                <svg>
+                    <defs>
+                      <filter id="gooeyness">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
+                        <feColorMatrix
+                          in="blur"
+                          mode="matrix"
+                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                          result="gooeyness"
+                        />
+                        <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                      </filter>
+                    </defs>
+                </svg>
+                <div class="plate plate2" onclick="closeAfterSometimeMob()" id="ocanva">
+                    <svg
+                      class="burger"
+                      version="1.1"
+                      height="100"
+                      width="100"
+                      viewBox="0 0 100 100"
+                    >
+                      <path
+                        class="line aqua line1"
+                        d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+                      />
+                      <path
+                        class="line aqua line2"
+                        d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+                      />
+                      <path
+                        class="line aqua line3"
+                        d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+                      />
+                      <path
+                        class="line aqua line4"
+                        d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+                      />
+                      <path
+                        class="line aqua line5"
+                        d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+                      />
+                      <path
+                        class="line aqua line6"
+                        d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+                      />
+                    </svg>
+                    <svg
+                      class="x"
+                      version="1.1"
+                      height="100"
+                      width="100"
+                      viewBox="0 0 100 100"
+                    >
+                      <path class="line aqua" d="M 34,32 L 66,68" />
+                      <path class="line aqua" d="M 66,32 L 34,68" />
+                    </svg>
+                </div>
+            </a>
+        </ul>
+    </div>
+
+    <!-- OFFCANVAS For Profile Click Event-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="profile">
+            <div class="btn-container showOnPc">
+                <button class="d-none" id="hiddenBtn" data-bs-dismiss="offcanvas" aria-label="Close">ss</button>
+                <button class="canva-in" type="button">
+                    <svg>
+                        <defs>
+                          <filter id="gooeyness">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
+                            <feColorMatrix
+                              in="blur"
+                              mode="matrix"
+                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                              result="gooeyness"
+                            />
+                            <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                          </filter>
+                        </defs>
+                    </svg>
+                    <div class="plate plate2 active showOnPc" onclick="closeAfterSometimePC()" id="pcham">
+                        <svg
+                          class="burger"
+                          version="1.1"
+                          height="100"
+                          width="100"
+                          viewBox="0 0 100 100"
+                        >
+                          <path
+                            class="line line1"
+                            d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475"
+                          />
+                          <path
+                            class="line line2"
+                            d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034"
+                          />
+                          <path
+                            class="line line3"
+                            d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254"
+                          />
+                          <path
+                            class="line line4"
+                            d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525"
+                          />
+                          <path
+                            class="line line5"
+                            d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441"
+                          />
+                          <path
+                            class="line line6"
+                            d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695"
+                          />
+                        </svg>
+                        <svg
+                          class="x"
+                          version="1.1"
+                          height="100"
+                          width="100"
+                          viewBox="0 0 100 100"
+                        >
+                          <path class="line" d="M 34,32 L 66,68" />
+                          <path class="line" d="M 66,32 L 34,68" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="options">
+          <a class="showOnPhone" href="/events">Events</a>
+          <a class="showOnPhone" href="{% url 'workshops' %}">Workshops</a>
+          <a class="showOnPhone" href="/timeline">Timeline</a>
+          <a class="showOnPhone" href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
+          <a class="showOnPhone" href="{% url 'industrialvisits' %}">Industrial Visits</a>
+          <a class="showOnPhone" href="/attractions">Attractions</a>
+          <a class="showOnPhone" href="/aboutus">About Us</a>
+          <a class="showOnPhone" href="/contactus">Contact Us</a>
+          <a class="showOnPhone" href="/sponsors">Sponsors</a>
+          <a class="showOnPhone" href="/teams">Teams</a>
+          <a class="showOnPhone" href="/buymerch">Merchandise</a>
+        </div>
+    </div>
+    <!-- OFFCANVAS For Profile Click Event-->
+
+    <div class="section">        
+        <h1 class="title mb-4 text-2xl">Corporate Social Responsibilities</h1>
+        <div class="workshop container">
+          <div class="workshop-wrap py-3">
+            {% for w in data %}
+                <div class="first hero swiper-slide">
+                  <img class="hero-profile-img" src="{{w.socialinitiative.poster.url}}" alt="">
+                  <div class="hero-description-bk"></div>
+                  <div class="hero-logo">
+                    <img src="{% static 'img/logo_square.jpg' %}" alt="">
+                  </div>
+                  <div class="hero-description">
+                    <p>{{w.socialinitiative.description|truncatechars:70 }}</p>
+                  </div>
+                  <div  class="hero-date">
+                    <p>{{ w.socialinitiative.name }}</p>
+                  </div>
+                  <div class="hero-btn">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}">Learn More</a>
+                  </div>
+                </div>
+                {% comment %} <span class="close"></span>
+                <span class="arrow"></span>
+                <article>
+                  <h2>{{ w.socialinitiative.name }}</h2>
+                  <div class="pic"><img src="{{w.socialinitiative.poster.url}}"></div>                
+                  <div class="desc">{{w.socialinitiative.description|truncatechars:120 }} </div>
+            
+                </article>
+                <div class="actions">
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}" class="btn w-100"><span>View</span>
+                      <span class="icon w-100">View More</span>
+                    </button>
+                  </div>
+              </div> {% endcomment %}
+            {% endfor %}
+            </div>          
+    </div> 
+    
+
+<style>
+  .modal-dialog{
+    max-width: 60vw;
+  }
+
+  .modal-content {
+    background:transparent !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color:#fff !important;
+    padding:10px;
+  }
+  .btn-primary
+  {
+    color: #3c0136  !important;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1.5px solid #fff;
+    background: linear-gradient(89.97deg, #ae67fa  1.84%, #f49867 102.67%) !important;
+  }
+  @media(max-width:600px){
+    .modal-dialog{
+      max-width: unset;
+    }
+    iframe{
+      min-height: 225px !important;
+    }
+    .modal-body{
+      padding-left:  0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+</style>
+
+{% for w in data %}
+  <div class="fade modal bd-example-modal-lg" style="z-index: 100000000000000000000000000000000000000000000000;" id="exampleModal{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">{{ w.socialinitiative.name }}</h3>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <style>
+            .btn-conttainer{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          </style>
+          <div class="container-fluid">
+              <img class="w-100 rounded pos" style="max-height: 432px;object-fit: contain;" src="{{w.socialinitiative.poster.url}}">
+              
+              <div class="btn-conttainer mt-3">
+                {% if w.socialinitiative.webinar_link %}
+                <div class="my-2 mx-3">
+                  <a class="btn btn-primary  mx-auto d-block" href="{{w.socialinitiative.webinar_link}}">  Webinar Link </a>
+                </div>
+                {% endif %}
+                {% if w.socialinitiative.app_link %}
+                <div class="my-2 mx-3">
+                  <a class="btn btn-primary  mx-auto d-block" href="{{w.socialinitiative.app_link}}">  App Link </a>
+                </div>
+                {% endif %}
+              </div>
+              
+              <p class="my-3 text-center fs-4">{{ w.socialinitiative.date_time|date }}</p>
+
+              <p class="my-3 text-justify">{{w.socialinitiative.description}}</p>
+              {% if w.socialinitiative.video_link or w.photos|length > 0   %}
+              <h4>Glimpses</h4>
+              <hr>
+              {% endif %}
+              {% if w.socialinitiative.video_link %}
+                <iframe class="d-block rounded mx-auto w-100 my-3" style="min-height: 340px;" src="{{w.socialinitiative.video_link}}" frameborder="0"></iframe>
+              {% endif %}
+
+              <div class="row img-cont">
+                {% if w.photos|length > 0  %}
+                  {% for img in w.photos %}
+                      {% if img.image.url %}
+                          <div class="col-12 col-lg-6">
+                            <img class="w-100 rounded mx-1 my-2" src="{{img.image.url}}"  alt="" />
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+
+</body>
+</html>
+

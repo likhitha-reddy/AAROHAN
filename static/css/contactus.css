@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+  font-family: Monument;
+  src: url('../fonts/MonumentExtended-Regular.otf');
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#bg-vid {
+  position: fixed;
+  inset: 0;
+  z-index: -100;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.container {
+  height: calc(100vh - 110px);
+  margin-top: 110px;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  overflow: unset;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.container svg {
+  height: 24px;
+  width: 24px;
+  position: static;
+  z-index: 1;
+}
+
+.side {
+  width: 35%;
+  display: grid;
+  place-items: center;
+}
+
+.main {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-header {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.95rem);
+  font-family: 'Monument', display !important;
+  letter-spacing: 5px;
+  color: rgb(237, 218, 255);
+  text-transform: uppercase;
+  text-shadow: rgb(183, 111, 251) 0 0 35px;
+  margin-block: 3rem;
+}
+
+.contact-mail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-mail > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(241, 241, 241);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 1.5rem 3.5rem 1.5rem 2rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.contact:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.301);
+  color: rgb(241, 241, 241);
+  box-shadow: rgba(255, 255, 255, 0.25) 4px 4px 15px;
+}
+
+.contact-social h1,
+.contact-mail h1 {
+  font-size: 2rem;
+  font-family: 'Monument', display !important;
+  letter-spacing: 5px;
+  color: rgb(237, 218, 255);
+  text-transform: uppercase;
+  margin-block-start: 2.5rem;
+  margin-block-end: 1rem;
+}
+.contact-mail h4 {
+  font-family: 'Monument', display !important;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: rgb(237, 218, 255);
+  margin-top: -1rem;
+}
+.social-links-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.social-link {
+  width: 85px;
+  height: 85px;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 15px;
+  color: aliceblue;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.301);
+  color: rgb(241, 241, 241);
+  box-shadow: rgba(255, 255, 255, 0.25) 4px 4px 15px;
+}
+
+.contact-info h2 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    padding-inline: 1rem;
+    margin-top: 110px;
+  }
+  .side,
+  .main {
+    width: auto;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .side-header {
+    font-size: 2rem;
+    margin-block: 1.5rem;
+  }
+
+  .contact-mail h1,
+  .contact-social h1 {
+    font-size: 1.25rem;
+    margin-block: 1rem;
+  }
+
+  .contact-mail > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact {
+    width: fit-content;
+  }
+
+  .social-links-container {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    width: 65px;
+    height: 65px;
+  }
+}

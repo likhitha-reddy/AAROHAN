@@ -6,6 +6,15 @@
   padding: 0;
 }
 
+:root{
+  --custom-Red: #D63629;
+  --custom-brown-opacity: #280e0991;
+  --custom-Red-opacity : #d6372973;
+  --custom-pink-opacity: #e979578f;
+  --custom-brown : #280E09;
+  --custom-pink : #E97957;
+}
+
 body {
   background-color: #201830;
   color: #fff;
@@ -73,35 +82,10 @@ body {
   align-items: center;
   transform: skew(-5deg);
   z-index: 40000;
-  border: 2px solid #ff009d;
+  border: 2px solid var(--custom-Red);
   cursor: pointer;
-  clip-path: polygon(
-    83% 100%,
-    86% 98%,
-    99% 78%,
-    100% 71%,
-    100% 8%,
-    99% 4%,
-    98% 1%,
-    94% 0,
-    4% 0,
-    2% 2%,
-    1% 5%,
-    0 8%,
-    0 92%,
-    1% 97%,
-    2% 98%,
-    4% 100%
-  );
+  clip-path: view-box;
 }
-
-/* .line {
-    background: rgb(255, 26, 133);
-    box-shadow: 0px 0px 20px 2px rgba(255, 26, 133, 0.555);
-    width: 1200px;
-    height: 2px;
-    margin: 0 auto;
-} */
 
 .offcanvas {
   z-index: 100009;
@@ -111,9 +95,9 @@ body {
 }
 
 .active2 {
-  background: rgb(255, 26, 133);
+  background: var(--custom-brown);
   z-index: 40000;
-  box-shadow: 0px 0px 40px 5px rgba(255, 26, 133, 0.555);
+  box-shadow: 0px 0px 40px 5px var(--custom-brown-opacity);
 }
 
 .cards {
@@ -129,7 +113,8 @@ body {
   z-index: 0;
 }
 .card {
-  background-color: rgba(73, 0, 61, 0.671);
+  background-color: var(--custom-brown-opacity);
+  /* background-color: #D63629; */
   width: 306px;
   height: 400px;
   display: flex;
@@ -152,7 +137,7 @@ body {
   z-index: -1;
   border-radius: 15px;
   padding: 2px;
-  background: linear-gradient(-120deg, #00c0c7, #ff009d);
+  background: linear-gradient(-135deg, var(--custom-pink), var(--custom-Red));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -171,16 +156,16 @@ body {
   margin: 8px 0px 4px 0px;
 }
 .event h1 {
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
   margin: 0px;
-  background: -webkit-linear-gradient(-120deg, #00c0c7, #ff009d);
+  background: -webkit-linear-gradient(var(--custom-Red), var(--custom-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .card h2 {
   margin: 0px;
-  font-size: 13px;
+  font-size: 14px;
 }
 .buttons {
   display: flex;
@@ -189,10 +174,10 @@ body {
 
 .button {
   margin-top: 15px;
-  width: 75px;
-  height: 21px;
+  width: 100px;
+  height: 30px;
   border-radius: 15px;
-  font-size: 9px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,8 +189,9 @@ body {
   border: 0.5px solid #ffffff;
 }
 .register {
-  background: rgb(255, 26, 133);
-  box-shadow: 0px 0px 20px 2px rgba(255, 26, 133, 0.555);
+  /* background: rgb(255, 26, 133); */
+  background: var(--custom-Red);
+  /* box-shadow: 0px 0px 20px 2px rgba(255, 26, 133, 0.555); */
 }
 
 .modal {
@@ -227,7 +213,7 @@ body {
   position: fixed;
 }
 .modalCard {
-  background-color: rgba(73, 0, 61, 0.671);
+  background-color: var(--custom-brown-opacity);
   width: 1000px;
   height: 590px;
   display: flex;
@@ -250,9 +236,10 @@ body {
   z-index: -1;
   border-radius: 15px;
   padding: 2px;
-  background: linear-gradient(-120deg, #00c0c7, #ff009d);
+  background: linear-gradient(-120deg, var(--custom-pink), var(--custom-Red));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
+  box-shadow: 5px 5px var(--custom-pink);
   mask-composite: exclude;
 }
 
@@ -260,7 +247,6 @@ body {
   width: 24px !important;
   height: 24px !important;
   cursor: pointer;
-
 }
 .close {
   display: flex;
@@ -284,7 +270,7 @@ body {
   align-items: center;
 }
 .modalCardWrapper p {
-  font-size: 11px !important;
+  font-size: 15px !important;
   line-height: 25px;
   text-transform: uppercase;
   width: 400px;
@@ -294,7 +280,7 @@ body {
 
 .modalCardWrapper h1 {
     margin-top: 41px;
-    background: -webkit-linear-gradient(-120deg, #00c0c7, #ff009d);
+    background: -webkit-linear-gradient(var(--custom-pink), var(--custom-Red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -316,8 +302,8 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: rgb(255, 26, 133);
-    box-shadow: 0px 0px 20px 2px rgba(255, 26, 133, 0.555);
+    background: var(--custom-Red);
+    box-shadow: 0px 0px 10px 1px var(--custom-Red-opacity);
     color: #fff;
   }
   
@@ -387,3 +373,18 @@ body {
     font-size: 18px;
     }
   }
+
+.dot{
+  width:4px;
+  height:4px;
+  position:absolute;
+  background-color:#ff00cc;
+  box-shadow:0px 0px 10px 2px #ff00cc;
+  border-radius: 20px;
+  z-index:2;
+}
+
+html, body, #container {
+width:100%; 
+height:100%;
+}

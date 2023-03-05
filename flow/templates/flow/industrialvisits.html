@@ -315,7 +315,9 @@
                     {{w.industrialvisit.name}}
                   </p>
                   <div class="profile" style="margin-top: 45px !important;">
+                    {% if w.industrialvisit.image %}
                     <img src="{{w.industrialvisit.image.url}}" class="testimonial-img" alt="">
+                    {% endif %}
                     <h3>{{w.industrialvisit.subheading|truncatechars:120}}</h3>
                     <a data-bs-toggle="modal" data-bs-target="#exampleModal{{forloop.counter}}"> Know More </a>
                   </div>
