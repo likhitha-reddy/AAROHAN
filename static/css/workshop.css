@@ -1,0 +1,63 @@
+/* workshops styles */
+.section {
+  background: #010936;
+  background: -webkit-linear-gradient(top, #010936, #3c0136);
+  background: -moz-linear-gradient(top, #010936, #3c0136);
+  background: linear-gradient(to bottom, #010936, #3c0136);
+}
+.workshop {
+  width: 100%;
+}
+.title {
+  width: 100%;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-top: 130px;
+  padding-left: 100px;
+}
+@media(max-width:640px){
+  .title {
+    padding-left: 0;
+    margin-bottom: 1.25rem !important;
+    text-align: center;
+  }
+}
+.swiper {
+  width: 100%;
+  padding: 50px 0 !important;
+}
+.swiper-slide {
+  height: 390px !important;
+  width:  380px !important;
+  position: relative;
+  border: none;
+  z-index: 3;
+  border-radius: 10px;
+  transition: transform 0.8s ease-in-out;
+  text-decoration: none;
+}
+.swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.05);
+}
+@media(max-width:600px){
+  .swiper-slide{
+    max-width: 90vw !important;
+    height: unset !important;
+  }
+  .swiper {
+    padding: 0 0 !important;
+    margin-top: 80px !important; 
+  }
+}

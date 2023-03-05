@@ -1,0 +1,108 @@
+
+
+/* workshops styles */
+#section2 {
+    background: #010936;
+    background: -webkit-linear-gradient(top, #010936, #3C0136);
+    background: -moz-linear-gradient(top, #010936, #3C0136);
+    background: linear-gradient(to bottom, #010936, #3C0136);  
+  }
+  
+  .workshop {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .title {
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 130px;
+    padding-left: 100px;
+  }
+  
+  .workshop-wrap {
+    width: 100%;
+    height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 50px;
+    overflow-x: scroll !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+  
+  .workshop-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .workshop-wrap > :first-child {
+    margin-left: 150px;
+  }
+  
+  .workshop-wrap a {
+    margin: 0 40px;
+    height: 310px;
+    width: 300px;
+    position: relative;
+    border: none;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
+    z-index: 3;
+    border-radius: 10px;
+    transition: transform 0.8s ease-in-out;
+    text-decoration: none;
+    animation: bounce 0.8s ease-in-out alternate-reverse infinite;
+  }
+  
+  .workshop-wrap a:hover {
+    transform: scale(1.1);
+    animation: none;
+  }
+  
+  .workshop-wrap a img {
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    border: none;
+    border-radius: 10px 10px;
+  }
+  .workshop-name {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.6) 30%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0.9) 80%,
+        rgba(0, 0, 0, 1) 100%
+      );
+  }
+  .workshop-name p {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    left: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .workshop-wrap > :first-child {
+      margin-left: 30px;
+    }
+    .title{
+      text-align: center;
+      padding-left: 0;
+    }
+    .workshop-wrap a {
+      margin-left: 20px;
+    }
+  }

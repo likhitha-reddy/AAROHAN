@@ -42,7 +42,7 @@ def events(request):
         for d in days:
             evnt.append([eve for eve in Events.objects.filter(eventDay__day_number__exact=d["day_number"]).order_by('date_time').values()])
         
-        return render(request, 'flow/events.html', {'events':evnt, 'days':list(days)})
+        return render(request, 'flow/eventsAndInitiatives/events.html', {'events':evnt, 'days':list(days)})
     except ObjectDoesNotExist:
         raise Http404
 
@@ -62,7 +62,7 @@ def socialInitiative_view(request):
         newdictionary.update({"photos":photos})
         data.append(newdictionary)        
     print(data)
-    return render(request, "flow/socialinitiative.html", {"data":data})
+    return render(request, "flow/eventsAndInitiatives/socialInitiatives.html", {"data":data})
 
 def industrialvisit_view(request):
     industrialvisits = IndustrialVisits.objects.all()
@@ -73,7 +73,7 @@ def industrialvisit_view(request):
         newdictionary.update({"photos":photos})
         data.append(newdictionary) 
     print(data)
-    return render(request, "flow/industrialvisits.html", {"data":data})
+    return render(request, "flow/eventsAndInitiatives/industrialVisits.html", {"data":data})
     
 
 def sponsor_view(request):
