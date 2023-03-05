@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 import json
 
 from .models import *
-# Create your views here.
 
 
 def index(request):

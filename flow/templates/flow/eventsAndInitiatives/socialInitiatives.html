@@ -40,7 +40,7 @@
 			<div class="shadow">
 				<div class="card draw-border">
 					<img
-						src="{{w.socialinitiative.image.url}}"
+						src="{{w.socialinitiative.poster.url}}"
 						alt="Person"
 						class="card__image"
 					/>
@@ -53,9 +53,8 @@
 					</div>
 
 					<div class="buttons">
-						<div class="button">Register</div>
+						<a class="button" href="{{w.socialinitiative.webinar_link}}" style="text-decoration: none;">Register</a>
 						<div class="know" value="{{w.socialinitiative.id}}">
-              <input type="hidden" name="value" value="{{w.socialinitiative.id}}">
 							<button class="button" value="{{w.socialinitiative.id}}">Know More
 						</div>
 					</div>
@@ -68,16 +67,16 @@
           <img src="{% static 'img/cross.png' %}" alt="" class="cross" value="{{w.socialinitiative.id}}" />
         </div>
         <div class="modalCardWrapper">
-          <img src="{{w.socialinitiative.image.url}}" alt="" />
+          <img src="{{w.socialinitiative.poster.url}}" alt="" />
           <div class="">
             <p>
-              {{w.socialinitiative.description}}
+              {{w.socialinitiative.description|truncatechars:550}}
             </p>
             <h1>{{w.socialinitiative.name}}</h1>
             <div class="time">
               <h3>{{w.socialinitiative.date_time}}</h3>
             </div>
-            <div class="btn draw-border modal_reg">Register</div>            
+            <a class="btn draw-border modal_reg" href="{{w.webinar_link}}" style="text-decoration: none;">Register</a>            
           </div>
         
         </div>
@@ -88,7 +87,7 @@
           {% for p in w.photos %}
           {% if p.image %}
           <div class="gallery-item">
-             <img src="{p.image.url}" alt="">
+             <img src="{{p.image.url}}" alt="">
           </div>
           {% endif %}
           {% endfor %}
