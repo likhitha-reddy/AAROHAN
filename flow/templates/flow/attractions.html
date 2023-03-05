@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,6 +11,16 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="{% static 'attractions/css/main.css' %}" />
+    <style>
+      @font-face {
+        font-family: 'Transformers';
+        src: url("{% static 'attractions/media/font.ttf' %}") format('truetype');
+      }
+
+      body {
+        background-image: url("{% static 'attractions/media/bg.png' %}");
+      }
+    </style>
   </head>
 
   <body>

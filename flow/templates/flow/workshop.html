@@ -11,6 +11,16 @@
       href="{% static 'img/final-logo.png' %}"
       type="image/x-icon"
     />
+    <style>
+      @font-face {
+        font-family: 'Transformers';
+        src: url("{% static 'workshops/media/font.ttf' %}") format('truetype');
+      }
+
+      body {
+        background-image: url("{% static 'workshops/media/bg.png' %}");
+      }
+    </style>
     <link rel="stylesheet" href="{% static 'workshops/css/main.css' %}" />
   </head>
 
