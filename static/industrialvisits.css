@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
+.about {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#section{
+  min-height: 100vh !important;
+  margin-top: 150px;
+}
+
+
+/* workshops styles */
+.section {
+  background: #010936;
+  background: -webkit-linear-gradient(top, #010936, #3c0136);
+  background: -moz-linear-gradient(top, #010936, #3c0136);
+  background: linear-gradient(to bottom, #010936, #3c0136);
+}
+.workshop {
+  width: 100%;
+}
+.title {
+  width: 100%;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-top: 130px;
+  padding-left: 100px;
+}
+@media(max-width:640px){
+  .title {
+    padding-left: 0;
+    margin-bottom: 1.25rem !important;
+    text-align: center;
+  }
+}
+.swiper {
+  width: 100%;
+  padding: 20px 0 !important;
+}
+.swiper-slide {
+  position: relative;
+  border: none;
+  z-index: 3;
+  border-radius: 10px;
+  transition: transform 0.8s ease-in-out;
+  text-decoration: none;
+  background:transparent !important;
+}
+
+@media (max-width: 640px) {
+  .title{
+    padding-left: 0 !important;
+    text-align: center;
+  }
+  .cards{
+    flex-direction: column;
+  }
+  .cards .card{
+    margin: 0.6rem 1rem;
+    width: 100% !important;
+  }
+  .section{
+    min-height: 100vh;
+    overflow: scroll;
+  }
+}
+@media(max-width:600px){
+  .swiper {
+    padding: 0 0 !important;
+  }
+  .testimonial-item p
+  {
+    font-size:24px;
+  }
+}
+ .testimonial-item {
+  box-sizing: content-box;
+  padding: 30px;
+  margin: 30px 30px;
+  box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
+  background: #010936;
+  /* background: -webkit-linear-gradient(bottom, #010936, #3c0136);
+  background: -moz-linear-gradient(bottom, #010936, #3c0136); */
+  background: linear-gradient(89.97deg, #f49867 1.84%, #ae67fa 102.67%);;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.3s;
+  border-radius:10px;
+}
+ .testimonial-item .stars {
+  margin-bottom: 15px;
+}
+ .testimonial-item .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+}
+ .testimonial-item .testimonial-img {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: 0 auto;
+}
+ .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 20px 0 10px 0;
+  font-size:12px;
+  color: #fff;
+}
+ .testimonial-item a {
+  font-size: 14px;
+  color: #fff !important;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0;
+  text-decoration: none;
+  border: 1.5px solid #fff;
+  padding:5px 10px; 
+  margin-top:30px !important;
+  border-radius: 10px;
+}
+.testimonial-item a:hover {
+  font-size: 14px;
+  color: #3c0136  !important;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(89.97deg, #ae67fa  1.84%, #f49867 102.67%);
+  text-decoration: none;
+}
+ .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+  background: linear-gradient(89.97deg, #fff 1.84%, #fafafa 102.67%);
+  background-clip: text;
+  font-size: 26px;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+ .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #3c0136;
+}
+ .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #3c0136;
+}
+ .swiper-slide {
+  opacity: .3;
+  height: auto;
+}
+
+@media (max-width: 1199px) {
+ .swiper-slide-active {
+    opacity: 1;
+  }
+ .swiper-pagination {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+ .swiper-slide-next {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
