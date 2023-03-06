@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 import json
 
 from .models import *
-# Create your views here.
 
 
 def index(request):
@@ -30,7 +29,7 @@ def home(request):
     attractions = MajorAttractions.objects.all()
     context = {'events': events, 'workshops': workshops, 'faqs': faqs,
                'about': about, 'sponsors': sponsors, 'attractions': attractions, 'arena' : arena}
-    return render(request, 'flow/home.html', context)
+    return render(request, 'flow/homepage.html', context)
 
 
 def events(request):
@@ -60,8 +59,7 @@ def socialInitiative_view(request):
         photos = i.socialImages.all()
         newdictionary = {"socialinitiative":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary)        
-    print(data)
+        data.append(newdictionary)
     return render(request, "flow/eventsAndInitiatives/socialInitiatives.html", {"data":data})
 
 def industrialvisit_view(request):
@@ -71,8 +69,7 @@ def industrialvisit_view(request):
         photos = i.industrialImages.all()
         newdictionary = {"industrialvisit":i}
         newdictionary.update({"photos":photos})
-        data.append(newdictionary) 
-    print(data)
+        data.append(newdictionary)
     return render(request, "flow/eventsAndInitiatives/industrialVisits.html", {"data":data})
     
 
@@ -105,19 +102,12 @@ def attractions_page(request):
 
 
 def team_page(request):
-    umbrellas = TeamCategory.objects.all().order_by('-teamId')
+    umbrellas = TeamCategory.objects.all()
     members = []
     for umbrella in umbrellas:
-        members.append((TeamMember.objects.filter(team=umbrella).values()))
-    umbrellas = TeamCategory.objects.values().order_by('-teamId')
-    umbrellas = [umbrella for umbrella in umbrellas]
-    
-    members_list = []
-    for category in members:
-        category_members = [member for member in category]
-        members_list.append(category_members)
-    context = {'teams': umbrellas, 'members': members_list}
-    return render(request, "flow/team22.html", context)
+        members.append(TeamMember.objects.filter(team=umbrella))
+    context = {'teams':umbrellas,'members':members}
+    return render(request,"flow/teams.html",context)
 
 
 def timeline(request):

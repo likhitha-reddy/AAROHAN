@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
 
-@font-face {
-  font-family: 'Transformers';
-  src: url('/static/attractions/media/font.ttf') format('truetype');
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +7,7 @@
 }
 
 body {
-  background-image: url('/static/workshops/media/bg.png');
+  background-image: url('/static/workshops/media_workshops/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -396,4 +391,4 @@ body::after {
   .modal-desc {
     font-size: 14px;
   }
-}
+

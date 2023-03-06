@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 :root{
@@ -18,12 +20,23 @@
 body {
   background-color: #201830;
   color: #fff;
-  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Unbounded', cursive;
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: #060c24;
+  padding-top: 0;
+  margin: 0;
 }
+ 
+
 
 #myVideo {
   position: fixed;
@@ -73,18 +86,16 @@ body {
   font-size: 0.8rem !important;
 }
 .day {
-  width: 160px;
-  height: 43px;
-  margin: 10px;
-  margin-bottom: 0px;
+  margin-top: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: skew(-5deg);
-  z-index: 40000;
-  border: 2px solid var(--custom-Red);
   cursor: pointer;
-  clip-path: view-box;
+  color: #fff;
 }
 
 .offcanvas {
@@ -95,11 +106,26 @@ body {
 }
 
 .active2 {
-  background: var(--custom-brown);
+  background: var(--custom-Red);
   z-index: 40000;
   box-shadow: 0px 0px 40px 5px var(--custom-brown-opacity);
+  margin-top: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
 }
+@media screen and (max-width: 1100px) {
 
+  .active2{
+    z-index: -20000;
+  }
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -107,6 +133,12 @@ body {
 
   height: calc(100vh - 183px);
   overflow-y: auto;
+}
+
+@media screen and (max-width: 1120px){
+.cards {
+      z-index: -10000;
+}
 }
 .carddisplay {
   position: absolute;
@@ -116,7 +148,7 @@ body {
   background-color: var(--custom-brown-opacity);
   /* background-color: #D63629; */
   width: 306px;
-  height: 400px;
+  height: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,7 +209,7 @@ body {
   width: 100px;
   height: 30px;
   border-radius: 15px;
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +231,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   top: 0;
   left: 0;
   backdrop-filter: blur(2px);
@@ -375,14 +407,24 @@ body {
   }
   .container {
     padding-top: 6rem;
+    padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #61463d2d;
-    font-family:'Roboto Slab', sans-serif;
+    /* background-color: #61463d2d; */
+    font-family: 'Unbounded', cursive;
+    background-size: cover;
 }
+@media screen and (max-width: 1100px) {
+
+  .container{
+    z-index: -200000;
+  }
+}
+  
+
 .dot{
   width:4px;
   height:4px;
