@@ -25,9 +25,9 @@ body {
   color: white;
   position: absolute;
   right: 10%;
-  top: 15%;
+  top: 3%;
   height: 85vh;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-x: hidden;
 }
 
@@ -124,4 +124,12 @@ body {
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+
+@media (max-width: 1115px){
+
+  .form_container {
+    width: 66vw;
+  }
+
 }
