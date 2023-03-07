@@ -43,7 +43,7 @@ bar and footer */
 
 .navMenu {
   /* font-family: 'Unbounded', cursive; */
-  left: 40px;
+  left: 0px;
   right: 0;
   top: 0;
   margin-top: 0;
@@ -61,8 +61,10 @@ bar and footer */
   /* margin-left: 70px; */
   /* z-index: 20000; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.342);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(5.9px);
+  z-index: 10001;
 }
 
 .navMenu a {
