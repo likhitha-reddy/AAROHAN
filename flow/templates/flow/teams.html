@@ -29,10 +29,6 @@
       href="{% static 'teams/css/teams.css' %}"
       type="text/css"
     />
-    <link
-    rel="stylesheet" 
-    href="{% static 'navbarAndFooter/navbar.css' %}"
-    >
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script
@@ -46,70 +42,7 @@
     ></script>
   </head>
   <body class="body">
-
-
-    <div class="navMenu" style=" z-index: 100;">
-      <div class="menu-wrap">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="">Initiatives</a>
-            <ul class="drop-menu">
-              <li class="drop-menu-item">
-                <a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
-              </li>
-              <li class="drop-menu-item">
-                <a href="{% url 'industrialvisits' %}">Industrial Visits</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    
-      <div class="menu-wrap">
-        <ul class="menu">
-          <li class="menu-item">
-            <a class="no_border" href="#">Events</a>
-            <ul class="drop-menu">
-              <li class="drop-menu-item">
-                <a href="{% url 'events' %}">Events</a>
-              </li>
-              <li class="drop-menu-item">
-                <a href="{% url 'workshops' %}">Workshops</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    
-    <a href="{% url 'timeline' %}">Timeline</a>
-	  <a href="{% url 'attractions' %}">Attractions</a>
-	  <a href="{% url 'aboutus' %}">About Us</a>
-	  <a href="{% url 'contactus' %}">Contact Us</a>
-	  <a href="{% url 'sponsors' %}">Sponsors</a>
-	  <a href="{% url 'teams' %}">Teams</a>
-	  <a href="{% url 'merch' %}">Merchandise</a>
-    <div id="indicator"></div>
-    </div>
-    
-    <img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
-    
-    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
-    <label for="menu-icon"></label>
-    <nav class="nav" style="z-index:100;">
-      <ul class="ul">
-      <li class="link"><a href="{% url 'industrialvisits' %}">Industrial Visits</a></li>
-		  <li class="link"><a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a></li>
-		  <li class="link"><a href="{% url 'events' %}">Events</a></li>
-		  <li class="link"><a href="{% url 'workshops' %}">Workshops</a></li>
-		  <li class="link"><a href="{% url 'timeline' %}">Timeline</a></li>
-		  <li class="link"><a href="{% url 'attractions' %}">Attractions</a></li>
-		  <li class="link"><a href="{% url 'aboutus' %}">About Us</a></li>
-		  <li class="link"><a href="{% url 'contactus' %}">Contact Us</a></li>
-		  <li class="link"><a href="{% url 'sponsors' %}">Sponsors</a></li>
-		  <li class="link"><a href="{% url 'teams' %}">Teams</a></li>
-		  <li class="link"><a href="{% url 'merch' %}">Merchandise</a></li>
-      </ul>
-    </nav>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <div class="container">
       <div
         data-w-id="52c0daad-0247-a6d7-0a85-9e080f0c9283"
@@ -261,5 +194,6 @@
     <!--[if lte IE 9
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
     ><![endif]-->
+    <!-- {% include 'flow/navbarAndFooter/footer.html' %} -->
   </body>
 </html>
