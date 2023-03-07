@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			type="image/jpg"
+			href="{% static 'aarhnLogo.png' %}"
+		/>
+		<title>Events</title>
+
+		<link rel="stylesheet" href="{% static 'css/hamburger.css' %}" />
+		<!-- <link rel="stylesheet" href="{% static 'css/home.css' %}" /> -->
+		<link
+			rel="stylesheet"
+			href="{% static 'eventsAndInitiatives/events.css' %}"
+		/>
+		<!-- <link rel="stylesheet" href="{% static 'events22.css' %}" /> -->
+		<link rel="stylesheet" href="{% static 'firefly.css' %}" />
+	</head>
+
+	<body
+		style="
+			background-image: url('{% static 'bg23.jpg' %}');
+		"
+	>
+		<div class="container">
+			{% include 'flow/navbarAndFooter/navbar.html' %}
+
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+			<div class="firefly"></div>
+
+			<!-- <div class="bg_blur"></div>
+			<div class="bg_grain"></div> -->
+
+			{{days|json_script:'days'}} {{events|json_script:'events'}}
+
+			<div class="days">
+				{% for d in days %}
+				<div class="day" day="{{d.day_number}}">
+					<h3>DAY {{d.day_number|add:"-1"}}</h3>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="cards" id="cards"></div>
+			<div class="modal"></div>
+
+			<script>
+				const man = document.querySelectorAll(".day");
+
+				for (var i = 0; i < man.length; i++) {
+					const str = man[i];
+					const days = JSON.parse(
+						document.getElementById("days").textContent
+					);
+					const events = JSON.parse(
+						document.getElementById("events").textContent
+					);
+
+					str.addEventListener("click", () => {
+						for (var j = 0; j < man.length; j++) {
+							const check = man[j];
+							if (check.classList.contains("active2")) {
+								check.classList.remove("active2");
+							}
+						}
+						str.classList.add("active2");
+						const dy = str.getAttribute("day");
+
+						const crdiv = document.getElementById("cards");
+						crdiv.innerHTML = ``;
+						for (var b = 0; b < events[dy - 1].length; b++) {
+							crdiv.innerHTML += `
+                    <div class="card">
+                        <div class="cardWrapper">
+                            <img src="media/${events[dy - 1][b].logo}" alt="" />
+                            <div class="event">
+                                <h1>${events[dy - 1][b].eventName}</h1>
+                                <h2>${new Date(
+									events[dy - 1][b].date_time
+								).toLocaleString("en-US", {
+									hour: "numeric",
+									minute: "numeric",
+									hour12: true,
+								})}</h2>
+                            </div>
+                            <div class="buttons">
+                                <div class="button know" id="know" c1="${
+									dy - 1
+								}" c2="${b}">
+                                    <div class="">KNOW MORE</div>
+                                </div>
+                                <a style="text-decoration:none;" href="${
+									events[dy - 1][b].registration_link
+								}"><div class="button register">
+                                    <div class="">REGISTER</div>
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+						}
+
+						const register = document.querySelectorAll(".know");
+
+						for (var i = 0; i < register.length; i++) {
+							const c1 = parseInt(register[i].getAttribute("c1"));
+							const c2 = parseInt(register[i].getAttribute("c2"));
+
+							const str1 = register[i];
+							str1.addEventListener("click", () => {
+								const dv = document.querySelector(".modal");
+								dv.innerHTML = `
+                <div class="modalCard">
+                    <div class="close">
+                        <img src="{% static 'cross.png' %}" alt="" class="cross">
+                    </div>
+                    <div class="modalCardWrapper">
+                        <img src="media/${events[c1][c2].logo}" alt="" />
+                        <div class="">
+                            <p>
+                                ${events[c1][c2].description}
+                            </p>
+                            <h1>${events[c1][c2].eventName}</h1>
+                            <div class="time">
+                                <h3>${new Date(
+									events[c1][c2].date_time
+								).toLocaleString("en-US", {
+									hour: "numeric",
+									minute: "numeric",
+									hour12: true,
+								})}</h3>
+                            </div>
+                            <a style="text-decoration:none;" href="${
+								events[c1][c2].registration_link
+							}"><div class="modalbutton">
+                                <div class="">REGISTER</div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+								dv.classList.add("modaldisplay");
+
+								const closes =
+									document.querySelectorAll(".cross");
+
+								for (var i = 0; i < closes.length; i++) {
+									console.log(closes[i]);
+									const str2 = closes[i];
+									str2.addEventListener("click", () => {
+										const div =
+											document.querySelector(".modal");
+										div.classList.remove("modaldisplay");
+									});
+								}
+							});
+						}
+					});
+				}
+
+				window.onload = function () {
+					const man = document.querySelector(".day").click();
+				};
+			</script>
+			
+
+			
+		</div>
+		
+	</body>
+	<script src="{% static 'js/home.js' %}"></script>
+	{% include 'flow/navbarAndFooter/footer.html' %}
+		
+</html>

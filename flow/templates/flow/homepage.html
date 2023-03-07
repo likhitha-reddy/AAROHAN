@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAROHAN 2023</title>
+  <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'homepage/css/style.css'%}">
+</head>
+<body>
+	
+<!-- partial:index.partial.html -->
+<!-- <nav style="height: 50px;"> -->
+	<!-- <div class="full-body"> -->
+    <!-- <img class="main-img" style="width: 10vw;" src="assets/img/bg.png" /> -->
+  <nav class="nav-home">
+  <div class="menu-btn">
+		<div class="line line--1"></div>
+		<div class="line line--2"></div>
+		<div class="line line--3"></div>
+	</div>
+	<div class="nav-links">
+    <a href="{% url 'socialInitiatives' %}" class="link">Corporate Social Responsibilities</a>
+		<a href="{% url 'industrialvisits' %}" class="link">Industrial Visits</a>
+		<a href="{% url 'events' %}" class="link">Events</a>
+    <a href="{% url 'workshops' %}" class="link">Workshops</a>
+    <a href="{% url 'timeline' %}" class="link">Timeline</a>
+	  <a href="{% url 'attractions' %}" class="link">Attractions</a>
+	  <a href="{% url 'aboutus' %}" class="link">About Us</a>
+	  <a href="{% url 'contactus' %}" class="link">Contact Us</a>
+	  <a href="{% url 'sponsors' %}" class="link">Sponsors</a>
+	  <a href="{% url 'teams' %}" class="link">Teams</a>
+	  <!-- <a href="{% url 'merch' %}" class="link">Merchandise</a> -->
+		
+
+    <!-- Social Links -->
+    <div id="social_icons" class="social_links">
+      <a href="https://www.facebook.com/arhn.nitd/"><i id="icn1" class="fab fa-facebook-square"></i></a></br>
+      <a href="https://www.instagram.com/arhn.nitd/"><i id="icn2" class="fab fa-instagram"></i></a></br>
+      <a href="https://twitter.com/aarohan_nitdgp?lang=en"><i id="icn3"
+              class="fab fa-twitter-square"></i></a></br>
+      <a href="https://www.youtube.com/user/arhnNITD"><i id="icn4" class="fab fa-youtube"></i></a></br>
+  </div>
+	</div>
+
+</nav>
+<div class="logos"> 
+  <img class="logo arhn_logo" src="{% static 'img/aarohan_logo1-01.png' %}" alt="" srcset="" >
+  <img class="logo arhn_logo" src="{% static 'img/SAVE_20230228_135222.png' %}" alt="" srcset="" >
+</div>
+<!-- </div> -->
+
+
+
+
+  <script  src="{% static 'homepage/js/script.js' %}"></script>
+
+</body>
+</html>
+

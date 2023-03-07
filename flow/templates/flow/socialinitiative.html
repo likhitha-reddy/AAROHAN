@@ -56,8 +56,8 @@
               Initiatives
             </a>
             <ul class="dropdown-menu bg-transparent border-info mt-2" aria-labelledby="showini">
-              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'socialInitiatives' %}')" >Corporate Social Responsibilities</li>
-              <li class="curpo px-3 py-1 text-info" onclick="window.location.href=('{% url 'industrialvisits' %}')"  >Industrial Visits</li>
+              <li class="curpo px-3 py-1 text-info"><a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a></li>
+              <li class="curpo px-3 py-1 text-info"><a href="{% url 'industrialvisits' %}">Industrial Visits</a></li>
             </ul>
 
             <a class="botHover" href="/attractions">Attractions</a>
@@ -214,15 +214,10 @@
     </div>
     <!-- OFFCANVAS For Profile Click Event-->
     <div class="section">        
-        <h1 class="title mb-4">Corporate Social Responsibilities</h1>
+        <h1 class="title mb-4 text-2xl">Corporate Social Responsibilities</h1>
         <div class="workshop container">
           <div class="workshop-wrap py-3">
-
- 
-
-            <div class="swiper mySwiper container cards ">
-              <div class="swiper-wrapper">
-              {% for w in data %}
+            {% for w in data %}
                   <div class="first hero swiper-slide">
                     <img class="hero-profile-img" src="{{w.socialinitiative.poster.url}}" alt="">
                     <div class="hero-description-bk"></div>

@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.ove-crates{
+  cursor: pointer;
+}
+
+.header{
+    font-size: 2.3rem;
+    font-weight:400;
+    color: white;
+    display: inline;
+    font-family: 'PT Sans', sans-serif;
+    margin-top: 20px;
+    position: relative;
+    top: 20px;
+    text-align: center;
+   
+
+}
+
+.team-page .header{
+  letter-spacing: 3px;
+  margin: 10px 0px;
+}
+
+.mars-cont{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  
+}
+
+.text-header{
+  color: aliceblue;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 20px;
+  margin-top: 4rem;
+}
+
+.team-page{
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
+    width: 100vw;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px);
+     border: 4px solid rgba(255, 255, 255, 0.3);
+     overflow: auto;
+   padding: 10px 0px;
+   margin-top: 3px;
+
+
+}
+.clss{
+color:rgb(126 53 53);
+cursor: pointer;
+float: right;
+font-size: 2.2rem;
+position: absolute;
+right: 5vw;
+top:20px;
+}
+.btn{
+    padding: 10px;
+    margin:10px auto;
+    display: flex;
+}
+
+.open2{
+   visibility: hidden;
+    z-index:100;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    transform: translateY(-100vh);
+    transition: transform 1.5s;
+    transition-timing-function: ease;  
+}
+.overlay-team{
+    visibility: visible;
+    transition: 1.2s;
+    transform: translateY(0px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right:0;
+}
+ /* cards styling */
+ .card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+ }
+
+ .card img{
+  width: 100%;
+  height: 130%;
+  border-radius: 20px;
+}
+
+
+@media(max-width: 960px){
+.mars-cont{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+}
+.header{
+  font-size: 2.0rem;
+}
+}
