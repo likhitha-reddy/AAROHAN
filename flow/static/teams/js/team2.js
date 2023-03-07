@@ -2,7 +2,12 @@
 var cls = document.querySelectorAll('.clss');
 var overlay = document.querySelector('.mars-cont');
 var wholecontainer = document.querySelector('.container');
-var icon = document.querySelector('.cross-icon');
+var icon = document.querySelector('.cross-icon-teams');
+var menu=document.querySelector('.navMenu');
+var nav=document.querySelector('.nav');
+var value=0;
+const scrollingElement = (document.scrollingElement || document.body);
+var social=document.getElementById("icon-down");
 
 // for(i=0;i<btn.length;i++){
 //   btn[i].addEventListener("click",function(e) {
@@ -15,10 +20,11 @@ var icon = document.querySelector('.cross-icon');
 
 for(i=0;i<cls.length;i++){
   cls[i].addEventListener("click",function() {
-    console.log("sushi");
     overlay.classList.remove("overlay-team");
+    nav.classList.remove("nav-team");
     wholecontainer.style.display="block";
     icon.style.display="block";
+    menu.style.visibility="visible";;
   }); 
   
 }
@@ -33,7 +39,25 @@ function ToggleModal(id){
       category[i].style.display="none";
   }
   icon.style.display="none";
+  menu.style.visibility="hidden";
+  // nav.style.display="none";
+  nav.classList.add("nav-team");
   wholecontainer.style.display="none";
-  console.log(id);
   team.style="display:block;";
+
 }
+
+function  Updown(){
+  scrollingElement.scrollTop = 1500;
+}
+document.addEventListener('scroll',function(){
+  if(window.scrollY>600){
+    social.style="visibility:hidden;";
+   }
+   else{
+    social.style="visibility:visible;";
+   }
+})
+
+
+
