@@ -102,7 +102,7 @@
 	   font-weight: normal;
 	   margin: 0;
 	   
-	   background: linear-gradient(90deg, rgba(247,54,221,1) 0%, rgba(167,38,151,1) 26%, rgba(205,74,185,1) 47%, rgba(203,114,26,1) 74%, rgba(255,149,0,1) 100%);
+	   background: linear-gradient(90deg, rgb(178, 67, 50) 0%, rgb(196, 58, 58) 26%, rgba(205,74,185,1) 47%, rgba(203,114,26,1) 74%, rgb(166, 88, 42) 100%);
 	   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-weight: bold;
@@ -137,7 +137,7 @@
 	margin: 0;
 	font-family: 'Lemon/Milk light', sans-serif;
 	background-color: #00DBDE;
-	background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+	background-image: linear-gradient(90deg, #d62929, 40%, #000,69%, #d63629 100%);
 
 	-webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
@@ -200,7 +200,7 @@ body::-webkit-scrollbar {
    mask-composite: exclude; 
 }
  .card {
-   background-color: rgba(27, 3, 112, 0.671) !important;
+   background-color: rgba(15, 15, 15, 0.671) !important;
    width: 90%;
    height: fit-content;
    flex-direction: column;
@@ -212,6 +212,7 @@ body::-webkit-scrollbar {
    padding-bottom: 5px;
    padding-top: 2px; 
    z-index: 10;
+   opacity: 0.8;
  }
  .card::before {
    content: "";
@@ -223,7 +224,7 @@ body::-webkit-scrollbar {
    z-index: -1;
    border-radius: 15px;
    padding: 4px;
-   background: linear-gradient(-120deg, #00c0c7, #ff009d);
+   background:linear-gradient(-120deg, #e97957, #d63629, #280e09);
    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
    -webkit-mask-composite: destination-out;
    mask-composite: exclude;
@@ -362,7 +363,7 @@ body::-webkit-scrollbar {
 .btn-ap{
    color: #fff !important;
    font-weight: 600;
-   background:linear-gradient(45deg, #00DBDE 0%, #3235eb 100%);
+   background: linear-gradient(45deg, #d63629 0%, #842017 60%);
    font-size: 20px !important;
    padding:10px;
    background-size: 100% 100%;
