@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% include 'flow/navbar.html' %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,6 +11,7 @@
     <title>Contact us</title>
   </head>
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <div class="bgimage"></div>
     <div id="particle-container"></div>
     <div class="form_container">
@@ -59,6 +59,7 @@
         
       </div>
     </div>
+    {% include 'flow/navbarAndFooter/footer.html' %}
   </body>
   <script src="{% static 'js/contactus/particle.js' %}"></script>
 </html>

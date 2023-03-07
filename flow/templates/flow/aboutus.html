@@ -1,4 +1,4 @@
-{% load static %} {% include 'flow/navbar.html' %}
+{% load static %} 
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en" dir="ltr">
   <head>
@@ -37,6 +37,7 @@
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <div>
       <!-- bg image  -->
       <div
@@ -111,7 +112,9 @@
           </div>
         </div>
       </div>
+      {% include 'flow/navbarAndFooter/footer.html' %}
     </div>
+   
 
     <!-- Javascript-->
     <script src="{% static 'js/aboutus/about.js' %}"></script>

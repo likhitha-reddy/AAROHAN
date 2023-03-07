@@ -82,11 +82,11 @@ def sponsor_view(request):
 def about_page(request):
     about = About.objects.all()
     context = {'about': about}
-    return render(request, 'flow/comingSoon.html', context)
+    return render(request, 'flow/aboutus.html', context)
 
 
 def contactus(request):
-    return render(request, 'flow/comingSoon.html')
+    return render(request, 'flow/contactus.html')
 
 
 def faq_page(request):
