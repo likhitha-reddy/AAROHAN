@@ -2,6 +2,7 @@
 var cls = document.querySelectorAll('.clss');
 var overlay = document.querySelector('.mars-cont');
 var wholecontainer = document.querySelector('.container');
+var icon = document.querySelector('.cross-icon');
 
 // for(i=0;i<btn.length;i++){
 //   btn[i].addEventListener("click",function(e) {
@@ -17,7 +18,9 @@ for(i=0;i<cls.length;i++){
     console.log("sushi");
     overlay.classList.remove("overlay-team");
     wholecontainer.style.display="block";
+    icon.style.display="block";
   }); 
+  
 }
 
 
@@ -29,6 +32,7 @@ function ToggleModal(id){
   for(i=0;i<category.length;i++){
       category[i].style.display="none";
   }
+  icon.style.display="none";
   wholecontainer.style.display="none";
   console.log(id);
   team.style="display:block;";
