@@ -26,6 +26,7 @@
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <h1 class="head-h1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400.86 623.84">
         <defs>
@@ -136,6 +137,7 @@
       </div>
       {%endfor %}
     </div>
+    {% include 'flow/navbarAndFooter/footer.html' %}
     <script src="{% static 'workshops/js/main.js' %}"></script>
   </body>
 </html>

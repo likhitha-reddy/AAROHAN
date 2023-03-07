@@ -1,5 +1,4 @@
 {% load static %}
-{% include 'flow/navbar.html' %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +22,7 @@
 </head>
 
 <body>
-
+  {% include 'flow/navbarAndFooter/navbar.html' %}
   <!-- OFFCANVAS For Profile Click Event-->
 
   <video src="{% static 'videos/arhn_timeline.mp4' %}" autoplay muted loop id="video1">
@@ -265,6 +264,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="{% static 'js/home.js' %}"></script>
+  {% include 'flow/navbarAndFooter/footer.html' %}
 </body>
 
 </html>

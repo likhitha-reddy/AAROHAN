@@ -13,7 +13,6 @@
 	<body
 		style="
 			background-image: url('{% static 'bg23.jpg' %}');
-			background-size: 100% 100%;
 		"
 	>
   {% include 'flow/navbarAndFooter/navbar.html' %}
@@ -39,11 +38,13 @@
       {% for w in data %}
 			<div class="shadow">
 				<div class="card draw-border">
+					{% if w.socialinitiative.poster %}
 					<img
 						src="{{w.socialinitiative.poster.url}}"
 						alt="Person"
 						class="card__image"
 					/>
+					{% endif %}
 					<p class="card__name">{{w.socialinitiative.name}}</p>
 
 					<div class="info">
@@ -67,7 +68,9 @@
           <img src="{% static 'img/cross.png' %}" alt="" class="cross" value="{{w.socialinitiative.id}}" />
         </div>
         <div class="modalCardWrapper">
+			{% if w.socialinitiative.poster %}
           <img src="{{w.socialinitiative.poster.url}}" alt="" />
+		  {% endif %}
           <div class="">
             <p>
               {{w.socialinitiative.description|truncatechars:550}}
