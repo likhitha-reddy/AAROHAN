@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarohan Coming Soon</title>
-</head>
-<style>
-    .coming-soon{
-        font-size: 200px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-</style>
-<body>
-    {% include 'flow/navbarAndFooter/navbar.html' %}
-    <div class="coming-soon">
-        <h1>Coming Soon</h1>
-    </div>
-    {% include 'flow/navbarAndFooter/footer.html' %}
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Aarohan Coming Soon</title>
+	</head>
+	<style>
+		body {
+			background-color: black;
+			min-height: 100vh;
+		}
+		.coming-soon {
+			color: white;
+			font-size: 100px;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+		@media screen and (max-width: 400px) {
+			.coming-soon{
+                font-size: 20px;
+            }
+		}
+	</style>
+	<body>
+		{% include 'flow/navbarAndFooter/navbar.html' %}
+		<div class="coming-soon">
+			<h1>Coming Soon</h1>
+		</div>
+		{% include 'flow/navbarAndFooter/footer.html' %}
+	</body>
 </html>

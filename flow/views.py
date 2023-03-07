@@ -82,11 +82,11 @@ def sponsor_view(request):
 def about_page(request):
     about = About.objects.all()
     context = {'about': about}
-    return render(request, 'flow/aboutus.html', context)
+    return render(request, 'flow/comingSoon.html', context)
 
 
 def contactus(request):
-    return render(request, 'flow/contactus.html')
+    return render(request, 'flow/comingSoon.html')
 
 
 def faq_page(request):
@@ -219,7 +219,7 @@ def techmela(request):
     return render(request, "flow/techmela.html", {'robotics': robotics, 'assistive': assistive, 'software' : software})
 
 def aboutus(request):
-    return render(request, "flow/aboutus.html")
+    return render(request, "flow/comingsoon.html")
 
 def timelineDay1(request):
      return render(request,"flow/aarohan_timeline.html")

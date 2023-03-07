@@ -16,6 +16,10 @@
   --custom-pink : #E97957;
 }
 
+.navMenu{
+  font-family: 'Unbounded', cursive;
+}
+
 body {
   background-color: #201830;
   color: #fff;
