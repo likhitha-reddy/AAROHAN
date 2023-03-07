@@ -1,64 +1,78 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'navbarAndFooter/navbar.css' %}">
-<div class="navMenu">
-	<div class="menu-wrap">
-		<ul class="menu">
-			<li class="menu-item">
-				<a href="#">Initiatives</a>
-				<ul class="drop-menu">
-					<li class="drop-menu-item">
-						<a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a>
-					</li>
-					<li class="drop-menu-item">
-						<a href="{% url 'industrialvisits' %}">Industrial Visits</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+<div class="navbar">
+	<link rel="stylesheet" href="{% static 'navbarAndFooter/navbar.css' %}" />
+	<div class="navMenu">
+		<div class="menu-wrap">
+			<ul class="menu">
+				<li class="menu-item">
+					<a href="#">Initiatives</a>
+					<ul class="drop-menu">
+						<li class="drop-menu-item">
+							<a href="{% url 'socialInitiatives' %}"
+								>Corporate Social Responsibilities</a
+							>
+						</li>
+						<li class="drop-menu-item">
+							<a href="{% url 'industrialvisits' %}"
+								>Industrial Visits</a
+							>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
-	<div class="menu-wrap">
-		<ul class="menu">
-			<li class="menu-item">
-				<a class="no_border" href="#">Events</a>
-				<ul class="drop-menu">
-					<li class="drop-menu-item">
-						<a href="{% url 'events' %}">Events</a>
-					</li>
-					<li class="drop-menu-item">
-						<a href="{% url 'workshops' %}">Workshops</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+		<div class="menu-wrap">
+			<ul class="menu">
+				<li class="menu-item">
+					<a class="no_border" href="#">Events</a>
+					<ul class="drop-menu">
+						<li class="drop-menu-item">
+							<a href="{% url 'events' %}">Events</a>
+						</li>
+						<li class="drop-menu-item">
+							<a href="{% url 'workshops' %}">Workshops</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
-	<a href="{% url 'timeline' %}">Timeline</a>
-	<a href="{% url 'attractions' %}">Attractions</a>
-	<a href="{% url 'aboutus' %}">About Us</a>
-	<a href="{% url 'contactus' %}">Contact Us</a>
-	<a href="{% url 'sponsors' %}">Sponsors</a>
-	<a href="{% url 'teams' %}">Teams</a>
-	<a href="{% url 'merch' %}">Merchandise</a>
-	<div id="indicator"></div>
+		<a href="{% url 'timeline' %}">Timeline</a>
+		<a href="{% url 'attractions' %}">Attractions</a>
+		<a href="{% url 'aboutus' %}">About Us</a>
+		<a href="{% url 'contactus' %}">Contact Us</a>
+		<a href="{% url 'sponsors' %}">Sponsors</a>
+		<a href="{% url 'teams' %}">Teams</a>
+		<!-- <a href="{% url 'merch' %}">Merchandise</a> -->
+		<div id="indicator"></div>
+	</div>
+	<a href="{% url 'home' %}">
+		<img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
+	</a>
+	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+	<label for="menu-icon"></label>
+	<nav class="nav">
+		<ul class="ul">
+			<li class="link">
+				<a href="{% url 'industrialvisits' %}">Industrial Visits</a>
+			</li>
+			<li class="link">
+				<a href="{% url 'socialInitiatives' %}"
+					>Corporate Social Responsibilities</a
+				>
+			</li>
+			<li class="link"><a href="{% url 'events' %}">Events</a></li>
+			<li class="link"><a href="{% url 'workshops' %}">Workshops</a></li>
+			<li class="link"><a href="{% url 'timeline' %}">Timeline</a></li>
+			<li class="link">
+				<a href="{% url 'attractions' %}">Attractions</a>
+			</li>
+			<li class="link"><a href="{% url 'aboutus' %}">About Us</a></li>
+			<li class="link"><a href="{% url 'contactus' %}">Contact Us</a></li>
+			<li class="link"><a href="{% url 'sponsors' %}">Sponsors</a></li>
+			<li class="link"><a href="{% url 'teams' %}">Teams</a></li>
+			<!-- <li class="link"><a href="{% url 'merch' %}">Merchandise</a></li> -->
+		</ul>
+	</nav>
 </div>
-
-<img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
-
-<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
-<label for="menu-icon"></label>
-<nav class="nav">
-	<ul class="ul">
-		<li class="link"><a href="{% url 'industrialvisits' %}">Industrial Visits</a></li>
-		<li class="link"><a href="{% url 'socialInitiatives' %}">Corporate Social Responsibilities</a></li>
-		<li class="link"><a href="{% url 'events' %}">Events</a></li>
-		<li class="link"><a href="{% url 'workshops' %}">Workshops</a></li>
-		<li class="link"><a href="{% url 'timeline' %}">Timeline</a></li>
-		<li class="link"><a href="{% url 'attractions' %}">Attractions</a></li>
-		<li class="link"><a href="{% url 'aboutus' %}">About Us</a></li>
-		<li class="link"><a href="{% url 'contactus' %}">Contact Us</a></li>
-		<li class="link"><a href="{% url 'sponsors' %}">Sponsors</a></li>
-		<li class="link"><a href="{% url 'teams' %}">Teams</a></li>
-		<li class="link"><a href="{% url 'merch' %}">Merchandise</a></li>
-	</ul>
-</nav>

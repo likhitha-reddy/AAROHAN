@@ -26,6 +26,7 @@
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <h1 class="head-h1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400.86 623.84">
         <defs>
@@ -112,14 +113,14 @@
         _desc="{{workshop.description}}"
         _venue="{{workshop.venue}}"
         _contact="Contact us at {{workshop.contact}}"
-        _img="media_workshops/{{workshop.logo }}"
+        _img="media/{{workshop.logo }}"
         {%if
         workshop.registration_link%}
         _link="{{workshop.registration_link}}"
         {%endif
         %}
       >
-        <img src="media_workshops/{{workshop.logo }}" class="card-image" />
+        <img src="media/{{workshop.logo }}" class="card-image" />
         <div class="card-text">
           {%if workshop.registration_open%}
           <p class="card-tag">Registration Open!</p>
@@ -136,6 +137,7 @@
       </div>
       {%endfor %}
     </div>
+    {% include 'flow/navbarAndFooter/footer.html' %}
     <script src="{% static 'workshops/js/main.js' %}"></script>
   </body>
 </html>

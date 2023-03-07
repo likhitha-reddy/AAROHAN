@@ -1,18 +1,22 @@
 .footer {
   position: relative;
-  /* width: 1846px; */
   background: #e97957;
   min-height: 100px;
-  /* padding: 5px 10px; */
+  padding: 5px 10px;
   margin: 0;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 10rem;
   
 }  
+@media screen and (max-width: 400px){
+  .footer {
+    flex-direction: column;
+  }
+}
 .social-icon {
   position: relative;
   display: flex;

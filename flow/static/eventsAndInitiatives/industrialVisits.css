@@ -19,6 +19,12 @@ body{
   height: 100vh;
 }
 
+
+.navMenu{
+  font-family: 'Unbounded', cursive;
+}
+
+
 .container {
   padding-top: 6rem;
   margin: 0;
