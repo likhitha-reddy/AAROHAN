@@ -392,7 +392,7 @@ body {
   @media screen and (max-width: 600px) {
     .modalCardWrapper img {
         width: 300px;
-        height: auto;
+        height: 250px;
     }
     .modalCard {
         height: auto;
@@ -411,6 +411,11 @@ body {
     height: 40px;
     border-radius: 25px;
     font-size: 18px;
+    }
+    .modalDesc{
+      max-height: 45vh;
+      overflow-y: scroll;
+      margin-top: 5px;
     }
   }
   .container {
