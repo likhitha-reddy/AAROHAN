@@ -21,11 +21,17 @@
       body {
         background-image: url("{% static 'workshops/media_workshops/bg.png' %}");
       }
+
+      .navMenu a {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bolder !important;
+      }
     </style>
     <link rel="stylesheet" href="{% static 'workshops/css/main.css' %}" />
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <h1 class="head-h1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400.86 623.84">
         <defs>
@@ -175,5 +181,6 @@
       })
 
     </script>
+    {% include 'flow/navbarAndFooter/footer.html' %}
   </body>
 </html>
