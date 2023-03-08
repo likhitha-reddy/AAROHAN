@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-bottom: 5rem;
+  min-height: 100vh;
 }
 
 body::after {

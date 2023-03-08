@@ -14,17 +14,19 @@
     <style>
       @font-face {
         font-family: 'Transformers';
-        src: url("{% static 'workshops/media/font.ttf' %}") format('truetype');
+        src: url("{% static 'workshops/media_workshops/font.ttf' %}")
+          format('truetype');
       }
 
       body {
-        background-image: url("{% static 'workshops/media/bg.png' %}");
+        background-image: url("{% static 'workshops/media_workshops/bg.png' %}");
       }
     </style>
     <link rel="stylesheet" href="{% static 'workshops/css/main.css' %}" />
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <h1 class="head-h1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400.86 623.84">
         <defs>
@@ -135,6 +137,7 @@
       </div>
       {%endfor %}
     </div>
+    {% include 'flow/navbarAndFooter/footer.html' %}
     <script src="{% static 'workshops/js/main.js' %}"></script>
   </body>
 </html>

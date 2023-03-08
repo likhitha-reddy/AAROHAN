@@ -14,16 +14,18 @@
     <style>
       @font-face {
         font-family: 'Transformers';
-        src: url("{% static 'attractions/media/font.ttf' %}") format('truetype');
+        src: url("{% static 'attractions/media_attractions/font.ttf' %}")
+          format('truetype');
       }
 
       body {
-        background-image: url("{% static 'attractions/media/bg.png' %}");
+        background-image: url("{% static 'attractions/media_attractions/bg.png' %}");
       }
     </style>
   </head>
 
   <body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
     <h1 class="head-h1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590.86 623.84">
         <defs>
@@ -120,5 +122,6 @@
       {% endfor %}
     </div>
     <script src="{% static 'attractions/js/main.js' %}"></script>
+    {% include 'flow/navbarAndFooter/footer.html' %}
   </body>
 </html>

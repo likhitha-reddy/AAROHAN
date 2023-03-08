@@ -1,5 +1,4 @@
 {% load static %}
-{% include 'flow/navbar.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +18,10 @@
 </head>
 
 <body>
-
+  {% include 'flow/navbarAndFooter/navbar.html' %}
   <!-- OFFCANVAS For Profile Click Event-->
 
-  <video src="{% static 'videos/arhn_timeline.mp4' %}" autoplay muted loop id="video1">
+  <video src="{% static 'videos/mars.mp4' %}" autoplay muted loop id="video1">
   </video>
 
   {% block content %}
@@ -59,7 +58,7 @@
               <h2>Cybersecurity</h2>
               <h2>Crypto and Blockchain</h2>
 
-              <h1 style="color:violet">10:00 am</h1>
+              <h1 style="color:rgb(247, 140, 99)">10:00 am</h1>
 
           </div>
         </div>
@@ -73,7 +72,7 @@
               <h1>BrandStorming </h1>
               {% comment %} <h1>BrandStorming</h1> {% endcomment %}
             </div>
-            <h1 style="color:violet">10:00 am</h1>
+            <h1 style="color:rgb(247, 140, 99)">10:00 am</h1>
 
           </div>
         </div>
@@ -88,7 +87,7 @@
               <h1> Hackathons </h1>
               {% comment %} <h1>BrandStorming</h1> {% endcomment %}
             </div>
-            <h1 style="color:violet">9 am/4 pm </h1>
+            <h1 style="color:rgb(247, 140, 99)">9 am/4 pm </h1>
 
           </div>
         </div>
@@ -104,7 +103,7 @@
               <h1>Airmeet : Tech Conference 1(Technova)</h1>
               {% comment %} <h1>BrandStorming</h1> {% endcomment %}
             </div>
-            <h1 style="color:violet">12:00 noon</h1>
+            <h1 style="color:rgb(247, 140, 99)">12:00 noon</h1>
 
           </div>
         </div>
@@ -129,7 +128,7 @@
 
 
 
-            <h1 style="color:violet">12:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">12:00 pm</h1>
 
           </div>
         </div>
@@ -144,7 +143,7 @@
               <h1>Round 1</h1>
             </div>
 
-            {% comment %} <h2 style="color:white">Twin Attack <span style="color:violet">12:00 pm </h2> {% endcomment %}
+            {% comment %} <h2 style="color:white">Twin Attack <span style="color:rgb(247, 140, 99)">12:00 pm </h2> {% endcomment %}
             <h2> Perplexity </h2>
             <h2> BrainDarts</h2>
 
@@ -152,7 +151,7 @@
 
 
 
-            <h1 style="color:violet">1:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">1:00 pm</h1>
 
           </div>
         </div>
@@ -166,10 +165,10 @@
               <h1>Round 1</h1>
             </div>
 
-            {% comment %} <h2 style="color:white">Twin Attack <span style="color:violet">12:00 pm </h2> {% endcomment %}
+            {% comment %} <h2 style="color:white">Twin Attack <span style="color:rgb(247, 140, 99)">12:00 pm </h2> {% endcomment %}
             <h2> Junkyard </h2>
             <h2> Explicate</h2>
-            <h1 style="color:violet">2:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">2:00 pm</h1>
           </div>
         </div>
       </div>
@@ -182,7 +181,7 @@
               <h1>Final Round</h1>
             </div>
             <h2 style="font-size:18px"> ARcanum </h2>
-            <h1 style="color:violet">3:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">3:00 pm</h1>
           </div>
         </div>
       </div>
@@ -195,7 +194,7 @@
               <h1>Round 1</h1>
             </div>
 
-            {% comment %} <h2 style="color:white">Twin Attack <span style="color:violet">12:00 pm </h2> {% endcomment %}
+            {% comment %} <h2 style="color:white">Twin Attack <span style="color:rgb(247, 140, 99)">12:00 pm </h2> {% endcomment %}
             <h2> Tech Charades </h2>
             <h2> Knock Knock </h2>
 
@@ -204,10 +203,10 @@
 
 
 
-            <h1 style="color:violet">3:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">3:00 pm</h1>
             <br>
             <h2> Inspirate </h2>
-            <h1 style="color:violet">6:00 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">6:00 pm</h1>
           </div>
         </div>
       </div>
@@ -223,7 +222,7 @@
               <h1>Prelims 3</h1>
             </div>
 
-            {% comment %} <h2 style="color:white">Twin Attack <span style="color:violet">12:00 pm </h2> {% endcomment %}
+            {% comment %} <h2 style="color:white">Twin Attack <span style="color:rgb(247, 140, 99)">12:00 pm </h2> {% endcomment %}
             <h2> Be A Billionaire </h2>
             <h2> Call out Sherlock </h2>
 
@@ -233,7 +232,7 @@
 
 
 
-            <h1 style="color:violet">7:30 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">7:30 pm</h1>
 
           </div>
         </div>
@@ -249,7 +248,7 @@
 
             </div>
 
-            <h1 style="color:violet">9:30 pm-11:30 pm</h1>
+            <h1 style="color:rgb(247, 140, 99)">9:30 pm-11:30 pm</h1>
 
           </div>
         </div>
@@ -259,6 +258,8 @@
 
     </div>
   </div>
+
+  
   {% comment %} <div class="wrapper">
     <h1>Coming soon</span></h1>
   </div> {% endcomment %}
@@ -274,6 +275,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="{% static 'js/home.js' %}"></script>
+  {% include 'flow/navbarAndFooter/footer.html' %}
 </body>
 
 </html>

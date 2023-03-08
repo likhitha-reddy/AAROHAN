@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 import json
 
 from .models import *
-# Create your views here.
 
 
 def index(request):
@@ -220,7 +219,7 @@ def techmela(request):
     return render(request, "flow/techmela.html", {'robotics': robotics, 'assistive': assistive, 'software' : software})
 
 def aboutus(request):
-    return render(request, "flow/aboutus.html")
+    return render(request, "flow/comingsoon.html")
 
 def timelineDay1(request):
      return render(request,"flow/aarohan_timeline.html")

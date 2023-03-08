@@ -6,14 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Workshops</title>
+		<title>Corporate Social Initiative</title>
 		<link rel="stylesheet" href="{% static 'firefly.css' %}" />
     <link rel="stylesheet" href="{% static 'eventsAndInitiatives/socialInitiatives.css' %}">
 	</head>
 	<body
 		style="
 			background-image: url('{% static 'bg23.jpg' %}');
-			background-size: 100% 100%;
 		"
 	>
   {% include 'flow/navbarAndFooter/navbar.html' %}
@@ -39,11 +38,13 @@
       {% for w in data %}
 			<div class="shadow">
 				<div class="card draw-border">
+					{% if w.socialinitiative.poster %}
 					<img
-						src="{{w.socialinitiative.image.url}}"
+						src="{{w.socialinitiative.poster.url}}"
 						alt="Person"
 						class="card__image"
 					/>
+					{% endif %}
 					<p class="card__name">{{w.socialinitiative.name}}</p>
 
 					<div class="info">
@@ -53,9 +54,8 @@
 					</div>
 
 					<div class="buttons">
-						<div class="button">Register</div>
+						<a class="button" href="{{w.socialinitiative.webinar_link}}" style="text-decoration: none;">Register</a>
 						<div class="know" value="{{w.socialinitiative.id}}">
-              <input type="hidden" name="value" value="{{w.socialinitiative.id}}">
 							<button class="button" value="{{w.socialinitiative.id}}">Know More
 						</div>
 					</div>
@@ -68,16 +68,18 @@
           <img src="{% static 'img/cross.png' %}" alt="" class="cross" value="{{w.socialinitiative.id}}" />
         </div>
         <div class="modalCardWrapper">
-          <img src="{{w.socialinitiative.image.url}}" alt="" />
+			{% if w.socialinitiative.poster %}
+          <img src="{{w.socialinitiative.poster.url}}" alt="" />
+		  {% endif %}
           <div class="">
             <p>
-              {{w.socialinitiative.description}}
+              {{w.socialinitiative.description|truncatechars:550}}
             </p>
             <h1>{{w.socialinitiative.name}}</h1>
             <div class="time">
               <h3>{{w.socialinitiative.date_time}}</h3>
             </div>
-            <div class="btn draw-border modal_reg">Register</div>            
+            <a class="btn draw-border modal_reg" href="{{w.webinar_link}}" style="text-decoration: none;">Register</a>            
           </div>
         
         </div>
@@ -88,7 +90,7 @@
           {% for p in w.photos %}
           {% if p.image %}
           <div class="gallery-item">
-             <img src="{p.image.url}" alt="">
+             <img src="{{p.image.url}}" alt="">
           </div>
           {% endif %}
           {% endfor %}

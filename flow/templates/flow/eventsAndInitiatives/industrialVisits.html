@@ -6,14 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Workshops</title>
+		<title>Industrial Visits</title>
 		<link rel="stylesheet" href="{% static 'firefly.css' %}" />
     <link rel="stylesheet" href="{% static 'eventsAndInitiatives/industrialVisits.css' %}">
 	</head>
 	<body
 		style="
 			background-image: url('{% static 'bg23.jpg' %}');
-			background-size: 100% 100%;
 		"
 	>
   {% include 'flow/navbarAndFooter/navbar.html' %}
@@ -46,14 +45,12 @@
 					/>
 					<p class="card__name">{{w.industrialvisit.name}}</p>
 
-					<div class="info">
-						<div>DAY 1</div>
-
-						<div>6:00 pm</div>
+					<div class="info" style="display: flex;justify-content: center;">
+						<div>{{w.industrialvisit.date_time}}</div>
 					</div>
 
 					<div class="buttons">
-						<div class="button">Register</div>
+						<a class="button" href="{{w.industrialvisit.video_link}}" style="text-decoration: none;">Video</a>
 						<div class="know" value="{{w.industrialvisit.id}}">
               <input type="hidden" name="value" value="{{w.industrialvisit.id}}">
 							<button class="button" value="{{w.industrialvisit.id}}">Know More
@@ -75,9 +72,9 @@
             </p>
             <h1>{{w.industrialvisit.name}}</h1>
             <div class="time">
-              <h3>{{w.industrialvisit.date_time}}</h3>
+              <h4>{{w.industrialvisit.date_time}}</h4>
             </div>
-            <div class="btn draw-border modal_reg">Register</div>            
+            <a class="btn draw-border modal_reg" href="{{w.industrialvisit.video_link}}" style="text-decoration: none;">Video</a>            
           </div>
         
         </div>
