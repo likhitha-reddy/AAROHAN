@@ -80,7 +80,7 @@ top:20px;
 
 .open2{
    visibility: hidden;
-    z-index:100;
+    z-index:10000000;
     width: 100vw;
     position: absolute;
     top: 0;
