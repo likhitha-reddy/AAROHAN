@@ -6084,7 +6084,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .parallax-bg {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;

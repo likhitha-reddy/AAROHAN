@@ -34,4 +34,3 @@ modalBg.addEventListener('click', (e) => {
     modalBg.classList.remove('open-modal-bg')
     modal.classList.remove('open-modal')
   }
-})
