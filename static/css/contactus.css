@@ -4,9 +4,7 @@
   src: url('../fonts/MonumentExtended-Regular.otf');
 }
 
-body {
-  overflow-x: hidden;
-}
+
 
 * {
   box-sizing: border-box;
@@ -23,8 +21,7 @@ body {
 }
 
 .container {
-  height: calc(100vh - 110px);
-  margin-top: 110px;
+  height: 70vh;
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
