@@ -412,6 +412,11 @@ body {
     border-radius: 25px;
     font-size: 18px;
     }
+    .modalDesc{
+      max-height: 45vh;
+      overflow-y: scroll;
+      margin-top: 5px;
+    }
   }
   .container {
     padding-top: 6rem;
