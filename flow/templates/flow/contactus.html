@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,24 +12,23 @@
       crossorigin="anonymous"
     />
 
-
     <link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
-    <title>Contact Us | Aarohan 2022</title>
+    <title>Contact Us | Aarohan 2023</title>
   </head>
 
   <body>
-    {% include 'flow/navbarAndFooter/navbar.html' %}
-   
-    <img id="bg-vid" src={% static 'images/contactus/Background.jpg'%}/>
-      
+    {% include 'flow/navbarAndFooter/navbar.html' %} 
+    
+    <img id="bg-vid" src={%static 'images/contactus/Background.jpg'%}/>
+
     <!-- OFFCANVAS For Profile Click Event-->
     <div class="container">
-      
       <div class="side">
         <h1 class="side-header">Contact Us</h1>
       </div>
 
       <div class="main">
+        
         <div class="contact-social">
           <h1>Our Social Links</h1>
           <div class="social-links-container">
@@ -137,9 +135,9 @@
         </div>
         <div class="contact-mail">
           <h1>Send Us a Mail</h1>
-          <h4>Overall Coordinators, Aarohan 2022</h4>
+          <h4>Overall Coordinators, Aarohan 2023</h4>
           <div>
-            <a href="mailto:Suraj@ccanitd.in" class="contact">
+            <a href="mailto:cca@ccanitd.in" class="contact">
               <div class="contact-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -161,11 +159,11 @@
               </div>
 
               <div class="contact-info">
-                <h2>Suraj Kumar Sahoo</h2>
+                <h2>CCA Presi</h2>
               </div>
             </a>
 
-            <a href="mailto:rajas.kinetic@gmail.com" class="contact">
+            <a href="mailto:glug@gmail.com" class="contact">
               <div class="contact-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -187,13 +185,13 @@
               </div>
 
               <div class="contact-info">
-                <h2>Rajas Kulkarni</h2>
+                <h2>Glug Presi</h2>
               </div>
             </a>
           </div>
 
           <div>
-            <a href="mailto:rickydas189@gmail.com" class="contact">
+            <a href="mailto:sae@gmail.com" class="contact">
               <div class="contact-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -215,11 +213,11 @@
               </div>
 
               <div class="contact-info">
-                <h2>Rounak Das</h2>
+                <h2>SAE Presi</h2>
               </div>
             </a>
 
-            <a href="mailto:antoprathiksavio@gmail.com" class="contact">
+            <a href="mailto:mntc@gmail.com" class="contact">
               <div class="contact-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -241,12 +239,12 @@
               </div>
 
               <div class="contact-info">
-                <h2>Anto Pratik Savio</h2>
+                <h2>MNTC Presi</h2>
               </div>
             </a>
           </div>
           <div>
-            <a href="mailto:hrmourya27@gmail.com" class="contact">
+            <a href="mailto:rec@gmail.com" class="contact">
               <div class="contact-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -268,33 +266,24 @@
               </div>
 
               <div class="contact-info">
-                <h2>Hritesh Mourya</h2>
+                <h2>RECursion Presi</h2>
               </div>
             </a>
           </div>
-        
-         
-         
-
         </div>
-        
       </div>
-      
-    
-      
-      
     </div>
 
     <div class="footer-contact">
-      {% include 'flow/navbarAndFooter/footer.html' %}
+      <!-- {% include 'flow/navbarAndFooter/footer.html' %} -->
     </div>
     {% include 'flow/navbarAndFooter/footer.html' %}
   </body>
 
   <script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous"
-></script>
-<script src="{% static 'js/home.js' %}"></script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/home.js' %}"></script>
 </html>
