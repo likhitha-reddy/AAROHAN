@@ -310,7 +310,7 @@ body {
   align-items: center;
 }
 .modalCardWrapper p {
-  font-size: 15px !important;
+  font-size: 15px;
   line-height: 25px;
   text-transform: uppercase;
   width: 400px;
@@ -395,13 +395,14 @@ body {
         height: 250px;
     }
     .modalCard {
-        height: auto;
+        height: 97vh;
         width: 340px;
     }
     .modalCardWrapper p{
         width : 300px;
         font-size: 10px;
         line-height: 18px;
+        text-transform: none;
     }
     .modalCardWrapper h1 {
         font-size: 20px;
