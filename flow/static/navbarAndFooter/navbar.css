@@ -80,6 +80,7 @@ bar and footer */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(5.9px);
   z-index: 10001;
+  font-family: 'Unbounded', cursive;
 }
 
 .navMenu a {
