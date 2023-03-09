@@ -18,6 +18,11 @@
   margin: 0;
 }
 
+.logoLargeScreen{
+  height: 50px;
+  width: 50px
+}
+
 .menu-item {
   display: inline-block;
   position: relative;
@@ -110,6 +115,7 @@ bar and footer */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 .aarohan_logo{
+  display: none;
   z-index: 100000;
     position: fixed;
     top: 6px;
@@ -121,8 +127,12 @@ bar and footer */
 }
 @media screen and (max-width:1100px){
   .aarohan_logo{
+    display: block;
   width: 70px;
   height: 70px;
+  }
+  .logoLargeScreen{
+    display: none;
   }
 }
 .section-center{

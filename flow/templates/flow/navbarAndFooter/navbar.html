@@ -1,39 +1,44 @@
 {% load static %}
 <div class="navbar">
 	<link rel="stylesheet" href="{% static 'navbarAndFooter/navbar.css' %}" />
-	<!-- <div id="menuAndIcon"> -->
-	<div class="navMenu">
-		<a href="{% url 'socialInitiatives' %}">Initiatives</a>
+	<div id="menuAndIcon">
+		<div class="navMenu">
+			<a href="{% url 'home' %}">
+				<img
+					class="logoLargeScreen"
+					src="{% static 'img/aarhn.png' %}"
+					alt=""
+				/>
+			</a>
+			<a href="{% url 'socialInitiatives' %}">Initiatives</a>
 
-		<div class="menu-wrap">
-			<ul class="menu">
-				<li class="menu-item">
-					<a class="no_border" href="#">Events</a>
-					<ul class="drop-menu">
-						<li class="drop-menu-item">
-							<a href="{% url 'events' %}">Events</a>
-						</li>
-						<li class="drop-menu-item">
-							<a href="{% url 'workshops' %}">Workshops</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
+			<div class="menu-wrap">
+				<ul class="menu">
+					<li class="menu-item">
+						<a class="no_border" href="#">Events</a>
+						<ul class="drop-menu">
+							<li class="drop-menu-item">
+								<a href="{% url 'events' %}">Events</a>
+							</li>
+							<li class="drop-menu-item">
+								<a href="{% url 'workshops' %}">Workshops</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<a href="{% url 'timeline' %}">Timeline</a>
+			<a href="{% url 'attractions' %}">Attractions</a>
+			<a href="{% url 'aboutus' %}">About Us</a>
+			<a href="{% url 'contactus' %}">Contact Us</a>
+			<a href="{% url 'sponsors' %}">Sponsors</a>
+			<a href="{% url 'teams' %}">Teams</a>
+			<!-- <a href="{% url 'merch' %}">Merchandise</a> -->
+			<div id="indicator"></div>
 		</div>
-
-		<a href="{% url 'timeline' %}">Timeline</a>
-		<a href="{% url 'attractions' %}">Attractions</a>
-		<a href="{% url 'aboutus' %}">About Us</a>
-		<a href="{% url 'contactus' %}">Contact Us</a>
-		<a href="{% url 'sponsors' %}">Sponsors</a>
-		<a href="{% url 'teams' %}">Teams</a>
-		<!-- <a href="{% url 'merch' %}">Merchandise</a> -->
-		<div id="indicator"></div>
 	</div>
-	<a href="{% url 'home' %}">
-		<img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
-	</a>
-	<!-- </div> -->
+	<img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
 	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
 	<label for="menu-icon" class="cross-icon-teams"></label>
 	<nav class="nav">
