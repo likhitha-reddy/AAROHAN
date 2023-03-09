@@ -1,26 +1,9 @@
 {% load static %}
 <div class="navbar">
 	<link rel="stylesheet" href="{% static 'navbarAndFooter/navbar.css' %}" />
+	<!-- <div id="menuAndIcon"> -->
 	<div class="navMenu">
-		<div class="menu-wrap">
-			<ul class="menu">
-				<li class="menu-item">
-					<a href="#">Initiatives</a>
-					<ul class="drop-menu">
-						<li class="drop-menu-item">
-							<a href="{% url 'socialInitiatives' %}"
-								>Corporate Social Responsibilities</a
-							>
-						</li>
-						<li class="drop-menu-item">
-							<a href="{% url 'industrialvisits' %}"
-								>Industrial Visits</a
-							>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<a href="{% url 'socialInitiatives' %}">Initiatives</a>
 
 		<div class="menu-wrap">
 			<ul class="menu">
@@ -50,6 +33,7 @@
 	<a href="{% url 'home' %}">
 		<img class="aarohan_logo" src="{% static 'img/aarhn.png' %}" alt="" />
 	</a>
+	<!-- </div> -->
 	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
 	<label for="menu-icon" class="cross-icon-teams"></label>
 	<nav class="nav">
