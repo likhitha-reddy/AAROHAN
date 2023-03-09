@@ -49,7 +49,6 @@ def events(request):
 def workshops(request):
     workshops = Workshops.objects.values()
     workshops = [w for w in workshops]
-    print(list(workshops))
     return render(request, "flow/workshop.html", {'workshops': list(workshops)})
 
 def socialInitiative_view(request):
