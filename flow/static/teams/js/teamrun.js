@@ -3,7 +3,7 @@ var cls = document.querySelectorAll('.clss');
 var overlay = document.querySelector('.mars-cont');
 var wholecontainer = document.querySelector('.container');
 var icon = document.querySelector('.cross-icon-teams');
-var menu=document.querySelector('.navMenu');
+var menu=document.querySelector('.navbarMenu');
 var nav=document.querySelector('.nav');
 var value=0;
 var updown;
@@ -60,6 +60,3 @@ document.addEventListener('scroll',function(){
     social.style="visibility:visible;";
    }
 })
-
-
-
