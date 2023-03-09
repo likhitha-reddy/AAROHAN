@@ -125,6 +125,7 @@
 							const c2 = parseInt(register[i].getAttribute("c2"));
 
 							const str1 = register[i];
+							const description = events[c1][c2].description.replace(/\n/g, '<br/>');
 							str1.addEventListener("click", () => {
 								const dv = document.querySelector(".modal");
 								dv.innerHTML = `
@@ -137,7 +138,7 @@
                         <div class="">
 							<div class="modalDesc">
                             <p>
-                                ${events[c1][c2].description}
+                                ${description}
                             </p>
 							</div>
                             <h1>${events[c1][c2].eventName}</h1>
