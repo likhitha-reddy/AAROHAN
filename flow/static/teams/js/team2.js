@@ -6,6 +6,7 @@ var icon = document.querySelector('.cross-icon-teams');
 var menu=document.querySelector('.navMenu');
 var nav=document.querySelector('.nav');
 var value=0;
+var updown;
 const scrollingElement = (document.scrollingElement || document.body);
 var social=document.getElementById("icon-down");
 
@@ -24,9 +25,9 @@ for(i=0;i<cls.length;i++){
     nav.classList.remove("nav-team");
     wholecontainer.style.display="block";
     icon.style.display="block";
-    menu.style.visibility="visible";;
+    menu.style.visibility="visible";
+    scrollingElement.scrollTop = updown;
   }); 
-  
 }
 
 
@@ -44,13 +45,14 @@ function ToggleModal(id){
   nav.classList.add("nav-team");
   wholecontainer.style.display="none";
   team.style="display:block;";
-
+  updown=value;
 }
 
 function  Updown(){
   scrollingElement.scrollTop = 1500;
 }
 document.addEventListener('scroll',function(){
+  value=window.scrollY;
   if(window.scrollY>600){
     social.style="visibility:hidden;";
    }
