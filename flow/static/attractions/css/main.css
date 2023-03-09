@@ -33,6 +33,7 @@ body::after {
   user-select: none;
   filter: saturate(1.5);
   font-family: 'Transformers', sans-serif;
+  margin-top: 5rem;
 }
 
 .container {
@@ -138,7 +139,7 @@ body::after {
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
-  z-index: 9;
+  z-index: 99;
   backdrop-filter: blur(1px);
   display: grid;
   place-items: center;
