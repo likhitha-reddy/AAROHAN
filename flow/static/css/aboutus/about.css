@@ -6050,7 +6050,7 @@ html.rd-navbar-fixed-linked .page {
 .homepagecard {
   padding: 1em;
   max-width: 75vw;
-  max-height: 80vh;
+  max-height: max-content;
   margin: 5em;
   border-radius: 40px;
   border-spacing: 5em;
@@ -6084,7 +6084,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .parallax-bg {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -6104,7 +6104,6 @@ html.rd-navbar-fixed-linked .page {
 }
 
 @media (max-width: 1000px) {
-
   .homepagecard p {
     font-size: 1.2em;
     height: 100%;
@@ -6113,23 +6112,19 @@ html.rd-navbar-fixed-linked .page {
 
   .homepagecard p::-webkit-scrollbar {
     display: none;
-}
+  }
 
-.homepagecard p {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+  .homepagecard p {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   .homepagecard {
     max-width: 100vw;
     margin: 1em;
     margin-bottom: 8rem;
   }
-  
-
 }
-
-
 
 /*
 *
@@ -6163,7 +6158,6 @@ html.rd-navbar-fixed-linked .page {
     transform: rotate(-45deg);
     transform-origin: 2 40%;
   }
-
 }
 
 .google-map {

@@ -239,7 +239,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   top: 0;
   left: 0;
   backdrop-filter: blur(2px);
@@ -310,7 +310,7 @@ body {
   align-items: center;
 }
 .modalCardWrapper p {
-  font-size: 15px !important;
+  font-size: 15px;
   line-height: 25px;
   text-transform: uppercase;
   width: 400px;
@@ -392,16 +392,17 @@ body {
   @media screen and (max-width: 600px) {
     .modalCardWrapper img {
         width: 300px;
-        height: auto;
+        height: 250px;
     }
     .modalCard {
-        height: auto;
+        height: 97vh;
         width: 340px;
     }
     .modalCardWrapper p{
         width : 300px;
         font-size: 10px;
         line-height: 18px;
+        text-transform: none;
     }
     .modalCardWrapper h1 {
         font-size: 20px;
@@ -411,6 +412,11 @@ body {
     height: 40px;
     border-radius: 25px;
     font-size: 18px;
+    }
+    .modalDesc{
+      max-height: 45vh;
+      overflow-y: scroll;
+      margin-top: 5px;
     }
   }
   .container {
@@ -428,7 +434,7 @@ body {
 @media screen and (max-width: 1100px) {
 
   .container{
-    z-index: -200000;
+    z-index: 11;
     position: relative;
   }
 }

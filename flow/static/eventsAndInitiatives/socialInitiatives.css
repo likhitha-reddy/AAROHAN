@@ -171,7 +171,6 @@ body{
   left: 0;
   backdrop-filter: blur(2px);
   background-color: rgba(7, 7, 7, 0.753);
-  
 }
 .modaldisplay{
   display: flex !important;
