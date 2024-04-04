@@ -1,109 +1,126 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Corporate Social Initiative</title>
-		<link rel="stylesheet" href="{% static 'firefly.css' %}" />
-    <link rel="stylesheet" href="{% static 'eventsAndInitiatives/socialInitiatives.css' %}">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Corporate Social Initiative</title>
+
+	<link rel="stylesheet" href="{% static 'eventsAndInitiatives/social.css' %}">
 	<link rel="shortcut icon" type="image/jpg" href="{% static 'img/aarohan_logo1-01.png' %}">
-	</head>
-	<body
-		style="
-			background-image: url('{% static 'bg23.jpg' %}');
-		"
-	>
-  {% include 'flow/navbarAndFooter/navbar.html' %}
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Rubik+Doodle+Shadow&display=swap');
 
+		@font-face {
+			font-family: 'new';
+			src: url("{% static 'attractions/media_attractions/Lastica.ttf' %}") format('truetype');
+		}
 
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
-		<div class="firefly"></div>
+		.astro {
+			position: fixed;
+			bottom: 0px;
+			right: 0px;
+			opacity: 0.7;
+			z-index: 12;
+		}
 
-    <div class="container">
-      {% for w in data %}
-			<div class="shadow">
-				<div class="card draw-border">
-					{% if w.socialinitiative.poster %}
-					<img
-						src="{{w.socialinitiative.poster.url}}"
-						alt="Person"
-						class="card__image"
-					/>
-					{% endif %}
-					<p class="card__name">{{w.socialinitiative.name}}</p>
+		.img {
+			position: sticky;
+			top: 16px;
+			left: 10px;
+			opacity: 0.4;
+			width: 20rem;
+			z-index: 15;
+			height: 10rem;
+			display: block;
 
-					<div class="info">
-						<div>DAY 1</div>
+		}
+	</style>
+</head>
 
-						<div>6:00 pm</div>
+<body>
+	{% include 'flow/navbarAndFooter/navbar.html' %}
+	<img class="img " src="{% static 'attractions/media_attractions/star.png' %}">
+	<div class="header">
+		<h1 class="glitch" style="color: aliceblue; font-family: new; ">
+			<span aria-hidden="true">INITIATIVES</span>
+			INITIATIVES
+			<span aria-hidden="true">INITIATIVES</span>
+		</h1>
+	</div>
+	<div class="container">
+		{% for w in data %}
+		<div class="shadow">
+			<div class="card draw-b">
+				{% if w.socialinitiative.poster %}
+				<img src="{{w.socialinitiative.poster.url}}" alt="Person" class="card__image" />
+				{% endif %}
+				<h1 data-splitting="" class="card__name">{{w.socialinitiative.name}}</h1>
+				<p data-splitting="" class="text">
+				<div class="info">
+					<div>DAY 1</div>
+
+					<div>6:00 pm</div>
+				</div>
+
+				<div class="buttons">
+					<a class="button" href="{{w.socialinitiative.webinar_link}}"
+						style="text-decoration: none;">Register</a>
+					<div class="know" value="{{w.socialinitiative.id}}">
+						<button class="button" value="{{w.socialinitiative.id}}">Know More
 					</div>
-
-					<div class="buttons">
-						<a class="button" href="{{w.socialinitiative.webinar_link}}" style="text-decoration: none;">Register</a>
-						<div class="know" value="{{w.socialinitiative.id}}">
-							<button class="button" value="{{w.socialinitiative.id}}">Know More
-						</div>
-					</div>
+					</p>
 				</div>
 			</div>
+		</div>
+		<div class="modal" id="{{w.socialinitiative.id}}">
+			<div class="modalCard">
+				<div class="close">
+					<img src="{% static 'img/cross.png' %}" alt="" class="cross" value="{{w.socialinitiative.id}}" />
+				</div>
+				<div class="modalCardWrapper">
+					{% if w.socialinitiative.poster %}
+					<img src="{{w.socialinitiative.poster.url}}" alt="" />
+					{% endif %}
+					<div class="">
+						<p>
+							{{w.socialinitiative.description|truncatechars:550}}
+						</p>
+						<h1>{{w.socialinitiative.name}}</h1>
+						<div class="time">
+							<h3>{{w.socialinitiative.date_time}}</h3>
+						</div>
+						<a class="btn draw-border modal_reg" href="{{w.webinar_link}}"
+							style="text-decoration: none;">Register</a>
+					</div>
 
-    <div class="modal" id="{{w.socialinitiative.id}}">
-      <div class="modalCard">
-        <div class="close">
-          <img src="{% static 'img/cross.png' %}" alt="" class="cross" value="{{w.socialinitiative.id}}" />
-        </div>
-        <div class="modalCardWrapper">
-			{% if w.socialinitiative.poster %}
-          <img src="{{w.socialinitiative.poster.url}}" alt="" />
-		  {% endif %}
-          <div class="">
-            <p>
-              {{w.socialinitiative.description|truncatechars:550}}
-            </p>
-            <h1>{{w.socialinitiative.name}}</h1>
-            <div class="time">
-              <h3>{{w.socialinitiative.date_time}}</h3>
-            </div>
-            <a class="btn draw-border modal_reg" href="{{w.webinar_link}}" style="text-decoration: none;">Register</a>            
-          </div>
-        
-        </div>
-        <h1 class="head">
-          IMAGE GALLERY
-        </h1>
-        <div class="gallery" id="gallery">
-          {% for p in w.photos %}
-          {% if p.image %}
-          <div class="gallery-item">
-             <img src="{{p.image.url}}" alt="">
-          </div>
-          {% endif %}
-          {% endfor %}
-          
-      </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>  
-	</body>
+				</div>
+				<h1 class="head">
+					IMAGE GALLERY
+				</h1>
+				<div class="gallery" id="gallery">
+					{% for p in w.photos %}
+					{% if p.image %}
+					<div class="gallery-item">
+						<img src="{{p.image.url}}" alt="">
+					</div>
+					{% endif %}
+					{% endfor %}
 
-  {% include 'flow/navbarAndFooter/footer.html' %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="astro">
+		<img width="300" height="200" src="{% static 'attractions/media_attractions/astro.png' %}">
+	</div>
+</body>
 
-	<script src="{% static 'js/initiativesScript.js' %}"></script>
+
+<script src="{% static 'js/initiativesScript.js' %}"></script>
+
 </html>

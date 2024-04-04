@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corporate Social Initiative</title>
+    <link rel="shortcut icon" href="{% static 'img/final-logo.png' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'attractions/css/_main.css' %}" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Rubik+Doodle+Shadow&display=swap');
+
+
+
+        @font-face {
+            font-family: 'new';
+            src: url("{% static 'attractions/media_attractions/Lastica.ttf' %}") format('truetype');
+        }
+
+        body {
+            background-image: url("{% static 'attractions/media_attractions/darkbg.png' %}");
+            min-height: 100vh;
+        }
+
+
+
+        .layer {
+            overflow-y: scroll;
+
+            overflow-x: hidden;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .layer {
+
+                padding-top: 60rem;
+
+
+            }
+        }
+
+
+
+        .overlap {
+
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .navMenu a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder !important;
+        }
+
+
+        .astro {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            opacity: 0.7;
+            z-index: 12;
+
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'flow/navbarAndFooter/navbar.html' %}
+
+    <img class="img " src="{% static 'attractions/media_attractions/star.png' %}">
+
+
+    <div class="modal-bg">
+        <div class="modal">
+            <img src="" class="modal-image" />
+            <div class="modal-text">
+                <h2 class="modal-header"></h2>
+                <p class="modal-title"></p>
+                <p class="modal-desc"></p>
+                <div>
+                    <a href="" class="modal-btn">Visit page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="layer">
+        <div class="overlap">
+            <img src="{% static 'attractions/media_attractions/rev.gif' %}"
+                style="height:70vh;z-index: 2; position: sticky;">
+            <div class="container">
+                {% for w in data %}
+                <div class="card" _name="{{ w.socialinitiative.name }}" _title="{{ attraction.title }}"
+                    _img="{{w.socialinitiative.poster.url}}" {%if attraction.url %} _link="{{ attraction.url }}" {%endif
+                    %} _desc="{{ attraction.description }}">
+
+                    <img src="{{ attraction.image.url }}" class="card-image" />
+                    <div class="card-text">
+
+                        <h2 class="card-header">{{ attraction.name }}</h2>
+                        <p class="card-title">{{ attraction.title }}</p>
+                    </div>
+                    <a class="card-btn">Read More</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="astro">
+        <img width="300" height="200" src="{% static 'attractions/media_attractions/astro.png' %}">
+    </div>
+
+
+
+
+    <!--<h1 style=" position:sticky #ffffff; display: flex;
+  justify-content: center;
+  align-items: center;"> ATTRACTIONS</h1>
+  <div class="parentDiv" style="position:fixed ;z-index: 5;">
+    <img src="{% static 'attractions/media_attractions/rev.gif' %}" style="height:70vh;">
+
+
+
+  </div>
+  <div class="astro">
+    <img src="{% static 'attractions/media_attractions/astro.png' %}">
+  </div>
+  -->
+
+    <script src="{% static 'attractions/js/main.js' %}"></script>
+
+</body>
+
+</html>
