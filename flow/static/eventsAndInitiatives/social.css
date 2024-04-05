@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
+
 :root {
     --cover-timing: 0.5s;
     --cover-ease: cubic-bezier(0.66, 0.08, 0.19, 0.97);
@@ -55,7 +57,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -63,31 +65,22 @@ h2 {
     margin: auto;
 }
 
-.info {
-    font-size: small;
-    display: flex;
-    width: 60%;
-    justify-content: space-between;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 700;
-}
 
 .card {
     position: relative;
-    overflow-y: scroll;
     z-index: 5;
-    border: 5px solid #1b1918;
-    box-shadow: rgba(255, 255, 255, 0.3) 0 5vw 6vw -8vw, rgba(255, 255, 255, 0) 0 4.5vw 5vw -6vw, rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
+    border: 2px solid #1b1918;
+    backdrop-filter: blur(10px);
     transition: box-shadow 1s var(--cover-ease);
     background-color: rgba(218, 206, 206, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #bff8fb;
-    padding: 2rem;
+    padding: 1rem;
     width: 300px;
-    height: 440px;
-    margin-bottom: 5rem;
+    height: 420px;
+    margin-bottom: 2rem;
 
 }
 
@@ -200,24 +193,22 @@ p .word {
 
 .card__name {
     margin-top: 20px;
-    color: #e97957;
     margin-bottom: 10px;
-    font-size: 1.15rem;
-    font-family: 'Unbounded', cursive;
+    font-family: 'Montserrat', sans-serif;
     max-width: 100%;
     text-align: center;
-    line-height: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 93.52%;
+    color: rgb(255, 255, 255);
 }
 
 .card__image {
-
-
-    margin-top: 20px;
-    box-shadow: 0 5px 10px #e1dacb;
-
+    margin-top: 10px;
     background-color: #272133;
     width: 100%;
-    height: 100%;
+    height: 70%;
     -o-object-fit: cover;
     object-fit: cover;
 
@@ -329,7 +320,7 @@ h1 {
     cursor: pointer;
     line-height: 1.5;
 
-    font-family: 'Changa', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.05rem;
     margin: 1em;
     margin-bottom: 1.6rem;
@@ -408,8 +399,7 @@ h1 {
 .modalCardWrapper p {
     font-size: 18px;
     line-height: 27px;
-    font-family: 'Kanit', sans-serif;
-
+    font-family: 'Montserrat', sans-serif;
     color: #bff8fb;
     width: 400px;
     height: 300px;
@@ -418,7 +408,7 @@ h1 {
 .modalCardWrapper h1 {
     margin-top: 41px;
     color: #e97957;
-    font-family: 'Unbounded', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .time {
@@ -449,8 +439,7 @@ h1 {
 
 .head {
     color: #e97957;
-    font-family: 'Unbounded', cursive;
-
+    font-family: 'Montserrat', sans-serif;
     margin: 3.5rem;
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -571,23 +560,20 @@ h1 {
 .button {
     background: none;
     border: 3px solid #e97957;
-    color: #bff8fb;
+    color: #ecf3f3;
     cursor: pointer;
-    line-height: 1.5;
-    font-family: 'Changa', sans-serif;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.05rem;
-    margin: 1em;
-    margin-bottom: 1.6rem;
+    margin: 0.5em;
     width: 7rem;
-    height: 2.3rem;
+    height: 1.5rem;
     display: flex;
     align-items: center;
-    box-shadow: 0 5px 10px #6d8d8f7c;
-
+    box-shadow: 0 5px 8px #abb3b47c;
     justify-content: center;
     background: -webkit-linear-gradient(0deg, transparent 50%, #e97957 50%);
     background-size: 400px 80px;
-    -webkit-transform: perspective(200px) rotateY(13deg) rotateX(13deg);
     transition: all 0.4s;
 }
 
